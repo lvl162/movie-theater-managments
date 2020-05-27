@@ -37,19 +37,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtTenPhim = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtMaPhim = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.dgvPhim = new System.Windows.Forms.DataGridView();
-            this.MaPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayKhoiChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.TenPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayKhoiChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhim)).BeginInit();
             this.panel1.SuspendLayout();
@@ -68,8 +65,6 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtTenPhim);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtMaPhim);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(507, 166);
@@ -142,22 +137,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên Phim";
             // 
-            // txtMaPhim
-            // 
-            this.txtMaPhim.Location = new System.Drawing.Point(121, 19);
-            this.txtMaPhim.Name = "txtMaPhim";
-            this.txtMaPhim.Size = new System.Drawing.Size(100, 22);
-            this.txtMaPhim.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã Phim";
-            // 
             // dgvPhim
             // 
             this.dgvPhim.AllowUserToAddRows = false;
@@ -171,7 +150,6 @@
             this.dgvPhim.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhim.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPhim.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaPhim,
             this.TenPhim,
             this.TheLoai,
             this.NgayKhoiChieu,
@@ -185,49 +163,6 @@
             this.dgvPhim.Size = new System.Drawing.Size(988, 332);
             this.dgvPhim.TabIndex = 1;
             this.dgvPhim.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhim_RowEnter);
-            // 
-            // MaPhim
-            // 
-            this.MaPhim.DataPropertyName = "MaPhim";
-            this.MaPhim.FillWeight = 50F;
-            this.MaPhim.HeaderText = "Mã Phim";
-            this.MaPhim.MinimumWidth = 6;
-            this.MaPhim.Name = "MaPhim";
-            this.MaPhim.ReadOnly = true;
-            // 
-            // TenPhim
-            // 
-            this.TenPhim.DataPropertyName = "TenPhim";
-            this.TenPhim.HeaderText = "Tên Phim";
-            this.TenPhim.MinimumWidth = 6;
-            this.TenPhim.Name = "TenPhim";
-            this.TenPhim.ReadOnly = true;
-            // 
-            // TheLoai
-            // 
-            this.TheLoai.DataPropertyName = "TheLoai";
-            this.TheLoai.FillWeight = 70F;
-            this.TheLoai.HeaderText = "Thể Loại";
-            this.TheLoai.MinimumWidth = 6;
-            this.TheLoai.Name = "TheLoai";
-            this.TheLoai.ReadOnly = true;
-            // 
-            // NgayKhoiChieu
-            // 
-            this.NgayKhoiChieu.DataPropertyName = "NgayKhoiChieu";
-            this.NgayKhoiChieu.HeaderText = "Ngày Khởi Chiếu";
-            this.NgayKhoiChieu.MinimumWidth = 6;
-            this.NgayKhoiChieu.Name = "NgayKhoiChieu";
-            this.NgayKhoiChieu.ReadOnly = true;
-            // 
-            // MoTa
-            // 
-            this.MoTa.DataPropertyName = "MoTa";
-            this.MoTa.FillWeight = 150F;
-            this.MoTa.HeaderText = "Mô tả";
-            this.MoTa.MinimumWidth = 6;
-            this.MoTa.Name = "MoTa";
-            this.MoTa.ReadOnly = true;
             // 
             // panel1
             // 
@@ -280,6 +215,40 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // TenPhim
+            // 
+            this.TenPhim.DataPropertyName = "TenPhim";
+            this.TenPhim.HeaderText = "Tên Phim";
+            this.TenPhim.MinimumWidth = 6;
+            this.TenPhim.Name = "TenPhim";
+            this.TenPhim.ReadOnly = true;
+            // 
+            // TheLoai
+            // 
+            this.TheLoai.DataPropertyName = "TheLoai";
+            this.TheLoai.FillWeight = 70F;
+            this.TheLoai.HeaderText = "Thể Loại";
+            this.TheLoai.MinimumWidth = 6;
+            this.TheLoai.Name = "TheLoai";
+            this.TheLoai.ReadOnly = true;
+            // 
+            // NgayKhoiChieu
+            // 
+            this.NgayKhoiChieu.DataPropertyName = "NgayKhoiChieu";
+            this.NgayKhoiChieu.HeaderText = "Ngày Khởi Chiếu";
+            this.NgayKhoiChieu.MinimumWidth = 6;
+            this.NgayKhoiChieu.Name = "NgayKhoiChieu";
+            this.NgayKhoiChieu.ReadOnly = true;
+            // 
+            // MoTa
+            // 
+            this.MoTa.DataPropertyName = "MoTa";
+            this.MoTa.FillWeight = 150F;
+            this.MoTa.HeaderText = "Mô tả";
+            this.MoTa.MinimumWidth = 6;
+            this.MoTa.Name = "MoTa";
+            this.MoTa.ReadOnly = true;
+            // 
             // QuanLyPhim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -304,8 +273,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvPhim;
-        private System.Windows.Forms.TextBox txtMaPhim;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMoTa;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTheLoai;
@@ -314,15 +281,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTenPhim;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhim;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenPhim;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TheLoai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayKhoiChieu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MoTa;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenPhim;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TheLoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayKhoiChieu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MoTa;
     }
 }

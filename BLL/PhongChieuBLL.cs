@@ -16,23 +16,24 @@ namespace BLL
         
         public void DanhSachPhongChieu(DataGridView dataGridView) {
             PhongChieuDAL dal = new PhongChieuDAL();
+            dataGridView.AutoGenerateColumns = false;
             dataGridView.DataSource = dal.EF_GetAll();
         }
-        public bool ThemPhong(string ma, int soghe, float dt)
+        public bool ThemPhong(int soghe, float dt)
         {
-            PhongChieu phong = new PhongChieu() { MaPhong = ma, SoGhe = soghe, DienTich = dt };
+            PhongChieu phong = new PhongChieu() { SoGhe = soghe, DienTich = dt };
             if (pcDAL.ThemPhong(phong)) return true;
             return false;
         }
-        public bool UpdatePhong(string ma, int soghe, float dt)
+        public bool UpdatePhong( int soghe, float dt)
         {
-            PhongChieu phong = new PhongChieu() { MaPhong = ma, SoGhe = soghe, DienTich = dt };
+            PhongChieu phong = new PhongChieu() { SoGhe = soghe, DienTich = dt };
             if (pcDAL.UpdatePhong(phong)) return true;
             return false;
         }
-        public bool XoaPhong(string ma, int soghe, float dt)
+        public bool XoaPhong( int soghe, float dt)
         {
-            PhongChieu phong = new PhongChieu() { MaPhong = ma, SoGhe = soghe, DienTich = dt };
+            PhongChieu phong = new PhongChieu() { SoGhe = soghe, DienTich = dt };
             if (pcDAL.XoaPhong(phong)) return true;
             return false;
         }

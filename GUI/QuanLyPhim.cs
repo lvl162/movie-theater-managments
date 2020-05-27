@@ -27,58 +27,53 @@ namespace QuanLyRapPhim
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string maPhim, tenPhim, theLoai, moTa;
+            string tenPhim, theLoai, moTa;
             DateTime khoiChieu;
-            maPhim = txtMaPhim.Text;
             tenPhim = txtTenPhim.Text;
             theLoai = txtTheLoai.Text;
             moTa = txtMoTa.Text;
             khoiChieu = DateTime.Parse(txtNgayKhoiChieu.Text);
-            if (phimBLL.ThemPhim(maPhim, tenPhim, theLoai, khoiChieu, moTa )) QuanLyPhim_Load(sender, e);
+            if (phimBLL.ThemPhim(tenPhim, theLoai, khoiChieu, moTa )) QuanLyPhim_Load(sender, e);
             
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string maPhim, tenPhim, theLoai, moTa;
+            string tenPhim, theLoai, moTa;
             DateTime khoiChieu;
-            maPhim = txtMaPhim.Text;
             tenPhim = txtTenPhim.Text;
             theLoai = txtTheLoai.Text;
             moTa = txtMoTa.Text;
             khoiChieu = DateTime.Parse(txtNgayKhoiChieu.Text);
-            if (phimBLL.UpdatePhim(maPhim, tenPhim, theLoai, khoiChieu, moTa)) QuanLyPhim_Load(sender, e);
+            if (phimBLL.UpdatePhim(tenPhim, theLoai, khoiChieu, moTa)) QuanLyPhim_Load(sender, e);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             string maPhim, tenPhim, theLoai, moTa;
             DateTime khoiChieu;
-            maPhim = txtMaPhim.Text;
             tenPhim = txtTenPhim.Text;
             theLoai = txtTheLoai.Text;
             moTa = txtMoTa.Text;
             khoiChieu = DateTime.Parse(txtNgayKhoiChieu.Text);
-            if (phimBLL.XoaPhim(maPhim, tenPhim, theLoai, khoiChieu, moTa)) QuanLyPhim_Load(sender, e);
+            if (phimBLL.XoaPhim(tenPhim, theLoai, khoiChieu, moTa)) QuanLyPhim_Load(sender, e);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            txtMaPhim.Text = dgvPhim.Rows[RowEnter].Cells[0].Value.ToString();
-            txtTenPhim.Text = dgvPhim.Rows[RowEnter].Cells[1].Value.ToString();
-            txtTheLoai.Text = dgvPhim.Rows[RowEnter].Cells[2].Value.ToString();
-            txtNgayKhoiChieu.Text = dgvPhim.Rows[RowEnter].Cells[4].Value.ToString();
-            txtMoTa.Text = dgvPhim.Rows[RowEnter].Cells[3].Value.ToString();
+            txtTenPhim.Text = dgvPhim.Rows[RowEnter].Cells[0].Value.ToString();
+            txtTheLoai.Text = dgvPhim.Rows[RowEnter].Cells[1].Value.ToString();
+            txtNgayKhoiChieu.Text = dgvPhim.Rows[RowEnter].Cells[3].Value.ToString();
+            txtMoTa.Text = dgvPhim.Rows[RowEnter].Cells[2].Value.ToString();
         }
 
         private void dgvPhim_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             RowEnter = e.RowIndex;
-            txtMaPhim.Text = dgvPhim.Rows[RowEnter].Cells[0].Value.ToString();
-            txtTenPhim.Text = dgvPhim.Rows[RowEnter].Cells[1].Value.ToString();
-            txtTheLoai.Text = dgvPhim.Rows[RowEnter].Cells[2].Value.ToString();
-            txtNgayKhoiChieu.Text = dgvPhim.Rows[RowEnter].Cells[4].Value.ToString();
-            txtMoTa.Text = dgvPhim.Rows[RowEnter].Cells[3].Value.ToString();
+            txtTenPhim.Text = dgvPhim.Rows[RowEnter].Cells[0].Value.ToString();
+            txtTheLoai.Text = dgvPhim.Rows[RowEnter].Cells[1].Value.ToString();
+            txtNgayKhoiChieu.Text = dgvPhim.Rows[RowEnter].Cells[3].Value.ToString();
+            txtMoTa.Text = dgvPhim.Rows[RowEnter].Cells[2].Value.ToString();
         }
     }
 }

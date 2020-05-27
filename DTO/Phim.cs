@@ -14,12 +14,11 @@ namespace DTO
     {
 
         [Key]
-        [StringLength(10)]
-        public string MaPhim { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int MaPhim { get; set; }
         public string TenPhim { get; set; }
         public string TheLoai { get; set; }
         public string MoTa { get; set; }
         public DateTime? NgayKhoiChieu { get; set; }
-        //public virtual List<Phim> Phims { get; set; }
     }
 }

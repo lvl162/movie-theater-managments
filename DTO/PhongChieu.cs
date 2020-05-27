@@ -10,8 +10,8 @@ namespace DTO
     public class PhongChieu
     {
         [Key]
-        [StringLength(10)]
-        public string MaPhong { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int MaPhong { get; set; }
 
         public int? SoGhe { get; set; }
 
