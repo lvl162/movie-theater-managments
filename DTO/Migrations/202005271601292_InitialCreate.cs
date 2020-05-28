@@ -11,7 +11,7 @@
                 "dbo.Phim",
                 c => new
                     {
-                        MaPhim = c.String(nullable: false, maxLength: 10),
+                        MaPhim = c.Int(nullable: false, identity: true),
                         TenPhim = c.String(),
                         TheLoai = c.String(),
                         MoTa = c.String(),
@@ -23,7 +23,7 @@
                 "dbo.PhongChieu",
                 c => new
                     {
-                        MaPhong = c.String(nullable: false, maxLength: 10),
+                        MaPhong = c.Int(nullable: false, identity: true),
                         SoGhe = c.Int(),
                         DienTich = c.Double(),
                     })

@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LoginDAL.cs" />
     <Compile Include="PhimDAL.cs" />
     <Compile Include="PhongChieuDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

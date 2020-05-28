@@ -34,3 +34,9 @@ C:\Users\LuuVanLoi\Desktop\QLRP\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\LuuVanLoi\Desktop\QLRP\DTO\obj\Debug\DTO.csproj.CopyComplete
 C:\Users\LuuVanLoi\Desktop\QLRP\DTO\obj\Debug\DTO.dll
 C:\Users\LuuVanLoi\Desktop\QLRP\DTO\obj\Debug\DTO.pdb
+C:\Users\LuuVanLoi\Desktop\QLRP\DTO\obj\Debug\DTO.Migrations.InitialCreate.resources
+C:\Users\LuuVanLoi\Desktop\QLRP\DTO\obj\Debug\DTO.csproj.GenerateResource.cache
+C:\Users\LuuVanLoi\Desktop\QLRP\DTO\obj\Debug\DTO.Migrations.AddModel.resources
+C:\Users\LuuVanLoi\Desktop\QLRP\DTO\obj\Debug\DTO.Migrations.AddLogin.resources
+C:\Users\LuuVanLoi\Desktop\QLRP\DTO\obj\Debug\DTO.Migrations.ModifyLogin.resources
+C:\Users\LuuVanLoi\Desktop\QLRP\DTO\obj\Debug\DTO.Migrations.ModifyLogin1.resources

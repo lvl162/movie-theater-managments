@@ -7,13 +7,13 @@ namespace DTO.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class modifyPhimModel2 : IMigrationMetadata
+    public sealed partial class ModifyLogin : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(modifyPhimModel2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ModifyLogin));
         
         string IMigrationMetadata.Id
         {
-            get { return "202005271538165_modifyPhimModel2"; }
+            get { return "202005281532323_ModifyLogin"; }
         }
         
         string IMigrationMetadata.Source
