@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Login.cs" />
+    <Compile Include="NhanVien.cs" />
     <Compile Include="Phim.cs" />
     <Compile Include="QLRPContext.cs" />
     <Compile Include="PhongChieu.cs" />

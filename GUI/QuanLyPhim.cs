@@ -50,7 +50,7 @@ namespace QuanLyRapPhim
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string maPhim, tenPhim, theLoai, moTa;
+            string tenPhim, theLoai, moTa;
             DateTime khoiChieu;
             tenPhim = txtTenPhim.Text;
             theLoai = txtTheLoai.Text;

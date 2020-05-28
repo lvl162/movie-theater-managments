@@ -9,8 +9,11 @@ namespace DTO
 {
     public class QLRPContext : DbContext
     {
-        public QLRPContext() : base("name=QLRPModel") { }
+        public QLRPContext() : base("name=QLRPModel") {
+            Database.SetInitializer<QLRPContext>(new CreateDatabaseIfNotExists<QLRPContext>());
+        }
         public DbSet<Phim> Phims { get; set; }
         public DbSet<PhongChieu> PhongChieus { get; set; }
+        public DbSet<NhanVien> NhanViens { get; set; }
     }
 }

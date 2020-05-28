@@ -1,5 +1,4 @@
-﻿using QuanLyRapPhim;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI
+namespace QuanLyRapPhim
 {
     public partial class Login : Form
     {
@@ -18,14 +17,14 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void loginButton_Click(object sender, EventArgs e)
         {
-            new QuanLyPhong().ShowDialog();
+            
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void cancelButton_Click(object sender, EventArgs e)
         {
-            new QuanLyPhim().ShowDialog();
+            this.Close();
         }
     }
 }
