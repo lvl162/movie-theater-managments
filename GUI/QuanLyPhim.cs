@@ -32,7 +32,7 @@ namespace QuanLyRapPhim
             tenPhim = txtTenPhim.Text;
             theLoai = txtTheLoai.Text;
             moTa = txtMoTa.Text;
-            khoiChieu = DateTime.Parse(txtNgayKhoiChieu.Text);
+            khoiChieu = timePickerKhoiChieu.Value.Date;
             if (phimBLL.ThemPhim(tenPhim, theLoai, khoiChieu, moTa )) QuanLyPhim_Load(sender, e);
             
         }
@@ -44,7 +44,7 @@ namespace QuanLyRapPhim
             tenPhim = txtTenPhim.Text;
             theLoai = txtTheLoai.Text;
             moTa = txtMoTa.Text;
-            khoiChieu = DateTime.Parse(txtNgayKhoiChieu.Text);
+            khoiChieu = timePickerKhoiChieu.Value.Date;
             if (phimBLL.UpdatePhim(tenPhim, theLoai, khoiChieu, moTa)) QuanLyPhim_Load(sender, e);
         }
 
@@ -55,7 +55,7 @@ namespace QuanLyRapPhim
             tenPhim = txtTenPhim.Text;
             theLoai = txtTheLoai.Text;
             moTa = txtMoTa.Text;
-            khoiChieu = DateTime.Parse(txtNgayKhoiChieu.Text);
+            khoiChieu = timePickerKhoiChieu.Value.Date;
             if (phimBLL.XoaPhim(tenPhim, theLoai, khoiChieu, moTa)) QuanLyPhim_Load(sender, e);
         }
 
@@ -63,7 +63,7 @@ namespace QuanLyRapPhim
         {
             txtTenPhim.Text = dgvPhim.Rows[RowEnter].Cells[0].Value.ToString();
             txtTheLoai.Text = dgvPhim.Rows[RowEnter].Cells[1].Value.ToString();
-            txtNgayKhoiChieu.Text = dgvPhim.Rows[RowEnter].Cells[3].Value.ToString();
+            timePickerKhoiChieu.Value = DateTime.Parse(dgvPhim.Rows[RowEnter].Cells[3].Value.ToString());
             txtMoTa.Text = dgvPhim.Rows[RowEnter].Cells[2].Value.ToString();
         }
 
@@ -72,7 +72,7 @@ namespace QuanLyRapPhim
             RowEnter = e.RowIndex;
             txtTenPhim.Text = dgvPhim.Rows[RowEnter].Cells[0].Value.ToString();
             txtTheLoai.Text = dgvPhim.Rows[RowEnter].Cells[1].Value.ToString();
-            txtNgayKhoiChieu.Text = dgvPhim.Rows[RowEnter].Cells[3].Value.ToString();
+            timePickerKhoiChieu.Value = DateTime.Parse(dgvPhim.Rows[RowEnter].Cells[3].Value.ToString());
             txtMoTa.Text = dgvPhim.Rows[RowEnter].Cells[2].Value.ToString();
         }
     }

@@ -55,6 +55,7 @@
     <Compile Include="PhimDAL.cs" />
     <Compile Include="PhongChieuDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyNhanVienDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

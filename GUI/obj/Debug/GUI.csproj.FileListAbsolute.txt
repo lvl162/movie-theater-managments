@@ -73,3 +73,4 @@ C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.Properties.Resources
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.exe
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.pdb
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.Login.resources
+C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.QuanLyNhanVien.resources

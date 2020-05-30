@@ -61,6 +61,12 @@
     <Compile Include="Login.designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyNhanVien.Designer.cs">
+      <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyPhim.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="QuanLyNhanVien.resx">
+      <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLyPhim.resx">
       <DependentUpon>QuanLyPhim.cs</DependentUpon>
     </EmbeddedResource>

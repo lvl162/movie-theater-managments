@@ -32,21 +32,21 @@
             this.txtMoTa = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTheLoai = new System.Windows.Forms.TextBox();
-            this.txtNgayKhoiChieu = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTenPhim = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvPhim = new System.Windows.Forms.DataGridView();
+            this.TenPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayKhoiChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.TenPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayKhoiChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timePickerKhoiChieu = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhim)).BeginInit();
             this.panel1.SuspendLayout();
@@ -57,10 +57,10 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.timePickerKhoiChieu);
             this.groupBox1.Controls.Add(this.txtMoTa);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtTheLoai);
-            this.groupBox1.Controls.Add(this.txtNgayKhoiChieu);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtTenPhim);
@@ -77,7 +77,7 @@
             this.txtMoTa.Location = new System.Drawing.Point(371, 61);
             this.txtMoTa.Multiline = true;
             this.txtMoTa.Name = "txtMoTa";
-            this.txtMoTa.Size = new System.Drawing.Size(100, 63);
+            this.txtMoTa.Size = new System.Drawing.Size(129, 87);
             this.txtMoTa.TabIndex = 1;
             // 
             // label5
@@ -91,22 +91,15 @@
             // 
             // txtTheLoai
             // 
-            this.txtTheLoai.Location = new System.Drawing.Point(121, 102);
+            this.txtTheLoai.Location = new System.Drawing.Point(118, 66);
             this.txtTheLoai.Name = "txtTheLoai";
-            this.txtTheLoai.Size = new System.Drawing.Size(100, 22);
+            this.txtTheLoai.Size = new System.Drawing.Size(132, 22);
             this.txtTheLoai.TabIndex = 1;
-            // 
-            // txtNgayKhoiChieu
-            // 
-            this.txtNgayKhoiChieu.Location = new System.Drawing.Point(371, 19);
-            this.txtNgayKhoiChieu.Name = "txtNgayKhoiChieu";
-            this.txtNgayKhoiChieu.Size = new System.Drawing.Size(100, 22);
-            this.txtNgayKhoiChieu.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 107);
+            this.label3.Location = new System.Drawing.Point(29, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 17);
             this.label3.TabIndex = 0;
@@ -123,15 +116,15 @@
             // 
             // txtTenPhim
             // 
-            this.txtTenPhim.Location = new System.Drawing.Point(121, 60);
+            this.txtTenPhim.Location = new System.Drawing.Point(118, 24);
             this.txtTenPhim.Name = "txtTenPhim";
-            this.txtTenPhim.Size = new System.Drawing.Size(100, 22);
+            this.txtTenPhim.Size = new System.Drawing.Size(132, 22);
             this.txtTenPhim.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 65);
+            this.label2.Location = new System.Drawing.Point(29, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 17);
             this.label2.TabIndex = 0;
@@ -163,6 +156,40 @@
             this.dgvPhim.Size = new System.Drawing.Size(988, 332);
             this.dgvPhim.TabIndex = 1;
             this.dgvPhim.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhim_RowEnter);
+            // 
+            // TenPhim
+            // 
+            this.TenPhim.DataPropertyName = "TenPhim";
+            this.TenPhim.HeaderText = "Tên Phim";
+            this.TenPhim.MinimumWidth = 6;
+            this.TenPhim.Name = "TenPhim";
+            this.TenPhim.ReadOnly = true;
+            // 
+            // TheLoai
+            // 
+            this.TheLoai.DataPropertyName = "TheLoai";
+            this.TheLoai.FillWeight = 70F;
+            this.TheLoai.HeaderText = "Thể Loại";
+            this.TheLoai.MinimumWidth = 6;
+            this.TheLoai.Name = "TheLoai";
+            this.TheLoai.ReadOnly = true;
+            // 
+            // NgayKhoiChieu
+            // 
+            this.NgayKhoiChieu.DataPropertyName = "NgayKhoiChieu";
+            this.NgayKhoiChieu.HeaderText = "Ngày Khởi Chiếu";
+            this.NgayKhoiChieu.MinimumWidth = 6;
+            this.NgayKhoiChieu.Name = "NgayKhoiChieu";
+            this.NgayKhoiChieu.ReadOnly = true;
+            // 
+            // MoTa
+            // 
+            this.MoTa.DataPropertyName = "MoTa";
+            this.MoTa.FillWeight = 150F;
+            this.MoTa.HeaderText = "Mô tả";
+            this.MoTa.MinimumWidth = 6;
+            this.MoTa.Name = "MoTa";
+            this.MoTa.ReadOnly = true;
             // 
             // panel1
             // 
@@ -215,39 +242,16 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // TenPhim
+            // timePickerKhoiChieu
             // 
-            this.TenPhim.DataPropertyName = "TenPhim";
-            this.TenPhim.HeaderText = "Tên Phim";
-            this.TenPhim.MinimumWidth = 6;
-            this.TenPhim.Name = "TenPhim";
-            this.TenPhim.ReadOnly = true;
-            // 
-            // TheLoai
-            // 
-            this.TheLoai.DataPropertyName = "TheLoai";
-            this.TheLoai.FillWeight = 70F;
-            this.TheLoai.HeaderText = "Thể Loại";
-            this.TheLoai.MinimumWidth = 6;
-            this.TheLoai.Name = "TheLoai";
-            this.TheLoai.ReadOnly = true;
-            // 
-            // NgayKhoiChieu
-            // 
-            this.NgayKhoiChieu.DataPropertyName = "NgayKhoiChieu";
-            this.NgayKhoiChieu.HeaderText = "Ngày Khởi Chiếu";
-            this.NgayKhoiChieu.MinimumWidth = 6;
-            this.NgayKhoiChieu.Name = "NgayKhoiChieu";
-            this.NgayKhoiChieu.ReadOnly = true;
-            // 
-            // MoTa
-            // 
-            this.MoTa.DataPropertyName = "MoTa";
-            this.MoTa.FillWeight = 150F;
-            this.MoTa.HeaderText = "Mô tả";
-            this.MoTa.MinimumWidth = 6;
-            this.MoTa.Name = "MoTa";
-            this.MoTa.ReadOnly = true;
+            this.timePickerKhoiChieu.CustomFormat = "dd/MM/yyyy";
+            this.timePickerKhoiChieu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.timePickerKhoiChieu.Location = new System.Drawing.Point(371, 19);
+            this.timePickerKhoiChieu.Margin = new System.Windows.Forms.Padding(4);
+            this.timePickerKhoiChieu.Name = "timePickerKhoiChieu";
+            this.timePickerKhoiChieu.Size = new System.Drawing.Size(129, 22);
+            this.timePickerKhoiChieu.TabIndex = 3;
+            this.timePickerKhoiChieu.Value = new System.DateTime(2020, 5, 30, 0, 0, 0, 0);
             // 
             // QuanLyPhim
             // 
@@ -276,7 +280,6 @@
         private System.Windows.Forms.TextBox txtMoTa;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTheLoai;
-        private System.Windows.Forms.TextBox txtNgayKhoiChieu;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTenPhim;
@@ -290,5 +293,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TheLoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayKhoiChieu;
         private System.Windows.Forms.DataGridViewTextBoxColumn MoTa;
+        private System.Windows.Forms.DateTimePicker timePickerKhoiChieu;
     }
 }
