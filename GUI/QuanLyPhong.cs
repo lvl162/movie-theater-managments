@@ -47,26 +47,28 @@ namespace GUI
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            int maPhong = int.Parse(dgvPhong.Rows[RowEnter].Cells[0].Value.ToString());
             int soGhe;
             int.TryParse(txtSoGhe.Text, out soGhe);
             float dienTich;
             float.TryParse(txtDienTich.Text, out dienTich);
-            if (pcBLL.UpdatePhong(soGhe, dienTich)) QuanLyPhong_Load(sender, e);
+            if (pcBLL.UpdatePhong(maPhong, soGhe, dienTich)) QuanLyPhong_Load(sender, e);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             int soGhe;
+            int maPhong = int.Parse(dgvPhong.Rows[RowEnter].Cells[0].Value.ToString());
             int.TryParse(txtSoGhe.Text, out soGhe);
             float dienTich;
             float.TryParse(txtDienTich.Text, out dienTich);
-            if (pcBLL.XoaPhong(soGhe, dienTich)) QuanLyPhong_Load(sender, e);
+            if (pcBLL.XoaPhong(maPhong, soGhe, dienTich)) QuanLyPhong_Load(sender, e);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            txtSoGhe.Text = dgvPhong.Rows[RowEnter].Cells[0].Value.ToString();
-            txtDienTich.Text = dgvPhong.Rows[RowEnter].Cells[1].Value.ToString();
+            txtSoGhe.Text = dgvPhong.Rows[RowEnter].Cells[1].Value.ToString();
+            txtDienTich.Text = dgvPhong.Rows[RowEnter].Cells[2].Value.ToString();
         }
     }
 }

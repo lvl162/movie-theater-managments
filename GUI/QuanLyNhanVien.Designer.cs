@@ -52,6 +52,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
+            this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -137,6 +138,7 @@
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnCancel
             // 
@@ -147,6 +149,7 @@
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnDelete
             // 
@@ -157,6 +160,7 @@
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -167,6 +171,7 @@
             this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -329,6 +334,7 @@
             this.dgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaNhanVien,
             this.Column2,
             this.Column4,
             this.Column3,
@@ -343,6 +349,15 @@
             this.dgvNhanVien.RowHeadersWidth = 51;
             this.dgvNhanVien.Size = new System.Drawing.Size(1351, 291);
             this.dgvNhanVien.TabIndex = 0;
+            this.dgvNhanVien.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_RowEnter);
+            // 
+            // MaNhanVien
+            // 
+            this.MaNhanVien.DataPropertyName = "MaNhanVien";
+            this.MaNhanVien.HeaderText = "Mã NV";
+            this.MaNhanVien.MinimumWidth = 6;
+            this.MaNhanVien.Name = "MaNhanVien";
+            this.MaNhanVien.ReadOnly = true;
             // 
             // Column2
             // 
@@ -448,6 +463,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dgvNhanVien;
         private System.Windows.Forms.ComboBox cbNamNu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

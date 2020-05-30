@@ -25,15 +25,15 @@ namespace BLL
             if (pcDAL.ThemPhong(phong)) return true;
             return false;
         }
-        public bool UpdatePhong( int soghe, float dt)
+        public bool UpdatePhong(int ma, int soghe, float dt)
         {
-            PhongChieu phong = new PhongChieu() { SoGhe = soghe, DienTich = dt };
+            PhongChieu phong = new PhongChieu() { MaPhong = ma, SoGhe = soghe, DienTich = dt };
             if (pcDAL.UpdatePhong(phong)) return true;
             return false;
         }
-        public bool XoaPhong( int soghe, float dt)
+        public bool XoaPhong(int ma, int soghe, float dt)
         {
-            PhongChieu phong = new PhongChieu() { SoGhe = soghe, DienTich = dt };
+            PhongChieu phong = new PhongChieu() { MaPhong = ma, SoGhe = soghe, DienTich = dt };
             if (pcDAL.XoaPhong(phong)) return true;
             return false;
         }

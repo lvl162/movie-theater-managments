@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.timePickerKhoiChieu = new System.Windows.Forms.DateTimePicker();
             this.txtMoTa = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTheLoai = new System.Windows.Forms.TextBox();
@@ -37,16 +38,16 @@
             this.txtTenPhim = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvPhim = new System.Windows.Forms.DataGridView();
-            this.TenPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayKhoiChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.timePickerKhoiChieu = new System.Windows.Forms.DateTimePicker();
+            this.MaPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayKhoiChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhim)).BeginInit();
             this.panel1.SuspendLayout();
@@ -71,6 +72,17 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phim";
+            // 
+            // timePickerKhoiChieu
+            // 
+            this.timePickerKhoiChieu.CustomFormat = "dd/MM/yyyy";
+            this.timePickerKhoiChieu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.timePickerKhoiChieu.Location = new System.Drawing.Point(371, 19);
+            this.timePickerKhoiChieu.Margin = new System.Windows.Forms.Padding(4);
+            this.timePickerKhoiChieu.Name = "timePickerKhoiChieu";
+            this.timePickerKhoiChieu.Size = new System.Drawing.Size(129, 22);
+            this.timePickerKhoiChieu.TabIndex = 3;
+            this.timePickerKhoiChieu.Value = new System.DateTime(2020, 5, 30, 0, 0, 0, 0);
             // 
             // txtMoTa
             // 
@@ -143,6 +155,7 @@
             this.dgvPhim.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhim.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPhim.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaPhim,
             this.TenPhim,
             this.TheLoai,
             this.NgayKhoiChieu,
@@ -156,40 +169,6 @@
             this.dgvPhim.Size = new System.Drawing.Size(988, 332);
             this.dgvPhim.TabIndex = 1;
             this.dgvPhim.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhim_RowEnter);
-            // 
-            // TenPhim
-            // 
-            this.TenPhim.DataPropertyName = "TenPhim";
-            this.TenPhim.HeaderText = "Tên Phim";
-            this.TenPhim.MinimumWidth = 6;
-            this.TenPhim.Name = "TenPhim";
-            this.TenPhim.ReadOnly = true;
-            // 
-            // TheLoai
-            // 
-            this.TheLoai.DataPropertyName = "TheLoai";
-            this.TheLoai.FillWeight = 70F;
-            this.TheLoai.HeaderText = "Thể Loại";
-            this.TheLoai.MinimumWidth = 6;
-            this.TheLoai.Name = "TheLoai";
-            this.TheLoai.ReadOnly = true;
-            // 
-            // NgayKhoiChieu
-            // 
-            this.NgayKhoiChieu.DataPropertyName = "NgayKhoiChieu";
-            this.NgayKhoiChieu.HeaderText = "Ngày Khởi Chiếu";
-            this.NgayKhoiChieu.MinimumWidth = 6;
-            this.NgayKhoiChieu.Name = "NgayKhoiChieu";
-            this.NgayKhoiChieu.ReadOnly = true;
-            // 
-            // MoTa
-            // 
-            this.MoTa.DataPropertyName = "MoTa";
-            this.MoTa.FillWeight = 150F;
-            this.MoTa.HeaderText = "Mô tả";
-            this.MoTa.MinimumWidth = 6;
-            this.MoTa.Name = "MoTa";
-            this.MoTa.ReadOnly = true;
             // 
             // panel1
             // 
@@ -242,16 +221,47 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // timePickerKhoiChieu
+            // MaPhim
             // 
-            this.timePickerKhoiChieu.CustomFormat = "dd/MM/yyyy";
-            this.timePickerKhoiChieu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.timePickerKhoiChieu.Location = new System.Drawing.Point(371, 19);
-            this.timePickerKhoiChieu.Margin = new System.Windows.Forms.Padding(4);
-            this.timePickerKhoiChieu.Name = "timePickerKhoiChieu";
-            this.timePickerKhoiChieu.Size = new System.Drawing.Size(129, 22);
-            this.timePickerKhoiChieu.TabIndex = 3;
-            this.timePickerKhoiChieu.Value = new System.DateTime(2020, 5, 30, 0, 0, 0, 0);
+            this.MaPhim.DataPropertyName = "MaPhim";
+            this.MaPhim.HeaderText = "Mã Phim";
+            this.MaPhim.MinimumWidth = 6;
+            this.MaPhim.Name = "MaPhim";
+            this.MaPhim.ReadOnly = true;
+            // 
+            // TenPhim
+            // 
+            this.TenPhim.DataPropertyName = "TenPhim";
+            this.TenPhim.HeaderText = "Tên Phim";
+            this.TenPhim.MinimumWidth = 6;
+            this.TenPhim.Name = "TenPhim";
+            this.TenPhim.ReadOnly = true;
+            // 
+            // TheLoai
+            // 
+            this.TheLoai.DataPropertyName = "TheLoai";
+            this.TheLoai.FillWeight = 70F;
+            this.TheLoai.HeaderText = "Thể Loại";
+            this.TheLoai.MinimumWidth = 6;
+            this.TheLoai.Name = "TheLoai";
+            this.TheLoai.ReadOnly = true;
+            // 
+            // NgayKhoiChieu
+            // 
+            this.NgayKhoiChieu.DataPropertyName = "NgayKhoiChieu";
+            this.NgayKhoiChieu.HeaderText = "Ngày Khởi Chiếu";
+            this.NgayKhoiChieu.MinimumWidth = 6;
+            this.NgayKhoiChieu.Name = "NgayKhoiChieu";
+            this.NgayKhoiChieu.ReadOnly = true;
+            // 
+            // MoTa
+            // 
+            this.MoTa.DataPropertyName = "MoTa";
+            this.MoTa.FillWeight = 150F;
+            this.MoTa.HeaderText = "Mô tả";
+            this.MoTa.MinimumWidth = 6;
+            this.MoTa.Name = "MoTa";
+            this.MoTa.ReadOnly = true;
             // 
             // QuanLyPhim
             // 
@@ -289,10 +299,11 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.DateTimePicker timePickerKhoiChieu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhim;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenPhim;
         private System.Windows.Forms.DataGridViewTextBoxColumn TheLoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayKhoiChieu;
         private System.Windows.Forms.DataGridViewTextBoxColumn MoTa;
-        private System.Windows.Forms.DateTimePicker timePickerKhoiChieu;
     }
 }

@@ -39,6 +39,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtSoGhe = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DienTich = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
@@ -59,6 +60,7 @@
             this.dgvPhong.ColumnHeadersHeight = 29;
             this.dgvPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPhong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaPhong,
             this.SoGhe,
             this.DienTich});
             this.dgvPhong.Location = new System.Drawing.Point(34, 209);
@@ -167,6 +169,14 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Số ghế";
             // 
+            // MaPhong
+            // 
+            this.MaPhong.DataPropertyName = "MaPhong";
+            this.MaPhong.HeaderText = "Mã Phòng";
+            this.MaPhong.MinimumWidth = 6;
+            this.MaPhong.Name = "MaPhong";
+            this.MaPhong.ReadOnly = true;
+            // 
             // SoGhe
             // 
             this.SoGhe.DataPropertyName = "SoGhe";
@@ -218,6 +228,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MaskedTextBox txtSoGhe;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoGhe;
         private System.Windows.Forms.DataGridViewTextBoxColumn DienTich;
     }
