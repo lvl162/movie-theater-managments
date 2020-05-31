@@ -18,13 +18,7 @@ namespace DAL
                     Login res = context.Logins.Single(p => p.UserName == lg.UserName && p.Password == lg.Password);
                     int maNV = res.MaNhanVien;
                     var nv = context.NhanViens.Single(p => p.MaNhanVien == maNV);
-                    /*
-                     QTV Hệ Thống
-                    Quản Lý Phòng Chiếu
-                    Quản Lý Phim
-                    Quản Lý Lịch Chiếu
-                    Nhân Viên Bán Vé
-                    */
+                    
                     return nv.ChucVu;
                 }
                 catch (Exception e) { return "Khong tim thay"; }

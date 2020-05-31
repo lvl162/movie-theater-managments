@@ -55,11 +55,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BanVe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanVe.Designer.cs">
+      <DependentUpon>BanVe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyLichChieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyLichChieu.Designer.cs">
+      <DependentUpon>QuanLyLichChieu.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLyLoginUser.cs">
       <SubType>Form</SubType>

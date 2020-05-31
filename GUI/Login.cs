@@ -25,6 +25,13 @@ namespace QuanLyRapPhim
             string username = txtUser.Text;
             string password = txtPassword.Text;
             string ChucVu;
+            /*
+            QTV Hệ Thống
+            Quản Lý Phòng Chiếu
+            Quản Lý Phim
+            Quản Lý Lịch Chiếu
+            Nhân Viên Bán Vé
+            */
             ChucVu = LoginBLL.Login(username, password);
             if (ChucVu == "Khong tim thay")
             {
@@ -41,6 +48,14 @@ namespace QuanLyRapPhim
             if (ChucVu == "Quản Lý Phòng Chiếu")
             {
                 new QuanLyPhong().ShowDialog();
+            }
+            if (ChucVu == "Nhân Viên Bán Vé")
+            {
+                new BanVe().ShowDialog();
+            }
+            if (ChucVu == "Quản Lý Lịch Chiếu")
+            {
+                new QuanLyLichChieu().ShowDialog();
             }
         }
 

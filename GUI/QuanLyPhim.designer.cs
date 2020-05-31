@@ -224,6 +224,7 @@
             // MaPhim
             // 
             this.MaPhim.DataPropertyName = "MaPhim";
+            this.MaPhim.FillWeight = 35F;
             this.MaPhim.HeaderText = "Mã Phim";
             this.MaPhim.MinimumWidth = 6;
             this.MaPhim.Name = "MaPhim";
