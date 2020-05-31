@@ -21,8 +21,8 @@ namespace GUI
         private void dgvPhong_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             RowEnter = e.RowIndex;
-            txtSoGhe.Text = dgvPhong.Rows[RowEnter].Cells[0].Value.ToString();
-            txtDienTich.Text = dgvPhong.Rows[RowEnter].Cells[1].Value.ToString();
+            txtSoGhe.Text = dgvPhong.Rows[RowEnter].Cells[1].Value.ToString();
+            txtDienTich.Text = dgvPhong.Rows[RowEnter].Cells[2].Value.ToString();
         }
 
         protected void QuanLyPhong_Load(object sender, EventArgs e)

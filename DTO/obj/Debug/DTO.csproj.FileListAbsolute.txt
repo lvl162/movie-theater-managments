@@ -40,3 +40,4 @@ C:\Users\LuuVanLoi\Desktop\QLRP\DTO\obj\Debug\DTO.Migrations.AddModel.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\DTO\obj\Debug\DTO.Migrations.AddLogin.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\DTO\obj\Debug\DTO.Migrations.ModifyLogin.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\DTO\obj\Debug\DTO.Migrations.ModifyLogin1.resources
+C:\Users\LuuVanLoi\Desktop\QLRP\DTO\obj\Debug\DTO.Migrations.deleteLogin_role.resources

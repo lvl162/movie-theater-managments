@@ -20,7 +20,6 @@ namespace DTO
         [ForeignKey("NhanVien")]
         public int MaNhanVien { get; set; }
         public NhanVien NhanVien { get; set; }
-        public int role { get; set; }
-        
+      
     }
 }

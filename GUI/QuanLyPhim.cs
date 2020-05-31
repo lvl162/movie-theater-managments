@@ -65,8 +65,8 @@ namespace QuanLyRapPhim
         {
             txtTenPhim.Text = dgvPhim.Rows[RowEnter].Cells[1].Value.ToString();
             txtTheLoai.Text = dgvPhim.Rows[RowEnter].Cells[2].Value.ToString();
-            timePickerKhoiChieu.Value = DateTime.Parse(dgvPhim.Rows[RowEnter].Cells[4].Value.ToString());
-            txtMoTa.Text = dgvPhim.Rows[RowEnter].Cells[3].Value.ToString();
+            timePickerKhoiChieu.Value = DateTime.Parse(dgvPhim.Rows[RowEnter].Cells[3].Value.ToString());
+            txtMoTa.Text = dgvPhim.Rows[RowEnter].Cells[4].Value.ToString();
         }
 
         private void dgvPhim_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -74,8 +74,8 @@ namespace QuanLyRapPhim
             RowEnter = e.RowIndex;
             txtTenPhim.Text = dgvPhim.Rows[RowEnter].Cells[1].Value.ToString();
             txtTheLoai.Text = dgvPhim.Rows[RowEnter].Cells[2].Value.ToString();
-            timePickerKhoiChieu.Value = DateTime.Parse(dgvPhim.Rows[RowEnter].Cells[4].Value.ToString());
-            txtMoTa.Text = dgvPhim.Rows[RowEnter].Cells[3].Value.ToString();
+            timePickerKhoiChieu.Value = DateTime.Parse(dgvPhim.Rows[RowEnter].Cells[3].Value.ToString());
+            txtMoTa.Text = dgvPhim.Rows[RowEnter].Cells[4].Value.ToString();
         }
     }
 }

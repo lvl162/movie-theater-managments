@@ -31,6 +31,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnQuanLyLogin = new System.Windows.Forms.Button();
             this.cbNamNu = new System.Windows.Forms.ComboBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -91,6 +93,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnSearch);
+            this.panel2.Controls.Add(this.btnQuanLyLogin);
             this.panel2.Controls.Add(this.cbNamNu);
             this.panel2.Controls.Add(this.btnExit);
             this.panel2.Controls.Add(this.btnCancel);
@@ -117,6 +121,25 @@
             this.panel2.Size = new System.Drawing.Size(1377, 219);
             this.panel2.TabIndex = 1;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(610, 171);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(94, 28);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // btnQuanLyLogin
+            // 
+            this.btnQuanLyLogin.Location = new System.Drawing.Point(974, 171);
+            this.btnQuanLyLogin.Name = "btnQuanLyLogin";
+            this.btnQuanLyLogin.Size = new System.Drawing.Size(94, 28);
+            this.btnQuanLyLogin.TabIndex = 7;
+            this.btnQuanLyLogin.Text = "QL User";
+            this.btnQuanLyLogin.UseVisualStyleBackColor = true;
+            this.btnQuanLyLogin.Click += new System.EventHandler(this.btnQuanLyLogin_Click);
+            // 
             // cbNamNu
             // 
             this.cbNamNu.FormattingEnabled = true;
@@ -131,10 +154,10 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(1204, 171);
+            this.btnExit.Location = new System.Drawing.Point(1156, 171);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(100, 28);
+            this.btnExit.Size = new System.Drawing.Size(94, 28);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -142,10 +165,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(919, 171);
+            this.btnCancel.Location = new System.Drawing.Point(792, 171);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 28);
+            this.btnCancel.Size = new System.Drawing.Size(94, 28);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -153,10 +176,10 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(634, 171);
+            this.btnDelete.Location = new System.Drawing.Point(428, 171);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 28);
+            this.btnDelete.Size = new System.Drawing.Size(94, 28);
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -164,10 +187,10 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(349, 171);
+            this.btnUpdate.Location = new System.Drawing.Point(246, 171);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(100, 28);
+            this.btnUpdate.Size = new System.Drawing.Size(94, 28);
             this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -178,7 +201,7 @@
             this.btnAdd.Location = new System.Drawing.Point(64, 171);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 28);
+            this.btnAdd.Size = new System.Drawing.Size(94, 28);
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -188,6 +211,7 @@
             // 
             this.cbChucVu.FormattingEnabled = true;
             this.cbChucVu.Items.AddRange(new object[] {
+            "QTV Hệ Thống",
             "Quản Lý Phòng Chiếu",
             "Quản Lý Phim",
             "Quản Lý Lịch Chiếu",
@@ -386,7 +410,7 @@
             // Column6
             // 
             this.Column6.DataPropertyName = "SoCMND";
-            this.Column6.HeaderText = "SốCMND";
+            this.Column6.HeaderText = "Số CMND";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
@@ -394,7 +418,7 @@
             // Column5
             // 
             this.Column5.DataPropertyName = "SDT";
-            this.Column5.HeaderText = "SDT";
+            this.Column5.HeaderText = "Số Điện Thoại";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -463,6 +487,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dgvNhanVien;
         private System.Windows.Forms.ComboBox cbNamNu;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnQuanLyLogin;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;

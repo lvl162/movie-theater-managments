@@ -101,5 +101,10 @@ namespace QuanLyRapPhim
             cbChucVu.SelectedItem = dgvNhanVien.Rows[RowEnter].Cells[6].Value.ToString();
             txtDiaChi.Text = dgvNhanVien.Rows[RowEnter].Cells[7].Value.ToString();
         }
+
+        private void btnQuanLyLogin_Click(object sender, EventArgs e)
+        {
+            new QuanLyLoginUser().ShowDialog();
+        }
     }
 }

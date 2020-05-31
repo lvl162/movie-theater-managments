@@ -9,16 +9,25 @@ namespace DAL
 {
     public class LoginDAL
     {
-        public int Login(Login lg)
+        public string Login(Login lg)
         {
             using(QLRPContext context = new QLRPContext())
             {
                 try
                 {
                     Login res = context.Logins.Single(p => p.UserName == lg.UserName && p.Password == lg.Password);
-                    return int.Parse(res.role.ToString());
+                    int maNV = res.MaNhanVien;
+                    var nv = context.NhanViens.Single(p => p.MaNhanVien == maNV);
+                    /*
+                     QTV Hệ Thống
+                    Quản Lý Phòng Chiếu
+                    Quản Lý Phim
+                    Quản Lý Lịch Chiếu
+                    Nhân Viên Bán Vé
+                    */
+                    return nv.ChucVu;
                 }
-                catch (Exception e) { return -1; }
+                catch (Exception e) { return "Khong tim thay"; }
                 
             }
         }

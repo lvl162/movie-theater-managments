@@ -74,6 +74,10 @@
     <Compile Include="Migrations\202005281543509_ModifyLogin1.designer.cs">
       <DependentUpon>202005281543509_ModifyLogin1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005310520591_deleteLogin_role.cs" />
+    <Compile Include="Migrations\202005310520591_deleteLogin_role.designer.cs">
+      <DependentUpon>202005310520591_deleteLogin_role.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NhanVien.cs" />
     <Compile Include="Phim.cs" />
@@ -100,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005281543509_ModifyLogin1.resx">
       <DependentUpon>202005281543509_ModifyLogin1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005310520591_deleteLogin_role.resx">
+      <DependentUpon>202005310520591_deleteLogin_role.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

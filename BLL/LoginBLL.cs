@@ -11,7 +11,7 @@ namespace BLL
     public class LoginBLL
     {
         LoginDAL loginDAL = new LoginDAL();
-        public int Login(string user, string password)
+        public string Login(string user, string password)
         {
             return loginDAL.Login(new Login() { UserName = user, Password = password });
         }

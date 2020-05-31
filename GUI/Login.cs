@@ -24,21 +24,21 @@ namespace QuanLyRapPhim
         {
             string username = txtUser.Text;
             string password = txtPassword.Text;
-            int role;
-            role = LoginBLL.Login(username, password);
-            if (role == -1)
+            string ChucVu;
+            ChucVu = LoginBLL.Login(username, password);
+            if (ChucVu == "Khong tim thay")
             {
                 MessageBox.Show("Sai ten dang nhap/ mat khau..");
             }
-            if (role == 1)
+            if (ChucVu == "QTV Hệ Thống")
             {
                 new QuanLyNhanVien().ShowDialog();
             }
-            if (role == 2)
+            if (ChucVu == "Quản Lý Phim")
             {
                 new QuanLyPhim().ShowDialog();
             }
-            if (role == 3)
+            if (ChucVu == "Quản Lý Phòng Chiếu")
             {
                 new QuanLyPhong().ShowDialog();
             }
