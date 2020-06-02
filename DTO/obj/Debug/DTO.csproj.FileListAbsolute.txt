@@ -22,7 +22,6 @@ C:\Users\LuuVanLoi\source\repos\QLRP\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.
 C:\Users\LuuVanLoi\source\repos\QLRP\DTO\obj\Debug\DTO.csproj.CopyComplete
 C:\Users\LuuVanLoi\source\repos\QLRP\DTO\obj\Debug\DTO.dll
 C:\Users\LuuVanLoi\source\repos\QLRP\DTO\obj\Debug\DTO.pdb
-C:\Users\LuuVanLoi\Desktop\QLRP\DTO\bin\Debug\DTO.dll.config
 C:\Users\LuuVanLoi\Desktop\QLRP\DTO\bin\Debug\DTO.dll
 C:\Users\LuuVanLoi\Desktop\QLRP\DTO\bin\Debug\DTO.pdb
 C:\Users\LuuVanLoi\Desktop\QLRP\DTO\bin\Debug\EntityFramework.dll

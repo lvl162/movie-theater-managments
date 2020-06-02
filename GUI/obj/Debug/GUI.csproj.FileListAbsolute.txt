@@ -57,9 +57,7 @@ C:\Users\LuuVanLoi\Desktop\QLRP\GUI\bin\Debug\BLL.pdb
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\bin\Debug\EntityFramework.xml
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\bin\Debug\DAL.pdb
-C:\Users\LuuVanLoi\Desktop\QLRP\GUI\bin\Debug\DAL.dll.config
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\bin\Debug\DTO.pdb
-C:\Users\LuuVanLoi\Desktop\QLRP\GUI\bin\Debug\DTO.dll.config
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\GUI.csprojAssemblyReference.cache
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.QuanLyPhim.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\GUI.QuanLyPhong.resources
