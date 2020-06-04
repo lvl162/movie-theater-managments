@@ -1,4 +1,4 @@
-namespace DTO
+namespace Model
 {
     using System;
     using System.Collections.Generic;

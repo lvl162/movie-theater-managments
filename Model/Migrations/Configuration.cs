@@ -5,7 +5,7 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<DTO.QLRPContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Model.QLRPContext>
     {
         public Configuration()
         {
@@ -13,7 +13,7 @@
             ContextKey = "DTO.QLRPContext";
         }
 
-        protected override void Seed(DTO.QLRPContext context)
+        protected override void Seed(Model.QLRPContext context)
         {
             //  This method will be called after migrating to the latest version.
 
