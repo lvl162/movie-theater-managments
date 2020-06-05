@@ -13,13 +13,17 @@ namespace Model
     {
 
         [Key]
+        [Column(Order = 1)]
         public string UserName { get; set; }
 
+        [Key]
+        [ForeignKey("NhanVien")]
+        [Column(Order = 2)]
+        public int MaNhanVien { get; set; }
         public string Password { get; set; }
 
-        [ForeignKey("NhanVien")]
-        public int MaNhanVien { get; set; }
-        public NhanVien NhanVien { get; set; }
+        public virtual NhanVien NhanVien { get; set; }
+        
       
     }
 }

@@ -3,37 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
 using Model;
 namespace DAL
 {
-    public class LoginUserDAL
+    public class LoginUserManageDAL
     {
-        public List<dynamic> DanhSachUser()
+        public List<LoginUserWithNameDTO> DanhSachUser()
         {
             using (QLRPContext context = new QLRPContext())
             {
                 var list = (from lg in context.Logins
                             join nv in context.NhanViens
                             on lg.MaNhanVien equals nv.MaNhanVien
-                            select new
+                            select new LoginUserWithNameDTO()
                             {
                                 UserName = lg.UserName,
                                 Password = lg.Password,
                                 MaNhanVien = lg.MaNhanVien,
                                 HoVaTen = nv.HoVaTen,
                                 ChucVu = nv.ChucVu
-                            }).ToList<dynamic>();
+                            }).ToList<LoginUserWithNameDTO>();
                 return list;
             }
         }
 
-        public bool ThemUser(Login lg)
+        public bool ThemUser(LoginDTO lg)
         {
             try
             {
                 using (var context = new QLRPContext())
                 {
-                    context.Logins.Add(lg);
+                    context.Logins.Add(new Login() { MaNhanVien=lg.MaNhanVien, Password = lg.Password, UserName = lg.UserName});
                     context.SaveChanges();
                     return true;
                 }

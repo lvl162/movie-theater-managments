@@ -73,3 +73,5 @@ C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.QuanLyNhanVien.resou
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.QuanLyLoginUser.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\bin\Debug\Model.dll
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\bin\Debug\Model.pdb
+C:\Users\LuuVanLoi\Desktop\QLRP\GUI\bin\Debug\DTO.dll
+C:\Users\LuuVanLoi\Desktop\QLRP\GUI\bin\Debug\DTO.pdb

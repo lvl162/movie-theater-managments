@@ -18,6 +18,7 @@ namespace QuanLyRapPhim
         public Login()
         {
             InitializeComponent();
+            AcceptButton = loginButton;
         }
 
         private void loginButton_Click(object sender, EventArgs e)

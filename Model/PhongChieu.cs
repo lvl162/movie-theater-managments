@@ -13,9 +13,9 @@ namespace Model
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MaPhong { get; set; }
 
-        public int? SoGhe { get; set; }
+        public int SoGhe { get; set; }
 
-        public double? DienTich { get; set; }
-        //public virtual List<PhongChieu> PhongChieus { get; set; }
+        public string TenPhong { get; set; }
+        public virtual List<Ghe> Ghes { get; set; }
     }
 }

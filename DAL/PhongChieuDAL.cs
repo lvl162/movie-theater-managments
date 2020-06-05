@@ -43,7 +43,7 @@ namespace DAL
                 var phong = context.PhongChieus.Single(p => p.MaPhong == pc.MaPhong);
                 if (phong != null)
                 {
-                    phong.DienTich = pc.DienTich;
+                    phong.TenPhong = pc.TenPhong;
                     phong.SoGhe = pc.SoGhe;
                     context.SaveChanges();
                     return true;

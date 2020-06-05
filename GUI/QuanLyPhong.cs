@@ -22,7 +22,7 @@ namespace GUI
         {
             RowEnter = e.RowIndex;
             txtSoGhe.Text = dgvPhong.Rows[RowEnter].Cells[1].Value.ToString();
-            txtDienTich.Text = dgvPhong.Rows[RowEnter].Cells[2].Value.ToString();
+            txtTenPhong.Text = dgvPhong.Rows[RowEnter].Cells[2].Value.ToString();
         }
 
         protected void QuanLyPhong_Load(object sender, EventArgs e)
@@ -40,9 +40,8 @@ namespace GUI
         {
             int soGhe;
             int.TryParse(txtSoGhe.Text, out soGhe);
-            float dienTich;
-            float.TryParse(txtDienTich.Text, out dienTich);
-            if (pcBLL.ThemPhong(soGhe, dienTich)) QuanLyPhong_Load(sender,e);
+            string tenPhong = txtTenPhong.Text;
+            if (pcBLL.ThemPhong(soGhe, tenPhong)) QuanLyPhong_Load(sender,e);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -50,9 +49,8 @@ namespace GUI
             int maPhong = int.Parse(dgvPhong.Rows[RowEnter].Cells[0].Value.ToString());
             int soGhe;
             int.TryParse(txtSoGhe.Text, out soGhe);
-            float dienTich;
-            float.TryParse(txtDienTich.Text, out dienTich);
-            if (pcBLL.UpdatePhong(maPhong, soGhe, dienTich)) QuanLyPhong_Load(sender, e);
+            string tenPhong = txtTenPhong.Text;
+            if (pcBLL.UpdatePhong(maPhong, soGhe,tenPhong)) QuanLyPhong_Load(sender, e);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -60,15 +58,14 @@ namespace GUI
             int soGhe;
             int maPhong = int.Parse(dgvPhong.Rows[RowEnter].Cells[0].Value.ToString());
             int.TryParse(txtSoGhe.Text, out soGhe);
-            float dienTich;
-            float.TryParse(txtDienTich.Text, out dienTich);
-            if (pcBLL.XoaPhong(maPhong, soGhe, dienTich)) QuanLyPhong_Load(sender, e);
+            string tenPhong = txtTenPhong.Text;
+            if (pcBLL.XoaPhong(maPhong, soGhe, tenPhong)) QuanLyPhong_Load(sender, e);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             txtSoGhe.Text = dgvPhong.Rows[RowEnter].Cells[1].Value.ToString();
-            txtDienTich.Text = dgvPhong.Rows[RowEnter].Cells[2].Value.ToString();
+            txtTenPhong.Text = dgvPhong.Rows[RowEnter].Cells[2].Value.ToString();
         }
     }
 }

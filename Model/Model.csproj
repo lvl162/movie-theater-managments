@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,6 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatVe.cs" />
+    <Compile Include="Ghe.cs" />
+    <Compile Include="LichChieu.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Migrations\202005271601292_InitialCreate.cs" />
     <Compile Include="Migrations\202005271601292_InitialCreate.designer.cs">
@@ -78,15 +80,52 @@
     <Compile Include="Migrations\202005310520591_deleteLogin_role.designer.cs">
       <DependentUpon>202005310520591_deleteLogin_role.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006041434091_addLichChieuModel.cs" />
+    <Compile Include="Migrations\202006041434091_addLichChieuModel.designer.cs">
+      <DependentUpon>202006041434091_addLichChieuModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006041750308_addLichChieuModel2.cs" />
+    <Compile Include="Migrations\202006041750308_addLichChieuModel2.designer.cs">
+      <DependentUpon>202006041750308_addLichChieuModel2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006041758383_addLichChieuModel3.cs" />
+    <Compile Include="Migrations\202006041758383_addLichChieuModel3.designer.cs">
+      <DependentUpon>202006041758383_addLichChieuModel3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006041805346_addLichChieuModel4.cs" />
+    <Compile Include="Migrations\202006041805346_addLichChieuModel4.designer.cs">
+      <DependentUpon>202006041805346_addLichChieuModel4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006050632526_addLichChieuModel5.cs" />
+    <Compile Include="Migrations\202006050632526_addLichChieuModel5.designer.cs">
+      <DependentUpon>202006050632526_addLichChieuModel5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006050700004_addLichChieuModel6.cs" />
+    <Compile Include="Migrations\202006050700004_addLichChieuModel6.designer.cs">
+      <DependentUpon>202006050700004_addLichChieuModel6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006050712577_addDatVe.cs" />
+    <Compile Include="Migrations\202006050712577_addDatVe.designer.cs">
+      <DependentUpon>202006050712577_addDatVe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006050724488_addDatVe1.cs" />
+    <Compile Include="Migrations\202006050724488_addDatVe1.designer.cs">
+      <DependentUpon>202006050724488_addDatVe1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006051630491_modifyLogin.cs" />
+    <Compile Include="Migrations\202006051630491_modifyLogin.designer.cs">
+      <DependentUpon>202006051630491_modifyLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006051637124_modifylogin2pk.cs" />
+    <Compile Include="Migrations\202006051637124_modifylogin2pk.designer.cs">
+      <DependentUpon>202006051637124_modifylogin2pk.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NhanVien.cs" />
     <Compile Include="Phim.cs" />
     <Compile Include="QLRPContext.cs" />
     <Compile Include="PhongChieu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202005271601292_InitialCreate.resx">
@@ -107,14 +146,33 @@
     <EmbeddedResource Include="Migrations\202005310520591_deleteLogin_role.resx">
       <DependentUpon>202005310520591_deleteLogin_role.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006041434091_addLichChieuModel.resx">
+      <DependentUpon>202006041434091_addLichChieuModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006041750308_addLichChieuModel2.resx">
+      <DependentUpon>202006041750308_addLichChieuModel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006041758383_addLichChieuModel3.resx">
+      <DependentUpon>202006041758383_addLichChieuModel3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006041805346_addLichChieuModel4.resx">
+      <DependentUpon>202006041805346_addLichChieuModel4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006050632526_addLichChieuModel5.resx">
+      <DependentUpon>202006050632526_addLichChieuModel5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006050700004_addLichChieuModel6.resx">
+      <DependentUpon>202006050700004_addLichChieuModel6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006050712577_addDatVe.resx">
+      <DependentUpon>202006050712577_addDatVe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006050724488_addDatVe1.resx">
+      <DependentUpon>202006050724488_addDatVe1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006051637124_modifylogin2pk.resx">
+      <DependentUpon>202006051637124_modifylogin2pk.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
-  </Target>
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>

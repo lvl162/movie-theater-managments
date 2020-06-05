@@ -15,7 +15,7 @@ namespace BLL
         public void DanhSachPhim(DataGridView dataGridView)
         {
             dataGridView.AutoGenerateColumns = false;
-            dataGridView.DataSource = phimDAL.EF_GetAll();
+            dataGridView.DataSource = phimDAL.DanhSachPhim();
         }
         public bool ThemPhim(string ten, string theloai, DateTime khoichieu, string mota)
         {

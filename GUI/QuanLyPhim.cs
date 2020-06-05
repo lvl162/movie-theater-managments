@@ -18,6 +18,7 @@ namespace QuanLyRapPhim
         {
             InitializeComponent();
             phimBLL = new PhimBLL();
+            dgvPhim.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
 
         private void QuanLyPhim_Load(object sender, EventArgs e)
@@ -33,8 +34,8 @@ namespace QuanLyRapPhim
             theLoai = txtTheLoai.Text;
             moTa = txtMoTa.Text;
             khoiChieu = timePickerKhoiChieu.Value.Date;
-            if (phimBLL.ThemPhim(tenPhim, theLoai, khoiChieu, moTa )) QuanLyPhim_Load(sender, e);
-            
+            if (phimBLL.ThemPhim(tenPhim, theLoai, khoiChieu, moTa )) 
+                QuanLyPhim_Load(sender, e);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

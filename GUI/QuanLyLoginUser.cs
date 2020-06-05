@@ -15,7 +15,7 @@ namespace QuanLyRapPhim
     public partial class QuanLyLoginUser : Form
     {
         int RowEnter = 0;
-        LoginUserBLL userBLL = new LoginUserBLL();
+        LoginUserManageBLL userBLL = new LoginUserManageBLL();
         public QuanLyLoginUser()
         {
             InitializeComponent();

@@ -9,7 +9,7 @@ namespace DAL
 {
     public class PhimDAL
     {
-        public List<Phim> EF_GetAll()
+        public List<Phim> DanhSachPhim()
         {
             using (QLRPContext context = new QLRPContext())
             {

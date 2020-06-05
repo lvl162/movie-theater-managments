@@ -41,3 +41,5 @@ C:\Users\LuuVanLoi\Desktop\QLRP\BLL\obj\Debug\BLL.dll
 C:\Users\LuuVanLoi\Desktop\QLRP\BLL\obj\Debug\BLL.pdb
 C:\Users\LuuVanLoi\Desktop\QLRP\BLL\bin\Debug\Model.dll
 C:\Users\LuuVanLoi\Desktop\QLRP\BLL\bin\Debug\Model.pdb
+C:\Users\LuuVanLoi\Desktop\QLRP\BLL\bin\Debug\DTO.dll
+C:\Users\LuuVanLoi\Desktop\QLRP\BLL\bin\Debug\DTO.pdb

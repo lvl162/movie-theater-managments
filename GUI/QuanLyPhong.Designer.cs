@@ -35,7 +35,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtDienTich = new System.Windows.Forms.MaskedTextBox();
+            this.txtTenPhong = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtSoGhe = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -126,7 +126,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.txtDienTich);
+            this.groupBox1.Controls.Add(this.txtTenPhong);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtSoGhe);
             this.groupBox1.Controls.Add(this.label3);
@@ -137,25 +137,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Phòng";
             // 
-            // txtDienTich
+            // txtTenPhong
             // 
-            this.txtDienTich.Location = new System.Drawing.Point(154, 98);
-            this.txtDienTich.Name = "txtDienTich";
-            this.txtDienTich.Size = new System.Drawing.Size(100, 22);
-            this.txtDienTich.TabIndex = 14;
+            this.txtTenPhong.Location = new System.Drawing.Point(163, 39);
+            this.txtTenPhong.Name = "txtTenPhong";
+            this.txtTenPhong.Size = new System.Drawing.Size(100, 22);
+            this.txtTenPhong.TabIndex = 14;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(57, 103);
+            this.label4.Location = new System.Drawing.Point(66, 44);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 17);
+            this.label4.Size = new System.Drawing.Size(77, 17);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Diện tích";
+            this.label4.Text = "Tên phòng";
             // 
             // txtSoGhe
             // 
-            this.txtSoGhe.Location = new System.Drawing.Point(154, 54);
+            this.txtSoGhe.Location = new System.Drawing.Point(163, 80);
             this.txtSoGhe.Name = "txtSoGhe";
             this.txtSoGhe.Size = new System.Drawing.Size(100, 22);
             this.txtSoGhe.TabIndex = 15;
@@ -163,7 +163,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(57, 59);
+            this.label3.Location = new System.Drawing.Point(66, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 17);
             this.label3.TabIndex = 12;
@@ -187,8 +187,8 @@
             // 
             // DienTich
             // 
-            this.DienTich.DataPropertyName = "DienTich";
-            this.DienTich.HeaderText = "Diện Tích";
+            this.DienTich.DataPropertyName = "TenPhong";
+            this.DienTich.HeaderText = "Tên phòng";
             this.DienTich.MinimumWidth = 6;
             this.DienTich.Name = "DienTich";
             this.DienTich.ReadOnly = true;
@@ -224,7 +224,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.MaskedTextBox txtDienTich;
+        private System.Windows.Forms.MaskedTextBox txtTenPhong;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MaskedTextBox txtSoGhe;
         private System.Windows.Forms.Label label3;

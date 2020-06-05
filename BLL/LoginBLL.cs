@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using DTO;
 namespace BLL
 {
     public class LoginBLL
@@ -13,7 +13,7 @@ namespace BLL
         LoginDAL loginDAL = new LoginDAL();
         public string Login(string user, string password)
         {
-            return loginDAL.Login(new Login() { UserName = user, Password = password });
+            return loginDAL.Login(new LoginDTO() { UserName = user, Password = password });
         }
     }
 }

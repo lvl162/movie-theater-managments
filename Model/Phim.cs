@@ -16,8 +16,11 @@ namespace Model
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MaPhim { get; set; }
+        [Required]
         public string TenPhim { get; set; }
+        [Required]
         public string TheLoai { get; set; }
+        [Required]
         public string MoTa { get; set; }
         public DateTime? NgayKhoiChieu { get; set; }
     }
