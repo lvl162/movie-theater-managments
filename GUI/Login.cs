@@ -14,7 +14,7 @@ namespace QuanLyRapPhim
 {
     public partial class Login : Form
     {
-        LoginBLL LoginBLL = new LoginBLL();
+        QuanLyLoginBLL LoginBLL = new QuanLyLoginBLL();
         public Login()
         {
             InitializeComponent();
@@ -37,6 +37,7 @@ namespace QuanLyRapPhim
             if (ChucVu == "Khong tim thay")
             {
                 MessageBox.Show("Sai ten dang nhap/ mat khau..");
+                new QuanLyPhong().ShowDialog();
             }
             if (ChucVu == "QTV Hệ Thống")
             {

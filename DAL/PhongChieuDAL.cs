@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using DTO;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,19 +15,19 @@ namespace DAL
 
     public class PhongChieuDAL
     {
-        public List<PhongChieu> EF_GetAll()
+        public List<PhongChieuDTO> DanhSachPhongChieu()
         {
             QLRPContext context = new QLRPContext();
-            var list = context.PhongChieus.Select(p => p).ToList();
+            var list = context.PhongChieus.Select(pc => new PhongChieuDTO() { MaPhong = pc.MaPhong, TenPhong = pc.TenPhong, SoGhe = pc.SoGhe }).ToList();
             return list;
         }
-        public bool ThemPhong(PhongChieu pc)
+        public bool ThemPhong(PhongChieuDTO pc)
         {
             try
             {
                 using (QLRPContext context = new QLRPContext())
                 {
-                    context.PhongChieus.Add(pc);
+                    context.PhongChieus.Add(new PhongChieu() { MaPhong = pc.MaPhong, TenPhong = pc.TenPhong, SoGhe = pc.SoGhe });
                     context.SaveChanges();
                     return true;
                 }
@@ -36,7 +37,7 @@ namespace DAL
                 return false;
             }
         }
-        public bool UpdatePhong(PhongChieu pc)
+        public bool UpdatePhong(PhongChieuDTO pc)
         {
             using (var context = new QLRPContext())
             {
@@ -51,7 +52,7 @@ namespace DAL
                 return false;
             }
         }
-        public bool XoaPhong(PhongChieu pc)
+        public bool XoaPhong(PhongChieuDTO pc)
         {
             using (var context = new QLRPContext())
             {

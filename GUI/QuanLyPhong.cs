@@ -12,7 +12,7 @@ namespace GUI
 {
     public partial class QuanLyPhong : Form
     {
-        PhongChieuBLL pcBLL;
+        QuanLyPhongChieuBLL pcBLL;
         int RowEnter = 0;
         public QuanLyPhong()
         {
@@ -27,7 +27,7 @@ namespace GUI
 
         protected void QuanLyPhong_Load(object sender, EventArgs e)
         {
-            pcBLL = new PhongChieuBLL();
+            pcBLL = new QuanLyPhongChieuBLL();
             pcBLL.DanhSachPhongChieu(dgvPhong);
         }
 

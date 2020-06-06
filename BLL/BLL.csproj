@@ -44,9 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="QuanLyLichChieuBLL.cs" />
-    <Compile Include="LoginBLL.cs" />
-    <Compile Include="PhimBLL.cs" />
-    <Compile Include="PhongChieuBLL.cs" />
+    <Compile Include="QuanLyLoginBLL.cs" />
+    <Compile Include="QuanLyPhimBLL.cs" />
+    <Compile Include="QuanLyPhongChieuBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LoginUserManageBLL.cs" />
     <Compile Include="QuanLyNhanVienBLL.cs" />

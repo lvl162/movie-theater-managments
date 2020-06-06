@@ -7,7 +7,7 @@ using DTO;
 using Model;
 namespace DAL
 {
-    public class LoginDAL
+    public class QuanLyLoginDAL
     {
         public string Login(LoginDTO lg)
         {

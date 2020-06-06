@@ -7,8 +7,8 @@ namespace DTO
     {
         public int MaPhong { get; set; }
 
-        public int? SoGhe { get; set; }
+        public int SoGhe { get; set; }
 
-        public double? DienTich { get; set; }
+        public string TenPhong { get; set; }
     }
 }

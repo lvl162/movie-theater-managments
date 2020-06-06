@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using DTO;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,23 +8,34 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class PhimDAL
+    public class QuanLyPhimDAL
     {
-        public List<Phim> DanhSachPhim()
+        public List<PhimDTO> DanhSachPhim()
         {
             using (QLRPContext context = new QLRPContext())
             {
-                var list = context.Phims.Select(p => p).ToList();
+                var list = context.Phims.Select(p => new PhimDTO() 
+                    { MaPhim = p.MaPhim,
+                    MoTa = p.MoTa, NgayKhoiChieu = p.NgayKhoiChieu,
+                    TenPhim = p.TenPhim, TheLoai = p.TheLoai
+                    })
+                    .ToList();
                 return list;
             }
         }
-        public bool ThemPhim(Phim p)
+        public bool ThemPhim(PhimDTO p)
         {
             try
             {
                 using (QLRPContext context = new QLRPContext())
                 {
-                    context.Phims.Add(p);
+                    context.Phims.Add(new Phim() {
+                        MaPhim = p.MaPhim,
+                        MoTa = p.MoTa,
+                        NgayKhoiChieu = p.NgayKhoiChieu,
+                        TenPhim = p.TenPhim,
+                        TheLoai = p.TheLoai
+                    });
                     context.SaveChanges();
                     return true;
                 }
@@ -33,7 +45,7 @@ namespace DAL
                 return false;
             }
         }
-        public bool XoaPhim(Phim p)
+        public bool XoaPhim(PhimDTO p)
         {
             using (QLRPContext context = new QLRPContext())
             {
@@ -48,7 +60,7 @@ namespace DAL
             }
 
         }
-        public bool UpdatePhim(Phim p)
+        public bool UpdatePhim(PhimDTO p)
         {
             using (QLRPContext context = new QLRPContext())
             {

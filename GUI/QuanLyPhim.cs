@@ -12,12 +12,12 @@ namespace QuanLyRapPhim
 {
     public partial class QuanLyPhim : Form
     {
-        PhimBLL phimBLL;
+        QuanLyPhimBLL phimBLL;
         int RowEnter = 0;
         public QuanLyPhim()
         {
             InitializeComponent();
-            phimBLL = new PhimBLL();
+            phimBLL = new QuanLyPhimBLL();
             dgvPhim.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
 
