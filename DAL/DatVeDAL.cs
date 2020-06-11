@@ -1,4 +1,5 @@
 ﻿using DTO;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,75 @@ namespace DAL
 {
     public class DatVeDAL
     {
-        public List<String> getListPhim()
+        public List<PhimDTO> LayDanhSachPhim()
         {
-            using (QLRPContext context = new QLRPContext())
+            try
             {
-                var list = from phim in context.Phims
-                           select phim.TenPhim.ToString();
-                return list.ToList();
+                using (var context = new QLRPContext())
+                {
+                    var list = (from p in context.Phims
+                                select new PhimDTO
+                                {
+                                    MaPhim = p.MaPhim,
+                                    TenPhim = p.TenPhim,
+                                    MoTa = p.MoTa,
+                                    NgayKhoiChieu = p.NgayKhoiChieu,
+                                    TheLoai = p.TheLoai
+                                }).ToList();
+                    return list;
+                }
             }
+            catch(Exception ex)
+            {
+                return new List<PhimDTO>();
+            }
+        } 
+        public List<LichChieuDTO> LayDanhSachLichChieuTuMaPhim(int MaPhim)
+        {
+            try
+            {
+                using (var context = new QLRPContext())
+                {
+                    var list = (from p in context.LichChieus
+                                where p.MaPhim == MaPhim
+                                select new LichChieuDTO()
+                                {
+                                    MaPhim = p.MaPhim,
+                                    MaLichChieu = p.MaLichChieu,
+                                    MaPhong = p.MaPhong,
+                                    NgayGioChieu = p.NgayGioChieu
+                                }).ToList();
+                    return list;
+                }
+            }
+            catch
+            {
+                return new List<LichChieuDTO>();
+            }
+        }
+        public PhongChieuDTO LayPhongTheoLichChieu(int MaPhong)
+        {
+            try
+            {
+                using (var context = new QLRPContext())
+                {
+                    PhongChieu pc = context.PhongChieus.Single(p => p.MaPhong == MaPhong);
+                    return new PhongChieuDTO()
+                    {
+                        MaPhong = pc.MaPhong,
+                        TenPhong = pc.TenPhong,
+                        SoGhe = pc.SoGhe
+                    };
+                }
+            }
+            catch
+            {
+                return new PhongChieuDTO()
+                {
+                    TenPhong = "NOT FOUND"
+                };
+            }
+           
         }
     }
 }

@@ -36,8 +36,8 @@ namespace QuanLyRapPhim
             ChucVu = LoginBLL.Login(username, password);
             if (ChucVu == "Khong tim thay")
             {
-                MessageBox.Show("Sai ten dang nhap/ mat khau..");
-                new QuanLyPhong().ShowDialog();
+                //MessageBox.Show("Sai ten dang nhap/ mat khau..");
+                new DatVe().ShowDialog();
             }
             if (ChucVu == "QTV Hệ Thống")
             {
@@ -53,7 +53,7 @@ namespace QuanLyRapPhim
             }
             if (ChucVu == "Nhân Viên Bán Vé")
             {
-                new BanVe().ShowDialog();
+                new DatVe().ShowDialog();
             }
             if (ChucVu == "Quản Lý Lịch Chiếu")
             {

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,27 +9,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BLL;
+
 namespace QuanLyRapPhim
 {
-    public partial class DatVeForm : Form
+    public partial class DatVe : Form
     {
         DatVeBLL datVeBLL = new DatVeBLL();
-        public DatVeForm()
+        public DatVe()
         {
             InitializeComponent();
         }
 
-        private void DatVeForm_Load(object sender, EventArgs e)
+        private void DatVe_Load(object sender, EventArgs e)
         {
-            datVeBLL.getListPhim(cbListPhim);
+            cbChonPhim.DataSource = datVeBLL.LayDanhSachPhim();
+            cbChonPhim.DisplayMember = "TenPhim";
+            cbChonPhim.ValueMember = "MaPhim";
+        }
+        private void cbChonCaChieu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var lichchieu = cbChonCaChieu.SelectedItem as LichChieuDTO;
+            var phong = datVeBLL.LayPhongTheoLichChieu(lichchieu.MaPhong);
+            txtTenPhong.ReadOnly = false;
+            txtTenPhong.Text = phong.TenPhong;
+            txtTenPhong.ReadOnly = true;
         }
 
-        private void cbListPhim_SelectedValueChanged(object sender, EventArgs e)
+        private void cbChonPhim_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String selectedPhim = cbListPhim.SelectedValue.ToString();
-            //datVeBLL.getListLichChieu(selectedPhim);
-            MessageBox.Show(selectedPhim, "OK", MessageBoxButtons.OK);
+            var phim = cbChonPhim.SelectedItem as PhimDTO;
+            txtMoTa.Text = phim.MoTa;
+            cbChonCaChieu.DataSource = datVeBLL.LayDanhSachLichChieu(phim.MaPhim);
+            cbChonCaChieu.DisplayMember = "NgayGioChieu";
         }
     }
 }

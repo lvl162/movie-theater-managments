@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatVeDAL.cs" />
     <Compile Include="QuanLyLoginDAL.cs" />
     <Compile Include="LoginUserManageDAL.cs" />
     <Compile Include="QuanLyPhimDAL.cs" />

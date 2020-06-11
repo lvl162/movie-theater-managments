@@ -1,4 +1,5 @@
 ﻿using DAL;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,17 @@ namespace BLL
     public class DatVeBLL
     {
         DatVeDAL datVeDAL = new DatVeDAL();
-        public void getListPhim(ComboBox cb)
+        public List<PhimDTO> LayDanhSachPhim()
         {
-            cb.DataSource = datVeDAL.getListPhim();
+            return datVeDAL.LayDanhSachPhim();
+        }
+        public List<LichChieuDTO> LayDanhSachLichChieu(int MaPhim)
+        {
+            return datVeDAL.LayDanhSachLichChieuTuMaPhim(MaPhim);
+        }
+        public PhongChieuDTO LayPhongTheoLichChieu(int MaPhong)
+        {
+            return datVeDAL.LayPhongTheoLichChieu(MaPhong);
         }
     }
 }

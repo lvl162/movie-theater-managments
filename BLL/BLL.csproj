@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatVeBLL.cs" />
     <Compile Include="QuanLyLichChieuBLL.cs" />
     <Compile Include="QuanLyLoginBLL.cs" />
     <Compile Include="QuanLyPhimBLL.cs" />
