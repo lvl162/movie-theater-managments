@@ -43,5 +43,10 @@ namespace QuanLyRapPhim
             txtPassword.Text = dgvLoginUser.Rows[RowEnter].Cells[1].Value.ToString();
             txtMaNV.Text = dgvLoginUser.Rows[RowEnter].Cells[2].Value.ToString();
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

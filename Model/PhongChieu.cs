@@ -17,5 +17,11 @@ namespace Model
 
         public string TenPhong { get; set; }
         public virtual List<Ghe> Ghes { get; set; }
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
+        public string NguoiTao { get; set; }
+        public DateTime NgayTao { get; set; }
+        public string NguoiSua { get; set; }
+        public DateTime NgaySua { get; set; }
     }
 }

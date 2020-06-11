@@ -1,21 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using Model;
 namespace DAL
 {
+    public static class CurrentUser
+    {
+        public static string Username;
+        public static string Password;
+    }
     public class QuanLyLoginDAL
     {
         public string Login(LoginDTO lg)
         {
-            using(QLRPContext context = new QLRPContext())
+            try
             {
-                try
+                using (QLRPContext context = new QLRPContext())
                 {
-                    //Login res = context.Logins.Single(p => p.UserName == lg.UserName && p.Password == lg.Password);
                     LoginDTO res = (from l in context.Logins
                                     where l.UserName == lg.UserName && l.Password == lg.Password
                                     select new LoginDTO
@@ -26,13 +31,18 @@ namespace DAL
                                     }).SingleOrDefault();
                     if (res == null) { throw new Exception("Khong tim thay"); }
                     int maNV = res.MaNhanVien;
+                    CurrentUser.Username = res.UserName;
+                    CurrentUser.Password = res.Password;
                     var nv = context.NhanViens.Single(p => p.MaNhanVien == maNV);
-                    
+
                     return nv.ChucVu;
                 }
-                catch (Exception e) { return "Khong tim thay"; }
-                
+            }
+            catch (Exception ex)
+            {
+                return "Khong tim thay";
             }
         }
+
     }
 }

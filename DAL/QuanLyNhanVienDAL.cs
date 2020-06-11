@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using DTO;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +10,24 @@ namespace DAL
 {
     public class QuanLyNhanVienDAL
     {
-        public bool ThemNhanVien(NhanVien nv)
+        public bool ThemNhanVien(NhanVienDTO nv)
         {
             try
             {
                 using (QLRPContext context = new QLRPContext())
                 {
-                    context.NhanViens.Add(nv);
+                    context.NhanViens.Add(new NhanVien() { 
+                    MaNhanVien = nv.MaNhanVien,
+                    ChucVu = nv.ChucVu,
+                    NgaySinh = nv.NgaySinh,
+                    DiaChi = nv.DiaChi,
+                    GioiTinh = nv.GioiTinh,
+                    HoVaTen = nv.HoVaTen,
+                    SDT = nv.SDT,
+                    SoCMND = nv.SoCMND,
+                    NgayTao = DateTime.Now,
+                    NguoiTao = CurrentUser.Username
+                    });
                     context.SaveChanges();
                     return true;
                 }
@@ -26,7 +38,7 @@ namespace DAL
             }
         }
 
-        public bool XoaNhanVien(NhanVien nv)
+        public bool XoaNhanVien(NhanVienDTO nv)
         {
             try
             {
@@ -48,7 +60,7 @@ namespace DAL
             }
         }
 
-        public bool UpdateNhanVien(NhanVien nv)
+        public bool UpdateNhanVien(NhanVienDTO nv)
         {
             try
             {
@@ -64,6 +76,8 @@ namespace DAL
                         nv_found.SDT = nv.SDT;
                         nv_found.SoCMND = nv.SoCMND;
                         nv_found.GioiTinh = nv.GioiTinh;
+                        nv_found.NguoiSua = CurrentUser.Username;
+                        nv_found.NgayTao = DateTime.Now;
                         context.SaveChanges();
                         return true;
                     }
@@ -75,11 +89,21 @@ namespace DAL
                 return false;
             }
         }
-        public List<NhanVien> DanhSachSinhVien()
+        public List<NhanVienDTO> DanhSachSinhVien()
         {
             using (QLRPContext context = new QLRPContext())
             {
-                var list = context.NhanViens.Select(p => p);
+                var list = context.NhanViens.Select(nv => new NhanVienDTO
+                {
+                    MaNhanVien = nv.MaNhanVien,
+                    ChucVu = nv.ChucVu,
+                    NgaySinh = nv.NgaySinh,
+                    DiaChi = nv.DiaChi,
+                    GioiTinh = nv.GioiTinh,
+                    HoVaTen = nv.HoVaTen,
+                    SDT = nv.SDT,
+                    SoCMND = nv.SoCMND,
+                });
                 return list.ToList();
             }
         }

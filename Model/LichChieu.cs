@@ -25,6 +25,12 @@ namespace Model
 
         [Index("IX_PhongPhimNgayGio", 3, IsUnique = true)]
         public DateTime NgayGioChieu { get; set; }
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
+        public string NguoiTao { get; set; }
+        public DateTime NgayTao { get; set; }
+        public string NguoiSua { get; set; }
+        public DateTime NgaySua { get; set; }
         public virtual PhongChieu PhongChieu { get; set; }
         public virtual Phim Phim { get; set; }
     }

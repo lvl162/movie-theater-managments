@@ -20,6 +20,12 @@ namespace Model
         public int MaGhe { get; set; }
         public string LoaiVe { get; set; }
         public DateTime ThoiGianDatVe { get; set; }
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
+        public string NguoiTao { get; set; }
+        public DateTime NgayTao { get; set; }
+        public string NguoiSua { get; set; }
+        public DateTime NgaySua { get; set; }
         public virtual LichChieu LichChieu { get; set; }
         public virtual Ghe Ghe { get; set; }
     }

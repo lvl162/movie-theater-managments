@@ -23,5 +23,11 @@ namespace Model
         [Required]
         public string MoTa { get; set; }
         public DateTime? NgayKhoiChieu { get; set; }
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
+        public string NguoiTao { get; set; }
+        public DateTime NgayTao { get; set; }
+        public string NguoiSua { get; set; }
+        public DateTime NgaySua { get; set; }
     }
 }

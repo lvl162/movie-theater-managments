@@ -21,5 +21,11 @@ namespace Model
         public string DiaChi { get; set; }
         public string GioiTinh { get; set; }
         public string ChucVu { get; set; }
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
+        public string NguoiTao { get; set; }
+        public DateTime NgayTao { get; set; }
+        public string NguoiSua { get; set; }
+        public DateTime NgaySua { get; set; }
     }
 }

@@ -37,7 +37,7 @@ namespace QuanLyRapPhim
             if (ChucVu == "Khong tim thay")
             {
                 //MessageBox.Show("Sai ten dang nhap/ mat khau..");
-                new DatVe().ShowDialog();
+                new QuanLyNhanVien().ShowDialog();
             }
             if (ChucVu == "QTV Hệ Thống")
             {

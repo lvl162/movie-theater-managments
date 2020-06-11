@@ -27,7 +27,7 @@ namespace DAL
             {
                 using (QLRPContext context = new QLRPContext())
                 {
-                    context.PhongChieus.Add(new PhongChieu() { MaPhong = pc.MaPhong, TenPhong = pc.TenPhong, SoGhe = pc.SoGhe });
+                    context.PhongChieus.Add(new PhongChieu() { MaPhong = pc.MaPhong, TenPhong = pc.TenPhong, SoGhe = pc.SoGhe, NguoiTao = CurrentUser.Username, NgayTao = DateTime.Now });
                     context.SaveChanges();
                     return true;
                 }
@@ -39,30 +39,46 @@ namespace DAL
         }
         public bool UpdatePhong(PhongChieuDTO pc)
         {
-            using (var context = new QLRPContext())
+            try
             {
-                var phong = context.PhongChieus.Single(p => p.MaPhong == pc.MaPhong);
-                if (phong != null)
+                using (var context = new QLRPContext())
                 {
-                    phong.TenPhong = pc.TenPhong;
-                    phong.SoGhe = pc.SoGhe;
-                    context.SaveChanges();
-                    return true;
+                    var phong = context.PhongChieus.Single(p => p.MaPhong == pc.MaPhong);
+                    if (phong != null)
+                    {
+                        phong.TenPhong = pc.TenPhong;
+                        phong.SoGhe = pc.SoGhe;
+                        phong.NguoiSua = CurrentUser.Username;
+                        phong.NgaySua = DateTime.Now;
+                        context.SaveChanges();
+                        return true;
+                    }
+                    return false;
                 }
+            }
+            catch (Exception ex)
+            {
                 return false;
             }
         }
         public bool XoaPhong(PhongChieuDTO pc)
         {
-            using (var context = new QLRPContext())
+            try
             {
-                var phong = context.PhongChieus.Single(p => p.MaPhong == pc.MaPhong);
-                if (phong != null)
+                using (var context = new QLRPContext())
                 {
-                    context.PhongChieus.Remove(phong);
-                    context.SaveChanges();
-                    return true;
+                    var phong = context.PhongChieus.Single(p => p.MaPhong == pc.MaPhong);
+                    if (phong != null)
+                    {
+                        context.PhongChieus.Remove(phong);
+                        context.SaveChanges();
+                        return true;
+                    }
+                    return false;
                 }
+            }
+            catch (Exception ex)
+            {
                 return false;
             }
         }

@@ -21,7 +21,12 @@ namespace Model
         [Column(Order = 2)]
         public int MaNhanVien { get; set; }
         public string Password { get; set; }
-
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
+        public string NguoiTao { get; set; }
+        public DateTime NgayTao { get; set; }
+        public string NguoiSua { get; set; }
+        public DateTime NgaySua { get; set; }
         public virtual NhanVien NhanVien { get; set; }
         
       
