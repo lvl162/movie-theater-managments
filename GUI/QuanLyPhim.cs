@@ -23,60 +23,103 @@ namespace QuanLyRapPhim
 
         private void QuanLyPhim_Load(object sender, EventArgs e)
         {
-            phimBLL.DanhSachPhim(dgvPhim);
+            try
+            {
+                dgvPhim.AutoGenerateColumns = false;
+                dgvPhim.DataSource = phimBLL.DanhSachPhim();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string tenPhim, theLoai, moTa;
-            DateTime khoiChieu;
-            tenPhim = txtTenPhim.Text;
-            theLoai = txtTheLoai.Text;
-            moTa = txtMoTa.Text;
-            khoiChieu = timePickerKhoiChieu.Value.Date;
-            if (phimBLL.ThemPhim(tenPhim, theLoai, khoiChieu, moTa )) 
-                QuanLyPhim_Load(sender, e);
+            try
+            {
+                string tenPhim, theLoai, moTa;
+                DateTime khoiChieu;
+                tenPhim = txtTenPhim.Text;
+                theLoai = txtTheLoai.Text;
+                moTa = txtMoTa.Text;
+                khoiChieu = timePickerKhoiChieu.Value.Date;
+                if (phimBLL.ThemPhim(tenPhim, theLoai, khoiChieu, moTa))
+                    QuanLyPhim_Load(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string tenPhim, theLoai, moTa;
-            int maPhim = int.Parse(dgvPhim.Rows[RowEnter].Cells[0].Value.ToString());
-            DateTime khoiChieu;
-            tenPhim = txtTenPhim.Text;
-            theLoai = txtTheLoai.Text;
-            moTa = txtMoTa.Text;
-            khoiChieu = timePickerKhoiChieu.Value.Date;
-            if (phimBLL.UpdatePhim(maPhim, tenPhim, theLoai, khoiChieu, moTa)) QuanLyPhim_Load(sender, e);
+            try
+            {
+                string tenPhim, theLoai, moTa;
+                int maPhim = int.Parse(dgvPhim.Rows[RowEnter].Cells[0].Value.ToString());
+                DateTime khoiChieu;
+                tenPhim = txtTenPhim.Text;
+                theLoai = txtTheLoai.Text;
+                moTa = txtMoTa.Text;
+                khoiChieu = timePickerKhoiChieu.Value.Date;
+                if (phimBLL.UpdatePhim(maPhim, tenPhim, theLoai, khoiChieu, moTa)) QuanLyPhim_Load(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string tenPhim, theLoai, moTa;
-            int maPhim = int.Parse(dgvPhim.Rows[RowEnter].Cells[0].Value.ToString());
-            DateTime khoiChieu;
-            tenPhim = txtTenPhim.Text;
-            theLoai = txtTheLoai.Text;
-            moTa = txtMoTa.Text;
-            khoiChieu = timePickerKhoiChieu.Value.Date;
-            if (phimBLL.XoaPhim(maPhim, tenPhim, theLoai, khoiChieu, moTa)) QuanLyPhim_Load(sender, e);
+            try
+            {
+                string tenPhim, theLoai, moTa;
+                int maPhim = int.Parse(dgvPhim.Rows[RowEnter].Cells[0].Value.ToString());
+                DateTime khoiChieu;
+                tenPhim = txtTenPhim.Text;
+                theLoai = txtTheLoai.Text;
+                moTa = txtMoTa.Text;
+                khoiChieu = timePickerKhoiChieu.Value.Date;
+                if (phimBLL.XoaPhim(maPhim, tenPhim, theLoai, khoiChieu, moTa)) QuanLyPhim_Load(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            txtTenPhim.Text = dgvPhim.Rows[RowEnter].Cells[1].Value.ToString();
-            txtTheLoai.Text = dgvPhim.Rows[RowEnter].Cells[2].Value.ToString();
-            timePickerKhoiChieu.Value = DateTime.Parse(dgvPhim.Rows[RowEnter].Cells[3].Value.ToString());
-            txtMoTa.Text = dgvPhim.Rows[RowEnter].Cells[4].Value.ToString();
+            try
+            {
+                txtTenPhim.Text = dgvPhim.Rows[RowEnter].Cells[1].Value.ToString();
+                txtTheLoai.Text = dgvPhim.Rows[RowEnter].Cells[2].Value.ToString();
+                timePickerKhoiChieu.Value = DateTime.Parse(dgvPhim.Rows[RowEnter].Cells[3].Value.ToString());
+                txtMoTa.Text = dgvPhim.Rows[RowEnter].Cells[4].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dgvPhim_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            RowEnter = e.RowIndex;
-            txtTenPhim.Text = dgvPhim.Rows[RowEnter].Cells[1].Value.ToString();
-            txtTheLoai.Text = dgvPhim.Rows[RowEnter].Cells[2].Value.ToString();
-            timePickerKhoiChieu.Value = DateTime.Parse(dgvPhim.Rows[RowEnter].Cells[3].Value.ToString());
-            txtMoTa.Text = dgvPhim.Rows[RowEnter].Cells[4].Value.ToString();
+            try
+            {
+                RowEnter = e.RowIndex;
+                txtTenPhim.Text = dgvPhim.Rows[RowEnter].Cells[1].Value.ToString();
+                txtTheLoai.Text = dgvPhim.Rows[RowEnter].Cells[2].Value.ToString();
+                timePickerKhoiChieu.Value = DateTime.Parse(dgvPhim.Rows[RowEnter].Cells[3].Value.ToString());
+                txtMoTa.Text = dgvPhim.Rows[RowEnter].Cells[4].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

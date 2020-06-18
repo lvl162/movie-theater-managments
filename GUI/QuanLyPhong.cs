@@ -20,15 +20,29 @@ namespace GUI
         }
         private void dgvPhong_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            RowEnter = e.RowIndex;
-            txtSoGhe.Text = dgvPhong.Rows[RowEnter].Cells[1].Value.ToString();
-            txtTenPhong.Text = dgvPhong.Rows[RowEnter].Cells[2].Value.ToString();
+            try
+            {
+                RowEnter = e.RowIndex;
+                txtSoGhe.Text = dgvPhong.Rows[RowEnter].Cells[1].Value.ToString();
+                txtTenPhong.Text = dgvPhong.Rows[RowEnter].Cells[2].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-        protected void QuanLyPhong_Load(object sender, EventArgs e)
+        private void QuanLyPhong_Load(object sender, EventArgs e)
         {
-            pcBLL = new QuanLyPhongChieuBLL();
-            pcBLL.DanhSachPhongChieu(dgvPhong);
+            try
+            {
+                dgvPhong.AutoGenerateColumns = false;
+                dgvPhong.DataSource = pcBLL.DanhSachPhongChieu();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -38,34 +52,65 @@ namespace GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            int soGhe;
-            int.TryParse(txtSoGhe.Text, out soGhe);
-            string tenPhong = txtTenPhong.Text;
-            if (pcBLL.ThemPhong(soGhe, tenPhong)) QuanLyPhong_Load(sender,e);
+            try
+            {
+                int soGhe;
+                soGhe = int.Parse(txtSoGhe.Text);
+                string tenPhong = txtTenPhong.Text;
+                if (pcBLL.ThemPhong(soGhe, tenPhong)) QuanLyPhong_Load(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            int maPhong = int.Parse(dgvPhong.Rows[RowEnter].Cells[0].Value.ToString());
-            int soGhe;
-            int.TryParse(txtSoGhe.Text, out soGhe);
-            string tenPhong = txtTenPhong.Text;
-            if (pcBLL.UpdatePhong(maPhong, soGhe,tenPhong)) QuanLyPhong_Load(sender, e);
+            try
+            {
+                int maPhong = int.Parse(dgvPhong.Rows[RowEnter].Cells[0].Value.ToString());
+                int soGhe;
+                int.TryParse(txtSoGhe.Text, out soGhe);
+                string tenPhong = txtTenPhong.Text;
+                if (pcBLL.UpdatePhong(maPhong, soGhe, tenPhong)) QuanLyPhong_Load(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int soGhe;
-            int maPhong = int.Parse(dgvPhong.Rows[RowEnter].Cells[0].Value.ToString());
-            int.TryParse(txtSoGhe.Text, out soGhe);
-            string tenPhong = txtTenPhong.Text;
-            if (pcBLL.XoaPhong(maPhong, soGhe, tenPhong)) QuanLyPhong_Load(sender, e);
+            try
+            {
+                int soGhe;
+                int maPhong = int.Parse(dgvPhong.Rows[RowEnter].Cells[0].Value.ToString());
+                int.TryParse(txtSoGhe.Text, out soGhe);
+                string tenPhong = txtTenPhong.Text;
+                if (pcBLL.XoaPhong(maPhong, soGhe, tenPhong)) QuanLyPhong_Load(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            txtSoGhe.Text = dgvPhong.Rows[RowEnter].Cells[1].Value.ToString();
-            txtTenPhong.Text = dgvPhong.Rows[RowEnter].Cells[2].Value.ToString();
+            try
+            {
+                txtSoGhe.Text = dgvPhong.Rows[RowEnter].Cells[1].Value.ToString();
+                txtTenPhong.Text = dgvPhong.Rows[RowEnter].Cells[2].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
         }
     }
 }

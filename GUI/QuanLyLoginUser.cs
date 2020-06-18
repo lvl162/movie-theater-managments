@@ -33,7 +33,15 @@ namespace QuanLyRapPhim
 
         private void QuanLyLoginUser_Load(object sender, EventArgs e)
         {
-            userBLL.DanhSachUser(dgvLoginUser);
+            try
+            {
+                dgvLoginUser.AutoGenerateColumns = false;
+                dgvLoginUser.DataSource = userBLL.DanhSachUser();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dgvLoginUser_RowEnter(object sender, DataGridViewCellEventArgs e)

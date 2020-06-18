@@ -26,7 +26,9 @@ namespace DAL
                     SDT = nv.SDT,
                     SoCMND = nv.SoCMND,
                     NgayTao = DateTime.Now,
-                    NguoiTao = CurrentUser.Username
+                    NguoiTao = CurrentUser.Username,
+                    NgaySua = DateTime.Now,
+                    NguoiSua = CurrentUser.Username
                     });
                     context.SaveChanges();
                     return true;
@@ -34,7 +36,7 @@ namespace DAL
             }
             catch(Exception e)
             {
-                return false;
+                throw e;
             }
         }
 
@@ -56,7 +58,7 @@ namespace DAL
             }
             catch (Exception e)
             {
-                return false;
+                throw e;
             }
         }
 
@@ -86,26 +88,33 @@ namespace DAL
             }
             catch (Exception e)
             {
-                return false;
+                throw e;
             }
         }
         public List<NhanVienDTO> DanhSachSinhVien()
         {
-            using (QLRPContext context = new QLRPContext())
+            try
             {
-                var list = context.NhanViens.Select(nv => new NhanVienDTO
+                using (QLRPContext context = new QLRPContext())
                 {
-                    MaNhanVien = nv.MaNhanVien,
-                    ChucVu = nv.ChucVu,
-                    NgaySinh = nv.NgaySinh,
-                    DiaChi = nv.DiaChi,
-                    GioiTinh = nv.GioiTinh,
-                    HoVaTen = nv.HoVaTen,
-                    SDT = nv.SDT,
-                    SoCMND = nv.SoCMND,
-                });
-                return list.ToList();
+                    var list = context.NhanViens.Select(nv => new NhanVienDTO
+                    {
+                        MaNhanVien = nv.MaNhanVien,
+                        ChucVu = nv.ChucVu,
+                        NgaySinh = nv.NgaySinh,
+                        DiaChi = nv.DiaChi,
+                        GioiTinh = nv.GioiTinh,
+                        HoVaTen = nv.HoVaTen,
+                        SDT = nv.SDT,
+                        SoCMND = nv.SoCMND,
+                    });
+                    return list.ToList();
+                }
             }
+            catch (Exception ex)
+            {
+                throw ex;
+            } 
         }
     }
 }

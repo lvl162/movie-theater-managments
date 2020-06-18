@@ -17,9 +17,18 @@ namespace DAL
     {
         public List<PhongChieuDTO> DanhSachPhongChieu()
         {
-            QLRPContext context = new QLRPContext();
-            var list = context.PhongChieus.Select(pc => new PhongChieuDTO() { MaPhong = pc.MaPhong, TenPhong = pc.TenPhong, SoGhe = pc.SoGhe }).ToList();
-            return list;
+            try
+            {
+                using (QLRPContext context = new QLRPContext())
+                {
+                    var list = context.PhongChieus.Select(pc => new PhongChieuDTO() { MaPhong = pc.MaPhong, TenPhong = pc.TenPhong, SoGhe = pc.SoGhe }).ToList();
+                    return list;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public bool ThemPhong(PhongChieuDTO pc)
         {
@@ -27,14 +36,18 @@ namespace DAL
             {
                 using (QLRPContext context = new QLRPContext())
                 {
-                    context.PhongChieus.Add(new PhongChieu() { MaPhong = pc.MaPhong, TenPhong = pc.TenPhong, SoGhe = pc.SoGhe, NguoiTao = CurrentUser.Username, NgayTao = DateTime.Now });
+                    context.PhongChieus.Add(new PhongChieu() { MaPhong = pc.MaPhong, TenPhong = pc.TenPhong,
+                        SoGhe = pc.SoGhe, NguoiTao = CurrentUser.Username, NgayTao = DateTime.Now,
+                        NgaySua = DateTime.Now,
+                        NguoiSua = CurrentUser.Username
+                    });
                     context.SaveChanges();
                     return true;
                 }
             }
             catch (Exception e)
             {
-                return false;
+                throw e;
             }
         }
         public bool UpdatePhong(PhongChieuDTO pc)
@@ -58,7 +71,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
         public bool XoaPhong(PhongChieuDTO pc)
@@ -79,7 +92,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
     }

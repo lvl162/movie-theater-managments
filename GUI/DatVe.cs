@@ -22,25 +22,46 @@ namespace QuanLyRapPhim
 
         private void DatVe_Load(object sender, EventArgs e)
         {
-            cbChonPhim.DataSource = datVeBLL.LayDanhSachPhim();
-            cbChonPhim.DisplayMember = "TenPhim";
-            cbChonPhim.ValueMember = "MaPhim";
+            try
+            {
+                cbChonPhim.DataSource = datVeBLL.LayDanhSachPhim();
+                cbChonPhim.DisplayMember = "TenPhim";
+                cbChonPhim.ValueMember = "MaPhim";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void cbChonCaChieu_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var lichchieu = cbChonCaChieu.SelectedItem as LichChieuDTO;
-            var phong = datVeBLL.LayPhongTheoLichChieu(lichchieu.MaPhong);
-            txtTenPhong.ReadOnly = false;
-            txtTenPhong.Text = phong.TenPhong;
-            txtTenPhong.ReadOnly = true;
+            try
+            {
+                var lichchieu = cbChonCaChieu.SelectedItem as LichChieuDTO;
+                var phong = datVeBLL.LayPhongTheoLichChieu(lichchieu.MaPhong);
+                txtTenPhong.ReadOnly = false;
+                txtTenPhong.Text = phong.TenPhong;
+                txtTenPhong.ReadOnly = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cbChonPhim_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var phim = cbChonPhim.SelectedItem as PhimDTO;
-            txtMoTa.Text = phim.MoTa;
-            cbChonCaChieu.DataSource = datVeBLL.LayDanhSachLichChieu(phim.MaPhim);
-            cbChonCaChieu.DisplayMember = "NgayGioChieu";
+            try
+            {
+                var phim = cbChonPhim.SelectedItem as PhimDTO;
+                txtMoTa.Text = phim.MoTa;
+                cbChonCaChieu.DataSource = datVeBLL.LayDanhSachLichChieu(phim.MaPhim);
+                cbChonCaChieu.DisplayMember = "NgayGioChieu";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

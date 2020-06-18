@@ -14,15 +14,37 @@ namespace BLL
         DatVeDAL datVeDAL = new DatVeDAL();
         public List<PhimDTO> LayDanhSachPhim()
         {
-            return datVeDAL.LayDanhSachPhim();
+            try
+            {
+                return datVeDAL.LayDanhSachPhim();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
         public List<LichChieuDTO> LayDanhSachLichChieu(int MaPhim)
         {
-            return datVeDAL.LayDanhSachLichChieuTuMaPhim(MaPhim);
+            try
+            {
+                return datVeDAL.LayDanhSachLichChieuTuMaPhim(MaPhim);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public PhongChieuDTO LayPhongTheoLichChieu(int MaPhong)
         {
-            return datVeDAL.LayPhongTheoLichChieu(MaPhong);
+            try
+            {
+                return datVeDAL.LayPhongTheoLichChieu(MaPhong);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

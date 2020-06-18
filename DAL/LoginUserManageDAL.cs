@@ -11,21 +11,29 @@ namespace DAL
     {
         public List<LoginUserWithNameDTO> DanhSachUser()
         {
-            using (QLRPContext context = new QLRPContext())
+            try
             {
-                var list = (from lg in context.Logins
-                            join nv in context.NhanViens
-                            on lg.MaNhanVien equals nv.MaNhanVien
-                            select new LoginUserWithNameDTO()
-                            {
-                                UserName = lg.UserName,
-                                Password = lg.Password,
-                                MaNhanVien = lg.MaNhanVien,
-                                HoVaTen = nv.HoVaTen,
-                                ChucVu = nv.ChucVu
-                            }).ToList<LoginUserWithNameDTO>();
-                return list;
+                using (QLRPContext context = new QLRPContext())
+                {
+                    var list = (from lg in context.Logins
+                                join nv in context.NhanViens
+                                on lg.MaNhanVien equals nv.MaNhanVien
+                                select new LoginUserWithNameDTO()
+                                {
+                                    UserName = lg.UserName,
+                                    Password = lg.Password,
+                                    MaNhanVien = lg.MaNhanVien,
+                                    HoVaTen = nv.HoVaTen,
+                                    ChucVu = nv.ChucVu
+                                }).ToList<LoginUserWithNameDTO>();
+                    return list;
+                }
             }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+           
         }
 
         public bool ThemUser(LoginDTO lg)
@@ -34,14 +42,19 @@ namespace DAL
             {
                 using (var context = new QLRPContext())
                 {
-                    context.Logins.Add(new Login() { MaNhanVien=lg.MaNhanVien, Password = lg.Password, UserName = lg.UserName, NgayTao = DateTime.Now, NguoiTao = CurrentUser.Username});
+                    context.Logins.Add(new Login() { MaNhanVien=lg.MaNhanVien, Password = lg.Password, 
+                        UserName = lg.UserName, NgayTao = DateTime.Now, NguoiTao = CurrentUser.Username,
+                        NgaySua = DateTime.Now,
+                        NguoiSua = CurrentUser.Username
+                    });
                     context.SaveChanges();
                     return true;
                 }
             }
-            catch(Exception e )
+            catch(Exception ex )
             {
-                return false;
+                throw ex;
+
             }
         }
         public bool UpdateUser(LoginDTO lg)
@@ -66,7 +79,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
     }

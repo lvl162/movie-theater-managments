@@ -13,14 +13,28 @@ namespace BLL
     public class LoginUserManageBLL
     {
         LoginUserManageDAL userDAL = new LoginUserManageDAL();
-        public void DanhSachUser(DataGridView dgv)
+        public List<LoginUserWithNameDTO> DanhSachUser()
         {
-            dgv.DataSource = userDAL.DanhSachUser();
+            try
+            {
+                return userDAL.DanhSachUser();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            } 
         }
         public bool ThemUser(string username, string password, int maNV)
         {
-            if (userDAL.ThemUser(new LoginDTO() { UserName = username, Password = password, MaNhanVien = maNV})) return true;
-            return false;
+            try
+            {
+                if (userDAL.ThemUser(new LoginDTO() { UserName = username, Password = password, MaNhanVien = maNV })) return true;
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

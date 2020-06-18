@@ -29,7 +29,7 @@ namespace DAL
                                         UserName = l.UserName,
                                         Password = l.Password
                                     }).SingleOrDefault();
-                    if (res == null) { throw new Exception("Khong tim thay"); }
+                    if (res == null) { return "Khong tim thay"; }
                     int maNV = res.MaNhanVien;
                     CurrentUser.Username = res.UserName;
                     CurrentUser.Password = res.Password;
@@ -40,7 +40,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                return "Khong tim thay";
+                throw ex;
             }
         }
 

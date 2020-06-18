@@ -23,52 +23,54 @@ namespace QuanLyRapPhim
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            string username = txtUser.Text;
-            string password = txtPassword.Text;
-            string ChucVu;
-            /*
-            QTV Hệ Thống
-            Quản Lý Phòng Chiếu
-            Quản Lý Phim
-            Quản Lý Lịch Chiếu
-            Nhân Viên Bán Vé
-            */
-            ChucVu = LoginBLL.Login(username, password);
-            if (ChucVu == "Khong tim thay")
+            try
             {
-                //MessageBox.Show("Sai ten dang nhap/ mat khau..");
-                new QuanLyNhanVien().ShowDialog();
+                string username = txtUser.Text;
+                string password = txtPassword.Text;
+                string ChucVu;
+                /*
+                QTV Hệ Thống
+                Quản Lý Phòng Chiếu
+                Quản Lý Phim
+                Quản Lý Lịch Chiếu
+                Nhân Viên Bán Vé
+                */
+                ChucVu = LoginBLL.Login(username, password);
+                if (ChucVu == "Khong tim thay")
+                {
+                    MessageBox.Show("Sai ten dang nhap/ mat khau..");
+                    //new QuanLyNhanVien().ShowDialog();
+                }
+                if (ChucVu == "QTV Hệ Thống")
+                {
+                    new QuanLyNhanVien().ShowDialog();
+                }
+                if (ChucVu == "Quản Lý Phim")
+                {
+                    new QuanLyPhim().ShowDialog();
+                }
+                if (ChucVu == "Quản Lý Phòng Chiếu")
+                {
+                    new QuanLyPhong().ShowDialog();
+                }
+                if (ChucVu == "Nhân Viên Bán Vé")
+                {
+                    new DatVe().ShowDialog();
+                }
+                if (ChucVu == "Quản Lý Lịch Chiếu")
+                {
+                    new QuanLyLichChieu().ShowDialog();
+                }
             }
-            if (ChucVu == "QTV Hệ Thống")
+            catch (Exception ex)
             {
-                new QuanLyNhanVien().ShowDialog();
-            }
-            if (ChucVu == "Quản Lý Phim")
-            {
-                new QuanLyPhim().ShowDialog();
-            }
-            if (ChucVu == "Quản Lý Phòng Chiếu")
-            {
-                new QuanLyPhong().ShowDialog();
-            }
-            if (ChucVu == "Nhân Viên Bán Vé")
-            {
-                new DatVe().ShowDialog();
-            }
-            if (ChucVu == "Quản Lý Lịch Chiếu")
-            {
-                new QuanLyLichChieu().ShowDialog();
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new QuanLyPhim().ShowDialog();
         }
     }
 }

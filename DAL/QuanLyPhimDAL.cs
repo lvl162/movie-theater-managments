@@ -30,7 +30,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
         }
         public bool ThemPhim(PhimDTO p)
@@ -47,7 +47,9 @@ namespace DAL
                         TenPhim = p.TenPhim,
                         TheLoai = p.TheLoai,
                         NgayTao = DateTime.Now,
-                        NguoiTao = CurrentUser.Username
+                        NguoiTao = CurrentUser.Username,
+                        NgaySua = DateTime.Now,
+                        NguoiSua = CurrentUser.Username
                     });
                     context.SaveChanges();
                     return true;
@@ -55,7 +57,7 @@ namespace DAL
             }
             catch (Exception e)
             {
-                return false;
+                throw e;
             }
         }
         public bool XoaPhim(PhimDTO p)
@@ -76,7 +78,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
 
         }
@@ -103,7 +105,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
 
         }

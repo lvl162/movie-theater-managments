@@ -30,7 +30,7 @@ namespace DAL
             }
             catch(Exception ex)
             {
-                return new List<PhimDTO>();
+                throw ex;
             }
         } 
         public List<LichChieuDTO> LayDanhSachLichChieuTuMaPhim(int MaPhim)
@@ -51,9 +51,9 @@ namespace DAL
                     return list;
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                return new List<LichChieuDTO>();
+                throw ex;
             }
         }
         public PhongChieuDTO LayPhongTheoLichChieu(int MaPhong)
@@ -71,12 +71,9 @@ namespace DAL
                     };
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                return new PhongChieuDTO()
-                {
-                    TenPhong = "NOT FOUND"
-                };
+                throw ex;
             }
            
         }

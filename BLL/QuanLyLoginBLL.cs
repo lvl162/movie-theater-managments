@@ -13,7 +13,15 @@ namespace BLL
         QuanLyLoginDAL loginDAL = new QuanLyLoginDAL();
         public string Login(string user, string password)
         {
-            return loginDAL.Login(new LoginDTO() { UserName = user, Password = password });
+            try
+            {
+                return loginDAL.Login(new LoginDTO() { UserName = user, Password = password });
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }
