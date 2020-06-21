@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatVeBLL.cs" />
+    <Compile Include="GheBLL.cs" />
     <Compile Include="QuanLyLichChieuBLL.cs" />
     <Compile Include="QuanLyLoginBLL.cs" />
     <Compile Include="QuanLyPhimBLL.cs" />

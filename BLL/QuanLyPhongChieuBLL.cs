@@ -30,8 +30,7 @@ namespace BLL
             try
             {
                 PhongChieuDTO phong = new PhongChieuDTO() { SoGhe = soghe, TenPhong = tenphong };
-                if (pcDAL.ThemPhong(phong)) return true;
-                return false;
+                return (pcDAL.ThemPhong(phong));
             }
             catch (Exception e)
             {

@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatVeDAL.cs" />
+    <Compile Include="GheDAL.cs" />
     <Compile Include="QuanLyLoginDAL.cs" />
     <Compile Include="LoginUserManageDAL.cs" />
     <Compile Include="QuanLyPhimDAL.cs" />

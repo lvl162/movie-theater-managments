@@ -67,6 +67,12 @@
     <Compile Include="Login.designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyGhe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyGhe.Designer.cs">
+      <DependentUpon>QuanLyGhe.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyLichChieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="QuanLyGhe.resx">
+      <DependentUpon>QuanLyGhe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyLichChieu.resx">
+      <DependentUpon>QuanLyLichChieu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLyLoginUser.resx">
       <DependentUpon>QuanLyLoginUser.cs</DependentUpon>
     </EmbeddedResource>

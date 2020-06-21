@@ -88,35 +88,6 @@ namespace DAL
             {
                 throw ex;
             }
-            //using (var context = new QLRPContext())
-            //{
-            //    var phong = context.PhongChieus.Single(p => p.MaPhong == pc.MaPhong);
-            //    //context.Database.ExecuteSqlCommand($"UPDATE dbo.PhongChieu SET TenPhong = 'AX' WHERE MaPhong = {pc.MaPhong}");
-            //    phong.TenPhong = pc.TenPhong;
-            //    phong.SoGhe = pc.SoGhe;
-            //    phong.NguoiSua = CurrentUser.Username;
-            //    phong.NgaySua = DateTime.Now;
-            //    bool saveFailed;
-            //    do
-            //    {
-            //        saveFailed = false;
-
-            //        try
-            //        {
-            //            context.SaveChanges();
-            //            return true;
-            //        }
-            //        catch (DbUpdateConcurrencyException ex)
-            //        {
-            //            saveFailed = true;
-
-            //            ex.Entries.Single().Reload();
-            //            throw ex;
-            //        }
-
-            //    } while (saveFailed);
-
-            //}
         }
         public bool XoaPhong(PhongChieuDTO pc)
         {

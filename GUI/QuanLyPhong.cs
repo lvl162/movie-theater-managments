@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using DTO;
+using QuanLyRapPhim;
 
 namespace GUI
 {
@@ -124,6 +125,11 @@ namespace GUI
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnDSGhe_Click(object sender, EventArgs e)
+        {
+            new QuanLyGhe().ShowDialog();
         }
     }
 }
