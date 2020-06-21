@@ -50,7 +50,6 @@
     <Compile Include="PhimDTO.cs" />
     <Compile Include="PhongChieuDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyLichChieuDAL.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -71,17 +71,21 @@ namespace DAL
                     NhanVien nv_found = context.NhanViens.Single(p => p.MaNhanVien == nv.MaNhanVien);
                     if (nv_found != null)
                     {
-                        nv_found.ChucVu = nv.ChucVu;
-                        nv_found.DiaChi = nv.DiaChi;
-                        nv_found.HoVaTen = nv.HoVaTen;
-                        nv_found.NgaySinh = nv.NgaySinh;
-                        nv_found.SDT = nv.SDT;
-                        nv_found.SoCMND = nv.SoCMND;
-                        nv_found.GioiTinh = nv.GioiTinh;
-                        nv_found.NguoiSua = CurrentUser.Username;
-                        nv_found.NgayTao = DateTime.Now;
-                        context.SaveChanges();
-                        return true;
+                        if (BitConverter.ToUInt64(nv_found.RowVersion, 0).ToString().Equals(nv.RowVersion))
+                        {
+                            nv_found.ChucVu = nv.ChucVu;
+                            nv_found.DiaChi = nv.DiaChi;
+                            nv_found.HoVaTen = nv.HoVaTen;
+                            nv_found.NgaySinh = nv.NgaySinh;
+                            nv_found.SDT = nv.SDT;
+                            nv_found.SoCMND = nv.SoCMND;
+                            nv_found.GioiTinh = nv.GioiTinh;
+                            nv_found.NguoiSua = CurrentUser.Username;
+                            nv_found.NgayTao = DateTime.Now;
+                            context.SaveChanges();
+                            return true;
+                        }
+                        else throw new Exception("Da co update truoc do.");
                     }
                     return false;
                 }
@@ -97,7 +101,7 @@ namespace DAL
             {
                 using (QLRPContext context = new QLRPContext())
                 {
-                    var list = context.NhanViens.Select(nv => new NhanVienDTO
+                    var list = context.NhanViens.AsEnumerable().Select(nv => new NhanVienDTO
                     {
                         MaNhanVien = nv.MaNhanVien,
                         ChucVu = nv.ChucVu,
@@ -107,6 +111,7 @@ namespace DAL
                         HoVaTen = nv.HoVaTen,
                         SDT = nv.SDT,
                         SoCMND = nv.SoCMND,
+                        RowVersion = BitConverter.ToUInt64(nv.RowVersion, 0).ToString()
                     });
                     return list.ToList();
                 }

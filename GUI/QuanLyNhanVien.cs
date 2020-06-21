@@ -54,7 +54,6 @@ namespace QuanLyRapPhim
 
         private void dgvNhanVien_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            
             RowEnter = e.RowIndex;
             txtHoTen.Text = dgvNhanVien.Rows[RowEnter].Cells[1].Value.ToString();
             timePickerNgaySinh.Value = DateTime.Parse(dgvNhanVien.Rows[RowEnter].Cells[2].Value.ToString());
@@ -93,7 +92,7 @@ namespace QuanLyRapPhim
             try
             {
                 int maNV = int.Parse(dgvNhanVien.Rows[RowEnter].Cells[0].Value.ToString());
-                string HoTen, SDT, SoCMND, GioiTinh, DiaChi, ChucVu;
+                string HoTen, SDT, SoCMND, GioiTinh, DiaChi, ChucVu, RowVer;
                 DateTime NgaySinh;
                 HoTen = txtHoTen.Text;
                 SDT = txtSDT.Text;
@@ -102,8 +101,10 @@ namespace QuanLyRapPhim
                 ChucVu = cbChucVu.SelectedItem.ToString();
                 DiaChi = txtDiaChi.Text;
                 NgaySinh = timePickerNgaySinh.Value.Date;
-
-                if (quanLyBLL.UpdateNhanVien(maNV, HoTen, NgaySinh, GioiTinh, SoCMND, SDT, ChucVu, DiaChi)) QuanLyNhanVien_Load(sender, e);
+                RowVer = dgvNhanVien.Rows[RowEnter].Cells[8].Value.ToString();
+                if (quanLyBLL.UpdateNhanVien(maNV, HoTen, NgaySinh, GioiTinh, SoCMND, SDT, ChucVu, DiaChi, RowVer))
+                    MessageBox.Show("Update thành công!");
+                QuanLyNhanVien_Load(sender, e);
             }
             catch (Exception ex)
             {

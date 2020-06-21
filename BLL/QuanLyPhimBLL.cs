@@ -49,11 +49,15 @@ namespace BLL
                 throw ex;
             }
         }
-        public bool UpdatePhim(int ma, string ten, string theloai, DateTime khoichieu, string mota)
+        public bool UpdatePhim(int ma, string ten, string theloai, DateTime khoichieu, string mota, string rowVersion)
         {
             try
             {
-                PhimDTO p = new PhimDTO() { MaPhim = ma, TenPhim = ten, TheLoai = theloai, NgayKhoiChieu = khoichieu, MoTa = mota };
+                PhimDTO p = new PhimDTO() { 
+                    MaPhim = ma, TenPhim = ten, TheLoai = theloai, 
+                    NgayKhoiChieu = khoichieu, MoTa = mota, 
+                    RowVersion = rowVersion
+                };
                 if (phimDAL.UpdatePhim(p)) return true;
                 return false;
             }

@@ -36,5 +36,20 @@ namespace BLL
                 throw ex;
             }
         }
+
+        public bool UpdateUser(string new_user, string new_password, int new_manv, string old_user, int old_manv, string rowVer)
+        {
+            try
+            {
+                if (userDAL.UpdateUser(new LoginDTO() { UserName = new_user, Password = new_password, MaNhanVien = new_manv, RowVersion = rowVer },old_user, old_manv))
+                    return true;
+                return false;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

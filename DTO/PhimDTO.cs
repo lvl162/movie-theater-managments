@@ -14,5 +14,6 @@ namespace DTO
         public string TheLoai { get; set; }
         public string MoTa { get; set; }
         public DateTime? NgayKhoiChieu { get; set; }
+        public string RowVersion { get; set; }
     }
 }

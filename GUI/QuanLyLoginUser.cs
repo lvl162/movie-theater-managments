@@ -23,12 +23,19 @@ namespace QuanLyRapPhim
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string userName, password;
-            int maNV;
-            userName = txtUserName.Text;
-            password = txtPassword.Text;
-            maNV = int.Parse(txtMaNV.Text);
-            if (userBLL.ThemUser(userName, password, maNV)) QuanLyLoginUser_Load(sender, e);
+            try
+            {
+                string userName, password;
+                int maNV;
+                userName = txtUserName.Text;
+                password = txtPassword.Text;
+                maNV = int.Parse(txtMaNV.Text);
+                if (userBLL.ThemUser(userName, password, maNV)) QuanLyLoginUser_Load(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void QuanLyLoginUser_Load(object sender, EventArgs e)
@@ -46,15 +53,39 @@ namespace QuanLyRapPhim
 
         private void dgvLoginUser_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            RowEnter = e.RowIndex;
-            txtUserName.Text = dgvLoginUser.Rows[RowEnter].Cells[0].Value.ToString();
-            txtPassword.Text = dgvLoginUser.Rows[RowEnter].Cells[1].Value.ToString();
-            txtMaNV.Text = dgvLoginUser.Rows[RowEnter].Cells[2].Value.ToString();
+            try
+            {
+                RowEnter = e.RowIndex;
+                txtUserName.Text = dgvLoginUser.Rows[RowEnter].Cells[0].Value.ToString();
+                txtPassword.Text = dgvLoginUser.Rows[RowEnter].Cells[1].Value.ToString();
+                txtMaNV.Text = dgvLoginUser.Rows[RowEnter].Cells[2].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                string old_user, new_user, new_password, rowVer;
+                int old_manv, new_manv;
+                old_user = dgvLoginUser.Rows[RowEnter].Cells[0].Value.ToString();
+                old_manv = int.Parse(dgvLoginUser.Rows[RowEnter].Cells[2].Value.ToString());
+                new_user = txtUserName.Text;
+                new_password = txtPassword.Text;
+                new_manv = int.Parse(txtMaNV.Text);
+                rowVer = dgvLoginUser.Rows[RowEnter].Cells[5].Value.ToString();
+                if (userBLL.UpdateUser(new_user, new_password, new_manv, old_user, old_manv, rowVer))
+                    MessageBox.Show("Update thành công!");
+                QuanLyLoginUser_Load(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -42,16 +42,15 @@ namespace BLL
             }
            
         }
-        public bool UpdateNhanVien(int _maNV, string _HoTen, DateTime _NgaySinh, string _GioiTinh, string _SoCMND, string _SDT, string _ChucVu, string _DiaChi)
+        public bool UpdateNhanVien(int _maNV, string _HoTen, DateTime _NgaySinh, string _GioiTinh, string _SoCMND, string _SDT, string _ChucVu, string _DiaChi, string _rowVer)
         {
             try
             {
-                if (quanLyDAL.UpdateNhanVien(new NhanVienDTO() { MaNhanVien = _maNV, HoVaTen = _HoTen, NgaySinh = _NgaySinh, ChucVu = _ChucVu, GioiTinh = _GioiTinh, DiaChi = _DiaChi, SDT = _SDT, SoCMND = _SoCMND })) return true;
+                if (quanLyDAL.UpdateNhanVien(new NhanVienDTO() { MaNhanVien = _maNV, HoVaTen = _HoTen, NgaySinh = _NgaySinh, ChucVu = _ChucVu, GioiTinh = _GioiTinh, DiaChi = _DiaChi, SDT = _SDT, SoCMND = _SoCMND, RowVersion = _rowVer })) return true;
                 return false;
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             

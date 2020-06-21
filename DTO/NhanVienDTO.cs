@@ -16,5 +16,6 @@ namespace DTO
         public string DiaChi { get; set; }
         public string GioiTinh { get; set; }
         public string ChucVu { get; set; }
+        public string RowVersion { get; set; }
     }
 }

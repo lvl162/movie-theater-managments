@@ -10,5 +10,7 @@ namespace DTO
         public int SoGhe { get; set; }
 
         public string TenPhong { get; set; }
+
+        public string RowVersion { get; set; }
     }
 }

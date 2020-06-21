@@ -30,11 +30,6 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvLoginUser = new System.Windows.Forms.DataGridView();
-            this.MaUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Passsword = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoVaTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -47,6 +42,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.MaUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Passsword = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoVaTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoginUser)).BeginInit();
             this.panel3.SuspendLayout();
@@ -78,7 +79,8 @@
             this.Passsword,
             this.MaNV,
             this.HoVaTen,
-            this.ChucVu});
+            this.ChucVu,
+            this.RowVersion});
             this.dgvLoginUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvLoginUser.Location = new System.Drawing.Point(0, 0);
             this.dgvLoginUser.Name = "dgvLoginUser";
@@ -88,46 +90,6 @@
             this.dgvLoginUser.Size = new System.Drawing.Size(802, 304);
             this.dgvLoginUser.TabIndex = 0;
             this.dgvLoginUser.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoginUser_RowEnter);
-            // 
-            // MaUser
-            // 
-            this.MaUser.DataPropertyName = "UserName";
-            this.MaUser.HeaderText = "Tên đăng nhập";
-            this.MaUser.MinimumWidth = 6;
-            this.MaUser.Name = "MaUser";
-            this.MaUser.ReadOnly = true;
-            // 
-            // Passsword
-            // 
-            this.Passsword.DataPropertyName = "Password";
-            this.Passsword.HeaderText = "Mật khẩu";
-            this.Passsword.MinimumWidth = 6;
-            this.Passsword.Name = "Passsword";
-            this.Passsword.ReadOnly = true;
-            // 
-            // MaNV
-            // 
-            this.MaNV.DataPropertyName = "MaNhanVien";
-            this.MaNV.HeaderText = "Mã NV";
-            this.MaNV.MinimumWidth = 6;
-            this.MaNV.Name = "MaNV";
-            this.MaNV.ReadOnly = true;
-            // 
-            // HoVaTen
-            // 
-            this.HoVaTen.DataPropertyName = "HoVaTen";
-            this.HoVaTen.HeaderText = "Họ Tên NV";
-            this.HoVaTen.MinimumWidth = 6;
-            this.HoVaTen.Name = "HoVaTen";
-            this.HoVaTen.ReadOnly = true;
-            // 
-            // ChucVu
-            // 
-            this.ChucVu.DataPropertyName = "ChucVu";
-            this.ChucVu.HeaderText = "Chức vụ";
-            this.ChucVu.MinimumWidth = 6;
-            this.ChucVu.Name = "ChucVu";
-            this.ChucVu.ReadOnly = true;
             // 
             // btnExit
             // 
@@ -238,6 +200,53 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "Username";
             // 
+            // MaUser
+            // 
+            this.MaUser.DataPropertyName = "UserName";
+            this.MaUser.HeaderText = "Tên đăng nhập";
+            this.MaUser.MinimumWidth = 6;
+            this.MaUser.Name = "MaUser";
+            this.MaUser.ReadOnly = true;
+            // 
+            // Passsword
+            // 
+            this.Passsword.DataPropertyName = "Password";
+            this.Passsword.HeaderText = "Mật khẩu";
+            this.Passsword.MinimumWidth = 6;
+            this.Passsword.Name = "Passsword";
+            this.Passsword.ReadOnly = true;
+            // 
+            // MaNV
+            // 
+            this.MaNV.DataPropertyName = "MaNhanVien";
+            this.MaNV.HeaderText = "Mã NV";
+            this.MaNV.MinimumWidth = 6;
+            this.MaNV.Name = "MaNV";
+            this.MaNV.ReadOnly = true;
+            // 
+            // HoVaTen
+            // 
+            this.HoVaTen.DataPropertyName = "HoVaTen";
+            this.HoVaTen.HeaderText = "Họ Tên NV";
+            this.HoVaTen.MinimumWidth = 6;
+            this.HoVaTen.Name = "HoVaTen";
+            this.HoVaTen.ReadOnly = true;
+            // 
+            // ChucVu
+            // 
+            this.ChucVu.DataPropertyName = "ChucVu";
+            this.ChucVu.HeaderText = "Chức vụ";
+            this.ChucVu.MinimumWidth = 6;
+            this.ChucVu.Name = "ChucVu";
+            this.ChucVu.ReadOnly = true;
+            // 
+            // RowVersion
+            // 
+            this.RowVersion.DataPropertyName = "RowVersion";
+            this.RowVersion.HeaderText = "RowVersion";
+            this.RowVersion.MinimumWidth = 6;
+            this.RowVersion.Name = "RowVersion";
+            // 
             // QuanLyLoginUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -281,5 +290,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoVaTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChucVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RowVersion;
     }
 }

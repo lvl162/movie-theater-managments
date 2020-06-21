@@ -64,7 +64,10 @@ namespace QuanLyRapPhim
                 theLoai = txtTheLoai.Text;
                 moTa = txtMoTa.Text;
                 khoiChieu = timePickerKhoiChieu.Value.Date;
-                if (phimBLL.UpdatePhim(maPhim, tenPhim, theLoai, khoiChieu, moTa)) QuanLyPhim_Load(sender, e);
+                string rowVer = dgvPhim.Rows[RowEnter].Cells[5].Value.ToString();
+                if (phimBLL.UpdatePhim(maPhim, tenPhim, theLoai, khoiChieu, moTa, rowVer))
+                    MessageBox.Show("Update thành công!");
+                QuanLyPhim_Load(sender, e);
             }
             catch (Exception ex)
             {

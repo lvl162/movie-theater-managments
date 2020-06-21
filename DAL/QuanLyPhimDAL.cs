@@ -16,13 +16,14 @@ namespace DAL
             {
                 using (QLRPContext context = new QLRPContext())
                 {
-                    var list = context.Phims.Select(p => new PhimDTO()
+                    var list = context.Phims.AsEnumerable().Select(p => new PhimDTO()
                     {
                         MaPhim = p.MaPhim,
                         MoTa = p.MoTa,
                         NgayKhoiChieu = p.NgayKhoiChieu,
                         TenPhim = p.TenPhim,
-                        TheLoai = p.TheLoai
+                        TheLoai = p.TheLoai,
+                        RowVersion = BitConverter.ToUInt64(p.RowVersion, 0).ToString()
                     })
                         .ToList();
                     return list;
@@ -91,14 +92,18 @@ namespace DAL
                     Phim pc = context.Phims.Single(px => px.MaPhim == p.MaPhim);
                     if (pc != null)
                     {
-                        pc.TenPhim = p.TenPhim;
-                        pc.TheLoai = p.TheLoai;
-                        pc.MoTa = p.MoTa;
-                        pc.NgayKhoiChieu = p.NgayKhoiChieu;
-                        pc.NgaySua = DateTime.Now;
-                        pc.NguoiSua = CurrentUser.Username;
-                        context.SaveChanges();
-                        return true;
+                        if (BitConverter.ToUInt64(pc.RowVersion, 0).ToString().Equals(p.RowVersion))
+                        {
+                            pc.TenPhim = p.TenPhim;
+                            pc.TheLoai = p.TheLoai;
+                            pc.MoTa = p.MoTa;
+                            pc.NgayKhoiChieu = p.NgayKhoiChieu;
+                            pc.NgaySua = DateTime.Now;
+                            pc.NguoiSua = CurrentUser.Username;
+                            context.SaveChanges();
+                            return true;
+                        }
+                        else throw new Exception("Da co update truoc do.");
                     }
                     return false;
                 }

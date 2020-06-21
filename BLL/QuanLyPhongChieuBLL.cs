@@ -38,9 +38,11 @@ namespace BLL
                 throw e;
             }
         }
-        public bool UpdatePhong(int ma, int soghe, string tenphong)
+
+
+        public bool UpdatePhong(int ma, int soghe, string tenphong, string rowVer)
         {
-            PhongChieuDTO phong = new PhongChieuDTO() { MaPhong = ma, SoGhe = soghe, TenPhong = tenphong };
+            PhongChieuDTO phong = new PhongChieuDTO() { MaPhong = ma, SoGhe = soghe, TenPhong = tenphong, RowVersion = rowVer };
             if (pcDAL.UpdatePhong(phong)) return true;
             return false;
         }

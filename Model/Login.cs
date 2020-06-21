@@ -28,7 +28,5 @@ namespace Model
         public string NguoiSua { get; set; }
         public DateTime NgaySua { get; set; }
         public virtual NhanVien NhanVien { get; set; }
-        
-      
     }
 }

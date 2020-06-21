@@ -11,5 +11,6 @@ namespace DTO
         public int MaGhe { get; set; }
         public int MaPhong { get; set; }
         public string TenGhe { get; set; }
+        public string RowVersion { get; set; }
     }
 }

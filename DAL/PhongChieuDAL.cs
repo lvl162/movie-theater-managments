@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,12 @@ namespace DAL
             {
                 using (QLRPContext context = new QLRPContext())
                 {
-                    var list = context.PhongChieus.Select(pc => new PhongChieuDTO() { MaPhong = pc.MaPhong, TenPhong = pc.TenPhong, SoGhe = pc.SoGhe }).ToList();
+                    var list = (from pc in context.PhongChieus
+                                select pc)
+                               .AsEnumerable()
+                               .Select (pc => new PhongChieuDTO() { 
+                        MaPhong = pc.MaPhong, TenPhong = pc.TenPhong, SoGhe = pc.SoGhe, RowVersion = BitConverter.ToUInt64(pc.RowVersion, 0).ToString()
+                    }).ToList();
                     return list;
                 }
             }
@@ -50,6 +56,7 @@ namespace DAL
                 throw e;
             }
         }
+
         public bool UpdatePhong(PhongChieuDTO pc)
         {
             try
@@ -59,20 +66,57 @@ namespace DAL
                     var phong = context.PhongChieus.Single(p => p.MaPhong == pc.MaPhong);
                     if (phong != null)
                     {
-                        phong.TenPhong = pc.TenPhong;
-                        phong.SoGhe = pc.SoGhe;
-                        phong.NguoiSua = CurrentUser.Username;
-                        phong.NgaySua = DateTime.Now;
-                        context.SaveChanges();
-                        return true;
+                        if (BitConverter.ToUInt64(phong.RowVersion, 0).ToString().Equals(pc.RowVersion))
+                        {
+                            phong.TenPhong = pc.TenPhong;
+                            phong.SoGhe = pc.SoGhe;
+                            phong.NguoiSua = CurrentUser.Username;
+                            phong.NgaySua = DateTime.Now;
+                            context.SaveChanges();
+                            return true;
+                        }
+                        else throw new Exception("Da co update truoc do.");
                     }
                     return false;
                 }
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                throw new Exception("Update failed. Ai do cung dang up");
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+            //using (var context = new QLRPContext())
+            //{
+            //    var phong = context.PhongChieus.Single(p => p.MaPhong == pc.MaPhong);
+            //    //context.Database.ExecuteSqlCommand($"UPDATE dbo.PhongChieu SET TenPhong = 'AX' WHERE MaPhong = {pc.MaPhong}");
+            //    phong.TenPhong = pc.TenPhong;
+            //    phong.SoGhe = pc.SoGhe;
+            //    phong.NguoiSua = CurrentUser.Username;
+            //    phong.NgaySua = DateTime.Now;
+            //    bool saveFailed;
+            //    do
+            //    {
+            //        saveFailed = false;
+
+            //        try
+            //        {
+            //            context.SaveChanges();
+            //            return true;
+            //        }
+            //        catch (DbUpdateConcurrencyException ex)
+            //        {
+            //            saveFailed = true;
+
+            //            ex.Entries.Single().Reload();
+            //            throw ex;
+            //        }
+
+            //    } while (saveFailed);
+
+            //}
         }
         public bool XoaPhong(PhongChieuDTO pc)
         {

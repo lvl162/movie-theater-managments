@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using DTO;
+
 namespace GUI
 {
     public partial class QuanLyPhong : Form
@@ -17,6 +20,7 @@ namespace GUI
         public QuanLyPhong()
         {
             InitializeComponent();
+            pcBLL = new QuanLyPhongChieuBLL();
         }
         private void dgvPhong_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -57,7 +61,10 @@ namespace GUI
                 int soGhe;
                 soGhe = int.Parse(txtSoGhe.Text);
                 string tenPhong = txtTenPhong.Text;
-                if (pcBLL.ThemPhong(soGhe, tenPhong)) QuanLyPhong_Load(sender, e);
+                if (pcBLL.ThemPhong(soGhe, tenPhong)) 
+                { 
+                    QuanLyPhong_Load(sender, e); 
+                }
             }
             catch (Exception ex)
             {
@@ -69,16 +76,20 @@ namespace GUI
         {
             try
             {
+                string rowVersion = dgvPhong.Rows[RowEnter].Cells[3].Value.ToString();
                 int maPhong = int.Parse(dgvPhong.Rows[RowEnter].Cells[0].Value.ToString());
                 int soGhe;
                 int.TryParse(txtSoGhe.Text, out soGhe);
                 string tenPhong = txtTenPhong.Text;
-                if (pcBLL.UpdatePhong(maPhong, soGhe, tenPhong)) QuanLyPhong_Load(sender, e);
+                if (pcBLL.UpdatePhong(maPhong, soGhe, tenPhong, rowVersion)) { 
+                    QuanLyPhong_Load(sender, e);
+                    MessageBox.Show("Update thành công!");
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
+                QuanLyPhong_Load(sender, e);
             }
         }
 
@@ -90,7 +101,10 @@ namespace GUI
                 int maPhong = int.Parse(dgvPhong.Rows[RowEnter].Cells[0].Value.ToString());
                 int.TryParse(txtSoGhe.Text, out soGhe);
                 string tenPhong = txtTenPhong.Text;
-                if (pcBLL.XoaPhong(maPhong, soGhe, tenPhong)) QuanLyPhong_Load(sender, e);
+                if (pcBLL.XoaPhong(maPhong, soGhe, tenPhong))
+                {
+                    QuanLyPhong_Load(sender, e);
+                }
             }
             catch (Exception ex)
             {
@@ -109,7 +123,6 @@ namespace GUI
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
             }
         }
     }

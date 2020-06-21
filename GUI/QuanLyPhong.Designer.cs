@@ -42,6 +42,7 @@
             this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DienTich = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +63,8 @@
             this.dgvPhong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaPhong,
             this.SoGhe,
-            this.DienTich});
+            this.DienTich,
+            this.RowVersion});
             this.dgvPhong.Location = new System.Drawing.Point(34, 209);
             this.dgvPhong.Name = "dgvPhong";
             this.dgvPhong.RowHeadersVisible = false;
@@ -193,6 +195,15 @@
             this.DienTich.Name = "DienTich";
             this.DienTich.ReadOnly = true;
             // 
+            // RowVersion
+            // 
+            this.RowVersion.DataPropertyName = "RowVersion";
+            this.RowVersion.HeaderText = "RowVersion";
+            this.RowVersion.MinimumWidth = 6;
+            this.RowVersion.Name = "RowVersion";
+            this.RowVersion.ReadOnly = true;
+            this.RowVersion.Visible = false;
+            // 
             // QuanLyPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -231,6 +242,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoGhe;
         private System.Windows.Forms.DataGridViewTextBoxColumn DienTich;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RowVersion;
     }
 }
 

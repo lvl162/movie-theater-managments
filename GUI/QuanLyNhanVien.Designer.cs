@@ -62,6 +62,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -365,7 +366,8 @@
             this.Column6,
             this.Column5,
             this.Column8,
-            this.Column7});
+            this.Column7,
+            this.RowVersion});
             this.dgvNhanVien.Location = new System.Drawing.Point(13, 0);
             this.dgvNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.dgvNhanVien.Name = "dgvNhanVien";
@@ -439,6 +441,14 @@
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
+            // RowVersion
+            // 
+            this.RowVersion.DataPropertyName = "RowVersion";
+            this.RowVersion.HeaderText = "RowVersion";
+            this.RowVersion.MinimumWidth = 6;
+            this.RowVersion.Name = "RowVersion";
+            this.RowVersion.ReadOnly = true;
+            // 
             // QuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -497,5 +507,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RowVersion;
     }
 }

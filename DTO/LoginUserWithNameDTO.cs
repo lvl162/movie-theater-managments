@@ -13,5 +13,6 @@ namespace DTO
         public int MaNhanVien { get; set; }
         public string HoVaTen { get; set; }
         public string ChucVu { get; set; }
+        public string RowVersion { get; set; }
     }
 }

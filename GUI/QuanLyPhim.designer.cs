@@ -48,6 +48,7 @@
             this.TheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayKhoiChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhim)).BeginInit();
             this.panel1.SuspendLayout();
@@ -159,7 +160,8 @@
             this.TenPhim,
             this.TheLoai,
             this.NgayKhoiChieu,
-            this.MoTa});
+            this.MoTa,
+            this.RowVersion});
             this.dgvPhim.Location = new System.Drawing.Point(12, 172);
             this.dgvPhim.Name = "dgvPhim";
             this.dgvPhim.ReadOnly = true;
@@ -264,6 +266,15 @@
             this.MoTa.Name = "MoTa";
             this.MoTa.ReadOnly = true;
             // 
+            // RowVersion
+            // 
+            this.RowVersion.DataPropertyName = "RowVersion";
+            this.RowVersion.HeaderText = "RowVersion";
+            this.RowVersion.MinimumWidth = 6;
+            this.RowVersion.Name = "RowVersion";
+            this.RowVersion.ReadOnly = true;
+            this.RowVersion.Visible = false;
+            // 
             // QuanLyPhim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -306,5 +317,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TheLoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayKhoiChieu;
         private System.Windows.Forms.DataGridViewTextBoxColumn MoTa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RowVersion;
     }
 }

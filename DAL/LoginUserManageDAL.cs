@@ -15,8 +15,8 @@ namespace DAL
             {
                 using (QLRPContext context = new QLRPContext())
                 {
-                    var list = (from lg in context.Logins
-                                join nv in context.NhanViens
+                    var list = (from lg in context.Logins.AsEnumerable()
+                                join nv in context.NhanViens.AsEnumerable()
                                 on lg.MaNhanVien equals nv.MaNhanVien
                                 select new LoginUserWithNameDTO()
                                 {
@@ -24,7 +24,8 @@ namespace DAL
                                     Password = lg.Password,
                                     MaNhanVien = lg.MaNhanVien,
                                     HoVaTen = nv.HoVaTen,
-                                    ChucVu = nv.ChucVu
+                                    ChucVu = nv.ChucVu,
+                                    RowVersion = BitConverter.ToUInt64(lg.RowVersion, 0).ToString()
                                 }).ToList<LoginUserWithNameDTO>();
                     return list;
                 }
@@ -57,21 +58,26 @@ namespace DAL
 
             }
         }
-        public bool UpdateUser(LoginDTO lg)
+        public bool UpdateUser(LoginDTO lg, string old_user, int old_manv)
         {
             try
             {
                 using (QLRPContext context = new QLRPContext())
                 {
-                    Login login = context.Logins.Single(p => p.UserName == lg.UserName && p.MaNhanVien == lg.MaNhanVien);
+                    Login login = context.Logins.Single(p => p.UserName == old_user && p.MaNhanVien == old_manv);
                     if (login!= null)
                     {
-                        login.MaNhanVien = lg.MaNhanVien;
-                        login.NgaySua = DateTime.Now;
-                        login.NguoiSua = CurrentUser.Username;
-                        login.Password = lg.Password;
-                        login.UserName = lg.UserName;
-                        context.SaveChanges();
+                        if (BitConverter.ToUInt64(login.RowVersion, 0).ToString().Equals(lg.RowVersion))
+                        {
+                            login.MaNhanVien = lg.MaNhanVien;
+                            login.NgaySua = DateTime.Now;
+                            login.NguoiSua = CurrentUser.Username;
+                            login.Password = lg.Password;
+                            login.UserName = lg.UserName;
+                            //TODO: The property '' is part of the object's key information and cannot be modified
+                            context.SaveChanges();
+                        }
+                        else throw new Exception("Da co update truoc do.");
                     }
                     return true;
 
