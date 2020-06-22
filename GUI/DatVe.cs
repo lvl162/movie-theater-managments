@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using QuanLyRapPhim.DanhSachPhong;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,10 +39,17 @@ namespace QuanLyRapPhim
             try
             {
                 var lichchieu = cbChonCaChieu.SelectedItem as LichChieuDTO;
-                var phong = datVeBLL.LayPhongTheoLichChieu(lichchieu.MaPhong);
-                txtTenPhong.ReadOnly = false;
-                txtTenPhong.Text = phong.TenPhong;
-                txtTenPhong.ReadOnly = true;
+                if (lichchieu != null)
+                {
+                    var phong = datVeBLL.LayPhongTheoLichChieu(lichchieu.MaPhong);
+                    if (phong != null)
+                        txtTenPhong.Text = phong.TenPhong;
+                    else txtTenPhong.Text = "Không tìm thấy phòng";
+                }
+                else
+                {
+                    txtTenPhong.Text = "Không tìm thấy phòng";
+                }
             }
             catch (Exception ex)
             {
@@ -55,13 +63,26 @@ namespace QuanLyRapPhim
             {
                 var phim = cbChonPhim.SelectedItem as PhimDTO;
                 txtMoTa.Text = phim.MoTa;
-                cbChonCaChieu.DataSource = datVeBLL.LayDanhSachLichChieu(phim.MaPhim);
-                cbChonCaChieu.DisplayMember = "NgayGioChieu";
+                if (datVeBLL.LayDanhSachLichChieu(phim.MaPhim).Count != 0)
+                {
+                    cbChonCaChieu.DataSource = datVeBLL.LayDanhSachLichChieu(phim.MaPhim);
+                    cbChonCaChieu.DisplayMember = "GioChieuAndPhong";
+                }
+                else
+                {
+                    cbChonCaChieu.DataSource = new List<string>() { "Không có lịch chiếu cho phim này" };
+                    //cbChonCaChieu.SelectedValue = 0;
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnChonGhe_Click(object sender, EventArgs e)
+        {
+            new Phong1().ShowDialog();
         }
     }
 }

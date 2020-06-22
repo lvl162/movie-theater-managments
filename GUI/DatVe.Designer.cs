@@ -40,7 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btcancel = new System.Windows.Forms.Button();
             this.butinhoadon = new System.Windows.Forms.Button();
-            this.btchonghe = new System.Windows.Forms.Button();
+            this.btnChonGhe = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -89,13 +89,13 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.btcancel);
             this.panel2.Controls.Add(this.butinhoadon);
-            this.panel2.Controls.Add(this.btchonghe);
+            this.panel2.Controls.Add(this.btnChonGhe);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 62);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(922, 486);
+            this.panel2.Size = new System.Drawing.Size(922, 417);
             this.panel2.TabIndex = 4;
             // 
             // txtTenPhong
@@ -121,9 +121,9 @@
             this.label4.Location = new System.Drawing.Point(67, 93);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 20);
+            this.label4.Size = new System.Drawing.Size(116, 20);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Chọ ca chiếu:";
+            this.label4.Text = "Chọn ca chiếu";
             // 
             // cbChonCaChieu
             // 
@@ -178,16 +178,17 @@
             this.butinhoadon.Text = "In hóa đơn";
             this.butinhoadon.UseVisualStyleBackColor = true;
             // 
-            // btchonghe
+            // btnChonGhe
             // 
-            this.btchonghe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btchonghe.Location = new System.Drawing.Point(73, 212);
-            this.btchonghe.Margin = new System.Windows.Forms.Padding(4);
-            this.btchonghe.Name = "btchonghe";
-            this.btchonghe.Size = new System.Drawing.Size(92, 34);
-            this.btchonghe.TabIndex = 4;
-            this.btchonghe.Text = "Chọn ghế";
-            this.btchonghe.UseVisualStyleBackColor = true;
+            this.btnChonGhe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChonGhe.Location = new System.Drawing.Point(73, 212);
+            this.btnChonGhe.Margin = new System.Windows.Forms.Padding(4);
+            this.btnChonGhe.Name = "btnChonGhe";
+            this.btnChonGhe.Size = new System.Drawing.Size(92, 34);
+            this.btnChonGhe.TabIndex = 4;
+            this.btnChonGhe.Text = "Chọn ghế";
+            this.btnChonGhe.UseVisualStyleBackColor = true;
+            this.btnChonGhe.Click += new System.EventHandler(this.btnChonGhe_Click);
             // 
             // DatVe
             // 
@@ -215,7 +216,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btcancel;
         private System.Windows.Forms.Button butinhoadon;
-        private System.Windows.Forms.Button btchonghe;
+        private System.Windows.Forms.Button btnChonGhe;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbChonCaChieu;
         private System.Windows.Forms.ComboBox cbChonPhim;

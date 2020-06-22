@@ -78,3 +78,4 @@ C:\Users\LuuVanLoi\Desktop\QLRP\GUI\bin\Debug\DTO.pdb
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.DatVe.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.QuanLyGhe.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.QuanLyLichChieu.resources
+C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.DanhSachPhong.Phong1.resources

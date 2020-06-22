@@ -15,5 +15,12 @@ namespace DTO
         public string RowVersion { get; set; }
         public string TenPhim { get; set; }
         public string TenPhong { get; set; }
+        public string GioChieuAndPhong
+        {
+            get
+            {
+                return "TG: " + NgayGioChieu.ToString() + " Phong: " + TenPhong;
+            }
+        }
     }
 }

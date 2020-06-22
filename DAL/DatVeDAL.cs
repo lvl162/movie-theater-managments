@@ -39,16 +39,23 @@ namespace DAL
             {
                 using (var context = new QLRPContext())
                 {
+                    List<LichChieuDTO> lichChieus = new List<LichChieuDTO>();
                     var list = (from p in context.LichChieus
                                 where p.MaPhim == MaPhim
-                                select new LichChieuDTO()
-                                {
-                                    MaPhim = p.MaPhim,
-                                    MaLichChieu = p.MaLichChieu,
-                                    MaPhong = p.MaPhong,
-                                    NgayGioChieu = p.NgayGioChieu
-                                }).ToList();
-                    return list;
+                                select p).ToList();
+                    foreach (var lc in list)
+                    {
+                        lichChieus.Add(new LichChieuDTO()
+                        {
+                            MaPhim = lc.MaPhim,
+                            MaLichChieu = lc.MaLichChieu,
+                            MaPhong = lc.MaPhong,
+                            NgayGioChieu = lc.NgayGioChieu,
+                            TenPhim = lc.Phim.TenPhim,
+                            TenPhong = lc.PhongChieu.TenPhong,
+                        });
+                    }
+                    return lichChieus;
                 }
             }
             catch (Exception ex)
