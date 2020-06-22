@@ -11,7 +11,7 @@ using Model;
 
 namespace BLL
 {
-    public class QuanLyPhongChieuBLL
+    public class PhongChieuBLL
     {
         PhongChieuDAL pcDAL = new PhongChieuDAL();
         

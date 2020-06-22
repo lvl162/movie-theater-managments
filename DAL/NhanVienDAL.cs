@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class QuanLyNhanVienDAL
+    public class NhanVienDAL
     {
         public bool ThemNhanVien(NhanVienDTO nv)
         {

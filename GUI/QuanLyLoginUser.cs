@@ -15,7 +15,7 @@ namespace QuanLyRapPhim
     public partial class QuanLyLoginUser : Form
     {
         int RowEnter = 0;
-        LoginUserManageBLL userBLL = new LoginUserManageBLL();
+        LoginUserBLL userBLL = new LoginUserBLL();
         public QuanLyLoginUser()
         {
             InitializeComponent();
@@ -36,6 +36,7 @@ namespace QuanLyRapPhim
             {
                 MessageBox.Show(ex.Message);
             }
+            QuanLyLoginUser_Load(sender, e);
         }
 
         private void QuanLyLoginUser_Load(object sender, EventArgs e)
@@ -80,12 +81,12 @@ namespace QuanLyRapPhim
                 rowVer = dgvLoginUser.Rows[RowEnter].Cells[5].Value.ToString();
                 if (userBLL.UpdateUser(new_user, new_password, new_manv, old_user, old_manv, rowVer))
                     MessageBox.Show("Update thành công!");
-                QuanLyLoginUser_Load(sender, e);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            QuanLyLoginUser_Load(sender, e);
         }
     }
 }

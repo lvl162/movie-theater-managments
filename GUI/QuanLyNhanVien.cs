@@ -13,7 +13,7 @@ namespace QuanLyRapPhim
     public partial class QuanLyNhanVien : Form
     {
         int RowEnter = 0;
-        QuanLyNhanVienBLL quanLyBLL = new QuanLyNhanVienBLL();
+        NhanVienBLL quanLyBLL = new NhanVienBLL();
         public QuanLyNhanVien()
         {
             InitializeComponent();
@@ -37,6 +37,8 @@ namespace QuanLyRapPhim
             {
                 MessageBox.Show(ex.Message);
             }
+            QuanLyNhanVien_Load(sender, e);
+
         }
 
         private void QuanLyNhanVien_Load(object sender, EventArgs e)
@@ -85,6 +87,8 @@ namespace QuanLyRapPhim
             {
                 MessageBox.Show(ex.Message);
             }
+            QuanLyNhanVien_Load(sender, e);
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -104,13 +108,12 @@ namespace QuanLyRapPhim
                 RowVer = dgvNhanVien.Rows[RowEnter].Cells[8].Value.ToString();
                 if (quanLyBLL.UpdateNhanVien(maNV, HoTen, NgaySinh, GioiTinh, SoCMND, SDT, ChucVu, DiaChi, RowVer))
                     MessageBox.Show("Update thành công!");
-                QuanLyNhanVien_Load(sender, e);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
+            QuanLyNhanVien_Load(sender, e);
         }
 
         private void btnExit_Click(object sender, EventArgs e)

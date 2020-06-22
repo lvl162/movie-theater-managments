@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class QuanLyPhimDAL
+    public class PhimDAL
     {
         public List<PhimDTO> DanhSachPhim()
         {

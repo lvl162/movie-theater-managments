@@ -8,9 +8,9 @@ using DTO;
 using Model;
 namespace BLL
 {
-    public class QuanLyPhimBLL
+    public class PhimBLL
     {
-        QuanLyPhimDAL phimDAL = new QuanLyPhimDAL();
+        PhimDAL phimDAL = new PhimDAL();
 
         public List<PhimDTO> DanhSachPhim()
         {

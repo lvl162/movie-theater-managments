@@ -53,13 +53,13 @@
   <ItemGroup>
     <Compile Include="DatVeDAL.cs" />
     <Compile Include="GheDAL.cs" />
-    <Compile Include="QuanLyLoginDAL.cs" />
-    <Compile Include="LoginUserManageDAL.cs" />
-    <Compile Include="QuanLyPhimDAL.cs" />
+    <Compile Include="LoginDAL.cs" />
+    <Compile Include="LoginUserDAL.cs" />
+    <Compile Include="PhimDAL.cs" />
     <Compile Include="PhongChieuDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyLichChieuDAL.cs" />
-    <Compile Include="QuanLyNhanVienDAL.cs" />
+    <Compile Include="LichChieuDAL.cs" />
+    <Compile Include="NhanVienDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -13,5 +13,7 @@ namespace DTO
         public int MaPhim { get; set; }
         public DateTime NgayGioChieu { get; set; }
         public string RowVersion { get; set; }
+        public string TenPhim { get; set; }
+        public string TenPhong { get; set; }
     }
 }

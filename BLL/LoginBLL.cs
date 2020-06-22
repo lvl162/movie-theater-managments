@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 using DTO;
 namespace BLL
 {
-    public class QuanLyLoginBLL
+    public class LoginBLL
     {
-        QuanLyLoginDAL loginDAL = new QuanLyLoginDAL();
+        LoginDAL loginDAL = new LoginDAL();
         public string Login(string user, string password)
         {
             try

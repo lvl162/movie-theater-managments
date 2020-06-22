@@ -7,7 +7,7 @@ using DTO;
 using Model;
 namespace DAL
 {
-    public class LoginUserManageDAL
+    public class LoginUserDAL
     {
         public List<LoginUserWithNameDTO> DanhSachUser()
         {

@@ -16,14 +16,13 @@ namespace DAL
             {
                 using (var context = new QLRPContext())
                 {
-                    List<PhongChieu> list2 = context.PhongChieus.Select(p => p).ToList();
-                    List<GheDTO> list3 = new List<GheDTO>();
-                    foreach (PhongChieu p in list2)
+                    List<PhongChieu> phongChieus = context.PhongChieus.Select(p => p).ToList();
+                    List<GheDTO> ghes = new List<GheDTO>();
+                    foreach (PhongChieu p in phongChieus)
                     {
-                        List<Ghe> ghes = p.Ghes.ToList();
-                        foreach (Ghe g in ghes)
+                        foreach (Ghe g in p.Ghes.ToList())
                         {
-                            list3.Add(new GheDTO
+                            ghes.Add(new GheDTO
                             {
                                 MaGhe = g.MaGhe,
                                 MaPhong = g.MaPhong,
@@ -33,7 +32,7 @@ namespace DAL
                             });
                         }
                     }
-                    return list3;
+                    return ghes;
                 }
             }
             catch (Exception ex)

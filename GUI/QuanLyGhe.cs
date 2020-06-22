@@ -43,13 +43,14 @@ namespace QuanLyRapPhim
                 int maphong = int.Parse(txtMaPhong.Text);
                 string tenPhong = dgvDSGhe.Rows[RowEnter].Cells[3].Value.ToString();
                 if (gheBLL.ThemGhe(tenghe, maphong, tenPhong))
-                    //MessageBox.Show("Thêm thành công!");
-                QuanLyGhe_Load(sender,e);
+                    MessageBox.Show("Thêm thành công!");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            QuanLyGhe_Load(sender, e);
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -64,13 +65,12 @@ namespace QuanLyRapPhim
                 {
                     MessageBox.Show("Update thành công!");
                 }
-                QuanLyGhe_Load(sender, e);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                QuanLyGhe_Load(sender, e);
             }
+            QuanLyGhe_Load(sender, e);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -85,13 +85,12 @@ namespace QuanLyRapPhim
                 {
                     MessageBox.Show("Xoa thanh cong!");
                 }
-                QuanLyGhe_Load(sender, e);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
             }
+            QuanLyGhe_Load(sender, e);
         }
 
         private void dgvDSGhe_RowEnter(object sender, DataGridViewCellEventArgs e)

@@ -13,7 +13,7 @@ namespace DAL
         public static string Username;
         public static string Password;
     }
-    public class QuanLyLoginDAL
+    public class LoginDAL
     {
         public string Login(LoginDTO lg)
         {

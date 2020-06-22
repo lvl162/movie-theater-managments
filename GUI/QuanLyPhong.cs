@@ -16,12 +16,12 @@ namespace GUI
 {
     public partial class QuanLyPhong : Form
     {
-        QuanLyPhongChieuBLL pcBLL;
+        PhongChieuBLL pcBLL;
         int RowEnter = 0;
         public QuanLyPhong()
         {
             InitializeComponent();
-            pcBLL = new QuanLyPhongChieuBLL();
+            pcBLL = new PhongChieuBLL();
         }
         private void dgvPhong_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -63,14 +63,15 @@ namespace GUI
                 soGhe = int.Parse(txtSoGhe.Text);
                 string tenPhong = txtTenPhong.Text;
                 if (pcBLL.ThemPhong(soGhe, tenPhong)) 
-                { 
-                    QuanLyPhong_Load(sender, e); 
+                {
+                    MessageBox.Show("Them thanh cong!");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            QuanLyPhong_Load(sender, e);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -83,15 +84,14 @@ namespace GUI
                 int.TryParse(txtSoGhe.Text, out soGhe);
                 string tenPhong = txtTenPhong.Text;
                 if (pcBLL.UpdatePhong(maPhong, soGhe, tenPhong, rowVersion)) { 
-                    QuanLyPhong_Load(sender, e);
                     MessageBox.Show("Update thành công!");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                QuanLyPhong_Load(sender, e);
             }
+            QuanLyPhong_Load(sender, e);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -104,14 +104,14 @@ namespace GUI
                 string tenPhong = txtTenPhong.Text;
                 if (pcBLL.XoaPhong(maPhong, soGhe, tenPhong))
                 {
-                    QuanLyPhong_Load(sender, e);
+                    MessageBox.Show("Xoa thanh cong!");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
             }
+            QuanLyPhong_Load(sender, e);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

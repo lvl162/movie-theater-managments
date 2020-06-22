@@ -10,9 +10,9 @@ using Model;
 
 namespace BLL
 {
-    public class QuanLyNhanVienBLL
+    public class NhanVienBLL
     {
-        QuanLyNhanVienDAL quanLyDAL = new QuanLyNhanVienDAL();
+        NhanVienDAL quanLyDAL = new NhanVienDAL();
         public bool ThemNhanVien(string _HoTen, DateTime _NgaySinh, string _GioiTinh, string _SoCMND, string _SDT, string _ChucVu, string _DiaChi)
         {
             try

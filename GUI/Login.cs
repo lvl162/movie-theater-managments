@@ -14,7 +14,7 @@ namespace QuanLyRapPhim
 {
     public partial class Login : Form
     {
-        QuanLyLoginBLL LoginBLL = new QuanLyLoginBLL();
+        LoginBLL LoginBLL = new LoginBLL();
         public Login()
         {
             InitializeComponent();

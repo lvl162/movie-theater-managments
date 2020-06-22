@@ -12,12 +12,12 @@ namespace QuanLyRapPhim
 {
     public partial class QuanLyPhim : Form
     {
-        QuanLyPhimBLL phimBLL;
+        PhimBLL phimBLL;
         int RowEnter = 0;
         public QuanLyPhim()
         {
             InitializeComponent();
-            phimBLL = new QuanLyPhimBLL();
+            phimBLL = new PhimBLL();
             dgvPhim.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
 
@@ -45,12 +45,16 @@ namespace QuanLyRapPhim
                 moTa = txtMoTa.Text;
                 khoiChieu = timePickerKhoiChieu.Value.Date;
                 if (phimBLL.ThemPhim(tenPhim, theLoai, khoiChieu, moTa))
-                    QuanLyPhim_Load(sender, e);
+                {
+                    MessageBox.Show("Them thanh cong!");
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            QuanLyPhim_Load(sender, e);
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -67,12 +71,13 @@ namespace QuanLyRapPhim
                 string rowVer = dgvPhim.Rows[RowEnter].Cells[5].Value.ToString();
                 if (phimBLL.UpdatePhim(maPhim, tenPhim, theLoai, khoiChieu, moTa, rowVer))
                     MessageBox.Show("Update thành công!");
-                QuanLyPhim_Load(sender, e);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            QuanLyPhim_Load(sender, e);
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -86,12 +91,16 @@ namespace QuanLyRapPhim
                 theLoai = txtTheLoai.Text;
                 moTa = txtMoTa.Text;
                 khoiChieu = timePickerKhoiChieu.Value.Date;
-                if (phimBLL.XoaPhim(maPhim, tenPhim, theLoai, khoiChieu, moTa)) QuanLyPhim_Load(sender, e);
+                if (phimBLL.XoaPhim(maPhim, tenPhim, theLoai, khoiChieu, moTa))
+                {
+                    MessageBox.Show("Xoa thanh cong!");
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            QuanLyPhim_Load(sender, e);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

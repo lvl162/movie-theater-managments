@@ -10,9 +10,9 @@ using Model;
 
 namespace BLL
 {
-    public class LoginUserManageBLL
+    public class LoginUserBLL
     {
-        LoginUserManageDAL userDAL = new LoginUserManageDAL();
+        LoginUserDAL userDAL = new LoginUserDAL();
         public List<LoginUserWithNameDTO> DanhSachUser()
         {
             try
