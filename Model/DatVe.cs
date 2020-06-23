@@ -18,7 +18,6 @@ namespace Model
         public int MaLichChieu { get; set; }
         [ForeignKey("Ghe")]
         public int MaGhe { get; set; }
-        public string LoaiVe { get; set; }
         public DateTime ThoiGianDatVe { get; set; }
         [Timestamp]
         public byte[] RowVersion { get; set; }

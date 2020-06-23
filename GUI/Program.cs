@@ -1,4 +1,5 @@
 ﻿using QuanLyRapPhim;
+using QuanLyRapPhim.DanhSachPhong;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DatVe());
+            Application.Run(new Login());
         }
     }
 }

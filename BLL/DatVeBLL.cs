@@ -1,5 +1,6 @@
 ﻿using DAL;
 using DTO;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,33 @@ namespace BLL
                 throw ex;
             }
         }
+
+        public Dictionary<string, int> LayDSGhe(int maPhong)
+        {
+            try
+            {
+                return datVeDAL.LayDSGhe(maPhong);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public List<string> LayVeDaDat(int maLichChieu)
+        {
+            try
+            {
+                return datVeDAL.LayGheDaDat(maLichChieu);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public PhongChieuDTO LayPhongTheoLichChieu(int MaPhong)
         {
             try
@@ -44,6 +72,18 @@ namespace BLL
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        public bool DatVes(List<int> gheDaChon, int maLichChieu)
+        {
+            try
+            {
+                return datVeDAL.DatVes(gheDaChon, maLichChieu);
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
     }

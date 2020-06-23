@@ -8,8 +8,12 @@ namespace DTO
 {
     public class DatVeDTO
     {
-        public int MaGhe { get; set; }
+        public int MaLichChieu { get; set; }
         public int MaPhong { get; set; }
+        public string TenPhong { get; set; }
+        public int MaPhim { get; set; }
+        public string TenPhim { get; set; }
+        public int MaGhe { get; set; }
         public string TenGhe { get; set; }
         public string RowVersion { get; set; }
     }

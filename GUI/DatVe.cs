@@ -67,6 +67,7 @@ namespace QuanLyRapPhim
                 {
                     cbChonCaChieu.DataSource = datVeBLL.LayDanhSachLichChieu(phim.MaPhim);
                     cbChonCaChieu.DisplayMember = "GioChieuAndPhong";
+                    cbChonCaChieu.ValueMember = "MaLichChieu";
                 }
                 else
                 {
@@ -82,7 +83,15 @@ namespace QuanLyRapPhim
 
         private void btnChonGhe_Click(object sender, EventArgs e)
         {
-            new Phong1().ShowDialog();
+            int maLC;
+            LichChieuDTO lc = cbChonCaChieu.SelectedItem as LichChieuDTO;
+            maLC = lc.MaLichChieu;
+            int maPhong = lc.MaPhong;
+            string tenphong = lc.TenPhong;
+            if (tenphong == "P1")
+            {
+                new Phong1(lc).ShowDialog();
+            }
         }
     }
 }
