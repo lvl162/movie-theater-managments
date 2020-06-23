@@ -29,5 +29,6 @@ namespace Model
         public DateTime NgayTao { get; set; }
         public string NguoiSua { get; set; }
         public DateTime NgaySua { get; set; }
+        public int ThoiLuong { get; set; }
     }
 }

@@ -134,7 +134,8 @@ namespace DAL
 					{
 						MaPhong = p.MaPhong,
 						TenPhong = p.TenPhong,
-						SoGhe = p.SoGhe
+						SoHang = p.SoHang,
+						SoCot = p.SoCot
 					}).ToList();
 					return list;
 				}

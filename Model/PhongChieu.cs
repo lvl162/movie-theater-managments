@@ -12,11 +12,10 @@ namespace Model
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MaPhong { get; set; }
-
-        public int SoGhe { get; set; }
-
         public string TenPhong { get; set; }
         public virtual List<Ghe> Ghes { get; set; }
+        public int SoHang { get; set; }
+        public int SoCot { get; set; }
         [Timestamp]
         public byte[] RowVersion { get; set; }
         public string NguoiTao { get; set; }

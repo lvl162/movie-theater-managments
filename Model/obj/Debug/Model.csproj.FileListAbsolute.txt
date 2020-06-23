@@ -27,3 +27,4 @@ C:\Users\LuuVanLoi\Desktop\QLRP\Model\obj\Debug\DTO.Migrations.modifylogin2pk.re
 C:\Users\LuuVanLoi\Desktop\QLRP\Model\obj\Debug\DTO.Migrations.addAuditForEachTable.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\Model\obj\Debug\Model.csprojAssemblyReference.cache
 C:\Users\LuuVanLoi\Desktop\QLRP\Model\obj\Debug\DTO.Migrations.XoaGiDay.resources
+C:\Users\LuuVanLoi\Desktop\QLRP\Model\obj\Debug\DTO.Migrations.SuaPhonChieu.resources

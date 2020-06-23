@@ -26,7 +26,11 @@ namespace DAL
                                 select pc)
                                .AsEnumerable()
                                .Select (pc => new PhongChieuDTO() { 
-                        MaPhong = pc.MaPhong, TenPhong = pc.TenPhong, SoGhe = pc.SoGhe, RowVersion = BitConverter.ToUInt64(pc.RowVersion, 0).ToString()
+                                   MaPhong = pc.MaPhong, 
+                                   TenPhong = pc.TenPhong,
+                                   SoHang = pc.SoHang,
+                                   SoCot = pc.SoCot,
+                                   RowVersion = BitConverter.ToUInt64(pc.RowVersion, 0).ToString()
                     }).ToList();
                     return list;
                 }
@@ -43,7 +47,9 @@ namespace DAL
                 using (QLRPContext context = new QLRPContext())
                 {
                     context.PhongChieus.Add(new PhongChieu() { MaPhong = pc.MaPhong, TenPhong = pc.TenPhong,
-                        SoGhe = pc.SoGhe, NguoiTao = CurrentUser.Username, NgayTao = DateTime.Now,
+                        SoHang = pc.SoHang,
+                        SoCot = pc.SoCot,
+                        NguoiTao = CurrentUser.Username, NgayTao = DateTime.Now,
                         NgaySua = DateTime.Now,
                         NguoiSua = CurrentUser.Username
                     });
@@ -69,7 +75,8 @@ namespace DAL
                         if (BitConverter.ToUInt64(phong.RowVersion, 0).ToString().Equals(pc.RowVersion))
                         {
                             phong.TenPhong = pc.TenPhong;
-                            phong.SoGhe = pc.SoGhe;
+                            phong.SoHang = pc.SoHang;
+                            phong.SoCot = pc.SoCot;
                             phong.NguoiSua = CurrentUser.Username;
                             phong.NgaySua = DateTime.Now;
                             context.SaveChanges();
@@ -89,13 +96,13 @@ namespace DAL
                 throw ex;
             }
         }
-        public bool XoaPhong(PhongChieuDTO pc)
+        public bool XoaPhong(int ma)
         {
             try
             {
                 using (var context = new QLRPContext())
                 {
-                    var phong = context.PhongChieus.Single(p => p.MaPhong == pc.MaPhong);
+                    var phong = context.PhongChieus.Single(p => p.MaPhong == ma);
                     if (phong != null)
                     {
                         context.PhongChieus.Remove(phong);

@@ -88,10 +88,7 @@ namespace QuanLyRapPhim
             maLC = lc.MaLichChieu;
             int maPhong = lc.MaPhong;
             string tenphong = lc.TenPhong;
-            if (tenphong == "P1")
-            {
-                new Phong1(lc).ShowDialog();
-            }
+            new PhongDatVe(lc).ShowDialog();
         }
     }
 }

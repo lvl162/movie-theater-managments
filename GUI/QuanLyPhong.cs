@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,8 +27,9 @@ namespace GUI
             try
             {
                 RowEnter = e.RowIndex;
-                txtSoGhe.Text = dgvPhong.Rows[RowEnter].Cells[1].Value.ToString();
-                txtTenPhong.Text = dgvPhong.Rows[RowEnter].Cells[2].Value.ToString();
+                txtSoHang.Text = dgvPhong.Rows[RowEnter].Cells[2].Value.ToString();
+                txtTenPhong.Text = dgvPhong.Rows[RowEnter].Cells[1].Value.ToString();
+                txtSoCot.Text = dgvPhong.Rows[RowEnter].Cells[3].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -59,10 +59,13 @@ namespace GUI
         {
             try
             {
-                int soGhe;
-                soGhe = int.Parse(txtSoGhe.Text);
+                int soHang;
+                int soCot;
+                soHang = int.Parse(txtSoHang.Text);
+                soCot = int.Parse(txtSoCot.Text);
+
                 string tenPhong = txtTenPhong.Text;
-                if (pcBLL.ThemPhong(soGhe, tenPhong)) 
+                if (pcBLL.ThemPhong(tenPhong, soHang, soCot)) 
                 {
                     MessageBox.Show("Them thanh cong!");
                 }
@@ -78,12 +81,14 @@ namespace GUI
         {
             try
             {
-                string rowVersion = dgvPhong.Rows[RowEnter].Cells[3].Value.ToString();
+                string rowVersion = dgvPhong.Rows[RowEnter].Cells[4].Value.ToString();
                 int maPhong = int.Parse(dgvPhong.Rows[RowEnter].Cells[0].Value.ToString());
-                int soGhe;
-                int.TryParse(txtSoGhe.Text, out soGhe);
+                int soHang;
+                int soCot;
+                soHang = int.Parse(txtSoHang.Text);
+                soCot = int.Parse(txtSoCot.Text);
                 string tenPhong = txtTenPhong.Text;
-                if (pcBLL.UpdatePhong(maPhong, soGhe, tenPhong, rowVersion)) { 
+                if (pcBLL.UpdatePhong(maPhong, soHang, soCot, tenPhong, rowVersion)) { 
                     MessageBox.Show("Update thành công!");
                 }
             }
@@ -98,11 +103,9 @@ namespace GUI
         {
             try
             {
-                int soGhe;
                 int maPhong = int.Parse(dgvPhong.Rows[RowEnter].Cells[0].Value.ToString());
-                int.TryParse(txtSoGhe.Text, out soGhe);
-                string tenPhong = txtTenPhong.Text;
-                if (pcBLL.XoaPhong(maPhong, soGhe, tenPhong))
+                
+                if (pcBLL.XoaPhong(maPhong))
                 {
                     MessageBox.Show("Xoa thanh cong!");
                 }
@@ -118,7 +121,7 @@ namespace GUI
         {
             try
             {
-                txtSoGhe.Text = dgvPhong.Rows[RowEnter].Cells[1].Value.ToString();
+                txtSoHang.Text = dgvPhong.Rows[RowEnter].Cells[1].Value.ToString();
                 txtTenPhong.Text = dgvPhong.Rows[RowEnter].Cells[2].Value.ToString();
             }
             catch (Exception ex)

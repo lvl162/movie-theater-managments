@@ -1,6 +1,6 @@
 ﻿namespace QuanLyRapPhim.DanhSachPhong
 {
-    partial class Phong1
+    partial class PhongDatVe
     {
         /// <summary>
         /// Required designer variable.

@@ -13,14 +13,15 @@ using System.Windows.Forms;
 
 namespace QuanLyRapPhim.DanhSachPhong
 {
-    public partial class Phong1 : Form
+    public partial class PhongDatVe : Form
     {
         LichChieuDTO lichChieu = null;
+        PhongChieuDTO phongChieu = null;
         DatVeBLL datVeBLL;
         Dictionary<string, int> ghes = new Dictionary<string, int>();
         List<int> gheDaChon = new List<int>();
         List<string> gheDaDat = new List<string>();
-        public Phong1(LichChieuDTO lc)
+        public PhongDatVe(LichChieuDTO lc)
         {
             InitializeComponent();
             lichChieu = lc;
@@ -29,6 +30,7 @@ namespace QuanLyRapPhim.DanhSachPhong
             {
                 ghes = datVeBLL.LayDSGhe(lc.MaPhong);
                 gheDaDat = datVeBLL.LayVeDaDat(lc.MaLichChieu);
+                phongChieu = datVeBLL.LayKieuPhong(lc.MaPhong);
             }
             catch (Exception ex)
             {
@@ -37,9 +39,13 @@ namespace QuanLyRapPhim.DanhSachPhong
             // Trang : con
             // Do : da dat ve
             // Xanh la cay : da chon
-            for (char i = 'A'; i < 'A' + 10; i++)
+            GhesDraw(gheDaDat, phongChieu.SoHang, phongChieu.SoCot);
+        }
+        private void GhesDraw(List<string> gheDaDat, int r, int c)
+        {
+            for (char i = 'A'; i < 'A' + r; i++)
             {
-                for (int j = 1; j <= 10; j++)
+                for (int j = 1; j <= c; j++)
                 {
                     Button b = new Button();
                     b.Text = i + "" + j;

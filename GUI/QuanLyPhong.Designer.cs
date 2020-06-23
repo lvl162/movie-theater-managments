@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvPhong = new System.Windows.Forms.DataGridView();
-            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DienTich = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -41,9 +37,16 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtTenPhong = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtSoGhe = new System.Windows.Forms.MaskedTextBox();
+            this.txtSoHang = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnDSGhe = new System.Windows.Forms.Button();
+            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DienTich = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoCot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSoCot = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -63,8 +66,9 @@
             this.dgvPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPhong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaPhong,
-            this.SoGhe,
             this.DienTich,
+            this.SoHang,
+            this.SoCot,
             this.RowVersion});
             this.dgvPhong.Location = new System.Drawing.Point(34, 209);
             this.dgvPhong.Name = "dgvPhong";
@@ -74,39 +78,6 @@
             this.dgvPhong.Size = new System.Drawing.Size(766, 289);
             this.dgvPhong.TabIndex = 0;
             this.dgvPhong.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhong_RowEnter);
-            // 
-            // MaPhong
-            // 
-            this.MaPhong.DataPropertyName = "MaPhong";
-            this.MaPhong.HeaderText = "Mã Phòng";
-            this.MaPhong.MinimumWidth = 6;
-            this.MaPhong.Name = "MaPhong";
-            this.MaPhong.ReadOnly = true;
-            // 
-            // SoGhe
-            // 
-            this.SoGhe.DataPropertyName = "SoGhe";
-            this.SoGhe.HeaderText = "Số Ghế";
-            this.SoGhe.MinimumWidth = 6;
-            this.SoGhe.Name = "SoGhe";
-            this.SoGhe.ReadOnly = true;
-            // 
-            // DienTich
-            // 
-            this.DienTich.DataPropertyName = "TenPhong";
-            this.DienTich.HeaderText = "Tên phòng";
-            this.DienTich.MinimumWidth = 6;
-            this.DienTich.Name = "DienTich";
-            this.DienTich.ReadOnly = true;
-            // 
-            // RowVersion
-            // 
-            this.RowVersion.DataPropertyName = "RowVersion";
-            this.RowVersion.HeaderText = "RowVersion";
-            this.RowVersion.MinimumWidth = 6;
-            this.RowVersion.Name = "RowVersion";
-            this.RowVersion.ReadOnly = true;
-            this.RowVersion.Visible = false;
             // 
             // btnAdd
             // 
@@ -164,18 +135,20 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.txtTenPhong);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtSoGhe);
+            this.groupBox1.Controls.Add(this.txtSoCot);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtSoHang);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(245, 11);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(335, 131);
+            this.groupBox1.Size = new System.Drawing.Size(335, 128);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Phòng";
             // 
             // txtTenPhong
             // 
-            this.txtTenPhong.Location = new System.Drawing.Point(163, 39);
+            this.txtTenPhong.Location = new System.Drawing.Point(163, 31);
             this.txtTenPhong.Name = "txtTenPhong";
             this.txtTenPhong.Size = new System.Drawing.Size(100, 22);
             this.txtTenPhong.TabIndex = 14;
@@ -183,27 +156,27 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(66, 44);
+            this.label4.Location = new System.Drawing.Point(66, 36);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 17);
             this.label4.TabIndex = 11;
             this.label4.Text = "Tên phòng";
             // 
-            // txtSoGhe
+            // txtSoHang
             // 
-            this.txtSoGhe.Location = new System.Drawing.Point(163, 80);
-            this.txtSoGhe.Name = "txtSoGhe";
-            this.txtSoGhe.Size = new System.Drawing.Size(100, 22);
-            this.txtSoGhe.TabIndex = 15;
+            this.txtSoHang.Location = new System.Drawing.Point(163, 59);
+            this.txtSoHang.Name = "txtSoHang";
+            this.txtSoHang.Size = new System.Drawing.Size(100, 22);
+            this.txtSoHang.TabIndex = 15;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(66, 85);
+            this.label3.Location = new System.Drawing.Point(66, 64);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 17);
+            this.label3.Size = new System.Drawing.Size(61, 17);
             this.label3.TabIndex = 12;
-            this.label3.Text = "Số ghế";
+            this.label3.Text = "Số hàng";
             // 
             // btnDSGhe
             // 
@@ -214,6 +187,63 @@
             this.btnDSGhe.Text = "DS Ghe";
             this.btnDSGhe.UseVisualStyleBackColor = true;
             this.btnDSGhe.Click += new System.EventHandler(this.btnDSGhe_Click);
+            // 
+            // MaPhong
+            // 
+            this.MaPhong.DataPropertyName = "MaPhong";
+            this.MaPhong.HeaderText = "Mã Phòng";
+            this.MaPhong.MinimumWidth = 6;
+            this.MaPhong.Name = "MaPhong";
+            this.MaPhong.ReadOnly = true;
+            // 
+            // DienTich
+            // 
+            this.DienTich.DataPropertyName = "TenPhong";
+            this.DienTich.HeaderText = "Tên phòng";
+            this.DienTich.MinimumWidth = 6;
+            this.DienTich.Name = "DienTich";
+            this.DienTich.ReadOnly = true;
+            // 
+            // SoHang
+            // 
+            this.SoHang.DataPropertyName = "SoHang";
+            this.SoHang.HeaderText = "Số Hàng";
+            this.SoHang.MinimumWidth = 6;
+            this.SoHang.Name = "SoHang";
+            this.SoHang.ReadOnly = true;
+            // 
+            // SoCot
+            // 
+            this.SoCot.DataPropertyName = "SoCot";
+            this.SoCot.HeaderText = "Số cột";
+            this.SoCot.MinimumWidth = 6;
+            this.SoCot.Name = "SoCot";
+            this.SoCot.ReadOnly = true;
+            // 
+            // RowVersion
+            // 
+            this.RowVersion.DataPropertyName = "RowVersion";
+            this.RowVersion.HeaderText = "RowVersion";
+            this.RowVersion.MinimumWidth = 6;
+            this.RowVersion.Name = "RowVersion";
+            this.RowVersion.ReadOnly = true;
+            this.RowVersion.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(66, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 17);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Số cột";
+            // 
+            // txtSoCot
+            // 
+            this.txtSoCot.Location = new System.Drawing.Point(163, 87);
+            this.txtSoCot.Name = "txtSoCot";
+            this.txtSoCot.Size = new System.Drawing.Size(100, 22);
+            this.txtSoCot.TabIndex = 15;
             // 
             // QuanLyPhong
             // 
@@ -249,13 +279,16 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.MaskedTextBox txtTenPhong;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MaskedTextBox txtSoGhe;
+        private System.Windows.Forms.MaskedTextBox txtSoHang;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoGhe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DienTich;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RowVersion;
         private System.Windows.Forms.Button btnDSGhe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DienTich;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoCot;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RowVersion;
+        private System.Windows.Forms.MaskedTextBox txtSoCot;
+        private System.Windows.Forms.Label label1;
     }
 }
 

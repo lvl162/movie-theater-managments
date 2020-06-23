@@ -8,12 +8,12 @@ namespace DTO
 {
     public class PhimDTO
     {
-
         public int MaPhim { get; set; }
         public string TenPhim { get; set; }
         public string TheLoai { get; set; }
         public string MoTa { get; set; }
         public DateTime? NgayKhoiChieu { get; set; }
         public string RowVersion { get; set; }
+        public int ThoiLuong { get; set; }
     }
 }

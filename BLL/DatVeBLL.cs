@@ -50,6 +50,19 @@ namespace BLL
             }
         }
 
+        public PhongChieuDTO LayKieuPhong(int maPhong)
+        {
+            try
+            {
+                return datVeDAL.LayKieuPhong(maPhong);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public List<string> LayVeDaDat(int maLichChieu)
         {
             try

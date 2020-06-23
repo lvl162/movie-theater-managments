@@ -55,11 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DanhSachPhong\Phong1.cs">
+    <Compile Include="PhongDatVe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DanhSachPhong\Phong1.Designer.cs">
-      <DependentUpon>Phong1.cs</DependentUpon>
+    <Compile Include="PhongDatVe.Designer.cs">
+      <DependentUpon>PhongDatVe.cs</DependentUpon>
     </Compile>
     <Compile Include="DatVe.cs">
       <SubType>Form</SubType>
@@ -111,8 +111,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DanhSachPhong\Phong1.resx">
-      <DependentUpon>Phong1.cs</DependentUpon>
+    <EmbeddedResource Include="PhongDatVe.resx">
+      <DependentUpon>PhongDatVe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DatVe.resx">
       <DependentUpon>DatVe.cs</DependentUpon>

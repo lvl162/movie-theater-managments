@@ -60,6 +60,29 @@ namespace DAL
             }
         }
 
+        public PhongChieuDTO LayKieuPhong(int maPhong)
+        {
+            try
+            {
+                using (var context = new QLRPContext())
+                {
+                    var pc = context.PhongChieus.Single(p => p.MaPhong == maPhong);
+                    return new PhongChieuDTO()
+                    {
+                        SoCot = pc.SoCot,
+                        SoHang = pc.SoHang,
+                        TenPhong = pc.TenPhong,
+                        MaPhong = pc.MaPhong
+                    };
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public List<string> LayGheDaDat(int MaLichChieu)
         {
             try
@@ -156,7 +179,8 @@ namespace DAL
                     {
                         MaPhong = pc.MaPhong,
                         TenPhong = pc.TenPhong,
-                        SoGhe = pc.SoGhe
+                        SoHang = pc.SoHang,
+                        SoCot = pc.SoCot
                     };
                 }
             }

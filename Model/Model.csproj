@@ -128,6 +128,10 @@
     <Compile Include="Migrations\202006230817588_XoaGiDay.designer.cs">
       <DependentUpon>202006230817588_XoaGiDay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006230905217_SuaPhonChieu.cs" />
+    <Compile Include="Migrations\202006230905217_SuaPhonChieu.designer.cs">
+      <DependentUpon>202006230905217_SuaPhonChieu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NhanVien.cs" />
     <Compile Include="Phim.cs" />
@@ -186,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006230817588_XoaGiDay.resx">
       <DependentUpon>202006230817588_XoaGiDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006230905217_SuaPhonChieu.resx">
+      <DependentUpon>202006230905217_SuaPhonChieu.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -25,12 +25,11 @@ namespace BLL
                 throw ex;
             }
         }
-        public bool ThemPhong(int soghe, string tenphong)
+        public bool ThemPhong(string tenPhong, int soHang, int soCot)
         {
             try
             {
-                PhongChieuDTO phong = new PhongChieuDTO() { SoGhe = soghe, TenPhong = tenphong };
-                return (pcDAL.ThemPhong(phong));
+                return (pcDAL.ThemPhong(new PhongChieuDTO() { SoHang = soHang, TenPhong = tenPhong, SoCot = soCot }));
             }
             catch (Exception e)
             {
@@ -39,17 +38,30 @@ namespace BLL
         }
 
 
-        public bool UpdatePhong(int ma, int soghe, string tenphong, string rowVer)
+        public bool UpdatePhong(int ma, int soHang, int soCot, string tenphong, string rowVer)
         {
-            PhongChieuDTO phong = new PhongChieuDTO() { MaPhong = ma, SoGhe = soghe, TenPhong = tenphong, RowVersion = rowVer };
-            if (pcDAL.UpdatePhong(phong)) return true;
-            return false;
+            try
+            {
+                return pcDAL.UpdatePhong(new PhongChieuDTO() { MaPhong = ma, SoHang = soHang, SoCot = soCot, TenPhong = tenphong, RowVersion = rowVer });
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
-        public bool XoaPhong(int ma, int soghe, string tenphong)
+        public bool XoaPhong(int ma)
         {
-            PhongChieuDTO phong = new PhongChieuDTO() { MaPhong = ma, SoGhe = soghe, TenPhong = tenphong };
-            if (pcDAL.XoaPhong(phong)) return true;
-            return false;
+            try
+            {
+                return (pcDAL.XoaPhong(ma));
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
