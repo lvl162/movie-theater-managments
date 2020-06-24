@@ -91,7 +91,7 @@ namespace BLL
 		{
 			try
 			{
-				return LichChieuDAL.XoaLichChieu(malc_delete);
+				return lichChieuDAL.XoaLichChieu(malc_delete);
 			}
 			catch (Exception)
 			{

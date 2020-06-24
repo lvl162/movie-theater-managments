@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.dgvDSGhe = new System.Windows.Forms.DataGridView();
+            this.MaGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTenGhe = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,11 +41,8 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.MaGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbHi = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSGhe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +68,47 @@
             this.dgvDSGhe.Size = new System.Drawing.Size(827, 337);
             this.dgvDSGhe.TabIndex = 0;
             this.dgvDSGhe.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSGhe_RowEnter);
+            // 
+            // MaGhe
+            // 
+            this.MaGhe.DataPropertyName = "MaGhe";
+            this.MaGhe.HeaderText = "Mã ghế";
+            this.MaGhe.MinimumWidth = 6;
+            this.MaGhe.Name = "MaGhe";
+            this.MaGhe.ReadOnly = true;
+            // 
+            // TenGhe
+            // 
+            this.TenGhe.DataPropertyName = "TenGhe";
+            this.TenGhe.HeaderText = "Tên ghế";
+            this.TenGhe.MinimumWidth = 6;
+            this.TenGhe.Name = "TenGhe";
+            this.TenGhe.ReadOnly = true;
+            // 
+            // MaPhong
+            // 
+            this.MaPhong.DataPropertyName = "MaPhong";
+            this.MaPhong.HeaderText = "Mã phòng";
+            this.MaPhong.MinimumWidth = 6;
+            this.MaPhong.Name = "MaPhong";
+            this.MaPhong.ReadOnly = true;
+            // 
+            // TenPhong
+            // 
+            this.TenPhong.DataPropertyName = "TenPhong";
+            this.TenPhong.HeaderText = "Tên phòng";
+            this.TenPhong.MinimumWidth = 6;
+            this.TenPhong.Name = "TenPhong";
+            this.TenPhong.ReadOnly = true;
+            // 
+            // RowVersion
+            // 
+            this.RowVersion.DataPropertyName = "RowVersion";
+            this.RowVersion.HeaderText = "RowVersion";
+            this.RowVersion.MinimumWidth = 6;
+            this.RowVersion.Name = "RowVersion";
+            this.RowVersion.ReadOnly = true;
+            this.RowVersion.Visible = false;
             // 
             // label1
             // 
@@ -129,52 +172,32 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // MaGhe
+            // label2
             // 
-            this.MaGhe.DataPropertyName = "MaGhe";
-            this.MaGhe.HeaderText = "Mã ghế";
-            this.MaGhe.MinimumWidth = 6;
-            this.MaGhe.Name = "MaGhe";
-            this.MaGhe.ReadOnly = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "label2";
             // 
-            // TenGhe
+            // lbHi
             // 
-            this.TenGhe.DataPropertyName = "TenGhe";
-            this.TenGhe.HeaderText = "Tên ghế";
-            this.TenGhe.MinimumWidth = 6;
-            this.TenGhe.Name = "TenGhe";
-            this.TenGhe.ReadOnly = true;
-            // 
-            // MaPhong
-            // 
-            this.MaPhong.DataPropertyName = "MaPhong";
-            this.MaPhong.HeaderText = "Mã phòng";
-            this.MaPhong.MinimumWidth = 6;
-            this.MaPhong.Name = "MaPhong";
-            this.MaPhong.ReadOnly = true;
-            // 
-            // TenPhong
-            // 
-            this.TenPhong.DataPropertyName = "TenPhong";
-            this.TenPhong.HeaderText = "Tên phòng";
-            this.TenPhong.MinimumWidth = 6;
-            this.TenPhong.Name = "TenPhong";
-            this.TenPhong.ReadOnly = true;
-            // 
-            // RowVersion
-            // 
-            this.RowVersion.DataPropertyName = "RowVersion";
-            this.RowVersion.HeaderText = "RowVersion";
-            this.RowVersion.MinimumWidth = 6;
-            this.RowVersion.Name = "RowVersion";
-            this.RowVersion.ReadOnly = true;
-            this.RowVersion.Visible = false;
+            this.lbHi.AutoSize = true;
+            this.lbHi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHi.Location = new System.Drawing.Point(703, 29);
+            this.lbHi.Name = "lbHi";
+            this.lbHi.Size = new System.Drawing.Size(53, 20);
+            this.lbHi.TabIndex = 5;
+            this.lbHi.Text = "label4";
             // 
             // QuanLyGhe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(851, 491);
+            this.Controls.Add(this.lbHi);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
@@ -207,5 +230,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn RowVersion;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbHi;
     }
 }

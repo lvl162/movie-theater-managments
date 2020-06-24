@@ -19,6 +19,7 @@ namespace QuanLyRapPhim
         public DatVe()
         {
             InitializeComponent();
+            lbHi.Text = $"Hi {Login.UserName}!";
         }
 
         private void DatVe_Load(object sender, EventArgs e)
@@ -42,13 +43,22 @@ namespace QuanLyRapPhim
                 if (lichchieu != null)
                 {
                     var phong = datVeBLL.LayPhongTheoLichChieu(lichchieu.MaPhong);
+                    int e_s = datVeBLL.getSoGheTrong(lichchieu);
                     if (phong != null)
+                    {
                         txtTenPhong.Text = phong.TenPhong;
-                    else txtTenPhong.Text = "Không tìm thấy phòng";
+                        txtSoGheTrong.Text = datVeBLL.getSoGheTrong(lichchieu) + "";
+                    }
+                    else
+                    {
+                        txtTenPhong.Text = "Không tìm thấy phòng";
+                        txtSoGheTrong.Text = "";
+                    }
                 }
                 else
                 {
                     txtTenPhong.Text = "Không tìm thấy phòng";
+                    txtSoGheTrong.Text = "";
                 }
             }
             catch (Exception ex)
@@ -67,12 +77,11 @@ namespace QuanLyRapPhim
                 {
                     cbChonCaChieu.DataSource = datVeBLL.LayDanhSachLichChieu(phim.MaPhim);
                     cbChonCaChieu.DisplayMember = "GioChieuAndPhong";
-                    cbChonCaChieu.ValueMember = "MaLichChieu";
+                    cbChonCaChieu.ValueMember = "MaLichChieu";                    
                 }
                 else
                 {
                     cbChonCaChieu.DataSource = new List<string>() { "Không có lịch chiếu cho phim này" };
-                    //cbChonCaChieu.SelectedValue = 0;
                 }
             }
             catch (Exception ex)

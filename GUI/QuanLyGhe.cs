@@ -19,9 +19,9 @@ namespace QuanLyRapPhim
         public QuanLyGhe()
         {
             InitializeComponent();
+            lbHi.Text = $"Hi {Login.UserName}!";
             gheBLL = new GheBLL();
         }
-
         private void QuanLyGhe_Load(object sender, EventArgs e)
         {
             try

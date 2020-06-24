@@ -84,6 +84,23 @@ namespace DAL
             }
         }
 
+        public int getSoGheTrong(LichChieuDTO lc)
+        {
+            try
+            {
+                using (var context = new QLRPContext())
+                {
+                    int num_all_seats = context.Ghes.Count(p => p.MaPhong == lc.MaPhong);
+                    int num_all_booked_seats = context.DatVes.Count(p => p.MaLichChieu == lc.MaLichChieu);
+                    return num_all_seats - num_all_booked_seats;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public List<string> LayGheDaDat(int MaLichChieu)
         {
             try

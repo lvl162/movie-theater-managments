@@ -96,5 +96,17 @@ namespace BLL
                 throw;
             }
         }
+
+        public int getSoGheTrong(LichChieuDTO lc)
+        {
+            try
+            {
+                return datVeDAL.getSoGheTrong(lc);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

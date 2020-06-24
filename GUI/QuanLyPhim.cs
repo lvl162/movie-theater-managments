@@ -17,6 +17,7 @@ namespace QuanLyRapPhim
         public QuanLyPhim()
         {
             InitializeComponent();
+            lbHi.Text = $"Hi {Login.UserName}!";
             phimBLL = new PhimBLL();
             dgvPhim.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
         }

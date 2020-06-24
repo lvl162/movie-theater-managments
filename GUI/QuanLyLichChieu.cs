@@ -19,6 +19,7 @@ namespace QuanLyRapPhim
         public QuanLyLichChieu()
         {
             InitializeComponent();
+            lbHi.Text = $"Hi {Login.UserName}!";
             lichChieuBLL = new LichChieuBLL();
         }
 

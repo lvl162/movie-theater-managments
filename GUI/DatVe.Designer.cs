@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbHi = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -41,12 +42,15 @@
             this.btcancel = new System.Windows.Forms.Button();
             this.butinhoadon = new System.Windows.Forms.Button();
             this.btnChonGhe = new System.Windows.Forms.Button();
+            this.txtSoGheTrong = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lbHi);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -54,6 +58,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(922, 62);
             this.panel1.TabIndex = 0;
+            // 
+            // lbHi
+            // 
+            this.lbHi.AutoSize = true;
+            this.lbHi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHi.Location = new System.Drawing.Point(793, 27);
+            this.lbHi.Name = "lbHi";
+            this.lbHi.Size = new System.Drawing.Size(53, 20);
+            this.lbHi.TabIndex = 0;
+            this.lbHi.Text = "label5";
             // 
             // label1
             // 
@@ -81,6 +95,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtSoGheTrong);
             this.panel2.Controls.Add(this.txtTenPhong);
             this.panel2.Controls.Add(this.txtMoTa);
             this.panel2.Controls.Add(this.label4);
@@ -90,6 +105,7 @@
             this.panel2.Controls.Add(this.btcancel);
             this.panel2.Controls.Add(this.butinhoadon);
             this.panel2.Controls.Add(this.btnChonGhe);
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 62);
@@ -100,19 +116,21 @@
             // 
             // txtTenPhong
             // 
+            this.txtTenPhong.Enabled = false;
             this.txtTenPhong.Location = new System.Drawing.Point(243, 150);
             this.txtTenPhong.Name = "txtTenPhong";
             this.txtTenPhong.ReadOnly = true;
             this.txtTenPhong.Size = new System.Drawing.Size(262, 22);
-            this.txtTenPhong.TabIndex = 12;
+            this.txtTenPhong.TabIndex = 3;
             // 
             // txtMoTa
             // 
             this.txtMoTa.Location = new System.Drawing.Point(576, 8);
             this.txtMoTa.Multiline = true;
             this.txtMoTa.Name = "txtMoTa";
+            this.txtMoTa.ReadOnly = true;
             this.txtMoTa.Size = new System.Drawing.Size(316, 238);
-            this.txtMoTa.TabIndex = 11;
+            this.txtMoTa.TabIndex = 7;
             // 
             // label4
             // 
@@ -127,22 +145,24 @@
             // 
             // cbChonCaChieu
             // 
+            this.cbChonCaChieu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbChonCaChieu.FormattingEnabled = true;
             this.cbChonCaChieu.Location = new System.Drawing.Point(243, 93);
             this.cbChonCaChieu.Margin = new System.Windows.Forms.Padding(4);
             this.cbChonCaChieu.Name = "cbChonCaChieu";
             this.cbChonCaChieu.Size = new System.Drawing.Size(261, 24);
-            this.cbChonCaChieu.TabIndex = 9;
+            this.cbChonCaChieu.TabIndex = 2;
             this.cbChonCaChieu.SelectedIndexChanged += new System.EventHandler(this.cbChonCaChieu_SelectedIndexChanged);
             // 
             // cbChonPhim
             // 
+            this.cbChonPhim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbChonPhim.FormattingEnabled = true;
             this.cbChonPhim.Location = new System.Drawing.Point(243, 35);
             this.cbChonPhim.Margin = new System.Windows.Forms.Padding(4);
             this.cbChonPhim.Name = "cbChonPhim";
             this.cbChonPhim.Size = new System.Drawing.Size(261, 24);
-            this.cbChonPhim.TabIndex = 8;
+            this.cbChonPhim.TabIndex = 1;
             this.cbChonPhim.SelectedIndexChanged += new System.EventHandler(this.cbChonPhim_SelectedIndexChanged);
             // 
             // label3
@@ -159,7 +179,7 @@
             // btcancel
             // 
             this.btcancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btcancel.Location = new System.Drawing.Point(412, 212);
+            this.btcancel.Location = new System.Drawing.Point(412, 256);
             this.btcancel.Margin = new System.Windows.Forms.Padding(4);
             this.btcancel.Name = "btcancel";
             this.btcancel.Size = new System.Drawing.Size(92, 34);
@@ -170,18 +190,18 @@
             // butinhoadon
             // 
             this.butinhoadon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butinhoadon.Location = new System.Drawing.Point(243, 212);
+            this.butinhoadon.Location = new System.Drawing.Point(243, 256);
             this.butinhoadon.Margin = new System.Windows.Forms.Padding(4);
             this.butinhoadon.Name = "butinhoadon";
             this.butinhoadon.Size = new System.Drawing.Size(112, 34);
-            this.butinhoadon.TabIndex = 4;
+            this.butinhoadon.TabIndex = 5;
             this.butinhoadon.Text = "In hóa đơn";
             this.butinhoadon.UseVisualStyleBackColor = true;
             // 
             // btnChonGhe
             // 
             this.btnChonGhe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChonGhe.Location = new System.Drawing.Point(73, 212);
+            this.btnChonGhe.Location = new System.Drawing.Point(73, 256);
             this.btnChonGhe.Margin = new System.Windows.Forms.Padding(4);
             this.btnChonGhe.Name = "btnChonGhe";
             this.btnChonGhe.Size = new System.Drawing.Size(92, 34);
@@ -189,6 +209,26 @@
             this.btnChonGhe.Text = "Chọn ghế";
             this.btnChonGhe.UseVisualStyleBackColor = true;
             this.btnChonGhe.Click += new System.EventHandler(this.btnChonGhe_Click);
+            // 
+            // txtSoGheTrong
+            // 
+            this.txtSoGheTrong.Enabled = false;
+            this.txtSoGheTrong.Location = new System.Drawing.Point(243, 206);
+            this.txtSoGheTrong.Name = "txtSoGheTrong";
+            this.txtSoGheTrong.ReadOnly = true;
+            this.txtSoGheTrong.Size = new System.Drawing.Size(261, 22);
+            this.txtSoGheTrong.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(69, 208);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(104, 20);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Số ghế trống";
             // 
             // DatVe
             // 
@@ -202,6 +242,7 @@
             this.Text = "DatVe";
             this.Load += new System.EventHandler(this.DatVe_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -223,5 +264,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtMoTa;
         private System.Windows.Forms.TextBox txtTenPhong;
+        private System.Windows.Forms.Label lbHi;
+        private System.Windows.Forms.TextBox txtSoGheTrong;
+        private System.Windows.Forms.Label label5;
     }
 }

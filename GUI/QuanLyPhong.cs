@@ -20,6 +20,7 @@ namespace GUI
         public QuanLyPhong()
         {
             InitializeComponent();
+            lbHi.Text = $"Hi {Login.UserName}!";
             pcBLL = new PhongChieuBLL();
         }
         private void dgvPhong_RowEnter(object sender, DataGridViewCellEventArgs e)

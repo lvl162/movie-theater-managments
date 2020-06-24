@@ -17,6 +17,7 @@ namespace QuanLyRapPhim
         public QuanLyNhanVien()
         {
             InitializeComponent();
+            lbHi.Text = $"Hi {Login.UserName}!";
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {

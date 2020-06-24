@@ -8,11 +8,6 @@ using DTO;
 using Model;
 namespace DAL
 {
-    public static class CurrentUser
-    {
-        public static string Username;
-        public static string Password;
-    }
     public class LoginDAL
     {
         public string Login(LoginDTO lg)

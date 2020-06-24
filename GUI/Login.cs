@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +16,8 @@ namespace QuanLyRapPhim
     public partial class Login : Form
     {
         LoginBLL LoginBLL = new LoginBLL();
+        public static string UserName { get; set; }
+        public static string Password { get; set; }
         public Login()
         {
             InitializeComponent();
@@ -25,8 +28,8 @@ namespace QuanLyRapPhim
         {
             try
             {
-                string username = txtUser.Text;
-                string password = txtPassword.Text;
+                UserName = txtUser.Text;
+                Password = txtPassword.Text;
                 string ChucVu;
                 /*
                 QTV Hệ Thống
@@ -35,7 +38,7 @@ namespace QuanLyRapPhim
                 Quản Lý Lịch Chiếu
                 Nhân Viên Bán Vé
                 */
-                ChucVu = LoginBLL.Login(username, password);
+                ChucVu = LoginBLL.Login(UserName, Password);
                 if (ChucVu == "Khong tim thay")
                 {
                     MessageBox.Show("Sai ten dang nhap/ mat khau..");
