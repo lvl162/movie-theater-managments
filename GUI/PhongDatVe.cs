@@ -34,7 +34,7 @@ namespace QuanLyRapPhim.DanhSachPhong
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
             // Trang : con
             // Do : da dat ve

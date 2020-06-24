@@ -68,7 +68,7 @@ namespace DAL
 			}
 		}
 
-		public static bool XoaLichChieu(int malc_delete)
+		public bool XoaLichChieu(int malc_delete)
 		{
 			try
 			{
@@ -114,7 +114,7 @@ namespace DAL
 					return false;
 				}
 			}
-			catch (DbUpdateConcurrencyException ex)
+			catch (DbUpdateConcurrencyException)
 			{
 				throw new Exception("Update failed. Ai do cung dang up");
 			}

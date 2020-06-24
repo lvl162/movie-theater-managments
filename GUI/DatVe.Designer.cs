@@ -95,7 +95,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 62);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(922, 417);
+            this.panel2.Size = new System.Drawing.Size(922, 357);
             this.panel2.TabIndex = 4;
             // 
             // txtTenPhong
@@ -108,10 +108,10 @@
             // 
             // txtMoTa
             // 
-            this.txtMoTa.Location = new System.Drawing.Point(622, 8);
+            this.txtMoTa.Location = new System.Drawing.Point(576, 8);
             this.txtMoTa.Multiline = true;
             this.txtMoTa.Name = "txtMoTa";
-            this.txtMoTa.Size = new System.Drawing.Size(189, 164);
+            this.txtMoTa.Size = new System.Drawing.Size(316, 238);
             this.txtMoTa.TabIndex = 11;
             // 
             // label4
@@ -159,7 +159,7 @@
             // btcancel
             // 
             this.btcancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btcancel.Location = new System.Drawing.Point(413, 212);
+            this.btcancel.Location = new System.Drawing.Point(412, 212);
             this.btcancel.Margin = new System.Windows.Forms.Padding(4);
             this.btcancel.Name = "btcancel";
             this.btcancel.Size = new System.Drawing.Size(92, 34);
@@ -173,7 +173,7 @@
             this.butinhoadon.Location = new System.Drawing.Point(243, 212);
             this.butinhoadon.Margin = new System.Windows.Forms.Padding(4);
             this.butinhoadon.Name = "butinhoadon";
-            this.butinhoadon.Size = new System.Drawing.Size(92, 34);
+            this.butinhoadon.Size = new System.Drawing.Size(112, 34);
             this.butinhoadon.TabIndex = 4;
             this.butinhoadon.Text = "In hóa đơn";
             this.butinhoadon.UseVisualStyleBackColor = true;
@@ -194,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(922, 483);
+            this.ClientSize = new System.Drawing.Size(922, 422);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);

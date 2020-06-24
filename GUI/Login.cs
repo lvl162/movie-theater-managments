@@ -61,6 +61,7 @@ namespace QuanLyRapPhim
                 {
                     new QuanLyLichChieu().ShowDialog();
                 }
+                txtPassword.Text = "";
             }
             catch (Exception ex)
             {

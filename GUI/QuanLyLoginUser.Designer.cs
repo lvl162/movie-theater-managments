@@ -246,6 +246,7 @@
             this.RowVersion.HeaderText = "RowVersion";
             this.RowVersion.MinimumWidth = 6;
             this.RowVersion.Name = "RowVersion";
+            this.RowVersion.Visible = false;
             // 
             // QuanLyLoginUser
             // 

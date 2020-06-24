@@ -70,7 +70,7 @@
             this.txtPassword.Location = new System.Drawing.Point(159, 84);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(281, 34);
-            this.txtPassword.TabIndex = 1;
+            this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // loginButton
@@ -79,7 +79,7 @@
             this.loginButton.Location = new System.Drawing.Point(60, 190);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(156, 53);
-            this.loginButton.TabIndex = 2;
+            this.loginButton.TabIndex = 3;
             this.loginButton.Text = "Đăng nhập";
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
@@ -90,7 +90,7 @@
             this.cancelButton.Location = new System.Drawing.Point(284, 190);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(115, 53);
-            this.cancelButton.TabIndex = 2;
+            this.cancelButton.TabIndex = 4;
             this.cancelButton.Text = "Hủy";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);

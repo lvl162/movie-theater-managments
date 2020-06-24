@@ -28,8 +28,7 @@ namespace BLL
         {
             try
             {
-                if (userDAL.ThemUser(new LoginDTO() { UserName = username, Password = password, MaNhanVien = maNV })) return true;
-                return false;
+                return userDAL.ThemUser(new LoginDTO() { UserName = username, Password = password, MaNhanVien = maNV });
             }
             catch (Exception ex)
             {
@@ -41,9 +40,8 @@ namespace BLL
         {
             try
             {
-                if (userDAL.UpdateUser(new LoginDTO() { UserName = new_user, Password = new_password, MaNhanVien = new_manv, RowVersion = rowVer },old_user, old_manv))
-                    return true;
-                return false;
+                return userDAL.UpdateUser(new LoginDTO() { UserName = new_user, Password = new_password, MaNhanVien = new_manv, RowVersion = rowVer }, old_user, old_manv);
+                    
             }
             catch (Exception ex)
             {

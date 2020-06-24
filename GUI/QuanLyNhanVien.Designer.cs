@@ -380,6 +380,7 @@
             // MaNhanVien
             // 
             this.MaNhanVien.DataPropertyName = "MaNhanVien";
+            this.MaNhanVien.FillWeight = 50F;
             this.MaNhanVien.HeaderText = "Mã NV";
             this.MaNhanVien.MinimumWidth = 6;
             this.MaNhanVien.Name = "MaNhanVien";
@@ -404,6 +405,7 @@
             // Column3
             // 
             this.Column3.DataPropertyName = "GioiTinh";
+            this.Column3.FillWeight = 70F;
             this.Column3.HeaderText = "Giới tính";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
@@ -448,6 +450,7 @@
             this.RowVersion.MinimumWidth = 6;
             this.RowVersion.Name = "RowVersion";
             this.RowVersion.ReadOnly = true;
+            this.RowVersion.Visible = false;
             // 
             // QuanLyNhanVien
             // 

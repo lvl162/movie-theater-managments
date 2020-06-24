@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvDSGhe = new System.Windows.Forms.DataGridView();
-            this.MaGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTenGhe = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,6 +36,11 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.MaGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSGhe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,46 +66,6 @@
             this.dgvDSGhe.Size = new System.Drawing.Size(827, 337);
             this.dgvDSGhe.TabIndex = 0;
             this.dgvDSGhe.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSGhe_RowEnter);
-            // 
-            // MaGhe
-            // 
-            this.MaGhe.DataPropertyName = "MaGhe";
-            this.MaGhe.HeaderText = "Mã ghế";
-            this.MaGhe.MinimumWidth = 6;
-            this.MaGhe.Name = "MaGhe";
-            this.MaGhe.ReadOnly = true;
-            // 
-            // TenGhe
-            // 
-            this.TenGhe.DataPropertyName = "TenGhe";
-            this.TenGhe.HeaderText = "Tên ghế";
-            this.TenGhe.MinimumWidth = 6;
-            this.TenGhe.Name = "TenGhe";
-            this.TenGhe.ReadOnly = true;
-            // 
-            // MaPhong
-            // 
-            this.MaPhong.DataPropertyName = "MaPhong";
-            this.MaPhong.HeaderText = "Mã phòng";
-            this.MaPhong.MinimumWidth = 6;
-            this.MaPhong.Name = "MaPhong";
-            this.MaPhong.ReadOnly = true;
-            // 
-            // TenPhong
-            // 
-            this.TenPhong.DataPropertyName = "TenPhong";
-            this.TenPhong.HeaderText = "Tên phòng";
-            this.TenPhong.MinimumWidth = 6;
-            this.TenPhong.Name = "TenPhong";
-            this.TenPhong.ReadOnly = true;
-            // 
-            // RowVersion
-            // 
-            this.RowVersion.DataPropertyName = "RowVersion";
-            this.RowVersion.HeaderText = "RowVersion";
-            this.RowVersion.MinimumWidth = 6;
-            this.RowVersion.Name = "RowVersion";
-            this.RowVersion.ReadOnly = true;
             // 
             // label1
             // 
@@ -169,6 +129,47 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // MaGhe
+            // 
+            this.MaGhe.DataPropertyName = "MaGhe";
+            this.MaGhe.HeaderText = "Mã ghế";
+            this.MaGhe.MinimumWidth = 6;
+            this.MaGhe.Name = "MaGhe";
+            this.MaGhe.ReadOnly = true;
+            // 
+            // TenGhe
+            // 
+            this.TenGhe.DataPropertyName = "TenGhe";
+            this.TenGhe.HeaderText = "Tên ghế";
+            this.TenGhe.MinimumWidth = 6;
+            this.TenGhe.Name = "TenGhe";
+            this.TenGhe.ReadOnly = true;
+            // 
+            // MaPhong
+            // 
+            this.MaPhong.DataPropertyName = "MaPhong";
+            this.MaPhong.HeaderText = "Mã phòng";
+            this.MaPhong.MinimumWidth = 6;
+            this.MaPhong.Name = "MaPhong";
+            this.MaPhong.ReadOnly = true;
+            // 
+            // TenPhong
+            // 
+            this.TenPhong.DataPropertyName = "TenPhong";
+            this.TenPhong.HeaderText = "Tên phòng";
+            this.TenPhong.MinimumWidth = 6;
+            this.TenPhong.Name = "TenPhong";
+            this.TenPhong.ReadOnly = true;
+            // 
+            // RowVersion
+            // 
+            this.RowVersion.DataPropertyName = "RowVersion";
+            this.RowVersion.HeaderText = "RowVersion";
+            this.RowVersion.MinimumWidth = 6;
+            this.RowVersion.Name = "RowVersion";
+            this.RowVersion.ReadOnly = true;
+            this.RowVersion.Visible = false;
+            // 
             // QuanLyGhe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -194,11 +195,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvDSGhe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaGhe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenGhe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenPhong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RowVersion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTenGhe;
         private System.Windows.Forms.Label label3;
@@ -206,5 +202,10 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaGhe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenGhe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RowVersion;
     }
 }

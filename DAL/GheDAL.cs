@@ -2,6 +2,7 @@
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,6 +72,10 @@ namespace DAL
                     }
                     return false;
                 }
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                throw new Exception("Update failed. Ai do cung dang update.");
             }
             catch (Exception)
             {

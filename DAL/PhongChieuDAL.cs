@@ -87,9 +87,9 @@ namespace DAL
                     return false;
                 }
             }
-            catch (DbUpdateConcurrencyException ex)
+            catch (DbUpdateConcurrencyException)
             {
-                throw new Exception("Update failed. Ai do cung dang up");
+                throw new Exception("Update failed. Ai do cung dang update.");
             }
             catch (Exception ex)
             {

@@ -40,9 +40,7 @@ namespace BLL
         {
             try
             {
-                PhimDTO p = new PhimDTO() { MaPhim = ma, TenPhim = ten, TheLoai = theloai, NgayKhoiChieu = khoichieu, MoTa = mota };
-                if (phimDAL.XoaPhim(p)) return true;
-                return false;
+                return phimDAL.XoaPhim(new PhimDTO() { MaPhim = ma, TenPhim = ten, TheLoai = theloai, NgayKhoiChieu = khoichieu, MoTa = mota });
             }
             catch (Exception ex)
             {
