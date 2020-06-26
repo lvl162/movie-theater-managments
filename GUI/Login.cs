@@ -45,23 +45,11 @@ namespace QuanLyRapPhim
                 }
                 if (ChucVu == "QTV Hệ Thống")
                 {
-                    new QuanLyNhanVien().ShowDialog();
-                }
-                if (ChucVu == "Quản Lý Phim")
-                {
-                    new QuanLyPhim().ShowDialog();
-                }
-                if (ChucVu == "Quản Lý Phòng Chiếu")
-                {
-                    new QuanLyPhong().ShowDialog();
+                    new MenuForm().ShowDialog();
                 }
                 if (ChucVu == "Nhân Viên Bán Vé")
                 {
-                    new DatVe().ShowDialog();
-                }
-                if (ChucVu == "Quản Lý Lịch Chiếu")
-                {
-                    new QuanLyLichChieu().ShowDialog();
+                    new LichChieu().ShowDialog();
                 }
                 txtPassword.Text = "";
             }

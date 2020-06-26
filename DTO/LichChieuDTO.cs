@@ -22,5 +22,13 @@ namespace DTO
                 return "TG: " + NgayGioChieu.ToString() + " Phong: " + TenPhong;
             }
         }
+        public string NgayChieu
+        {
+            get { return NgayGioChieu.Date.ToString("dd/MM/yyyy"); }
+        }
+        public string GioChieu
+        {
+            get { return NgayGioChieu.ToString("hh:mm tt"); }
+        }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbHi = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -63,7 +64,6 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbHi = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -80,6 +80,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1377, 65);
             this.panel1.TabIndex = 0;
+            // 
+            // lbHi
+            // 
+            this.lbHi.AutoSize = true;
+            this.lbHi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHi.Location = new System.Drawing.Point(1227, 18);
+            this.lbHi.Name = "lbHi";
+            this.lbHi.Size = new System.Drawing.Size(0, 20);
+            this.lbHi.TabIndex = 6;
             // 
             // label1
             // 
@@ -215,9 +224,6 @@
             this.cbChucVu.FormattingEnabled = true;
             this.cbChucVu.Items.AddRange(new object[] {
             "QTV Hệ Thống",
-            "Quản Lý Phòng Chiếu",
-            "Quản Lý Phim",
-            "Quản Lý Lịch Chiếu",
             "Nhân Viên Bán Vé"});
             this.cbChucVu.Location = new System.Drawing.Point(1060, 114);
             this.cbChucVu.Margin = new System.Windows.Forms.Padding(4);
@@ -453,16 +459,6 @@
             this.RowVersion.Name = "RowVersion";
             this.RowVersion.ReadOnly = true;
             this.RowVersion.Visible = false;
-            // 
-            // lbHi
-            // 
-            this.lbHi.AutoSize = true;
-            this.lbHi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHi.Location = new System.Drawing.Point(1227, 18);
-            this.lbHi.Name = "lbHi";
-            this.lbHi.Size = new System.Drawing.Size(53, 20);
-            this.lbHi.TabIndex = 6;
-            this.lbHi.Text = $"Hi {Login.UserName}!";
             // 
             // QuanLyNhanVien
             // 

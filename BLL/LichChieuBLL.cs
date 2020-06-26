@@ -87,11 +87,36 @@ namespace BLL
 			}
 		}
 
+		public int getSoGheTrong(int maPhong, int maLichChieu)
+		{
+			try
+			{
+				return lichChieuDAL.getSoGheTrong(maPhong, maLichChieu);
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+		}
+
 		public bool XoaLichChieu(int malc_delete)
 		{
 			try
 			{
 				return lichChieuDAL.XoaLichChieu(malc_delete);
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+		}
+
+		public List<LichChieuDTO> Search(string _text)
+		{
+			try
+			{
+				return lichChieuDAL.Search(_text);
 			}
 			catch (Exception)
 			{

@@ -5,13 +5,20 @@ using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace DAL
 {
     public class LichChieuDAL
     {
-        public List<LichChieuDTO> DanhSachLichChieu()
+		public static string convertToUnSign(string s)
+		{
+			Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
+			string temp = s.Normalize(NormalizationForm.FormD);
+			return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
+		}
+		public List<LichChieuDTO> DanhSachLichChieu()
         {
 			try
 			{
@@ -82,6 +89,41 @@ namespace DAL
 						return true;
 					}
 					return false;
+				}
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+		}
+
+		public List<LichChieuDTO> Search(string text)
+		{
+			try
+			{
+				using (var context = new QLRPContext())
+				{
+					List<LichChieu> lichChieus = context.LichChieus.Select(p => p).ToList();
+					List<LichChieuDTO> lichChieuDTOs = new List<LichChieuDTO>();
+					foreach (LichChieu lc in lichChieus)
+					{
+						string tenPhim = convertToUnSign(lc.Phim.TenPhim).ToLower();
+						if (lc.Phim.TenPhim.Contains(text) || tenPhim.Contains(text.ToLower()))
+						{
+							var lcDTO = new LichChieuDTO
+							{
+								MaLichChieu = lc.MaLichChieu,
+								MaPhim = lc.MaPhim,
+								MaPhong = lc.MaPhong,
+								NgayGioChieu = lc.NgayGioChieu,
+								RowVersion = BitConverter.ToUInt64(lc.RowVersion, 0).ToString(),
+								TenPhim = lc.Phim.TenPhim,
+								TenPhong = lc.PhongChieu.TenPhong
+							};
+							lichChieuDTOs.Add(lcDTO);
+						}
+					}
+					return lichChieuDTOs;
 				}
 			}
 			catch (Exception)
@@ -168,5 +210,21 @@ namespace DAL
 				throw;
 			}
 		}
+		public int getSoGheTrong(int maPhong, int maLC)
+        {
+            try
+            {
+                using (var context = new QLRPContext())
+                {
+                    int num_all_seats = context.Ghes.Count(p => p.MaPhong == maPhong);
+                    int num_all_booked_seats = context.DatVes.Count(p => p.MaLichChieu == maLC);
+                    return num_all_seats - num_all_booked_seats;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 	}
 }

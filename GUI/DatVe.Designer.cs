@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtSoGheTrong = new System.Windows.Forms.TextBox();
             this.txtTenPhong = new System.Windows.Forms.TextBox();
             this.txtMoTa = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,9 +41,7 @@
             this.cbChonPhim = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btcancel = new System.Windows.Forms.Button();
-            this.butinhoadon = new System.Windows.Forms.Button();
             this.btnChonGhe = new System.Windows.Forms.Button();
-            this.txtSoGheTrong = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -103,7 +102,6 @@
             this.panel2.Controls.Add(this.cbChonPhim);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.btcancel);
-            this.panel2.Controls.Add(this.butinhoadon);
             this.panel2.Controls.Add(this.btnChonGhe);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label2);
@@ -113,6 +111,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(922, 357);
             this.panel2.TabIndex = 4;
+            // 
+            // txtSoGheTrong
+            // 
+            this.txtSoGheTrong.Enabled = false;
+            this.txtSoGheTrong.Location = new System.Drawing.Point(243, 206);
+            this.txtSoGheTrong.Name = "txtSoGheTrong";
+            this.txtSoGheTrong.ReadOnly = true;
+            this.txtSoGheTrong.Size = new System.Drawing.Size(261, 22);
+            this.txtSoGheTrong.TabIndex = 11;
             // 
             // txtTenPhong
             // 
@@ -187,37 +194,17 @@
             this.btcancel.Text = "Cancel";
             this.btcancel.UseVisualStyleBackColor = true;
             // 
-            // butinhoadon
-            // 
-            this.butinhoadon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butinhoadon.Location = new System.Drawing.Point(243, 256);
-            this.butinhoadon.Margin = new System.Windows.Forms.Padding(4);
-            this.butinhoadon.Name = "butinhoadon";
-            this.butinhoadon.Size = new System.Drawing.Size(112, 34);
-            this.butinhoadon.TabIndex = 5;
-            this.butinhoadon.Text = "In hóa đơn";
-            this.butinhoadon.UseVisualStyleBackColor = true;
-            // 
             // btnChonGhe
             // 
             this.btnChonGhe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChonGhe.Location = new System.Drawing.Point(73, 256);
             this.btnChonGhe.Margin = new System.Windows.Forms.Padding(4);
             this.btnChonGhe.Name = "btnChonGhe";
-            this.btnChonGhe.Size = new System.Drawing.Size(92, 34);
+            this.btnChonGhe.Size = new System.Drawing.Size(110, 34);
             this.btnChonGhe.TabIndex = 4;
             this.btnChonGhe.Text = "Chọn ghế";
             this.btnChonGhe.UseVisualStyleBackColor = true;
             this.btnChonGhe.Click += new System.EventHandler(this.btnChonGhe_Click);
-            // 
-            // txtSoGheTrong
-            // 
-            this.txtSoGheTrong.Enabled = false;
-            this.txtSoGheTrong.Location = new System.Drawing.Point(243, 206);
-            this.txtSoGheTrong.Name = "txtSoGheTrong";
-            this.txtSoGheTrong.ReadOnly = true;
-            this.txtSoGheTrong.Size = new System.Drawing.Size(261, 22);
-            this.txtSoGheTrong.TabIndex = 11;
             // 
             // label5
             // 
@@ -256,7 +243,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btcancel;
-        private System.Windows.Forms.Button butinhoadon;
         private System.Windows.Forms.Button btnChonGhe;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbChonCaChieu;

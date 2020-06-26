@@ -80,3 +80,5 @@ C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.QuanLyGhe.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.QuanLyLichChieu.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.DanhSachPhong.PhongDatVe.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.HoaDon.resources
+C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.MenuForm.resources
+C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.LichChieu.resources
