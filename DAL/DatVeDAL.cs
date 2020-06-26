@@ -144,8 +144,8 @@ namespace DAL
                             ThoiGianDatVe = DateTime.Now,
                         };
                         context.DatVes.Add(datVe);
-                        context.SaveChanges();
                     }
+                    context.SaveChanges();
                     return true;
                 }
             }

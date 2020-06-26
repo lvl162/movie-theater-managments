@@ -97,7 +97,9 @@ namespace QuanLyRapPhim
             maLC = lc.MaLichChieu;
             int maPhong = lc.MaPhong;
             string tenphong = lc.TenPhong;
-            new PhongDatVe(lc).ShowDialog();
+            PhongDatVe phongDatVe = new PhongDatVe(lc);
+            phongDatVe.Text = "Phòng " + txtTenPhong.Text;
+            phongDatVe.ShowDialog();
         }
     }
 }

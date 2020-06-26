@@ -72,6 +72,7 @@ namespace QuanLyRapPhim.DanhSachPhong
             if (b.BackColor == Color.Green)
             {
                 b.BackColor = Color.White;
+                gheDaChon.Remove(ghes[b.Text]);
                 return;
             }
             b.BackColor = Color.Green;
@@ -89,7 +90,7 @@ namespace QuanLyRapPhim.DanhSachPhong
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Đã có lỗi xảy ra trong quá trình đặt ghế hoặc ghế đã được đặt chỗ.");
             }
         }
 
