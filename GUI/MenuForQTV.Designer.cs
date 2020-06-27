@@ -96,7 +96,7 @@
             this.btnQLNhanVien.UseVisualStyleBackColor = true;
             this.btnQLNhanVien.Click += new System.EventHandler(this.btnQLNhanVien_Click);
             // 
-            // MenuForm
+            // MenuForQTV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -107,7 +107,8 @@
             this.Controls.Add(this.btnQLLichChieu);
             this.Controls.Add(this.btnQLPhong);
             this.Controls.Add(this.btnDatVe);
-            this.Name = "MenuForm";
+            this.Name = "MenuForQTV";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MenuForm";
             this.ResumeLayout(false);
 

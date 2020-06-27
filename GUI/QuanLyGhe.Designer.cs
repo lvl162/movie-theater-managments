@@ -207,6 +207,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvDSGhe);
             this.Name = "QuanLyGhe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "QuanLyGhe";
             this.Load += new System.EventHandler(this.QuanLyGhe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSGhe)).EndInit();

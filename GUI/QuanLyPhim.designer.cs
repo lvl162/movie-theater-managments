@@ -36,19 +36,19 @@
             this.txtTenPhim = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvPhim = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pbMoTa = new System.Windows.Forms.PictureBox();
-            this.lbHi = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.MaPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayKhoiChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbHi = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.pbMoTa = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhim)).BeginInit();
             this.panel1.SuspendLayout();
@@ -66,9 +66,9 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtTenPhim);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Location = new System.Drawing.Point(12, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(432, 166);
+            this.groupBox1.Size = new System.Drawing.Size(420, 166);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phim";
@@ -154,76 +154,6 @@
             this.dgvPhim.TabIndex = 1;
             this.dgvPhim.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhim_RowEnter);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lbHi);
-            this.panel1.Controls.Add(this.btnDelete);
-            this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Controls.Add(this.btnCancel);
-            this.panel1.Controls.Add(this.btnUpdate);
-            this.panel1.Location = new System.Drawing.Point(438, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(574, 166);
-            this.panel1.TabIndex = 2;
-            // 
-            // pbMoTa
-            // 
-            this.pbMoTa.Location = new System.Drawing.Point(763, 172);
-            this.pbMoTa.Name = "pbMoTa";
-            this.pbMoTa.Size = new System.Drawing.Size(228, 332);
-            this.pbMoTa.TabIndex = 4;
-            this.pbMoTa.TabStop = false;
-            // 
-            // lbHi
-            // 
-            this.lbHi.AutoSize = true;
-            this.lbHi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHi.Location = new System.Drawing.Point(423, 24);
-            this.lbHi.Name = "lbHi";
-            this.lbHi.Size = new System.Drawing.Size(53, 20);
-            this.lbHi.TabIndex = 6;
-            this.lbHi.Text = "label1";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(27, 91);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(80, 33);
-            this.btnDelete.TabIndex = 0;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(27, 24);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(80, 33);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(131, 91);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(80, 33);
-            this.btnCancel.TabIndex = 0;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(131, 24);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(80, 33);
-            this.btnUpdate.TabIndex = 0;
-            this.btnUpdate.Text = "Sửa";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
             // MaPhim
             // 
             this.MaPhim.DataPropertyName = "MaPhim";
@@ -277,6 +207,76 @@
             this.RowVersion.ReadOnly = true;
             this.RowVersion.Visible = false;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lbHi);
+            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Controls.Add(this.btnCancel);
+            this.panel1.Controls.Add(this.btnUpdate);
+            this.panel1.Location = new System.Drawing.Point(438, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(562, 166);
+            this.panel1.TabIndex = 2;
+            // 
+            // lbHi
+            // 
+            this.lbHi.AutoSize = true;
+            this.lbHi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHi.Location = new System.Drawing.Point(423, 24);
+            this.lbHi.Name = "lbHi";
+            this.lbHi.Size = new System.Drawing.Size(53, 20);
+            this.lbHi.TabIndex = 6;
+            this.lbHi.Text = "label1";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(27, 91);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(80, 33);
+            this.btnDelete.TabIndex = 0;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(27, 24);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(80, 33);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(131, 91);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(80, 33);
+            this.btnCancel.TabIndex = 0;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(131, 24);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(80, 33);
+            this.btnUpdate.TabIndex = 0;
+            this.btnUpdate.Text = "Sửa";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // pbMoTa
+            // 
+            this.pbMoTa.Location = new System.Drawing.Point(763, 172);
+            this.pbMoTa.Name = "pbMoTa";
+            this.pbMoTa.Size = new System.Drawing.Size(237, 332);
+            this.pbMoTa.TabIndex = 4;
+            this.pbMoTa.TabStop = false;
+            // 
             // QuanLyPhim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -288,6 +288,7 @@
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "QuanLyPhim";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "QuanLyPhim";
             this.Load += new System.EventHandler(this.QuanLyPhim_Load);
             this.groupBox1.ResumeLayout(false);

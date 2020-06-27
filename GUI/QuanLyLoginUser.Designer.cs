@@ -266,6 +266,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.panel2);
             this.Name = "QuanLyLoginUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "QuanLyLoginUser";
             this.Load += new System.EventHandler(this.QuanLyLoginUser_Load);
             this.panel2.ResumeLayout(false);

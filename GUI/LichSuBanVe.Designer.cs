@@ -159,6 +159,7 @@
             this.Controls.Add(this.SearchBy);
             this.Controls.Add(this.dgvLichSuBanVe);
             this.Name = "LichSuBanVe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "LichSuBanVe";
             this.Load += new System.EventHandler(this.LichSuBanVe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSuBanVe)).EndInit();

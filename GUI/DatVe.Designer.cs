@@ -210,6 +210,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DatVe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "DatVe";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

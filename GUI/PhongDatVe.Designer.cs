@@ -117,7 +117,8 @@
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.GhesPanel);
             this.Name = "PhongDatVe";
-            this.Text = "Phong1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Phong";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

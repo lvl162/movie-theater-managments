@@ -271,6 +271,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvPhong);
             this.Name = "QuanLyPhong";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Quản Lý Phòng";
             this.Load += new System.EventHandler(this.QuanLyPhong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).EndInit();

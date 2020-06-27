@@ -40,13 +40,13 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.gbLichChieuInfo = new System.Windows.Forms.GroupBox();
+            this.lbHi = new System.Windows.Forms.Label();
             this.cbPhongs = new System.Windows.Forms.ComboBox();
             this.cbPhims = new System.Windows.Forms.ComboBox();
             this.lichChieuPicker = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbHi = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSLichChieu)).BeginInit();
             this.gbLichChieuInfo.SuspendLayout();
             this.SuspendLayout();
@@ -182,6 +182,16 @@
             this.gbLichChieuInfo.TabStop = false;
             this.gbLichChieuInfo.Text = "Thông tin lịch chiếu";
             // 
+            // lbHi
+            // 
+            this.lbHi.AutoSize = true;
+            this.lbHi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHi.Location = new System.Drawing.Point(864, 23);
+            this.lbHi.Name = "lbHi";
+            this.lbHi.Size = new System.Drawing.Size(53, 20);
+            this.lbHi.TabIndex = 13;
+            this.lbHi.Text = "label4";
+            // 
             // cbPhongs
             // 
             this.cbPhongs.FormattingEnabled = true;
@@ -238,16 +248,6 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Chọn phim ";
             // 
-            // lbHi
-            // 
-            this.lbHi.AutoSize = true;
-            this.lbHi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHi.Location = new System.Drawing.Point(864, 23);
-            this.lbHi.Name = "lbHi";
-            this.lbHi.Size = new System.Drawing.Size(53, 20);
-            this.lbHi.TabIndex = 13;
-            this.lbHi.Text = "label4";
-            // 
             // QuanLyLichChieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -259,6 +259,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvDSLichChieu);
             this.Name = "QuanLyLichChieu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "QuanLyLichChieu";
             this.Load += new System.EventHandler(this.QuanLyLichChieu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSLichChieu)).EndInit();
