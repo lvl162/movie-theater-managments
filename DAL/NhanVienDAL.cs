@@ -41,13 +41,13 @@ namespace DAL
             }
         }
 
-        public bool XoaNhanVien(NhanVienDTO nv)
+        public bool XoaNhanVien(int manv)
         {
             try
             {
                 using (QLRPContext context = new QLRPContext())
                 {
-                    NhanVien nv_found = context.NhanViens.Single(p => p.MaNhanVien == nv.MaNhanVien);
+                    NhanVien nv_found = context.NhanViens.Single(p => p.MaNhanVien == manv);
                     if (nv_found != null)
                     {
                         context.NhanViens.Remove(nv_found);

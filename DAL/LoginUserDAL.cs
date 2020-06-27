@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
@@ -59,6 +60,30 @@ namespace DAL
 
             }
         }
+
+        public bool DeleteUser(string username, int manv)
+        {
+            try
+            {
+                using (var context = new QLRPContext())
+                {
+                    var login = context.Logins.Single(l => l.UserName == username && l.MaNhanVien == manv);
+                    if (login != null)
+                    {
+                        context.Logins.Remove(login);
+                        context.SaveChanges();
+                        return true;
+                    }
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public bool UpdateUser(LoginDTO lg, string old_user, int old_manv)
         {
             try

@@ -29,7 +29,8 @@ namespace DAL
 							NgayGioChieu = lc.NgayGioChieu,
 							RowVersion = BitConverter.ToUInt64(lc.RowVersion, 0).ToString(),
 							TenPhim = lc.Phim.TenPhim,
-							TenPhong = lc.PhongChieu.TenPhong
+							TenPhong = lc.PhongChieu.TenPhong,
+							PhimMoTa = lc.Phim.MoTa
 						};
 						lichChieuDTOs.Add(lcDTO);
 					}

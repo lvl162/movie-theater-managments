@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,10 +16,12 @@ namespace QuanLyRapPhim
     public partial class NVBVForm : Form
     {
         int RowEnter = 0;
+        static string workingDirectory = Environment.CurrentDirectory;
+        static string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName + @"\PhimPosters\";
         public NVBVForm()
         {
             InitializeComponent();
-            
+            pbPoster.SizeMode = PictureBoxSizeMode.StretchImage;
         }
         LichChieuBLL lichChieuBLL = new LichChieuBLL();
 
@@ -54,6 +57,12 @@ namespace QuanLyRapPhim
                 int maLichChieu = int.Parse(dgvLichChieu.Rows[RowEnter].Cells[4].Value.ToString());
                 int maPhong = int.Parse(dgvLichChieu.Rows[RowEnter].Cells[5].Value.ToString());
                 txtGheTrong.Text = lichChieuBLL.getSoGheTrong(maPhong, maLichChieu) + "";
+                string picPath = dgvLichChieu.Rows[RowEnter].Cells[6].Value.ToString().Trim();
+                pbPoster.Image = Image.FromFile(projectDirectory + picPath);
+            }
+            catch (FileNotFoundException)
+            {
+                pbPoster.Image = Image.FromFile(projectDirectory + "notfound.jpg");
             }
             catch (Exception ex)
             {

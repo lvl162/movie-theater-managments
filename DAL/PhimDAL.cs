@@ -62,13 +62,13 @@ namespace DAL
                 throw e;
             }
         }
-        public bool XoaPhim(PhimDTO p)
+        public bool XoaPhim(int ma)
         {
             try
             {
                 using (QLRPContext context = new QLRPContext())
                 {
-                    Phim pc = context.Phims.Single(px => px.MaPhim == p.MaPhim);
+                    Phim pc = context.Phims.Single(px => px.MaPhim == ma);
                     if (pc != null)
                     {
                         context.Phims.Remove(pc);

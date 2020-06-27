@@ -27,11 +27,11 @@ namespace BLL
 
         }
 
-        public bool XoaNhanVien(int _maNV, string _HoTen, DateTime _NgaySinh, string _GioiTinh, string _SoCMND, string _SDT, string _ChucVu, string _DiaChi)
+        public bool XoaNhanVien(int _maNV)
         {
             try
             {
-                return quanLyNhanVienDAL.XoaNhanVien(new NhanVienDTO() { MaNhanVien = _maNV, HoVaTen = _HoTen, NgaySinh = _NgaySinh, ChucVu = _ChucVu, GioiTinh = _GioiTinh, DiaChi = _DiaChi, SDT = _SDT, SoCMND = _SoCMND });
+                return quanLyNhanVienDAL.XoaNhanVien(_maNV);
             }
             catch (Exception ex)
             {

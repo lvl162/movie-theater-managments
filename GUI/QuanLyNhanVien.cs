@@ -80,17 +80,8 @@ namespace QuanLyRapPhim
                 try
                 {
                     int maNV = int.Parse(dgvNhanVien.Rows[RowEnter].Cells[0].Value.ToString());
-                    string HoTen, SDT, SoCMND, GioiTinh, DiaChi, ChucVu;
-                    DateTime NgaySinh;
-                    HoTen = txtHoTen.Text;
-                    SDT = txtSDT.Text;
-                    SoCMND = txtCMND.Text;
-                    GioiTinh = cbNamNu.SelectedItem.ToString();
-                    ChucVu = cbChucVu.SelectedItem.ToString();
-                    DiaChi = txtDiaChi.Text;
-                    NgaySinh = timePickerNgaySinh.Value.Date;
 
-                    if (quanLyNhanVienBLL.XoaNhanVien(maNV, HoTen, NgaySinh, GioiTinh, SoCMND, SDT, ChucVu, DiaChi))
+                    if (quanLyNhanVienBLL.XoaNhanVien(maNV))
                     {
                         MessageBox.Show("Xóa thành công!");
                     }

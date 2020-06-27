@@ -98,5 +98,31 @@ namespace QuanLyRapPhim
                 QuanLyLoginUser_Load(sender, e);
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc muốn sửa?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                try
+                {
+                    string username = txtUserName.Text;
+                    int manv = int.Parse(dgvLoginUser.Rows[RowEnter].Cells[2].Value.ToString());
+                    if (userBLL.DeleteUser(username, manv))
+                    {
+                        MessageBox.Show("Update thành công!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                QuanLyLoginUser_Load(sender, e);
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

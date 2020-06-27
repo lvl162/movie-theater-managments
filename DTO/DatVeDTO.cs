@@ -18,5 +18,6 @@ namespace DTO
         public string TenGhe { get; set; }
         public string NguoiBan { get; set; }
         public DateTime ThoiGianBan { get; set; }
+        public string PhimMoTa { get; set; }
     }
 }

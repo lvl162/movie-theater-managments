@@ -37,7 +37,6 @@
             this.ChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -107,6 +106,7 @@
             this.Passsword.MinimumWidth = 6;
             this.Passsword.Name = "Passsword";
             this.Passsword.ReadOnly = true;
+            this.Passsword.Visible = false;
             // 
             // MaNV
             // 
@@ -142,21 +142,13 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(656, 157);
+            this.btnExit.Location = new System.Drawing.Point(515, 157);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 26);
             this.btnExit.TabIndex = 11;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(515, 157);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 26);
-            this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnDelete
             // 
@@ -166,6 +158,7 @@
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -196,7 +189,7 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.txtUserName);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(165, 17);
+            this.panel3.Location = new System.Drawing.Point(110, 17);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(549, 111);
             this.panel3.TabIndex = 12;
@@ -223,6 +216,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(100, 22);
             this.txtPassword.TabIndex = 14;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // label4
             // 
@@ -253,7 +247,7 @@
             // 
             this.lbHi.AutoSize = true;
             this.lbHi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHi.Location = new System.Drawing.Point(754, 17);
+            this.lbHi.Location = new System.Drawing.Point(702, 17);
             this.lbHi.Name = "lbHi";
             this.lbHi.Size = new System.Drawing.Size(53, 20);
             this.lbHi.TabIndex = 13;
@@ -267,7 +261,6 @@
             this.Controls.Add(this.lbHi);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
@@ -288,7 +281,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvLoginUser;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAdd;
@@ -299,12 +291,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbHi;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn Passsword;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoVaTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChucVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn RowVersion;
-        private System.Windows.Forms.Label lbHi;
     }
 }

@@ -49,5 +49,17 @@ namespace BLL
                 throw ex;
             }
         }
+
+        public bool DeleteUser(string username, int manv)
+        {
+            try
+            {
+                return userDAL.DeleteUser(username, manv);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

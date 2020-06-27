@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,12 +15,15 @@ namespace QuanLyRapPhim
     {
         PhimBLL phimBLL;
         int RowEnter = 0;
+        static string workingDirectory = Environment.CurrentDirectory;
+        static string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName + @"\PhimPosters\";
         public QuanLyPhim()
         {
             InitializeComponent();
             lbHi.Text = $"Hi {Login.UserName}!";
             phimBLL = new PhimBLL();
             dgvPhim.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
+            pbMoTa.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void QuanLyPhim_Load(object sender, EventArgs e)
@@ -45,7 +49,7 @@ namespace QuanLyRapPhim
                     DateTime khoiChieu;
                     tenPhim = txtTenPhim.Text;
                     theLoai = txtTheLoai.Text;
-                    moTa = txtMoTa.Text;
+                    moTa = txtTenPhim.Text +".jpg";
                     khoiChieu = timePickerKhoiChieu.Value.Date;
                     if (phimBLL.ThemPhim(tenPhim, theLoai, khoiChieu, moTa))
                     {
@@ -71,7 +75,7 @@ namespace QuanLyRapPhim
                     DateTime khoiChieu;
                     tenPhim = txtTenPhim.Text;
                     theLoai = txtTheLoai.Text;
-                    moTa = txtMoTa.Text;
+                    moTa = txtTenPhim.Text + ".jpg";
                     khoiChieu = timePickerKhoiChieu.Value.Date;
                     string rowVer = dgvPhim.Rows[RowEnter].Cells[5].Value.ToString();
                     if (phimBLL.UpdatePhim(maPhim, tenPhim, theLoai, khoiChieu, moTa, rowVer))
@@ -91,14 +95,9 @@ namespace QuanLyRapPhim
             {
                 try
                 {
-                    string tenPhim, theLoai, moTa;
                     int maPhim = int.Parse(dgvPhim.Rows[RowEnter].Cells[0].Value.ToString());
-                    DateTime khoiChieu;
-                    tenPhim = txtTenPhim.Text;
-                    theLoai = txtTheLoai.Text;
-                    moTa = txtMoTa.Text;
-                    khoiChieu = timePickerKhoiChieu.Value.Date;
-                    if (phimBLL.XoaPhim(maPhim, tenPhim, theLoai, khoiChieu, moTa))
+                    
+                    if (phimBLL.XoaPhim(maPhim))
                     {
                         MessageBox.Show("Xóa thành công!");
                     }
@@ -118,7 +117,6 @@ namespace QuanLyRapPhim
                 txtTenPhim.Text = dgvPhim.Rows[RowEnter].Cells[1].Value.ToString();
                 txtTheLoai.Text = dgvPhim.Rows[RowEnter].Cells[2].Value.ToString();
                 timePickerKhoiChieu.Value = DateTime.Parse(dgvPhim.Rows[RowEnter].Cells[3].Value.ToString());
-                txtMoTa.Text = dgvPhim.Rows[RowEnter].Cells[4].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -134,7 +132,12 @@ namespace QuanLyRapPhim
                 txtTenPhim.Text = dgvPhim.Rows[RowEnter].Cells[1].Value.ToString();
                 txtTheLoai.Text = dgvPhim.Rows[RowEnter].Cells[2].Value.ToString();
                 timePickerKhoiChieu.Value = DateTime.Parse(dgvPhim.Rows[RowEnter].Cells[3].Value.ToString());
-                txtMoTa.Text = dgvPhim.Rows[RowEnter].Cells[4].Value.ToString();
+                string picPath = dgvPhim.Rows[RowEnter].Cells[4].Value.ToString();
+                pbMoTa.Image = Image.FromFile(projectDirectory + picPath);
+            }
+            catch(FileNotFoundException)
+            {
+                pbMoTa.Image = Image.FromFile(projectDirectory + "notfound.jpg");
             }
             catch (Exception ex)
             {
