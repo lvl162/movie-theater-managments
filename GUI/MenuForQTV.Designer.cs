@@ -1,6 +1,6 @@
 ﻿namespace QuanLyRapPhim
 {
-    partial class MenuForm
+    partial class MenuForQTV
     {
         /// <summary>
         /// Required designer variable.

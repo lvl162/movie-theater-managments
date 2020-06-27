@@ -81,16 +81,19 @@ namespace QuanLyRapPhim.DanhSachPhong
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("Bạn có chắc muốn đặt vé?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                if (datVeBLL.DatVes(gheDaChon, lichChieu.MaLichChieu))
+                try
                 {
-                    MessageBox.Show("Thanh cong!");
+                    if (datVeBLL.DatVes(gheDaChon, lichChieu.MaLichChieu))
+                    {
+                        MessageBox.Show("Thanh cong!");
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Đã có lỗi xảy ra trong quá trình đặt ghế hoặc ghế đã được đặt chỗ.");
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã có lỗi xảy ra trong quá trình đặt ghế hoặc ghế đã được đặt chỗ.");
+                }
             }
         }
 

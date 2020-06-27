@@ -11,16 +11,16 @@ using System.Windows.Forms;
 
 namespace QuanLyRapPhim
 {
-    public partial class MenuForm : Form
+    public partial class MenuForQTV : Form
     {
-        public MenuForm()
+        public MenuForQTV()
         {
             InitializeComponent();
         }
 
         private void btnDatVe_Click(object sender, EventArgs e)
         {
-            new DatVe().ShowDialog();
+            new NVBVForm().ShowDialog();
         }
 
         private void btnQLPhong_Click(object sender, EventArgs e)

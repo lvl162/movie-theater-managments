@@ -58,72 +58,83 @@ namespace GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("Bạn có chắc muốn thêm?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                int soHang;
-                int soCot;
-                soHang = int.Parse(txtSoHang.Text);
-                soCot = int.Parse(txtSoCot.Text);
-
-                string tenPhong = txtTenPhong.Text;
-                if (pcBLL.ThemPhong(tenPhong, soHang, soCot)) 
+                try
                 {
-                    MessageBox.Show("Them thanh cong!");
+                    int soHang;
+                    int soCot;
+                    soHang = int.Parse(txtSoHang.Text);
+                    soCot = int.Parse(txtSoCot.Text);
+
+                    string tenPhong = txtTenPhong.Text;
+                    if (pcBLL.ThemPhong(tenPhong, soHang, soCot))
+                    {
+                        MessageBox.Show("Thêm thành công!");
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                QuanLyPhong_Load(sender, e);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            QuanLyPhong_Load(sender, e);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("Bạn có chắc muốn sửa?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                string rowVersion = dgvPhong.Rows[RowEnter].Cells[4].Value.ToString();
-                int maPhong = int.Parse(dgvPhong.Rows[RowEnter].Cells[0].Value.ToString());
-                int soHang;
-                int soCot;
-                soHang = int.Parse(txtSoHang.Text);
-                soCot = int.Parse(txtSoCot.Text);
-                string tenPhong = txtTenPhong.Text;
-                if (pcBLL.UpdatePhong(maPhong, soHang, soCot, tenPhong, rowVersion)) { 
-                    MessageBox.Show("Update thành công!");
+                try
+                {
+                    string rowVersion = dgvPhong.Rows[RowEnter].Cells[4].Value.ToString();
+                    int maPhong = int.Parse(dgvPhong.Rows[RowEnter].Cells[0].Value.ToString());
+                    int soHang;
+                    int soCot;
+                    soHang = int.Parse(txtSoHang.Text);
+                    soCot = int.Parse(txtSoCot.Text);
+                    string tenPhong = txtTenPhong.Text;
+                    if (pcBLL.UpdatePhong(maPhong, soHang, soCot, tenPhong, rowVersion))
+                    {
+                        MessageBox.Show("Update thành công!");
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                QuanLyPhong_Load(sender, e);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            QuanLyPhong_Load(sender, e);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("Bạn có chắc muốn xóa?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                int maPhong = int.Parse(dgvPhong.Rows[RowEnter].Cells[0].Value.ToString());
-                
-                if (pcBLL.XoaPhong(maPhong))
+                try
                 {
-                    MessageBox.Show("Xoa thanh cong!");
+                    int maPhong = int.Parse(dgvPhong.Rows[RowEnter].Cells[0].Value.ToString());
+
+                    if (pcBLL.XoaPhong(maPhong))
+                    {
+                        MessageBox.Show("Xóa thành công!");
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                QuanLyPhong_Load(sender, e);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            QuanLyPhong_Load(sender, e);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             try
             {
-                txtSoHang.Text = dgvPhong.Rows[RowEnter].Cells[1].Value.ToString();
-                txtTenPhong.Text = dgvPhong.Rows[RowEnter].Cells[2].Value.ToString();
+                txtSoHang.Text = dgvPhong.Rows[RowEnter].Cells[2].Value.ToString();
+                txtTenPhong.Text = dgvPhong.Rows[RowEnter].Cells[1].Value.ToString();
+                txtSoCot.Text = dgvPhong.Rows[RowEnter].Cells[3].Value.ToString();
             }
             catch (Exception ex)
             {

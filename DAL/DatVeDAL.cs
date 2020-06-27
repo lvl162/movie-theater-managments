@@ -13,30 +13,6 @@ namespace DAL
 {
     public class DatVeDAL
     {
-        public List<PhimDTO> LayDanhSachPhim()
-        {
-            try
-            {
-                using (var context = new QLRPContext())
-                {
-                    var list = (from p in context.Phims
-                                select new PhimDTO
-                                {
-                                    MaPhim = p.MaPhim,
-                                    TenPhim = p.TenPhim,
-                                    MoTa = p.MoTa,
-                                    NgayKhoiChieu = p.NgayKhoiChieu,
-                                    TheLoai = p.TheLoai
-                                }).ToList();
-                    return list;
-                }
-            }
-            catch(Exception ex)
-            {
-                throw ex;
-            }
-        }
-
         public Dictionary<string, int> LayDSGhe(int maPhong)
         {
             try
@@ -56,7 +32,35 @@ namespace DAL
             }
             catch (Exception)
             {
+                throw;
+            }
+        }
 
+        public List<DatVeDTO> LichSuBanVe()
+        {
+            try
+            {
+                using (var context = new QLRPContext())
+                {
+                    var list = context.DatVes.Select(p => p).ToList();
+                    var res = new List<DatVeDTO>();
+                    foreach (var el in list)
+                    {
+                        res.Add(new DatVeDTO()
+                        {
+                            TenPhim = el.LichChieu.Phim.TenPhim,
+                            NgayGioChieu = el.LichChieu.NgayGioChieu,
+                            TenPhong = el.LichChieu.PhongChieu.TenPhong,
+                            TenGhe = el.Ghe.TenGhe,
+                            NguoiBan = el.NguoiTao,
+                            ThoiGianBan = el.NgayTao
+                        });
+                    }
+                    return res;
+                }
+            }
+            catch (Exception ex)
+            {
                 throw;
             }
         }
@@ -79,28 +83,9 @@ namespace DAL
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
-
-        public int getSoGheTrong(LichChieuDTO lc)
-        {
-            try
-            {
-                using (var context = new QLRPContext())
-                {
-                    int num_all_seats = context.Ghes.Count(p => p.MaPhong == lc.MaPhong);
-                    int num_all_booked_seats = context.DatVes.Count(p => p.MaLichChieu == lc.MaLichChieu);
-                    return num_all_seats - num_all_booked_seats;
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
         public List<string> LayGheDaDat(int MaLichChieu)
         {
             try
@@ -155,57 +140,5 @@ namespace DAL
             }
         }
 
-        public List<LichChieuDTO> LayDanhSachLichChieuTuMaPhim(int MaPhim)
-        {
-            try
-            {
-                using (var context = new QLRPContext())
-                {
-                    List<LichChieuDTO> lichChieus = new List<LichChieuDTO>();
-                    var list = (from p in context.LichChieus
-                                where p.MaPhim == MaPhim
-                                select p).ToList();
-                    foreach (var lc in list)
-                    {
-                        lichChieus.Add(new LichChieuDTO()
-                        {
-                            MaPhim = lc.MaPhim,
-                            MaLichChieu = lc.MaLichChieu,
-                            MaPhong = lc.MaPhong,
-                            NgayGioChieu = lc.NgayGioChieu,
-                            TenPhim = lc.Phim.TenPhim,
-                            TenPhong = lc.PhongChieu.TenPhong,
-                        });
-                    }
-                    return lichChieus;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        public PhongChieuDTO LayPhongTheoLichChieu(int MaPhong)
-        {
-            try
-            {
-                using (var context = new QLRPContext())
-                {
-                    PhongChieu pc = context.PhongChieus.Single(p => p.MaPhong == MaPhong);
-                    return new PhongChieuDTO()
-                    {
-                        MaPhong = pc.MaPhong,
-                        TenPhong = pc.TenPhong,
-                        SoHang = pc.SoHang,
-                        SoCot = pc.SoCot
-                    };
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-           
-        }
     }
 }

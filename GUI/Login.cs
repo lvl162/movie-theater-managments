@@ -45,11 +45,11 @@ namespace QuanLyRapPhim
                 }
                 if (ChucVu == "QTV Hệ Thống")
                 {
-                    new MenuForm().ShowDialog();
+                    new MenuForQTV().ShowDialog();
                 }
                 if (ChucVu == "Nhân Viên Bán Vé")
                 {
-                    new LichChieu().ShowDialog();
+                    new NVBVForm().ShowDialog();
                 }
                 txtPassword.Text = "";
             }

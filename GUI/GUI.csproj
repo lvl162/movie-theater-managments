@@ -61,17 +61,23 @@
     <Compile Include="HoaDon.designer.cs">
       <DependentUpon>HoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="LichChieu.cs">
+    <Compile Include="LichSuBanVe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LichChieu.Designer.cs">
-      <DependentUpon>LichChieu.cs</DependentUpon>
+    <Compile Include="LichSuBanVe.Designer.cs">
+      <DependentUpon>LichSuBanVe.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuForm.cs">
+    <Compile Include="NVBVForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuForm.Designer.cs">
-      <DependentUpon>MenuForm.cs</DependentUpon>
+    <Compile Include="NVBVForm.Designer.cs">
+      <DependentUpon>NVBVForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForQTV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForQTV.Designer.cs">
+      <DependentUpon>MenuForQTV.cs</DependentUpon>
     </Compile>
     <Compile Include="PhongDatVe.cs">
       <SubType>Form</SubType>
@@ -132,11 +138,14 @@
     <EmbeddedResource Include="HoaDon.resx">
       <DependentUpon>HoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LichChieu.resx">
-      <DependentUpon>LichChieu.cs</DependentUpon>
+    <EmbeddedResource Include="LichSuBanVe.resx">
+      <DependentUpon>LichSuBanVe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuForm.resx">
-      <DependentUpon>MenuForm.cs</DependentUpon>
+    <EmbeddedResource Include="NVBVForm.resx">
+      <DependentUpon>NVBVForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForQTV.resx">
+      <DependentUpon>MenuForQTV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PhongDatVe.resx">
       <DependentUpon>PhongDatVe.cs</DependentUpon>

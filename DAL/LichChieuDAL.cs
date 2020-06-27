@@ -5,19 +5,12 @@ using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace DAL
 {
     public class LichChieuDAL
     {
-		public static string convertToUnSign(string s)
-		{
-			Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
-			string temp = s.Normalize(NormalizationForm.FormD);
-			return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
-		}
 		public List<LichChieuDTO> DanhSachLichChieu()
         {
 			try
@@ -107,7 +100,7 @@ namespace DAL
 					List<LichChieuDTO> lichChieuDTOs = new List<LichChieuDTO>();
 					foreach (LichChieu lc in lichChieus)
 					{
-						string tenPhim = convertToUnSign(lc.Phim.TenPhim).ToLower();
+						string tenPhim = Utils.convertToUnSign(lc.Phim.TenPhim).ToLower();
 						if (lc.Phim.TenPhim.Contains(text) || tenPhim.Contains(text.ToLower()))
 						{
 							var lcDTO = new LichChieuDTO

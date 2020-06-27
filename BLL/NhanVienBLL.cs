@@ -12,12 +12,12 @@ namespace BLL
 {
     public class NhanVienBLL
     {
-        NhanVienDAL quanLyDAL = new NhanVienDAL();
+        NhanVienDAL quanLyNhanVienDAL = new NhanVienDAL();
         public bool ThemNhanVien(string _HoTen, DateTime _NgaySinh, string _GioiTinh, string _SoCMND, string _SDT, string _ChucVu, string _DiaChi)
         {
             try
             {
-                return quanLyDAL.ThemNhanVien(new NhanVienDTO() { HoVaTen = _HoTen, NgaySinh = _NgaySinh, ChucVu = _ChucVu, GioiTinh = _GioiTinh, DiaChi = _DiaChi, SDT = _SDT, SoCMND = _SoCMND });
+                return quanLyNhanVienDAL.ThemNhanVien(new NhanVienDTO() { HoVaTen = _HoTen, NgaySinh = _NgaySinh, ChucVu = _ChucVu, GioiTinh = _GioiTinh, DiaChi = _DiaChi, SDT = _SDT, SoCMND = _SoCMND });
             }
             catch (Exception ex)
             {
@@ -31,7 +31,7 @@ namespace BLL
         {
             try
             {
-                return quanLyDAL.XoaNhanVien(new NhanVienDTO() { MaNhanVien = _maNV, HoVaTen = _HoTen, NgaySinh = _NgaySinh, ChucVu = _ChucVu, GioiTinh = _GioiTinh, DiaChi = _DiaChi, SDT = _SDT, SoCMND = _SoCMND });
+                return quanLyNhanVienDAL.XoaNhanVien(new NhanVienDTO() { MaNhanVien = _maNV, HoVaTen = _HoTen, NgaySinh = _NgaySinh, ChucVu = _ChucVu, GioiTinh = _GioiTinh, DiaChi = _DiaChi, SDT = _SDT, SoCMND = _SoCMND });
             }
             catch (Exception ex)
             {
@@ -44,7 +44,7 @@ namespace BLL
         {
             try
             {
-                return quanLyDAL.UpdateNhanVien(new NhanVienDTO() { MaNhanVien = _maNV, HoVaTen = _HoTen, NgaySinh = _NgaySinh, ChucVu = _ChucVu, GioiTinh = _GioiTinh, DiaChi = _DiaChi, SDT = _SDT, SoCMND = _SoCMND, RowVersion = _rowVer });
+                return quanLyNhanVienDAL.UpdateNhanVien(new NhanVienDTO() { MaNhanVien = _maNV, HoVaTen = _HoTen, NgaySinh = _NgaySinh, ChucVu = _ChucVu, GioiTinh = _GioiTinh, DiaChi = _DiaChi, SDT = _SDT, SoCMND = _SoCMND, RowVersion = _rowVer });
             }
             catch (Exception ex)
             {
@@ -56,13 +56,25 @@ namespace BLL
         {
             try
             {
-                return quanLyDAL.DanhSachSinhVien().ToList();
+                return quanLyNhanVienDAL.DanhSachSinhVien().ToList();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
 
+        }
+
+        public List<NhanVienDTO> Search(string text)
+        {
+            try
+            {
+                return quanLyNhanVienDAL.Search(text);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

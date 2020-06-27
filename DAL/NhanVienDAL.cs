@@ -100,6 +100,40 @@ namespace DAL
                 throw e;
             }
         }
+
+        public List<NhanVienDTO> Search(string text)
+        {
+            try
+            {
+                using (QLRPContext context = new QLRPContext())
+                {
+                    //string tenPhim = Utils.convertToUnSign(lc.Phim.TenPhim).ToLower();
+                    //if (lc.Phim.TenPhim.Contains(text) || tenPhim.Contains(text.ToLower()))
+                    var list = context.NhanViens.AsEnumerable()
+                        .Where(nv => nv.HoVaTen.Contains(text) ||
+                    Utils.convertToUnSign(nv.HoVaTen.ToLower()).Contains(text.ToLower()))
+                        .Select(nv => new NhanVienDTO()
+                        {
+                            MaNhanVien = nv.MaNhanVien,
+                            ChucVu = nv.ChucVu,
+                            NgaySinh = nv.NgaySinh,
+                            DiaChi = nv.DiaChi,
+                            GioiTinh = nv.GioiTinh,
+                            HoVaTen = nv.HoVaTen,
+                            SDT = nv.SDT,
+                            SoCMND = nv.SoCMND,
+                            RowVersion = BitConverter.ToUInt64(nv.RowVersion, 0).ToString()
+                        }).ToList();
+                    return list;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public List<NhanVienDTO> DanhSachSinhVien()
         {
             try

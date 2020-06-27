@@ -13,30 +13,6 @@ namespace BLL
     public class DatVeBLL
     {
         DatVeDAL datVeDAL = new DatVeDAL();
-        public List<PhimDTO> LayDanhSachPhim()
-        {
-            try
-            {
-                return datVeDAL.LayDanhSachPhim();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            
-        }
-        public List<LichChieuDTO> LayDanhSachLichChieu(int MaPhim)
-        {
-            try
-            {
-                return datVeDAL.LayDanhSachLichChieuTuMaPhim(MaPhim);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
         public Dictionary<string, int> LayDSGhe(int maPhong)
         {
             try
@@ -61,6 +37,18 @@ namespace BLL
             }
         }
 
+        public List<DatVeDTO> LichSuBanVe()
+        {
+            try
+            {
+                return datVeDAL.LichSuBanVe();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public List<string> LayVeDaDat(int maLichChieu)
         {
             try
@@ -73,17 +61,7 @@ namespace BLL
             }
         }
 
-        public PhongChieuDTO LayPhongTheoLichChieu(int MaPhong)
-        {
-            try
-            {
-                return datVeDAL.LayPhongTheoLichChieu(MaPhong);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+        
 
         public bool DatVes(List<int> gheDaChon, int maLichChieu)
         {
@@ -97,16 +75,5 @@ namespace BLL
             }
         }
 
-        public int getSoGheTrong(LichChieuDTO lc)
-        {
-            try
-            {
-                return datVeDAL.getSoGheTrong(lc);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
     }
 }

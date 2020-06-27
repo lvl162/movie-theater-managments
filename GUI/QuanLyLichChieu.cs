@@ -46,66 +46,75 @@ namespace QuanLyRapPhim
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("Bạn có chắc muốn thêm?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                int maPhim;
-                int maPhong;
-                DateTime gioLichChieu;
-                maPhim = int.Parse(cbPhims.SelectedValue.ToString());
-                maPhong = int.Parse(cbPhongs.SelectedValue.ToString());
-                gioLichChieu = lichChieuPicker.Value;
-                //MessageBox.Show(maPhim + " " + maPhong + " " + lichChieu.ToString());
-                if (lichChieuBLL.ThemLichChieu(maPhim, maPhong, gioLichChieu))
+                try
                 {
-                    MessageBox.Show("Them thanh cong!");
+                    int maPhim;
+                    int maPhong;
+                    DateTime gioLichChieu;
+                    maPhim = int.Parse(cbPhims.SelectedValue.ToString());
+                    maPhong = int.Parse(cbPhongs.SelectedValue.ToString());
+                    gioLichChieu = lichChieuPicker.Value;
+                    if (lichChieuBLL.ThemLichChieu(maPhim, maPhong, gioLichChieu))
+                    {
+                        MessageBox.Show("Thêm thành công!");
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                QuanLyLichChieu_Load(sender, e);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            QuanLyLichChieu_Load(sender, e);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("Bạn có chắc muốn sửa?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                int malc_old = int.Parse(dgvDSLichChieu.Rows[RowEnter].Cells[0].Value.ToString());
-                int maPhim;
-                int maPhong;
-                DateTime gioLichChieu;
-                maPhim = int.Parse(cbPhims.SelectedValue.ToString());
-                maPhong = int.Parse(cbPhongs.SelectedValue.ToString());
-                gioLichChieu = lichChieuPicker.Value;
-                string rowVer = dgvDSLichChieu.Rows[RowEnter].Cells[4].Value.ToString();
-                if (lichChieuBLL.UpdateLichChieu(maPhim, maPhong, gioLichChieu, malc_old, rowVer))
+                try
                 {
-                    MessageBox.Show("Update thanh cong!");
+                    int malc_old = int.Parse(dgvDSLichChieu.Rows[RowEnter].Cells[0].Value.ToString());
+                    int maPhim;
+                    int maPhong;
+                    DateTime gioLichChieu;
+                    maPhim = int.Parse(cbPhims.SelectedValue.ToString());
+                    maPhong = int.Parse(cbPhongs.SelectedValue.ToString());
+                    gioLichChieu = lichChieuPicker.Value;
+                    string rowVer = dgvDSLichChieu.Rows[RowEnter].Cells[4].Value.ToString();
+                    if (lichChieuBLL.UpdateLichChieu(maPhim, maPhong, gioLichChieu, malc_old, rowVer))
+                    {
+                        MessageBox.Show("Update thành công!");
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                QuanLyLichChieu_Load(sender, e);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            QuanLyLichChieu_Load(sender, e);
+            
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("Bạn có chắc muốn xóa?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                int malc_delete = int.Parse(dgvDSLichChieu.Rows[RowEnter].Cells[0].Value.ToString());
-                if (lichChieuBLL.XoaLichChieu(malc_delete))
+                try
                 {
-                    MessageBox.Show("Xoa thanh cong!");
+                    int malc_delete = int.Parse(dgvDSLichChieu.Rows[RowEnter].Cells[0].Value.ToString());
+                    if (lichChieuBLL.XoaLichChieu(malc_delete))
+                    {
+                        MessageBox.Show("Xóa thành công!");
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                QuanLyLichChieu_Load(sender, e);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            QuanLyLichChieu_Load(sender, e);
         }
 
         private void dgvDSLichChieu_RowEnter(object sender, DataGridViewCellEventArgs e)

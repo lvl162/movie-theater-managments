@@ -37,60 +37,69 @@ namespace QuanLyRapPhim
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("Bạn có chắc muốn thêm?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                string tenghe = txtTenGhe.Text;
-                int maphong = int.Parse(txtMaPhong.Text);
-                string tenPhong = dgvDSGhe.Rows[RowEnter].Cells[3].Value.ToString();
-                if (gheBLL.ThemGhe(tenghe, maphong, tenPhong))
-                    MessageBox.Show("Thêm thành công!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            QuanLyGhe_Load(sender, e);
-
+                try
+                {
+                    string tenghe = txtTenGhe.Text;
+                    int maphong = int.Parse(txtMaPhong.Text);
+                    string tenPhong = dgvDSGhe.Rows[RowEnter].Cells[3].Value.ToString();
+                    if (gheBLL.ThemGhe(tenghe, maphong, tenPhong))
+                        MessageBox.Show("Thêm thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                QuanLyGhe_Load(sender, e);
+            }    
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("Bạn có chắc muốn cập nhật?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                int maGhe = int.Parse(dgvDSGhe.Rows[RowEnter].Cells[0].Value.ToString());
-                string tenGhe = txtTenGhe.Text;
-                int maPhong = int.Parse(txtMaPhong.Text);
-                string rowVersion = dgvDSGhe.Rows[RowEnter].Cells[4].Value.ToString();
-                if (gheBLL.UpdateGhe(maGhe, tenGhe, maPhong, rowVersion))
+                try
                 {
-                    MessageBox.Show("Update thành công!");
+                    int maGhe = int.Parse(dgvDSGhe.Rows[RowEnter].Cells[0].Value.ToString());
+                    string tenGhe = txtTenGhe.Text;
+                    int maPhong = int.Parse(txtMaPhong.Text);
+                    string rowVersion = dgvDSGhe.Rows[RowEnter].Cells[4].Value.ToString();
+                    if (gheBLL.UpdateGhe(maGhe, tenGhe, maPhong, rowVersion))
+                    {
+                        MessageBox.Show("Update thành công!");
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                QuanLyGhe_Load(sender, e);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            QuanLyGhe_Load(sender, e);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("Bạn có chắc muốn xóa?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                int maGhe = int.Parse(dgvDSGhe.Rows[RowEnter].Cells[0].Value.ToString());
-                int maPhong = int.Parse(dgvDSGhe.Rows[RowEnter].Cells[2].Value.ToString());
-                string tenGhe = txtTenGhe.Text;
-
-                if (gheBLL.XoaGhe(maGhe, tenGhe, maPhong))
+                try
                 {
-                    MessageBox.Show("Xoa thanh cong!");
+                    int maGhe = int.Parse(dgvDSGhe.Rows[RowEnter].Cells[0].Value.ToString());
+                    int maPhong = int.Parse(dgvDSGhe.Rows[RowEnter].Cells[2].Value.ToString());
+                    string tenGhe = txtTenGhe.Text;
+
+                    if (gheBLL.XoaGhe(maGhe, tenGhe, maPhong))
+                    {
+                        MessageBox.Show("Xóa thành công!");
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                QuanLyGhe_Load(sender, e);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            QuanLyGhe_Load(sender, e);
+            
         }
 
         private void dgvDSGhe_RowEnter(object sender, DataGridViewCellEventArgs e)

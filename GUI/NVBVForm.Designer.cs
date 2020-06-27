@@ -1,6 +1,6 @@
 ﻿namespace QuanLyRapPhim
 {
-    partial class LichChieu
+    partial class NVBVForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             this.dgvLichChieu = new System.Windows.Forms.DataGridView();
-            this.gbThongTinLichChieu = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtTenPhim = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtNgayChieu = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtGioChieu = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtTenPhong = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtGheTrong = new System.Windows.Forms.TextBox();
-            this.btnDatVe = new System.Windows.Forms.Button();
-            this.btnLichSu = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.TenPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GioChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phòng = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaLichChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gbThongTinLichChieu = new System.Windows.Forms.GroupBox();
+            this.txtGheTrong = new System.Windows.Forms.TextBox();
+            this.txtTenPhong = new System.Windows.Forms.TextBox();
+            this.txtGioChieu = new System.Windows.Forms.TextBox();
+            this.txtNgayChieu = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtTenPhim = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnDatVe = new System.Windows.Forms.Button();
+            this.btnLichSu = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichChieu)).BeginInit();
             this.gbThongTinLichChieu.SuspendLayout();
             this.SuspendLayout();
@@ -77,142 +77,6 @@
             this.dgvLichChieu.Size = new System.Drawing.Size(861, 300);
             this.dgvLichChieu.TabIndex = 0;
             this.dgvLichChieu.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLichChieu_RowEnter);
-            // 
-            // gbThongTinLichChieu
-            // 
-            this.gbThongTinLichChieu.Controls.Add(this.txtGheTrong);
-            this.gbThongTinLichChieu.Controls.Add(this.txtTenPhong);
-            this.gbThongTinLichChieu.Controls.Add(this.txtGioChieu);
-            this.gbThongTinLichChieu.Controls.Add(this.txtNgayChieu);
-            this.gbThongTinLichChieu.Controls.Add(this.label5);
-            this.gbThongTinLichChieu.Controls.Add(this.label4);
-            this.gbThongTinLichChieu.Controls.Add(this.label3);
-            this.gbThongTinLichChieu.Controls.Add(this.label2);
-            this.gbThongTinLichChieu.Controls.Add(this.txtTenPhim);
-            this.gbThongTinLichChieu.Controls.Add(this.label1);
-            this.gbThongTinLichChieu.Location = new System.Drawing.Point(12, 12);
-            this.gbThongTinLichChieu.Name = "gbThongTinLichChieu";
-            this.gbThongTinLichChieu.Size = new System.Drawing.Size(861, 86);
-            this.gbThongTinLichChieu.TabIndex = 1;
-            this.gbThongTinLichChieu.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tên phim";
-            // 
-            // txtTenPhim
-            // 
-            this.txtTenPhim.Location = new System.Drawing.Point(28, 47);
-            this.txtTenPhim.Name = "txtTenPhim";
-            this.txtTenPhim.Size = new System.Drawing.Size(131, 22);
-            this.txtTenPhim.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(195, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Ngày chiếu";
-            // 
-            // txtNgayChieu
-            // 
-            this.txtNgayChieu.Location = new System.Drawing.Point(198, 47);
-            this.txtNgayChieu.Name = "txtNgayChieu";
-            this.txtNgayChieu.Size = new System.Drawing.Size(131, 22);
-            this.txtNgayChieu.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(367, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Giờ chiếu";
-            // 
-            // txtGioChieu
-            // 
-            this.txtGioChieu.Location = new System.Drawing.Point(368, 47);
-            this.txtGioChieu.Name = "txtGioChieu";
-            this.txtGioChieu.Size = new System.Drawing.Size(131, 22);
-            this.txtGioChieu.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(533, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 17);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Tên phòng";
-            // 
-            // txtTenPhong
-            // 
-            this.txtTenPhong.Location = new System.Drawing.Point(538, 47);
-            this.txtTenPhong.Name = "txtTenPhong";
-            this.txtTenPhong.Size = new System.Drawing.Size(131, 22);
-            this.txtTenPhong.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(705, 18);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 17);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Số ghế còn trống";
-            // 
-            // txtGheTrong
-            // 
-            this.txtGheTrong.Location = new System.Drawing.Point(708, 47);
-            this.txtGheTrong.Name = "txtGheTrong";
-            this.txtGheTrong.Size = new System.Drawing.Size(131, 22);
-            this.txtGheTrong.TabIndex = 1;
-            // 
-            // btnDatVe
-            // 
-            this.btnDatVe.Location = new System.Drawing.Point(550, 116);
-            this.btnDatVe.Name = "btnDatVe";
-            this.btnDatVe.Size = new System.Drawing.Size(75, 39);
-            this.btnDatVe.TabIndex = 2;
-            this.btnDatVe.Text = "Đặt vé";
-            this.btnDatVe.UseVisualStyleBackColor = true;
-            this.btnDatVe.Click += new System.EventHandler(this.btnDatVe_Click);
-            // 
-            // btnLichSu
-            // 
-            this.btnLichSu.Location = new System.Drawing.Point(720, 116);
-            this.btnLichSu.Name = "btnLichSu";
-            this.btnLichSu.Size = new System.Drawing.Size(131, 39);
-            this.btnLichSu.TabIndex = 2;
-            this.btnLichSu.Text = "Lịch sử bán vé";
-            this.btnLichSu.UseVisualStyleBackColor = true;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(250, 119);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(169, 28);
-            this.txtSearch.TabIndex = 3;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(19, 124);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(185, 20);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Nhập tìm kiếm tên phim";
             // 
             // TenPhim
             // 
@@ -264,7 +128,144 @@
             this.MaPhong.ReadOnly = true;
             this.MaPhong.Visible = false;
             // 
-            // LichChieu
+            // gbThongTinLichChieu
+            // 
+            this.gbThongTinLichChieu.Controls.Add(this.txtGheTrong);
+            this.gbThongTinLichChieu.Controls.Add(this.txtTenPhong);
+            this.gbThongTinLichChieu.Controls.Add(this.txtGioChieu);
+            this.gbThongTinLichChieu.Controls.Add(this.txtNgayChieu);
+            this.gbThongTinLichChieu.Controls.Add(this.label5);
+            this.gbThongTinLichChieu.Controls.Add(this.label4);
+            this.gbThongTinLichChieu.Controls.Add(this.label3);
+            this.gbThongTinLichChieu.Controls.Add(this.label2);
+            this.gbThongTinLichChieu.Controls.Add(this.txtTenPhim);
+            this.gbThongTinLichChieu.Controls.Add(this.label1);
+            this.gbThongTinLichChieu.Location = new System.Drawing.Point(12, 12);
+            this.gbThongTinLichChieu.Name = "gbThongTinLichChieu";
+            this.gbThongTinLichChieu.Size = new System.Drawing.Size(861, 86);
+            this.gbThongTinLichChieu.TabIndex = 1;
+            this.gbThongTinLichChieu.TabStop = false;
+            // 
+            // txtGheTrong
+            // 
+            this.txtGheTrong.Location = new System.Drawing.Point(708, 47);
+            this.txtGheTrong.Name = "txtGheTrong";
+            this.txtGheTrong.Size = new System.Drawing.Size(131, 22);
+            this.txtGheTrong.TabIndex = 1;
+            // 
+            // txtTenPhong
+            // 
+            this.txtTenPhong.Location = new System.Drawing.Point(538, 47);
+            this.txtTenPhong.Name = "txtTenPhong";
+            this.txtTenPhong.Size = new System.Drawing.Size(131, 22);
+            this.txtTenPhong.TabIndex = 1;
+            // 
+            // txtGioChieu
+            // 
+            this.txtGioChieu.Location = new System.Drawing.Point(368, 47);
+            this.txtGioChieu.Name = "txtGioChieu";
+            this.txtGioChieu.Size = new System.Drawing.Size(131, 22);
+            this.txtGioChieu.TabIndex = 1;
+            // 
+            // txtNgayChieu
+            // 
+            this.txtNgayChieu.Location = new System.Drawing.Point(198, 47);
+            this.txtNgayChieu.Name = "txtNgayChieu";
+            this.txtNgayChieu.Size = new System.Drawing.Size(131, 22);
+            this.txtNgayChieu.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(705, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(117, 17);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Số ghế còn trống";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(533, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 17);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Tên phòng";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(367, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Giờ chiếu";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(195, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 17);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Ngày chiếu";
+            // 
+            // txtTenPhim
+            // 
+            this.txtTenPhim.Location = new System.Drawing.Point(28, 47);
+            this.txtTenPhim.Name = "txtTenPhim";
+            this.txtTenPhim.Size = new System.Drawing.Size(131, 22);
+            this.txtTenPhim.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(25, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tên phim";
+            // 
+            // btnDatVe
+            // 
+            this.btnDatVe.Location = new System.Drawing.Point(550, 116);
+            this.btnDatVe.Name = "btnDatVe";
+            this.btnDatVe.Size = new System.Drawing.Size(75, 39);
+            this.btnDatVe.TabIndex = 2;
+            this.btnDatVe.Text = "Đặt vé";
+            this.btnDatVe.UseVisualStyleBackColor = true;
+            this.btnDatVe.Click += new System.EventHandler(this.btnDatVe_Click);
+            // 
+            // btnLichSu
+            // 
+            this.btnLichSu.Location = new System.Drawing.Point(720, 116);
+            this.btnLichSu.Name = "btnLichSu";
+            this.btnLichSu.Size = new System.Drawing.Size(131, 39);
+            this.btnLichSu.TabIndex = 2;
+            this.btnLichSu.Text = "Lịch sử bán vé";
+            this.btnLichSu.UseVisualStyleBackColor = true;
+            this.btnLichSu.Click += new System.EventHandler(this.btnLichSu_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(250, 119);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(169, 28);
+            this.txtSearch.TabIndex = 3;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(19, 124);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(185, 20);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Nhập tìm kiếm tên phim";
+            // 
+            // NVBVForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -275,8 +276,8 @@
             this.Controls.Add(this.btnDatVe);
             this.Controls.Add(this.gbThongTinLichChieu);
             this.Controls.Add(this.dgvLichChieu);
-            this.Name = "LichChieu";
-            this.Text = "LichChieu";
+            this.Name = "NVBVForm";
+            this.Text = "Danh sách vé xem phim và bán vé";
             this.Load += new System.EventHandler(this.LichChieu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichChieu)).EndInit();
             this.gbThongTinLichChieu.ResumeLayout(false);

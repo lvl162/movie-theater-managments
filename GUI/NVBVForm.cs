@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,10 +12,10 @@ using System.Windows.Forms;
 
 namespace QuanLyRapPhim
 {
-    public partial class LichChieu : Form
+    public partial class NVBVForm : Form
     {
         int RowEnter = 0;
-        public LichChieu()
+        public NVBVForm()
         {
             InitializeComponent();
             
@@ -23,14 +24,22 @@ namespace QuanLyRapPhim
 
         private void LichChieu_Load(object sender, EventArgs e)
         {
-            dgvLichChieu.AutoGenerateColumns = false;
-            dgvLichChieu.DataSource = lichChieuBLL.DanhSachLichChieu();
-            dgvLichChieu.Rows[0].Selected = false;
+            try
+            {
+                dgvLichChieu.AutoGenerateColumns = false;
+                dgvLichChieu.DataSource = lichChieuBLL.DanhSachLichChieu();
+                txtSearch.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnDatVe_Click(object sender, EventArgs e)
         {
-            new DatVe().ShowDialog();
+            LichChieuDTO lc = dgvLichChieu.CurrentRow.DataBoundItem as LichChieuDTO;
+            new DatVe(lc).ShowDialog();
         }
 
         private void dgvLichChieu_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -62,6 +71,11 @@ namespace QuanLyRapPhim
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnLichSu_Click(object sender, EventArgs e)
+        {
+            new LichSuBanVe().ShowDialog();
         }
     }
 }

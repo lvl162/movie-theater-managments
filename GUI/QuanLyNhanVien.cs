@@ -13,7 +13,7 @@ namespace QuanLyRapPhim
     public partial class QuanLyNhanVien : Form
     {
         int RowEnter = 0;
-        NhanVienBLL quanLyBLL = new NhanVienBLL();
+        NhanVienBLL quanLyNhanVienBLL = new NhanVienBLL();
         public QuanLyNhanVien()
         {
             InitializeComponent();
@@ -21,25 +21,30 @@ namespace QuanLyRapPhim
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("Bạn có chắc muốn thêm?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                string HoTen, SDT, SoCMND, GioiTinh, DiaChi, ChucVu;
-                DateTime NgaySinh;
-                HoTen = txtHoTen.Text;
-                SDT = txtSDT.Text;
-                SoCMND = txtCMND.Text;
-                GioiTinh = cbNamNu.SelectedItem.ToString();
-                ChucVu = cbChucVu.SelectedItem.ToString();
-                DiaChi = txtDiaChi.Text;
-                NgaySinh = timePickerNgaySinh.Value.Date;
-                if (quanLyBLL.ThemNhanVien(HoTen, NgaySinh, GioiTinh, SoCMND, SDT, ChucVu, DiaChi)) QuanLyNhanVien_Load(sender, e);
+                try
+                {
+                    string HoTen, SDT, SoCMND, GioiTinh, DiaChi, ChucVu;
+                    DateTime NgaySinh;
+                    HoTen = txtHoTen.Text;
+                    SDT = txtSDT.Text;
+                    SoCMND = txtCMND.Text;
+                    GioiTinh = cbNamNu.SelectedItem.ToString();
+                    ChucVu = cbChucVu.SelectedItem.ToString();
+                    DiaChi = txtDiaChi.Text;
+                    NgaySinh = timePickerNgaySinh.Value.Date;
+                    if (quanLyNhanVienBLL.ThemNhanVien(HoTen, NgaySinh, GioiTinh, SoCMND, SDT, ChucVu, DiaChi))
+                    {
+                        MessageBox.Show("Thêm thành công!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                QuanLyNhanVien_Load(sender, e);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            QuanLyNhanVien_Load(sender, e);
-
         }
 
         private void QuanLyNhanVien_Load(object sender, EventArgs e)
@@ -47,7 +52,8 @@ namespace QuanLyRapPhim
             try
             {
                 dgvNhanVien.AutoGenerateColumns = false;
-                dgvNhanVien.DataSource = quanLyBLL.DanhSachNhanVien();
+                dgvNhanVien.DataSource = quanLyNhanVienBLL.DanhSachNhanVien();
+                txtSearch.Text = "";
             }
             catch (Exception ex)
             {
@@ -69,52 +75,62 @@ namespace QuanLyRapPhim
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("Bạn có chắc muốn xóa?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                int maNV = int.Parse(dgvNhanVien.Rows[RowEnter].Cells[0].Value.ToString());
-                string HoTen, SDT, SoCMND, GioiTinh, DiaChi, ChucVu;
-                DateTime NgaySinh;
-                HoTen = txtHoTen.Text;
-                SDT = txtSDT.Text;
-                SoCMND = txtCMND.Text;
-                GioiTinh = cbNamNu.SelectedItem.ToString();
-                ChucVu = cbChucVu.SelectedItem.ToString();
-                DiaChi = txtDiaChi.Text;
-                NgaySinh = timePickerNgaySinh.Value.Date;
+                try
+                {
+                    int maNV = int.Parse(dgvNhanVien.Rows[RowEnter].Cells[0].Value.ToString());
+                    string HoTen, SDT, SoCMND, GioiTinh, DiaChi, ChucVu;
+                    DateTime NgaySinh;
+                    HoTen = txtHoTen.Text;
+                    SDT = txtSDT.Text;
+                    SoCMND = txtCMND.Text;
+                    GioiTinh = cbNamNu.SelectedItem.ToString();
+                    ChucVu = cbChucVu.SelectedItem.ToString();
+                    DiaChi = txtDiaChi.Text;
+                    NgaySinh = timePickerNgaySinh.Value.Date;
 
-                if (quanLyBLL.XoaNhanVien(maNV, HoTen, NgaySinh, GioiTinh, SoCMND, SDT, ChucVu, DiaChi)) QuanLyNhanVien_Load(sender, e);
+                    if (quanLyNhanVienBLL.XoaNhanVien(maNV, HoTen, NgaySinh, GioiTinh, SoCMND, SDT, ChucVu, DiaChi))
+                    {
+                        MessageBox.Show("Xóa thành công!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                QuanLyNhanVien_Load(sender, e);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            QuanLyNhanVien_Load(sender, e);
 
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("Bạn có chắc muốn sửa?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                int maNV = int.Parse(dgvNhanVien.Rows[RowEnter].Cells[0].Value.ToString());
-                string HoTen, SDT, SoCMND, GioiTinh, DiaChi, ChucVu, RowVer;
-                DateTime NgaySinh;
-                HoTen = txtHoTen.Text;
-                SDT = txtSDT.Text;
-                SoCMND = txtCMND.Text;
-                GioiTinh = cbNamNu.SelectedItem.ToString();
-                ChucVu = cbChucVu.SelectedItem.ToString();
-                DiaChi = txtDiaChi.Text;
-                NgaySinh = timePickerNgaySinh.Value.Date;
-                RowVer = dgvNhanVien.Rows[RowEnter].Cells[8].Value.ToString();
-                if (quanLyBLL.UpdateNhanVien(maNV, HoTen, NgaySinh, GioiTinh, SoCMND, SDT, ChucVu, DiaChi, RowVer))
-                    MessageBox.Show("Update thành công!");
+                try
+                {
+                    int maNV = int.Parse(dgvNhanVien.Rows[RowEnter].Cells[0].Value.ToString());
+                    string HoTen, SDT, SoCMND, GioiTinh, DiaChi, ChucVu, RowVer;
+                    DateTime NgaySinh;
+                    HoTen = txtHoTen.Text;
+                    SDT = txtSDT.Text;
+                    SoCMND = txtCMND.Text;
+                    GioiTinh = cbNamNu.SelectedItem.ToString();
+                    ChucVu = cbChucVu.SelectedItem.ToString();
+                    DiaChi = txtDiaChi.Text;
+                    NgaySinh = timePickerNgaySinh.Value.Date;
+                    RowVer = dgvNhanVien.Rows[RowEnter].Cells[8].Value.ToString();
+                    if (quanLyNhanVienBLL.UpdateNhanVien(maNV, HoTen, NgaySinh, GioiTinh, SoCMND, SDT, ChucVu, DiaChi, RowVer))
+                        MessageBox.Show("Update thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                QuanLyNhanVien_Load(sender, e);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            QuanLyNhanVien_Load(sender, e);
+            
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -123,7 +139,7 @@ namespace QuanLyRapPhim
             //TODO: messagebox 
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnReset_Click(object sender, EventArgs e)
         {
             try
             {
@@ -144,6 +160,18 @@ namespace QuanLyRapPhim
         private void btnQuanLyLogin_Click(object sender, EventArgs e)
         {
             new QuanLyLoginUser().ShowDialog();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                dgvNhanVien.DataSource = quanLyNhanVienBLL.Search(txtSearch.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

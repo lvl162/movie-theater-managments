@@ -37,71 +37,78 @@ namespace QuanLyRapPhim
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("Bạn có chắc muốn thêm?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                string tenPhim, theLoai, moTa;
-                DateTime khoiChieu;
-                tenPhim = txtTenPhim.Text;
-                theLoai = txtTheLoai.Text;
-                moTa = txtMoTa.Text;
-                khoiChieu = timePickerKhoiChieu.Value.Date;
-                if (phimBLL.ThemPhim(tenPhim, theLoai, khoiChieu, moTa))
+                try
                 {
-                    MessageBox.Show("Them thanh cong!");
+                    string tenPhim, theLoai, moTa;
+                    DateTime khoiChieu;
+                    tenPhim = txtTenPhim.Text;
+                    theLoai = txtTheLoai.Text;
+                    moTa = txtMoTa.Text;
+                    khoiChieu = timePickerKhoiChieu.Value.Date;
+                    if (phimBLL.ThemPhim(tenPhim, theLoai, khoiChieu, moTa))
+                    {
+                        MessageBox.Show("Thêm thành công!");
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                QuanLyPhim_Load(sender, e);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            QuanLyPhim_Load(sender, e);
-
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("Bạn có chắc muốn sửa?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                string tenPhim, theLoai, moTa;
-                int maPhim = int.Parse(dgvPhim.Rows[RowEnter].Cells[0].Value.ToString());
-                DateTime khoiChieu;
-                tenPhim = txtTenPhim.Text;
-                theLoai = txtTheLoai.Text;
-                moTa = txtMoTa.Text;
-                khoiChieu = timePickerKhoiChieu.Value.Date;
-                string rowVer = dgvPhim.Rows[RowEnter].Cells[5].Value.ToString();
-                if (phimBLL.UpdatePhim(maPhim, tenPhim, theLoai, khoiChieu, moTa, rowVer))
-                    MessageBox.Show("Update thành công!");
+                try
+                {
+                    string tenPhim, theLoai, moTa;
+                    int maPhim = int.Parse(dgvPhim.Rows[RowEnter].Cells[0].Value.ToString());
+                    DateTime khoiChieu;
+                    tenPhim = txtTenPhim.Text;
+                    theLoai = txtTheLoai.Text;
+                    moTa = txtMoTa.Text;
+                    khoiChieu = timePickerKhoiChieu.Value.Date;
+                    string rowVer = dgvPhim.Rows[RowEnter].Cells[5].Value.ToString();
+                    if (phimBLL.UpdatePhim(maPhim, tenPhim, theLoai, khoiChieu, moTa, rowVer))
+                        MessageBox.Show("Update thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                QuanLyPhim_Load(sender, e);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            QuanLyPhim_Load(sender, e);
-
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("Bạn có chắc muốn xóa?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                string tenPhim, theLoai, moTa;
-                int maPhim = int.Parse(dgvPhim.Rows[RowEnter].Cells[0].Value.ToString());
-                DateTime khoiChieu;
-                tenPhim = txtTenPhim.Text;
-                theLoai = txtTheLoai.Text;
-                moTa = txtMoTa.Text;
-                khoiChieu = timePickerKhoiChieu.Value.Date;
-                if (phimBLL.XoaPhim(maPhim, tenPhim, theLoai, khoiChieu, moTa))
+                try
                 {
-                    MessageBox.Show("Xoa thanh cong!");
+                    string tenPhim, theLoai, moTa;
+                    int maPhim = int.Parse(dgvPhim.Rows[RowEnter].Cells[0].Value.ToString());
+                    DateTime khoiChieu;
+                    tenPhim = txtTenPhim.Text;
+                    theLoai = txtTheLoai.Text;
+                    moTa = txtMoTa.Text;
+                    khoiChieu = timePickerKhoiChieu.Value.Date;
+                    if (phimBLL.XoaPhim(maPhim, tenPhim, theLoai, khoiChieu, moTa))
+                    {
+                        MessageBox.Show("Xóa thành công!");
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                QuanLyPhim_Load(sender, e);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            QuanLyPhim_Load(sender, e);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
