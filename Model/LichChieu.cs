@@ -17,12 +17,9 @@ namespace Model
         [ForeignKey("PhongChieu")]
         [Index("IX_PhongPhimNgayGio", 1, IsUnique = true)]
         public int MaPhong { get; set; }
-        
-        
         [ForeignKey("Phim")]
         [Index("IX_PhongPhimNgayGio", 2, IsUnique = true)]
         public int MaPhim { get; set; }
-
         [Index("IX_PhongPhimNgayGio", 3, IsUnique = true)]
         public DateTime NgayGioChieu { get; set; }
         [Timestamp]

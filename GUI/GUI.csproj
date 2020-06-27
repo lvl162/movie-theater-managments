@@ -85,11 +85,11 @@
     <Compile Include="PhongDatVe.Designer.cs">
       <DependentUpon>PhongDatVe.cs</DependentUpon>
     </Compile>
-    <Compile Include="DatVe.cs">
+    <Compile Include="BanVe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DatVe.Designer.cs">
-      <DependentUpon>DatVe.cs</DependentUpon>
+    <Compile Include="BanVe.Designer.cs">
+      <DependentUpon>BanVe.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -135,6 +135,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils.cs" />
     <EmbeddedResource Include="HoaDon.resx">
       <DependentUpon>HoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,8 +151,8 @@
     <EmbeddedResource Include="PhongDatVe.resx">
       <DependentUpon>PhongDatVe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DatVe.resx">
-      <DependentUpon>DatVe.cs</DependentUpon>
+    <EmbeddedResource Include="BanVe.resx">
+      <DependentUpon>BanVe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

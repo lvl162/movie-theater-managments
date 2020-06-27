@@ -103,15 +103,14 @@ namespace DAL
                             //TODO: The property '' is part of the object's key information and cannot be modified
                             context.SaveChanges();
                         }
-                        else throw new Exception("Da co update truoc do.");
+                        else throw new Exception("Có ai đó đã update đối tượng này trước đó.");
                     }
                     return true;
-
                 }
             }
             catch (DbUpdateConcurrencyException)
             {
-                throw new Exception("Update failed. Ai do cung dang update.");
+                throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này.");
             }
             catch (Exception ex)
             {

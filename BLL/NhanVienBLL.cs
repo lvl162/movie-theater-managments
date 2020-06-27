@@ -64,17 +64,5 @@ namespace BLL
             }
 
         }
-
-        public List<NhanVienDTO> Search(string text)
-        {
-            try
-            {
-                return quanLyNhanVienDAL.Search(text);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
     }
 }

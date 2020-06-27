@@ -58,7 +58,7 @@ namespace DAL
                             {
                                 if (g.MaPhong == ghe.MaPhong && g.TenGhe == ghe.TenGhe)
                                 {
-                                    throw new Exception($"Ghe {ghe.TenGhe} da ton tai trong phong {ghe.TenPhong}");
+                                    throw new Exception($"Ghế {ghe.TenGhe} đã tồn tại trong phòng {ghe.TenPhong} rồi.");
                                 }
                             }
                             ghe_update.TenGhe = ghe.TenGhe;
@@ -68,14 +68,14 @@ namespace DAL
                             context.SaveChanges();
                             return true;
                         }
-                        else throw new Exception("Da co update truoc do.");
+                        else throw new Exception("Có ai đó đã update đối tượng này trước đó.");
                     }
                     return false;
                 }
             }
             catch (DbUpdateConcurrencyException)
             {
-                throw new Exception("Update failed. Ai do cung dang update.");
+                throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này.");
             }
             catch (Exception)
             {
@@ -96,7 +96,7 @@ namespace DAL
                         context.SaveChanges();
                         return true;
                     }
-                    throw new Exception("Khong tim thay ghe!");
+                    throw new Exception("Không tìm thấy ghế!");
                 }
             }
             catch (Exception ex)
@@ -116,7 +116,7 @@ namespace DAL
                     {
                         if (g.MaPhong == ghe.MaPhong && g.TenGhe == ghe.TenGhe)
                         {
-                            throw new Exception($"Ghe {ghe.TenGhe} da ton tai trong phong {ghe.TenPhong}");
+                            throw new Exception($"Ghế {ghe.TenGhe} đã tồn tại trong phòng {ghe.TenPhong} rồi.");
                         }
                     }
                     context.Ghes.Add(new Ghe

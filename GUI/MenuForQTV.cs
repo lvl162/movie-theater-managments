@@ -18,7 +18,7 @@ namespace QuanLyRapPhim
             InitializeComponent();
         }
 
-        private void btnDatVe_Click(object sender, EventArgs e)
+        private void btnBanVe_Click(object sender, EventArgs e)
         {
             new NVBVForm().ShowDialog();
         }

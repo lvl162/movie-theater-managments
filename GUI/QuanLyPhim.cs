@@ -23,7 +23,7 @@ namespace QuanLyRapPhim
             lbHi.Text = $"Hi {Login.UserName}!";
             phimBLL = new PhimBLL();
             dgvPhim.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
-            pbMoTa.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbPoster.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void QuanLyPhim_Load(object sender, EventArgs e)
@@ -132,12 +132,12 @@ namespace QuanLyRapPhim
                 txtTenPhim.Text = dgvPhim.Rows[RowEnter].Cells[1].Value.ToString();
                 txtTheLoai.Text = dgvPhim.Rows[RowEnter].Cells[2].Value.ToString();
                 timePickerKhoiChieu.Value = DateTime.Parse(dgvPhim.Rows[RowEnter].Cells[3].Value.ToString());
-                string picPath = dgvPhim.Rows[RowEnter].Cells[4].Value.ToString();
-                pbMoTa.Image = Image.FromFile(projectDirectory + picPath);
+                string picPath = projectDirectory + dgvPhim.Rows[RowEnter].Cells[4].Value.ToString();
+                pbPoster.Image = Image.FromFile(picPath);
             }
             catch(FileNotFoundException)
             {
-                pbMoTa.Image = Image.FromFile(projectDirectory + "notfound.jpg");
+                pbPoster.Image = Image.FromFile(projectDirectory + "notfound.jpg");
             }
             catch (Exception ex)
             {

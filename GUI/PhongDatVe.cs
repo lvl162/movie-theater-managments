@@ -28,9 +28,7 @@ namespace QuanLyRapPhim.DanhSachPhong
             datVeBLL = new DatVeBLL();
             try
             {
-                ghes = datVeBLL.LayDSGhe(lc.MaPhong);
-                gheDaDat = datVeBLL.LayVeDaDat(lc.MaLichChieu);
-                phongChieu = datVeBLL.LayKieuPhong(lc.MaPhong);
+                GhesDraw();
             }
             catch (Exception ex)
             {
@@ -39,10 +37,14 @@ namespace QuanLyRapPhim.DanhSachPhong
             // Trang : con
             // Do : da dat ve
             // Xanh la cay : da chon
-            GhesDraw(gheDaDat, phongChieu.SoHang, phongChieu.SoCot);
         }
-        private void GhesDraw(List<string> gheDaDat, int r, int c)
+        private void GhesDraw()
         {
+            ghes = datVeBLL.LayDSGhe(lichChieu.MaPhong);
+            gheDaDat = datVeBLL.LayVeDaDat(lichChieu.MaLichChieu);
+            phongChieu = datVeBLL.LayKieuPhong(lichChieu.MaPhong);
+            int r = phongChieu.SoHang;
+            int c = phongChieu.SoCot;
             for (char i = 'A'; i < 'A' + r; i++)
             {
                 for (int j = 1; j <= c; j++)
@@ -66,7 +68,7 @@ namespace QuanLyRapPhim.DanhSachPhong
             Button b = sender as Button;
             if (b.BackColor == Color.Red)
             {
-                MessageBox.Show("Ghe da dat.");
+                MessageBox.Show("Ghế đã được đặt.");
                 return;
             }
             if (b.BackColor == Color.Green)
@@ -81,18 +83,19 @@ namespace QuanLyRapPhim.DanhSachPhong
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc muốn đặt vé?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show($"Bạn có chắc muốn đặt {gheDaChon.Count} vé?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 try
                 {
                     if (datVeBLL.DatVes(gheDaChon, lichChieu.MaLichChieu))
                     {
-                        MessageBox.Show("Thanh cong!");
+                        MessageBox.Show("Mua vé thành công!");
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Đã có lỗi xảy ra trong quá trình đặt ghế hoặc ghế đã được đặt chỗ.");
+                    MessageBox.Show("Đã có lỗi xảy ra trong quá trình bán vé ghế hoặc ghế đã được đặt chỗ. Danh sách ghế đã được load lại.");
+                    GhesDraw();
                 }
             }
         }

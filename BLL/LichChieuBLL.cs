@@ -112,16 +112,5 @@ namespace BLL
 			}
 		}
 
-		public List<LichChieuDTO> Search(string _text)
-		{
-			try
-			{
-				return lichChieuDAL.Search(_text);
-			}
-			catch (Exception)
-			{
-				throw;
-			}
-		}
 	}
 }

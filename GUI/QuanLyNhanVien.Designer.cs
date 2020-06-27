@@ -64,6 +64,7 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbOptions = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -105,6 +106,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.cbOptions);
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.btnQuanLyLogin);
@@ -135,9 +137,9 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(1060, 174);
+            this.txtSearch.Location = new System.Drawing.Point(1198, 174);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(267, 22);
+            this.txtSearch.Size = new System.Drawing.Size(129, 22);
             this.txtSearch.TabIndex = 9;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -146,9 +148,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(927, 177);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 17);
+            this.label2.Size = new System.Drawing.Size(100, 17);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Tìm kiếm tên NV";
+            this.label2.Text = "Tìm kiếm bằng";
             // 
             // btnQuanLyLogin
             // 
@@ -390,6 +392,7 @@
             this.MaNhanVien.MinimumWidth = 6;
             this.MaNhanVien.Name = "MaNhanVien";
             this.MaNhanVien.ReadOnly = true;
+            this.MaNhanVien.Visible = false;
             // 
             // Column2
             // 
@@ -457,6 +460,23 @@
             this.RowVersion.ReadOnly = true;
             this.RowVersion.Visible = false;
             // 
+            // cbOptions
+            // 
+            this.cbOptions.FormattingEnabled = true;
+            this.cbOptions.Items.AddRange(new object[] {
+            "Họ và tên",
+            "Ngày sinh",
+            "Giới tính",
+            "Số CMMD",
+            "Số điện thoại",
+            "Chức vụ",
+            "Địa chỉ"});
+            this.cbOptions.Location = new System.Drawing.Point(1060, 174);
+            this.cbOptions.Name = "cbOptions";
+            this.cbOptions.Size = new System.Drawing.Size(121, 24);
+            this.cbOptions.TabIndex = 10;
+            this.cbOptions.SelectedIndexChanged += new System.EventHandler(this.cbOptions_SelectedIndexChanged);
+            // 
             // QuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -506,6 +526,11 @@
         private System.Windows.Forms.DataGridView dgvNhanVien;
         private System.Windows.Forms.ComboBox cbNamNu;
         private System.Windows.Forms.Button btnQuanLyLogin;
+        private System.Windows.Forms.Label lbHi;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbOptions;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
@@ -515,9 +540,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn RowVersion;
-        private System.Windows.Forms.Label lbHi;
-        private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Label label2;
     }
 }

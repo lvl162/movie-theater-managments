@@ -1,6 +1,6 @@
 ﻿namespace QuanLyRapPhim
 {
-    partial class DatVe
+    partial class BanVe
     {
         /// <summary>
         /// Required designer variable.
@@ -37,13 +37,14 @@
             this.txtGioChieu = new System.Windows.Forms.TextBox();
             this.txtNgayChieu = new System.Windows.Forms.TextBox();
             this.txtTenPhong = new System.Windows.Forms.TextBox();
-            this.txtMoTa = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btcancel = new System.Windows.Forms.Button();
             this.btnChonGhe = new System.Windows.Forms.Button();
+            this.pbPoster = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPoster)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -77,7 +78,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(922, 62);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Đặt vé";
+            this.label1.Text = "Thông tin bán vé";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -93,11 +94,11 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.pbPoster);
             this.panel2.Controls.Add(this.txtTenPhim);
             this.panel2.Controls.Add(this.txtGioChieu);
             this.panel2.Controls.Add(this.txtNgayChieu);
             this.panel2.Controls.Add(this.txtTenPhong);
-            this.panel2.Controls.Add(this.txtMoTa);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.btcancel);
@@ -146,15 +147,6 @@
             this.txtTenPhong.Size = new System.Drawing.Size(318, 22);
             this.txtTenPhong.TabIndex = 3;
             // 
-            // txtMoTa
-            // 
-            this.txtMoTa.Location = new System.Drawing.Point(711, 8);
-            this.txtMoTa.Multiline = true;
-            this.txtMoTa.Name = "txtMoTa";
-            this.txtMoTa.ReadOnly = true;
-            this.txtMoTa.Size = new System.Drawing.Size(181, 238);
-            this.txtMoTa.TabIndex = 7;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -197,11 +189,19 @@
             this.btnChonGhe.Name = "btnChonGhe";
             this.btnChonGhe.Size = new System.Drawing.Size(210, 34);
             this.btnChonGhe.TabIndex = 4;
-            this.btnChonGhe.Text = "Chọn ghế và mua vé";
+            this.btnChonGhe.Text = "Chọn ghế và bán vé";
             this.btnChonGhe.UseVisualStyleBackColor = true;
             this.btnChonGhe.Click += new System.EventHandler(this.btnChonGhe_Click);
             // 
-            // DatVe
+            // pbPoster
+            // 
+            this.pbPoster.Location = new System.Drawing.Point(679, 35);
+            this.pbPoster.Name = "pbPoster";
+            this.pbPoster.Size = new System.Drawing.Size(181, 255);
+            this.pbPoster.TabIndex = 11;
+            this.pbPoster.TabStop = false;
+            // 
+            // BanVe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -209,13 +209,14 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "DatVe";
+            this.Name = "BanVe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "DatVe";
+            this.Text = "Bán vé";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPoster)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -230,11 +231,11 @@
         private System.Windows.Forms.Button btnChonGhe;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtMoTa;
         private System.Windows.Forms.TextBox txtTenPhong;
         private System.Windows.Forms.Label lbHi;
         private System.Windows.Forms.TextBox txtTenPhim;
         private System.Windows.Forms.TextBox txtGioChieu;
         private System.Windows.Forms.TextBox txtNgayChieu;
+        private System.Windows.Forms.PictureBox pbPoster;
     }
 }

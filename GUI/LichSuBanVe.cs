@@ -44,8 +44,7 @@ namespace QuanLyRapPhim
         {
             if (cbOptions.SelectedIndex == 0)
             {
-                
-                dgvLichSuBanVe.DataSource = list.Where(l => l.TenPhim.Contains(txtSearch.Text) || convertToUnSign(l.TenPhim).ToLower().Contains(txtSearch.Text.ToLower())).ToList();
+                dgvLichSuBanVe.DataSource = list.Where(l => l.TenPhim.Contains(txtSearch.Text) || Utils.convertToUnSign(l.TenPhim).ToLower().Contains(txtSearch.Text.ToLower())).ToList();
             }
             if (cbOptions.SelectedIndex == 1)
             {
@@ -74,11 +73,6 @@ namespace QuanLyRapPhim
             txtSearch.Text = "";
         }
 
-        public static string convertToUnSign(string s)
-        {
-            Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
-            string temp = s.Normalize(NormalizationForm.FormD);
-            return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
-        }
+        
     }
 }

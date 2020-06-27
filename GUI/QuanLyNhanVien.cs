@@ -8,16 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using DTO;
+
 namespace QuanLyRapPhim
 {
     public partial class QuanLyNhanVien : Form
     {
         int RowEnter = 0;
         NhanVienBLL quanLyNhanVienBLL = new NhanVienBLL();
+        List<NhanVienDTO> list = new List<NhanVienDTO>();
         public QuanLyNhanVien()
         {
             InitializeComponent();
             lbHi.Text = $"Hi {Login.UserName}!";
+            cbOptions.SelectedIndex = 0;
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -51,8 +55,9 @@ namespace QuanLyRapPhim
         {
             try
             {
+                list = quanLyNhanVienBLL.DanhSachNhanVien();
                 dgvNhanVien.AutoGenerateColumns = false;
-                dgvNhanVien.DataSource = quanLyNhanVienBLL.DanhSachNhanVien();
+                dgvNhanVien.DataSource = list;
                 txtSearch.Text = "";
             }
             catch (Exception ex)
@@ -157,12 +162,46 @@ namespace QuanLyRapPhim
         {
             try
             {
-                dgvNhanVien.DataSource = quanLyNhanVienBLL.Search(txtSearch.Text);
+                string text = txtSearch.Text.ToLower();
+                int index = cbOptions.SelectedIndex;
+                if (index == 0)
+                {
+                    dgvNhanVien.DataSource = list.Where(nv => Utils.convertToUnSign(nv.HoVaTen).ToLower().Contains(text)).ToList();
+                }
+                if (index == 1)
+                {
+                    dgvNhanVien.DataSource = list.Where(nv => nv.NgaySinh.ToString("dd/MM/yyyy").Contains(text)).ToList();
+                }
+                if (index == 2)
+                {
+                    dgvNhanVien.DataSource = list.Where(nv => Utils.convertToUnSign(nv.GioiTinh).ToLower().Contains(text)).ToList();
+                }
+                if (index == 3)
+                {
+                    dgvNhanVien.DataSource = list.Where(nv => nv.SoCMND.Contains(text)).ToList();
+                }
+                if (index == 4)
+                {
+                    dgvNhanVien.DataSource = list.Where(nv => nv.SDT.Contains(text)).ToList();
+                }
+                if (index == 5)
+                {
+                    dgvNhanVien.DataSource = list.Where(nv => Utils.convertToUnSign(nv.ChucVu).ToLower().Contains(text)).ToList();
+                }
+                if (index == 6)
+                {
+                    dgvNhanVien.DataSource = list.Where(nv => Utils.convertToUnSign(nv.DiaChi).ToLower().Contains(text)).ToList();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void cbOptions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
         }
     }
 }

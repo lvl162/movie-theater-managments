@@ -31,5 +31,9 @@ namespace DTO
         {
             get { return NgayGioChieu.ToString("hh:mm tt"); }
         }
+        public int SoGheTrong
+        {
+            get;set;
+        }
     }
 }

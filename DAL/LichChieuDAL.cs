@@ -30,7 +30,8 @@ namespace DAL
 							RowVersion = BitConverter.ToUInt64(lc.RowVersion, 0).ToString(),
 							TenPhim = lc.Phim.TenPhim,
 							TenPhong = lc.PhongChieu.TenPhong,
-							PhimMoTa = lc.Phim.MoTa
+							PhimMoTa = lc.Phim.MoTa,
+							SoGheTrong = getSoGheTrong(lc.MaPhong,lc.MaLichChieu)
 						};
 						lichChieuDTOs.Add(lcDTO);
 					}
@@ -91,41 +92,6 @@ namespace DAL
 			}
 		}
 
-		public List<LichChieuDTO> Search(string text)
-		{
-			try
-			{
-				using (var context = new QLRPContext())
-				{
-					List<LichChieu> lichChieus = context.LichChieus.Select(p => p).ToList();
-					List<LichChieuDTO> lichChieuDTOs = new List<LichChieuDTO>();
-					foreach (LichChieu lc in lichChieus)
-					{
-						string tenPhim = Utils.convertToUnSign(lc.Phim.TenPhim).ToLower();
-						if (lc.Phim.TenPhim.Contains(text) || tenPhim.Contains(text.ToLower()))
-						{
-							var lcDTO = new LichChieuDTO
-							{
-								MaLichChieu = lc.MaLichChieu,
-								MaPhim = lc.MaPhim,
-								MaPhong = lc.MaPhong,
-								NgayGioChieu = lc.NgayGioChieu,
-								RowVersion = BitConverter.ToUInt64(lc.RowVersion, 0).ToString(),
-								TenPhim = lc.Phim.TenPhim,
-								TenPhong = lc.PhongChieu.TenPhong
-							};
-							lichChieuDTOs.Add(lcDTO);
-						}
-					}
-					return lichChieuDTOs;
-				}
-			}
-			catch (Exception)
-			{
-				throw;
-			}
-		}
-
 		public bool UpdateLichChieu(LichChieuDTO lichChieu)
 		{
 			try
@@ -145,14 +111,14 @@ namespace DAL
 							context.SaveChanges();
 							return true;
 						}
-						else throw new Exception("Da co update truoc do.");
+						else throw new Exception("Có ai đó đã update đối tượng này trước đó.");
 					}
 					return false;
 				}
 			}
 			catch (DbUpdateConcurrencyException)
 			{
-				throw new Exception("Update failed. Ai do cung dang up");
+				throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này.");
 			}
 			catch (Exception)
 			{

@@ -48,11 +48,11 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.pbMoTa = new System.Windows.Forms.PictureBox();
+            this.pbPoster = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhim)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMoTa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPoster)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -269,20 +269,20 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // pbMoTa
+            // pbPoster
             // 
-            this.pbMoTa.Location = new System.Drawing.Point(763, 172);
-            this.pbMoTa.Name = "pbMoTa";
-            this.pbMoTa.Size = new System.Drawing.Size(237, 332);
-            this.pbMoTa.TabIndex = 4;
-            this.pbMoTa.TabStop = false;
+            this.pbPoster.Location = new System.Drawing.Point(763, 172);
+            this.pbPoster.Name = "pbPoster";
+            this.pbPoster.Size = new System.Drawing.Size(237, 332);
+            this.pbPoster.TabIndex = 4;
+            this.pbPoster.TabStop = false;
             // 
             // QuanLyPhim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 516);
-            this.Controls.Add(this.pbMoTa);
+            this.Controls.Add(this.pbPoster);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvPhim);
             this.Controls.Add(this.groupBox1);
@@ -296,7 +296,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhim)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMoTa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPoster)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -317,7 +317,7 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DateTimePicker timePickerKhoiChieu;
         private System.Windows.Forms.Label lbHi;
-        private System.Windows.Forms.PictureBox pbMoTa;
+        private System.Windows.Forms.PictureBox pbPoster;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhim;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenPhim;
         private System.Windows.Forms.DataGridViewTextBoxColumn TheLoai;

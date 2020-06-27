@@ -75,7 +75,6 @@ C:\Users\LuuVanLoi\Desktop\QLRP\GUI\bin\Debug\Model.dll
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\bin\Debug\Model.pdb
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\bin\Debug\DTO.dll
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\bin\Debug\DTO.pdb
-C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.DatVe.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.QuanLyGhe.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.QuanLyLichChieu.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.DanhSachPhong.PhongDatVe.resources
@@ -83,3 +82,4 @@ C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.HoaDon.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.LichSuBanVe.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.NVBVForm.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.MenuForQTV.resources
+C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.BanVe.resources

@@ -42,9 +42,9 @@
             this.btnDatVe.Name = "btnDatVe";
             this.btnDatVe.Size = new System.Drawing.Size(101, 103);
             this.btnDatVe.TabIndex = 1;
-            this.btnDatVe.Text = "Đặt vé";
+            this.btnDatVe.Text = "Bán vé";
             this.btnDatVe.UseVisualStyleBackColor = true;
-            this.btnDatVe.Click += new System.EventHandler(this.btnDatVe_Click);
+            this.btnDatVe.Click += new System.EventHandler(this.btnBanVe_Click);
             // 
             // btnQLPhong
             // 

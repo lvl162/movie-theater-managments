@@ -71,15 +71,15 @@
             // 
             this.btnApply.Location = new System.Drawing.Point(241, 607);
             this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(82, 40);
+            this.btnApply.Size = new System.Drawing.Size(173, 40);
             this.btnApply.TabIndex = 3;
-            this.btnApply.Text = "Xác nhận";
+            this.btnApply.Text = "Xác nhận bán vé";
             this.btnApply.UseVisualStyleBackColor = true;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(501, 607);
+            this.btnCancel.Location = new System.Drawing.Point(555, 607);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(82, 40);
             this.btnCancel.TabIndex = 3;

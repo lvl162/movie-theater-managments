@@ -13,11 +13,11 @@ using System.Windows.Forms;
 
 namespace QuanLyRapPhim
 {
-    public partial class DatVe : Form
+    public partial class BanVe : Form
     {
         DatVeBLL datVeBLL = new DatVeBLL();
         LichChieuDTO lc = null;
-        public DatVe(LichChieuDTO lcDTO)
+        public BanVe(LichChieuDTO lcDTO)
         {
             InitializeComponent();
             lbHi.Text = $"Hi {Login.UserName}!";
@@ -25,7 +25,9 @@ namespace QuanLyRapPhim
             txtNgayChieu.Text = lcDTO.NgayChieu;
             txtTenPhim.Text = lcDTO.TenPhim;
             txtGioChieu.Text = lcDTO.GioChieu;
+            pbPoster.SizeMode = PictureBoxSizeMode.StretchImage;
             txtTenPhong.Text = lcDTO.TenPhong;
+            pbPoster.Image = Image.FromFile(NVBVForm.posterPath);
         }
 
         private void btnChonGhe_Click(object sender, EventArgs e)

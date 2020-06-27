@@ -86,51 +86,18 @@ namespace DAL
                             context.SaveChanges();
                             return true;
                         }
-                        else throw new Exception("Da co update truoc do.");
+                        else throw new Exception("Có ai đó đã update đối tượng này trước đó.");
                     }
                     return false;
                 }
             }
             catch (DbUpdateConcurrencyException)
             {
-                throw new Exception("Update failed. Ai do cung dang update.");
+                throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này.");
             }
             catch (Exception e)
             {
                 throw e;
-            }
-        }
-
-        public List<NhanVienDTO> Search(string text)
-        {
-            try
-            {
-                using (QLRPContext context = new QLRPContext())
-                {
-                    //string tenPhim = Utils.convertToUnSign(lc.Phim.TenPhim).ToLower();
-                    //if (lc.Phim.TenPhim.Contains(text) || tenPhim.Contains(text.ToLower()))
-                    var list = context.NhanViens.AsEnumerable()
-                        .Where(nv => nv.HoVaTen.Contains(text) ||
-                    Utils.convertToUnSign(nv.HoVaTen.ToLower()).Contains(text.ToLower()))
-                        .Select(nv => new NhanVienDTO()
-                        {
-                            MaNhanVien = nv.MaNhanVien,
-                            ChucVu = nv.ChucVu,
-                            NgaySinh = nv.NgaySinh,
-                            DiaChi = nv.DiaChi,
-                            GioiTinh = nv.GioiTinh,
-                            HoVaTen = nv.HoVaTen,
-                            SDT = nv.SDT,
-                            SoCMND = nv.SoCMND,
-                            RowVersion = BitConverter.ToUInt64(nv.RowVersion, 0).ToString()
-                        }).ToList();
-                    return list;
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
             }
         }
 
