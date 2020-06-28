@@ -74,7 +74,7 @@ namespace QuanLyRapPhim
             {
                 try
                 {
-                    string tenPhim, theLoai, moTa;
+                    string tenPhim, theLoai;
                     int maPhim = int.Parse(dgvPhim.Rows[RowEnter].Cells[0].Value.ToString());
                     DateTime khoiChieu;
                     tenPhim = txtTenPhim.Text;

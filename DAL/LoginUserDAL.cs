@@ -19,9 +19,13 @@ namespace DAL
                 {
                     foreach (var el in context.Logins.Select(p=>p).ToList())
                     {
-                        if (el.MaNhanVien == lg.MaNhanVien || el.UserName == lg.UserName)
+                        if (el.MaNhanVien == lg.MaNhanVien)
                         {
                             throw new Exception("Nhân viên này đã có tài khoản.");
+                        }
+                        if (el.UserName == lg.UserName)
+                        {
+                            throw new Exception("Username này đã tồn tại. Xin thử lại!");
                         }
                     }
                     Login newLogin = new Login()

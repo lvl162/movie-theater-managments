@@ -43,6 +43,7 @@ namespace QuanLyRapPhim
                     if (lgBLL.ResetPassword(txtUsername.Text, new_pw, MaNV))
                     {
                         MessageBox.Show("Reset mật khẩu thành công!");
+                        Close();
                     }
                 }
             }
