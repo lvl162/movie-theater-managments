@@ -79,10 +79,9 @@ namespace QuanLyRapPhim
                     DateTime khoiChieu;
                     tenPhim = txtTenPhim.Text;
                     theLoai = txtTheLoai.Text;
-                    moTa = txtTenPhim.Text + ".jpg";
                     khoiChieu = timePickerKhoiChieu.Value.Date;
                     string rowVer = dgvPhim.Rows[RowEnter].Cells[5].Value.ToString();
-                    if (phimBLL.UpdatePhim(maPhim, tenPhim, theLoai, khoiChieu, moTa, rowVer))
+                    if (phimBLL.UpdatePhim(maPhim, tenPhim, theLoai, khoiChieu, rowVer))
                         MessageBox.Show("Update thành công!");
                 }
                 catch (Exception ex)

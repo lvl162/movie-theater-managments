@@ -97,7 +97,6 @@ namespace DAL
                         {
                             pc.TenPhim = p.TenPhim;
                             pc.TheLoai = p.TheLoai;
-                            pc.MoTa = p.MoTa;
                             pc.NgayKhoiChieu = p.NgayKhoiChieu;
                             pc.NgaySua = DateTime.Now;
                             pc.NguoiSua = CurrentUser.Username;

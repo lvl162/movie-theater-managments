@@ -37,7 +37,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnUserInfo = new System.Windows.Forms.Button();
             this.cbNamNu = new System.Windows.Forms.ComboBox();
-            this.btnReset = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -112,7 +111,6 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.btnUserInfo);
             this.panel2.Controls.Add(this.cbNamNu);
-            this.panel2.Controls.Add(this.btnReset);
             this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Controls.Add(this.btnAdd);
@@ -173,7 +171,7 @@
             // 
             // btnUserInfo
             // 
-            this.btnUserInfo.Location = new System.Drawing.Point(624, 166);
+            this.btnUserInfo.Location = new System.Drawing.Point(609, 166);
             this.btnUserInfo.Name = "btnUserInfo";
             this.btnUserInfo.Size = new System.Drawing.Size(169, 28);
             this.btnUserInfo.TabIndex = 7;
@@ -193,20 +191,9 @@
             this.cbNamNu.Size = new System.Drawing.Size(184, 24);
             this.cbNamNu.TabIndex = 6;
             // 
-            // btnReset
-            // 
-            this.btnReset.Location = new System.Drawing.Point(474, 166);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(4);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(94, 28);
-            this.btnReset.TabIndex = 5;
-            this.btnReset.Text = "Clear";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(324, 166);
+            this.btnDelete.Location = new System.Drawing.Point(454, 166);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(94, 28);
@@ -217,7 +204,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(174, 166);
+            this.btnUpdate.Location = new System.Drawing.Point(304, 166);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(94, 28);
@@ -228,7 +215,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(24, 166);
+            this.btnAdd.Location = new System.Drawing.Point(154, 166);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(94, 28);
@@ -537,7 +524,6 @@
         private System.Windows.Forms.ComboBox cbNamNu;
         private System.Windows.Forms.Button btnUserInfo;
         private System.Windows.Forms.Label lbHi;
-        private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbOptions;

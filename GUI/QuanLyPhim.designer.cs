@@ -36,12 +36,6 @@
             this.txtTenPhim = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvPhim = new System.Windows.Forms.DataGridView();
-            this.MaPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayKhoiChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbOptions = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,6 +46,12 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.pbPoster = new System.Windows.Forms.PictureBox();
+            this.MaPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayKhoiChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhim)).BeginInit();
             this.panel1.SuspendLayout();
@@ -156,60 +156,6 @@
             this.dgvPhim.Size = new System.Drawing.Size(730, 332);
             this.dgvPhim.TabIndex = 1;
             this.dgvPhim.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhim_RowEnter);
-            // 
-            // MaPhim
-            // 
-            this.MaPhim.DataPropertyName = "MaPhim";
-            this.MaPhim.FillWeight = 35F;
-            this.MaPhim.HeaderText = "Mã Phim";
-            this.MaPhim.MinimumWidth = 6;
-            this.MaPhim.Name = "MaPhim";
-            this.MaPhim.ReadOnly = true;
-            this.MaPhim.Visible = false;
-            // 
-            // TenPhim
-            // 
-            this.TenPhim.DataPropertyName = "TenPhim";
-            this.TenPhim.HeaderText = "Tên Phim";
-            this.TenPhim.MinimumWidth = 6;
-            this.TenPhim.Name = "TenPhim";
-            this.TenPhim.ReadOnly = true;
-            // 
-            // TheLoai
-            // 
-            this.TheLoai.DataPropertyName = "TheLoai";
-            this.TheLoai.FillWeight = 70F;
-            this.TheLoai.HeaderText = "Thể Loại";
-            this.TheLoai.MinimumWidth = 6;
-            this.TheLoai.Name = "TheLoai";
-            this.TheLoai.ReadOnly = true;
-            // 
-            // NgayKhoiChieu
-            // 
-            this.NgayKhoiChieu.DataPropertyName = "NgayKhoiChieu";
-            this.NgayKhoiChieu.HeaderText = "Ngày Khởi Chiếu";
-            this.NgayKhoiChieu.MinimumWidth = 6;
-            this.NgayKhoiChieu.Name = "NgayKhoiChieu";
-            this.NgayKhoiChieu.ReadOnly = true;
-            // 
-            // MoTa
-            // 
-            this.MoTa.DataPropertyName = "MoTa";
-            this.MoTa.FillWeight = 150F;
-            this.MoTa.HeaderText = "Mô tả";
-            this.MoTa.MinimumWidth = 6;
-            this.MoTa.Name = "MoTa";
-            this.MoTa.ReadOnly = true;
-            this.MoTa.Visible = false;
-            // 
-            // RowVersion
-            // 
-            this.RowVersion.DataPropertyName = "RowVersion";
-            this.RowVersion.HeaderText = "RowVersion";
-            this.RowVersion.MinimumWidth = 6;
-            this.RowVersion.Name = "RowVersion";
-            this.RowVersion.ReadOnly = true;
-            this.RowVersion.Visible = false;
             // 
             // panel1
             // 
@@ -316,6 +262,60 @@
             this.pbPoster.Size = new System.Drawing.Size(237, 332);
             this.pbPoster.TabIndex = 4;
             this.pbPoster.TabStop = false;
+            // 
+            // MaPhim
+            // 
+            this.MaPhim.DataPropertyName = "MaPhim";
+            this.MaPhim.FillWeight = 35F;
+            this.MaPhim.HeaderText = "Mã Phim";
+            this.MaPhim.MinimumWidth = 6;
+            this.MaPhim.Name = "MaPhim";
+            this.MaPhim.ReadOnly = true;
+            this.MaPhim.Visible = false;
+            // 
+            // TenPhim
+            // 
+            this.TenPhim.DataPropertyName = "TenPhim";
+            this.TenPhim.HeaderText = "Tên Phim";
+            this.TenPhim.MinimumWidth = 6;
+            this.TenPhim.Name = "TenPhim";
+            this.TenPhim.ReadOnly = true;
+            // 
+            // TheLoai
+            // 
+            this.TheLoai.DataPropertyName = "TheLoai";
+            this.TheLoai.FillWeight = 70F;
+            this.TheLoai.HeaderText = "Thể Loại";
+            this.TheLoai.MinimumWidth = 6;
+            this.TheLoai.Name = "TheLoai";
+            this.TheLoai.ReadOnly = true;
+            // 
+            // NgayKhoiChieu
+            // 
+            this.NgayKhoiChieu.DataPropertyName = "NgayKhoiChieu";
+            this.NgayKhoiChieu.HeaderText = "Ngày Khởi Chiếu";
+            this.NgayKhoiChieu.MinimumWidth = 6;
+            this.NgayKhoiChieu.Name = "NgayKhoiChieu";
+            this.NgayKhoiChieu.ReadOnly = true;
+            // 
+            // MoTa
+            // 
+            this.MoTa.DataPropertyName = "MoTa";
+            this.MoTa.FillWeight = 150F;
+            this.MoTa.HeaderText = "Mô tả";
+            this.MoTa.MinimumWidth = 6;
+            this.MoTa.Name = "MoTa";
+            this.MoTa.ReadOnly = true;
+            this.MoTa.Visible = false;
+            // 
+            // RowVersion
+            // 
+            this.RowVersion.DataPropertyName = "RowVersion";
+            this.RowVersion.HeaderText = "RowVersion";
+            this.RowVersion.MinimumWidth = 6;
+            this.RowVersion.Name = "RowVersion";
+            this.RowVersion.ReadOnly = true;
+            this.RowVersion.Visible = false;
             // 
             // QuanLyPhim
             // 
