@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -9,6 +10,8 @@ namespace QuanLyRapPhim
 {
     public class Utils
     {
+        public static string workingDirectory = Environment.CurrentDirectory;
+        public static string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName + @"\PhimPosters\";
         public static string convertToUnSign(string s)
         {
             Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");

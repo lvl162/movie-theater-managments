@@ -45,7 +45,6 @@
     <Compile Include="GheDTO.cs" />
     <Compile Include="LichChieuDTO.cs" />
     <Compile Include="LoginDTO.cs" />
-    <Compile Include="LoginUserWithNameDTO.cs" />
     <Compile Include="NhanVienDTO.cs" />
     <Compile Include="PhimDTO.cs" />
     <Compile Include="PhongChieuDTO.cs" />

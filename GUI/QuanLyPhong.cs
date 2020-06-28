@@ -17,11 +17,14 @@ namespace GUI
     {
         PhongChieuBLL pcBLL;
         int RowEnter = 0;
+        List<PhongChieuDTO> list = new List<PhongChieuDTO>();
         public QuanLyPhong()
         {
             InitializeComponent();
             lbHi.Text = $"Hi {Login.UserName}!";
             pcBLL = new PhongChieuBLL();
+            dgvPhong.AutoGenerateColumns = false;
+            cbOptions.SelectedIndex = 0;
         }
         private void dgvPhong_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -42,8 +45,8 @@ namespace GUI
         {
             try
             {
-                dgvPhong.AutoGenerateColumns = false;
-                dgvPhong.DataSource = pcBLL.DanhSachPhongChieu();
+                list = pcBLL.DanhSachPhongChieu();
+                dgvPhong.DataSource = list;
             }
             catch (Exception ex)
             {
@@ -145,6 +148,36 @@ namespace GUI
         private void btnDSGhe_Click(object sender, EventArgs e)
         {
             new QuanLyGhe().ShowDialog();
+        }
+
+        private void cbOptions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int index = cbOptions.SelectedIndex;
+                string text = txtSearch.Text.ToLower();
+                if (index == 0)
+                {
+                    dgvPhong.DataSource = list.Where(p => p.TenPhong.ToLower().Contains(text)).ToList();
+                }
+                if (index == 1)
+                {
+                    dgvPhong.DataSource = list.Where(p => p.SoHang.ToString().Contains(text)).ToList();
+                }
+                if (index == 2)
+                {
+                    dgvPhong.DataSource = list.Where(p => p.SoCot.ToString().Contains(text)).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

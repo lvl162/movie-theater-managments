@@ -70,7 +70,6 @@ C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.exe
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.pdb
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.Login.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.QuanLyNhanVien.resources
-C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.QuanLyLoginUser.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\bin\Debug\Model.dll
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\bin\Debug\Model.pdb
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\bin\Debug\DTO.dll
@@ -83,3 +82,8 @@ C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.LichSuBanVe.resource
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.NVBVForm.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.MenuForQTV.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.BanVe.resources
+C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.ChangePassword.resources
+C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.ResetPassword.resources
+C:\Users\LuuVanLoi\Desktop\QLRP\GUI\bin\Debug\BCrypt.Net.dll
+C:\Users\LuuVanLoi\Desktop\QLRP\GUI\bin\Debug\BCrypt.Net.xml
+C:\Users\LuuVanLoi\Desktop\QLRP\GUI\obj\Debug\QuanLyRapPhim.ThemUser.resources

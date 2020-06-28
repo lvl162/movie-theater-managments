@@ -9,14 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using DTO;
+
 namespace QuanLyRapPhim
 {
     public partial class QuanLyPhim : Form
     {
         PhimBLL phimBLL;
+        List<PhimDTO> list = new List<PhimDTO>();  
         int RowEnter = 0;
-        static string workingDirectory = Environment.CurrentDirectory;
-        static string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName + @"\PhimPosters\";
+        
         public QuanLyPhim()
         {
             InitializeComponent();
@@ -24,14 +26,16 @@ namespace QuanLyRapPhim
             phimBLL = new PhimBLL();
             dgvPhim.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
             pbPoster.SizeMode = PictureBoxSizeMode.StretchImage;
+            cbOptions.SelectedIndex = 0;
         }
 
         private void QuanLyPhim_Load(object sender, EventArgs e)
         {
             try
             {
+                list = phimBLL.DanhSachPhim();
                 dgvPhim.AutoGenerateColumns = false;
-                dgvPhim.DataSource = phimBLL.DanhSachPhim();
+                dgvPhim.DataSource = list;
             }
             catch (Exception ex)
             {
@@ -132,17 +136,52 @@ namespace QuanLyRapPhim
                 txtTenPhim.Text = dgvPhim.Rows[RowEnter].Cells[1].Value.ToString();
                 txtTheLoai.Text = dgvPhim.Rows[RowEnter].Cells[2].Value.ToString();
                 timePickerKhoiChieu.Value = DateTime.Parse(dgvPhim.Rows[RowEnter].Cells[3].Value.ToString());
-                string picPath = projectDirectory + dgvPhim.Rows[RowEnter].Cells[4].Value.ToString();
+                string picPath = Utils.projectDirectory + dgvPhim.Rows[RowEnter].Cells[4].Value.ToString();
                 pbPoster.Image = Image.FromFile(picPath);
             }
             catch(FileNotFoundException)
             {
-                pbPoster.Image = Image.FromFile(projectDirectory + "notfound.jpg");
+                pbPoster.Image = Image.FromFile(Utils.projectDirectory + "notfound.jpg");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int index = cbOptions.SelectedIndex;
+                string text = txtSearch.Text.ToLower();
+                if (index == 0)
+                {
+                    dgvPhim.DataSource = list.Where(p => Utils.convertToUnSign(p.TenPhim).ToLower().Contains(text)).ToList();
+                }
+                if (index == 1)
+                {
+                    dgvPhim.DataSource = list.Where(p => Utils.convertToUnSign(p.TheLoai).ToLower().Contains(text)).ToList();
+                }
+                if (index == 2)
+                {
+                    dgvPhim.DataSource = list.Where(p => p.NgayKhoiChieu.ToString("dd/MM/yyyy").Contains(text)).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cbOptions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -140,6 +140,10 @@
     <Compile Include="Migrations\202006271617298_add_required.designer.cs">
       <DependentUpon>202006271617298_add_required.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006280833103_fix_login.cs" />
+    <Compile Include="Migrations\202006280833103_fix_login.designer.cs">
+      <DependentUpon>202006280833103_fix_login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NhanVien.cs" />
     <Compile Include="Phim.cs" />
@@ -207,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006271617298_add_required.resx">
       <DependentUpon>202006271617298_add_required.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006280833103_fix_login.resx">
+      <DependentUpon>202006280833103_fix_login.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

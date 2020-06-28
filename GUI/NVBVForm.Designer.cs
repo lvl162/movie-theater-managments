@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.dgvLichChieu = new System.Windows.Forms.DataGridView();
+            this.TenPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phòng = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLichChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoGheTrong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbThongTinLichChieu = new System.Windows.Forms.GroupBox();
             this.txtGheTrong = new System.Windows.Forms.TextBox();
             this.txtTenPhong = new System.Windows.Forms.TextBox();
@@ -46,14 +54,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pbPoster = new System.Windows.Forms.PictureBox();
             this.cbOptions = new System.Windows.Forms.ComboBox();
-            this.TenPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Phòng = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaLichChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoGheTrong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichChieu)).BeginInit();
             this.gbThongTinLichChieu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPoster)).BeginInit();
@@ -84,6 +84,73 @@
             this.dgvLichChieu.Size = new System.Drawing.Size(627, 300);
             this.dgvLichChieu.TabIndex = 0;
             this.dgvLichChieu.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLichChieu_RowEnter);
+            // 
+            // TenPhim
+            // 
+            this.TenPhim.DataPropertyName = "TenPhim";
+            this.TenPhim.HeaderText = "Tên phim";
+            this.TenPhim.MinimumWidth = 6;
+            this.TenPhim.Name = "TenPhim";
+            this.TenPhim.ReadOnly = true;
+            // 
+            // NgayChieu
+            // 
+            this.NgayChieu.DataPropertyName = "NgayChieu";
+            this.NgayChieu.HeaderText = "Ngày chiếu";
+            this.NgayChieu.MinimumWidth = 6;
+            this.NgayChieu.Name = "NgayChieu";
+            this.NgayChieu.ReadOnly = true;
+            // 
+            // GioChieu
+            // 
+            this.GioChieu.DataPropertyName = "GioChieu";
+            this.GioChieu.HeaderText = "Giờ chiếu";
+            this.GioChieu.MinimumWidth = 6;
+            this.GioChieu.Name = "GioChieu";
+            this.GioChieu.ReadOnly = true;
+            // 
+            // Phòng
+            // 
+            this.Phòng.DataPropertyName = "TenPhong";
+            this.Phòng.HeaderText = "Tên phòng";
+            this.Phòng.MinimumWidth = 6;
+            this.Phòng.Name = "Phòng";
+            this.Phòng.ReadOnly = true;
+            // 
+            // MaLichChieu
+            // 
+            this.MaLichChieu.DataPropertyName = "MaLichChieu";
+            this.MaLichChieu.HeaderText = "MaLichChieu";
+            this.MaLichChieu.MinimumWidth = 6;
+            this.MaLichChieu.Name = "MaLichChieu";
+            this.MaLichChieu.ReadOnly = true;
+            this.MaLichChieu.Visible = false;
+            // 
+            // MaPhong
+            // 
+            this.MaPhong.DataPropertyName = "MaPhong";
+            this.MaPhong.HeaderText = "MaPhong";
+            this.MaPhong.MinimumWidth = 6;
+            this.MaPhong.Name = "MaPhong";
+            this.MaPhong.ReadOnly = true;
+            this.MaPhong.Visible = false;
+            // 
+            // MoTa
+            // 
+            this.MoTa.DataPropertyName = "PhimMoTa";
+            this.MoTa.HeaderText = "MoTa";
+            this.MoTa.MinimumWidth = 6;
+            this.MoTa.Name = "MoTa";
+            this.MoTa.ReadOnly = true;
+            this.MoTa.Visible = false;
+            // 
+            // SoGheTrong
+            // 
+            this.SoGheTrong.DataPropertyName = "SoGheTrong";
+            this.SoGheTrong.HeaderText = "Số ghế trống";
+            this.SoGheTrong.MinimumWidth = 6;
+            this.SoGheTrong.Name = "SoGheTrong";
+            this.SoGheTrong.ReadOnly = true;
             // 
             // gbThongTinLichChieu
             // 
@@ -243,73 +310,6 @@
             this.cbOptions.Size = new System.Drawing.Size(121, 24);
             this.cbOptions.TabIndex = 6;
             this.cbOptions.SelectedIndexChanged += new System.EventHandler(this.cbOptions_SelectedIndexChanged);
-            // 
-            // TenPhim
-            // 
-            this.TenPhim.DataPropertyName = "TenPhim";
-            this.TenPhim.HeaderText = "Tên phim";
-            this.TenPhim.MinimumWidth = 6;
-            this.TenPhim.Name = "TenPhim";
-            this.TenPhim.ReadOnly = true;
-            // 
-            // NgayChieu
-            // 
-            this.NgayChieu.DataPropertyName = "NgayChieu";
-            this.NgayChieu.HeaderText = "Ngày chiếu";
-            this.NgayChieu.MinimumWidth = 6;
-            this.NgayChieu.Name = "NgayChieu";
-            this.NgayChieu.ReadOnly = true;
-            // 
-            // GioChieu
-            // 
-            this.GioChieu.DataPropertyName = "GioChieu";
-            this.GioChieu.HeaderText = "Giờ chiếu";
-            this.GioChieu.MinimumWidth = 6;
-            this.GioChieu.Name = "GioChieu";
-            this.GioChieu.ReadOnly = true;
-            // 
-            // Phòng
-            // 
-            this.Phòng.DataPropertyName = "TenPhong";
-            this.Phòng.HeaderText = "Tên phòng";
-            this.Phòng.MinimumWidth = 6;
-            this.Phòng.Name = "Phòng";
-            this.Phòng.ReadOnly = true;
-            // 
-            // MaLichChieu
-            // 
-            this.MaLichChieu.DataPropertyName = "MaLichChieu";
-            this.MaLichChieu.HeaderText = "MaLichChieu";
-            this.MaLichChieu.MinimumWidth = 6;
-            this.MaLichChieu.Name = "MaLichChieu";
-            this.MaLichChieu.ReadOnly = true;
-            this.MaLichChieu.Visible = false;
-            // 
-            // MaPhong
-            // 
-            this.MaPhong.DataPropertyName = "MaPhong";
-            this.MaPhong.HeaderText = "MaPhong";
-            this.MaPhong.MinimumWidth = 6;
-            this.MaPhong.Name = "MaPhong";
-            this.MaPhong.ReadOnly = true;
-            this.MaPhong.Visible = false;
-            // 
-            // MoTa
-            // 
-            this.MoTa.DataPropertyName = "PhimMoTa";
-            this.MoTa.HeaderText = "MoTa";
-            this.MoTa.MinimumWidth = 6;
-            this.MoTa.Name = "MoTa";
-            this.MoTa.ReadOnly = true;
-            this.MoTa.Visible = false;
-            // 
-            // SoGheTrong
-            // 
-            this.SoGheTrong.DataPropertyName = "SoGheTrong";
-            this.SoGheTrong.HeaderText = "Số ghế trống";
-            this.SoGheTrong.MinimumWidth = 6;
-            this.SoGheTrong.Name = "SoGheTrong";
-            this.SoGheTrong.ReadOnly = true;
             // 
             // NVBVForm
             // 

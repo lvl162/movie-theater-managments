@@ -32,9 +32,10 @@
             this.lbHi = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbOptions = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnQuanLyLogin = new System.Windows.Forms.Button();
+            this.btnUserInfo = new System.Windows.Forms.Button();
             this.cbNamNu = new System.Windows.Forms.ComboBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -64,7 +65,7 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbOptions = new System.Windows.Forms.ComboBox();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -109,7 +110,7 @@
             this.panel2.Controls.Add(this.cbOptions);
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.btnQuanLyLogin);
+            this.panel2.Controls.Add(this.btnUserInfo);
             this.panel2.Controls.Add(this.cbNamNu);
             this.panel2.Controls.Add(this.btnReset);
             this.panel2.Controls.Add(this.btnDelete);
@@ -135,9 +136,26 @@
             this.panel2.Size = new System.Drawing.Size(1377, 219);
             this.panel2.TabIndex = 1;
             // 
+            // cbOptions
+            // 
+            this.cbOptions.FormattingEnabled = true;
+            this.cbOptions.Items.AddRange(new object[] {
+            "Họ và tên",
+            "Ngày sinh",
+            "Giới tính",
+            "Số CMMD",
+            "Số điện thoại",
+            "Chức vụ",
+            "Địa chỉ"});
+            this.cbOptions.Location = new System.Drawing.Point(1060, 166);
+            this.cbOptions.Name = "cbOptions";
+            this.cbOptions.Size = new System.Drawing.Size(121, 24);
+            this.cbOptions.TabIndex = 10;
+            this.cbOptions.SelectedIndexChanged += new System.EventHandler(this.cbOptions_SelectedIndexChanged);
+            // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(1198, 174);
+            this.txtSearch.Location = new System.Drawing.Point(1198, 166);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(129, 22);
             this.txtSearch.TabIndex = 9;
@@ -146,21 +164,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(927, 177);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(927, 169);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 17);
             this.label2.TabIndex = 8;
             this.label2.Text = "Tìm kiếm bằng";
             // 
-            // btnQuanLyLogin
+            // btnUserInfo
             // 
-            this.btnQuanLyLogin.Location = new System.Drawing.Point(793, 171);
-            this.btnQuanLyLogin.Name = "btnQuanLyLogin";
-            this.btnQuanLyLogin.Size = new System.Drawing.Size(94, 28);
-            this.btnQuanLyLogin.TabIndex = 7;
-            this.btnQuanLyLogin.Text = "QL User";
-            this.btnQuanLyLogin.UseVisualStyleBackColor = true;
-            this.btnQuanLyLogin.Click += new System.EventHandler(this.btnQuanLyLogin_Click);
+            this.btnUserInfo.Location = new System.Drawing.Point(624, 166);
+            this.btnUserInfo.Name = "btnUserInfo";
+            this.btnUserInfo.Size = new System.Drawing.Size(169, 28);
+            this.btnUserInfo.TabIndex = 7;
+            this.btnUserInfo.Text = "Reset Password";
+            this.btnUserInfo.UseVisualStyleBackColor = true;
+            this.btnUserInfo.Click += new System.EventHandler(this.btnUserInfo_Click);
             // 
             // cbNamNu
             // 
@@ -176,18 +195,18 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(611, 171);
+            this.btnReset.Location = new System.Drawing.Point(474, 166);
             this.btnReset.Margin = new System.Windows.Forms.Padding(4);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(94, 28);
             this.btnReset.TabIndex = 5;
-            this.btnReset.Text = "Reset";
+            this.btnReset.Text = "Clear";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(428, 171);
+            this.btnDelete.Location = new System.Drawing.Point(324, 166);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(94, 28);
@@ -198,7 +217,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(246, 171);
+            this.btnUpdate.Location = new System.Drawing.Point(174, 166);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(94, 28);
@@ -209,7 +228,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(64, 171);
+            this.btnAdd.Location = new System.Drawing.Point(24, 166);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(94, 28);
@@ -374,7 +393,8 @@
             this.Column5,
             this.Column8,
             this.Column7,
-            this.RowVersion});
+            this.RowVersion,
+            this.Username});
             this.dgvNhanVien.Location = new System.Drawing.Point(13, 0);
             this.dgvNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.dgvNhanVien.Name = "dgvNhanVien";
@@ -460,22 +480,12 @@
             this.RowVersion.ReadOnly = true;
             this.RowVersion.Visible = false;
             // 
-            // cbOptions
+            // Username
             // 
-            this.cbOptions.FormattingEnabled = true;
-            this.cbOptions.Items.AddRange(new object[] {
-            "Họ và tên",
-            "Ngày sinh",
-            "Giới tính",
-            "Số CMMD",
-            "Số điện thoại",
-            "Chức vụ",
-            "Địa chỉ"});
-            this.cbOptions.Location = new System.Drawing.Point(1060, 174);
-            this.cbOptions.Name = "cbOptions";
-            this.cbOptions.Size = new System.Drawing.Size(121, 24);
-            this.cbOptions.TabIndex = 10;
-            this.cbOptions.SelectedIndexChanged += new System.EventHandler(this.cbOptions_SelectedIndexChanged);
+            this.Username.DataPropertyName = "UserName";
+            this.Username.HeaderText = "Tên đăng nhập";
+            this.Username.MinimumWidth = 6;
+            this.Username.Name = "Username";
             // 
             // QuanLyNhanVien
             // 
@@ -525,7 +535,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dgvNhanVien;
         private System.Windows.Forms.ComboBox cbNamNu;
-        private System.Windows.Forms.Button btnQuanLyLogin;
+        private System.Windows.Forms.Button btnUserInfo;
         private System.Windows.Forms.Label lbHi;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.TextBox txtSearch;
@@ -540,5 +550,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn RowVersion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
     }
 }

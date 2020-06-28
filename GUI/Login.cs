@@ -15,7 +15,7 @@ namespace QuanLyRapPhim
 {
     public partial class Login : Form
     {
-        LoginBLL LoginBLL = new LoginBLL();
+        LoginUserBLL LoginBLL = new LoginUserBLL();
         public static string UserName { get; set; }
         public static string Password { get; set; }
         public Login()
@@ -62,6 +62,11 @@ namespace QuanLyRapPhim
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void linkChangePassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new ChangePassword().ShowDialog();
         }
     }
 }

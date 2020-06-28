@@ -59,7 +59,7 @@ namespace DAL
                     return res;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }

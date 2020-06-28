@@ -17,5 +17,6 @@ namespace DTO
         public string GioiTinh { get; set; }
         public string ChucVu { get; set; }
         public string RowVersion { get; set; }
+        public string UserName { get; set; }
     }
 }

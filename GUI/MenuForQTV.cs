@@ -42,10 +42,5 @@ namespace QuanLyRapPhim
         {
             new QuanLyNhanVien().ShowDialog();
         }
-
-        private void btnQLUser_Click(object sender, EventArgs e)
-        {
-            new QuanLyLoginUser().ShowDialog();
-        }
     }
 }

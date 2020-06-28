@@ -41,7 +41,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.lbHi = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSGhe)).BeginInit();
             this.SuspendLayout();
@@ -172,15 +171,6 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
-            // 
             // lbHi
             // 
             this.lbHi.AutoSize = true;
@@ -197,7 +187,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(851, 491);
             this.Controls.Add(this.lbHi);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
@@ -231,7 +220,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn RowVersion;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbHi;
     }
 }

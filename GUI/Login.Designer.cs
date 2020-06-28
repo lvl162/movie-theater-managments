@@ -34,6 +34,7 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.linkChangePassword = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -95,11 +96,24 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
+            // linkChangePassword
+            // 
+            this.linkChangePassword.AutoSize = true;
+            this.linkChangePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkChangePassword.Location = new System.Drawing.Point(333, 144);
+            this.linkChangePassword.Name = "linkChangePassword";
+            this.linkChangePassword.Size = new System.Drawing.Size(107, 20);
+            this.linkChangePassword.TabIndex = 5;
+            this.linkChangePassword.TabStop = true;
+            this.linkChangePassword.Text = "Đổi mật khẩu";
+            this.linkChangePassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkChangePassword_LinkClicked);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(461, 289);
+            this.Controls.Add(this.linkChangePassword);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.txtPassword);
@@ -122,5 +136,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.LinkLabel linkChangePassword;
     }
 }

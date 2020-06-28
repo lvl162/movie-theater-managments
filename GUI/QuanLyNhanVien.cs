@@ -76,6 +76,14 @@ namespace QuanLyRapPhim
             txtSDT.Text = dgvNhanVien.Rows[RowEnter].Cells[5].Value.ToString();
             cbChucVu.SelectedItem = dgvNhanVien.Rows[RowEnter].Cells[6].Value.ToString();
             txtDiaChi.Text = dgvNhanVien.Rows[RowEnter].Cells[7].Value.ToString();
+            if (dgvNhanVien.Rows[RowEnter].Cells[9].Value.ToString().Trim() == "Chưa có tài khoản")
+            {
+                btnUserInfo.Text = "Thêm tài khoản";
+            }
+            else
+            {
+                btnUserInfo.Text = "Reset password";
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -118,7 +126,9 @@ namespace QuanLyRapPhim
                     NgaySinh = timePickerNgaySinh.Value.Date;
                     RowVer = dgvNhanVien.Rows[RowEnter].Cells[8].Value.ToString();
                     if (quanLyNhanVienBLL.UpdateNhanVien(maNV, HoTen, NgaySinh, GioiTinh, SoCMND, SDT, ChucVu, DiaChi, RowVer))
+                    {
                         MessageBox.Show("Update thành công!");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -132,7 +142,6 @@ namespace QuanLyRapPhim
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
-            //TODO: messagebox 
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -153,9 +162,27 @@ namespace QuanLyRapPhim
             }
         }
 
-        private void btnQuanLyLogin_Click(object sender, EventArgs e)
+        private void btnUserInfo_Click(object sender, EventArgs e)
         {
-            new QuanLyLoginUser().ShowDialog();
+            try
+            {
+                string cmd = (sender as Button).Text;
+                int maNV = int.Parse(dgvNhanVien.Rows[RowEnter].Cells[0].Value.ToString());
+                if (cmd == "Thêm tài khoản")
+                {
+                    new ThemUser(maNV).ShowDialog();
+                }
+                if (cmd == "Reset password")
+                {
+                    string username = dgvNhanVien.Rows[RowEnter].Cells[9].Value.ToString().Trim();
+                    new ResetPassword(username, maNV).ShowDialog();
+                }
+                QuanLyNhanVien_Load(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

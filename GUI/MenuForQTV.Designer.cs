@@ -32,7 +32,6 @@
             this.btnQLPhong = new System.Windows.Forms.Button();
             this.btnQLPhim = new System.Windows.Forms.Button();
             this.btnQLLichChieu = new System.Windows.Forms.Button();
-            this.btnQLUser = new System.Windows.Forms.Button();
             this.btnQLNhanVien = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -76,16 +75,6 @@
             this.btnQLLichChieu.UseVisualStyleBackColor = true;
             this.btnQLLichChieu.Click += new System.EventHandler(this.btnQLLichChieu_Click);
             // 
-            // btnQLUser
-            // 
-            this.btnQLUser.Location = new System.Drawing.Point(415, 199);
-            this.btnQLUser.Name = "btnQLUser";
-            this.btnQLUser.Size = new System.Drawing.Size(101, 103);
-            this.btnQLUser.TabIndex = 6;
-            this.btnQLUser.Text = "Quản lý App User";
-            this.btnQLUser.UseVisualStyleBackColor = true;
-            this.btnQLUser.Click += new System.EventHandler(this.btnQLUser_Click);
-            // 
             // btnQLNhanVien
             // 
             this.btnQLNhanVien.Location = new System.Drawing.Point(236, 199);
@@ -102,7 +91,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(611, 366);
             this.Controls.Add(this.btnQLNhanVien);
-            this.Controls.Add(this.btnQLUser);
             this.Controls.Add(this.btnQLPhim);
             this.Controls.Add(this.btnQLLichChieu);
             this.Controls.Add(this.btnQLPhong);
@@ -120,7 +108,6 @@
         private System.Windows.Forms.Button btnQLPhong;
         private System.Windows.Forms.Button btnQLPhim;
         private System.Windows.Forms.Button btnQLLichChieu;
-        private System.Windows.Forms.Button btnQLUser;
         private System.Windows.Forms.Button btnQLNhanVien;
     }
 }

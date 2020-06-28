@@ -46,7 +46,6 @@
     <Compile Include="DatVeBLL.cs" />
     <Compile Include="GheBLL.cs" />
     <Compile Include="LichChieuBLL.cs" />
-    <Compile Include="LoginBLL.cs" />
     <Compile Include="PhimBLL.cs" />
     <Compile Include="PhongChieuBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

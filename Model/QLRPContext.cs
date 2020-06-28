@@ -19,6 +19,5 @@ namespace Model
         public DbSet<LichChieu> LichChieus { get; set; }
         public DbSet<Ghe> Ghes { get; set; }
         public DbSet<DatVe> DatVes { get; set; }
-        
     }
 }

@@ -101,25 +101,59 @@ namespace DAL
             }
         }
 
-        public List<NhanVienDTO> DanhSachSinhVien()
+        public bool IsHavingAccount(int manv)
         {
             try
             {
                 using (QLRPContext context = new QLRPContext())
                 {
-                    var list = context.NhanViens.AsEnumerable().Select(nv => new NhanVienDTO
+                    foreach(var el in context.Logins.Select(p=>p).ToList())
                     {
-                        MaNhanVien = nv.MaNhanVien,
-                        ChucVu = nv.ChucVu,
-                        NgaySinh = nv.NgaySinh,
-                        DiaChi = nv.DiaChi,
-                        GioiTinh = nv.GioiTinh,
-                        HoVaTen = nv.HoVaTen,
-                        SDT = nv.SDT,
-                        SoCMND = nv.SoCMND,
-                        RowVersion = BitConverter.ToUInt64(nv.RowVersion, 0).ToString()
-                    });
-                    return list.ToList();
+                        if (el.MaNhanVien == manv)
+                        {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public List<NhanVienDTO> DanhSachNhanVien()
+        {
+            try
+            {
+                using (QLRPContext context = new QLRPContext())
+                {
+                    var list = context.NhanViens.Select(p => p).ToList();
+                    var res = new List<NhanVienDTO>();
+                    foreach (var nv in list)
+                    {
+                        string username = "Chưa có tài khoản";
+                        if (nv.Login != null)
+                        {
+                            username = nv.Login.UserName;
+                        }
+                        NhanVienDTO n = new NhanVienDTO()
+                        {
+                            MaNhanVien = nv.MaNhanVien,
+                            ChucVu = nv.ChucVu,
+                            NgaySinh = nv.NgaySinh,
+                            DiaChi = nv.DiaChi,
+                            GioiTinh = nv.GioiTinh,
+                            HoVaTen = nv.HoVaTen,
+                            SDT = nv.SDT,
+                            SoCMND = nv.SoCMND,
+                            UserName = username,
+                            RowVersion = BitConverter.ToUInt64(nv.RowVersion, 0).ToString()
+                        };
+                        res.Add(n);
+                    }
+                    return res;
                 }
             }
             catch (Exception ex)

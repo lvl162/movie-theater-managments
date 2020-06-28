@@ -16,8 +16,6 @@ namespace QuanLyRapPhim
     public partial class NVBVForm : Form
     {
         int RowEnter = 0;
-        static string workingDirectory = Environment.CurrentDirectory;
-        static string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName + @"\PhimPosters\";
         public static string posterPath;
         public NVBVForm()
         {
@@ -61,12 +59,12 @@ namespace QuanLyRapPhim
                 int maLichChieu = int.Parse(dgvLichChieu.Rows[RowEnter].Cells[4].Value.ToString());
                 int maPhong = int.Parse(dgvLichChieu.Rows[RowEnter].Cells[5].Value.ToString());
                 txtGheTrong.Text = dgvLichChieu.Rows[RowEnter].Cells[7].Value + "";
-                posterPath = projectDirectory + dgvLichChieu.Rows[RowEnter].Cells[6].Value.ToString().Trim();
+                posterPath = Utils.projectDirectory + dgvLichChieu.Rows[RowEnter].Cells[6].Value.ToString().Trim();
                 pbPoster.Image = Image.FromFile(posterPath);
             }
             catch (FileNotFoundException)
             {
-                posterPath = projectDirectory + "notfound.jpg";
+                posterPath = Utils.projectDirectory + "notfound.jpg";
                 pbPoster.Image = Image.FromFile(posterPath);
             }
             catch (Exception ex)
@@ -83,7 +81,7 @@ namespace QuanLyRapPhim
                 string text = txtSearch.Text.ToLower();
                 if (index == 0)
                 {
-                    dgvLichChieu.DataSource = list.Where(p => p.TenPhim.ToLower().Contains(text) || Utils.convertToUnSign(p.TenPhim).ToLower().Contains(text)).ToList();
+                    dgvLichChieu.DataSource = list.Where(p => Utils.convertToUnSign(p.TenPhim).ToLower().Contains(text)).ToList();
                 }
                 if (index == 1)
                 {

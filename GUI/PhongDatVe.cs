@@ -90,9 +90,10 @@ namespace QuanLyRapPhim.DanhSachPhong
                     if (datVeBLL.DatVes(gheDaChon, lichChieu.MaLichChieu))
                     {
                         MessageBox.Show("Mua vé thành công!");
+                        Close();
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Đã có lỗi xảy ra trong quá trình bán vé ghế hoặc ghế đã được đặt chỗ. Danh sách ghế đã được load lại.");
                     GhesDraw();

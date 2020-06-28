@@ -12,14 +12,11 @@ namespace Model
     public class Login
     {
 
-        [Key]
-        [Column(Order = 1)]
-        public string UserName { get; set; }
-
+        
         [Key]
         [ForeignKey("NhanVien")]
-        [Column(Order = 2)]
         public int MaNhanVien { get; set; }
+        public string UserName { get; set; }
         public string Password { get; set; }
         [Timestamp]
         public byte[] RowVersion { get; set; }

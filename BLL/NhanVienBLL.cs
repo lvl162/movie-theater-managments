@@ -56,13 +56,25 @@ namespace BLL
         {
             try
             {
-                return quanLyNhanVienDAL.DanhSachSinhVien().ToList();
+                return quanLyNhanVienDAL.DanhSachNhanVien();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
 
+        }
+
+        public bool IsHavingAccount(int manv)
+        {
+            try
+            {
+                return quanLyNhanVienDAL.IsHavingAccount(manv);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

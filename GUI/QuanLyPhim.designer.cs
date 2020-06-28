@@ -43,6 +43,9 @@
             this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbOptions = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.lbHi = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -68,7 +71,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(420, 166);
+            this.groupBox1.Size = new System.Drawing.Size(420, 154);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phim";
@@ -162,6 +165,7 @@
             this.MaPhim.MinimumWidth = 6;
             this.MaPhim.Name = "MaPhim";
             this.MaPhim.ReadOnly = true;
+            this.MaPhim.Visible = false;
             // 
             // TenPhim
             // 
@@ -209,6 +213,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cbOptions);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Controls.Add(this.lbHi);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.btnAdd);
@@ -219,11 +226,44 @@
             this.panel1.Size = new System.Drawing.Size(562, 166);
             this.panel1.TabIndex = 2;
             // 
+            // cbOptions
+            // 
+            this.cbOptions.FormattingEnabled = true;
+            this.cbOptions.Items.AddRange(new object[] {
+            "Tên phim",
+            "Thể loại",
+            "Ngày khởi chiếu"});
+            this.cbOptions.Location = new System.Drawing.Point(181, 118);
+            this.cbOptions.Name = "cbOptions";
+            this.cbOptions.Size = new System.Drawing.Size(121, 24);
+            this.cbOptions.TabIndex = 9;
+            this.cbOptions.SelectedIndexChanged += new System.EventHandler(this.cbOptions_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(24, 119);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(118, 20);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Tìm kiếm bằng";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(351, 114);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(169, 28);
+            this.txtSearch.TabIndex = 7;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
             // lbHi
             // 
             this.lbHi.AutoSize = true;
             this.lbHi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHi.Location = new System.Drawing.Point(423, 24);
+            this.lbHi.Location = new System.Drawing.Point(421, 20);
             this.lbHi.Name = "lbHi";
             this.lbHi.Size = new System.Drawing.Size(53, 20);
             this.lbHi.TabIndex = 6;
@@ -231,7 +271,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(27, 91);
+            this.btnDelete.Location = new System.Drawing.Point(254, 60);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(80, 33);
             this.btnDelete.TabIndex = 0;
@@ -241,7 +281,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(27, 24);
+            this.btnAdd.Location = new System.Drawing.Point(32, 60);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(80, 33);
             this.btnAdd.TabIndex = 0;
@@ -251,7 +291,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(131, 91);
+            this.btnCancel.Location = new System.Drawing.Point(357, 60);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(80, 33);
             this.btnCancel.TabIndex = 0;
@@ -261,7 +301,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(131, 24);
+            this.btnUpdate.Location = new System.Drawing.Point(136, 60);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(80, 33);
             this.btnUpdate.TabIndex = 0;
@@ -318,6 +358,9 @@
         private System.Windows.Forms.DateTimePicker timePickerKhoiChieu;
         private System.Windows.Forms.Label lbHi;
         private System.Windows.Forms.PictureBox pbPoster;
+        private System.Windows.Forms.ComboBox cbOptions;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhim;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenPhim;
         private System.Windows.Forms.DataGridViewTextBoxColumn TheLoai;

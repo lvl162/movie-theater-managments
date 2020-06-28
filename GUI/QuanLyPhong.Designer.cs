@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvPhong = new System.Windows.Forms.DataGridView();
-            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DienTich = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoCot = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -48,6 +43,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnDSGhe = new System.Windows.Forms.Button();
             this.lbHi = new System.Windows.Forms.Label();
+            this.cbOptions = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DienTich = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoCot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -79,47 +82,6 @@
             this.dgvPhong.Size = new System.Drawing.Size(766, 289);
             this.dgvPhong.TabIndex = 0;
             this.dgvPhong.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhong_RowEnter);
-            // 
-            // MaPhong
-            // 
-            this.MaPhong.DataPropertyName = "MaPhong";
-            this.MaPhong.HeaderText = "Mã Phòng";
-            this.MaPhong.MinimumWidth = 6;
-            this.MaPhong.Name = "MaPhong";
-            this.MaPhong.ReadOnly = true;
-            // 
-            // DienTich
-            // 
-            this.DienTich.DataPropertyName = "TenPhong";
-            this.DienTich.HeaderText = "Tên phòng";
-            this.DienTich.MinimumWidth = 6;
-            this.DienTich.Name = "DienTich";
-            this.DienTich.ReadOnly = true;
-            // 
-            // SoHang
-            // 
-            this.SoHang.DataPropertyName = "SoHang";
-            this.SoHang.HeaderText = "Số Hàng";
-            this.SoHang.MinimumWidth = 6;
-            this.SoHang.Name = "SoHang";
-            this.SoHang.ReadOnly = true;
-            // 
-            // SoCot
-            // 
-            this.SoCot.DataPropertyName = "SoCot";
-            this.SoCot.HeaderText = "Số cột";
-            this.SoCot.MinimumWidth = 6;
-            this.SoCot.Name = "SoCot";
-            this.SoCot.ReadOnly = true;
-            // 
-            // RowVersion
-            // 
-            this.RowVersion.DataPropertyName = "RowVersion";
-            this.RowVersion.HeaderText = "RowVersion";
-            this.RowVersion.MinimumWidth = 6;
-            this.RowVersion.Name = "RowVersion";
-            this.RowVersion.ReadOnly = true;
-            this.RowVersion.Visible = false;
             // 
             // btnAdd
             // 
@@ -181,7 +143,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtSoHang);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(245, 11);
+            this.groupBox1.Location = new System.Drawing.Point(53, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(335, 128);
             this.groupBox1.TabIndex = 7;
@@ -256,11 +218,88 @@
             this.lbHi.TabIndex = 9;
             this.lbHi.Text = "label2";
             // 
+            // cbOptions
+            // 
+            this.cbOptions.FormattingEnabled = true;
+            this.cbOptions.Items.AddRange(new object[] {
+            "Tên phòng",
+            "Số hàng",
+            "Số cột"});
+            this.cbOptions.Location = new System.Drawing.Point(551, 69);
+            this.cbOptions.Name = "cbOptions";
+            this.cbOptions.Size = new System.Drawing.Size(121, 24);
+            this.cbOptions.TabIndex = 12;
+            this.cbOptions.SelectedIndexChanged += new System.EventHandler(this.cbOptions_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(394, 70);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(118, 20);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Tìm kiếm bằng";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(503, 105);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(169, 28);
+            this.txtSearch.TabIndex = 10;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // MaPhong
+            // 
+            this.MaPhong.DataPropertyName = "MaPhong";
+            this.MaPhong.HeaderText = "Mã Phòng";
+            this.MaPhong.MinimumWidth = 6;
+            this.MaPhong.Name = "MaPhong";
+            this.MaPhong.ReadOnly = true;
+            this.MaPhong.Visible = false;
+            // 
+            // DienTich
+            // 
+            this.DienTich.DataPropertyName = "TenPhong";
+            this.DienTich.HeaderText = "Tên phòng";
+            this.DienTich.MinimumWidth = 6;
+            this.DienTich.Name = "DienTich";
+            this.DienTich.ReadOnly = true;
+            // 
+            // SoHang
+            // 
+            this.SoHang.DataPropertyName = "SoHang";
+            this.SoHang.HeaderText = "Số Hàng";
+            this.SoHang.MinimumWidth = 6;
+            this.SoHang.Name = "SoHang";
+            this.SoHang.ReadOnly = true;
+            // 
+            // SoCot
+            // 
+            this.SoCot.DataPropertyName = "SoCot";
+            this.SoCot.HeaderText = "Số cột";
+            this.SoCot.MinimumWidth = 6;
+            this.SoCot.Name = "SoCot";
+            this.SoCot.ReadOnly = true;
+            // 
+            // RowVersion
+            // 
+            this.RowVersion.DataPropertyName = "RowVersion";
+            this.RowVersion.HeaderText = "RowVersion";
+            this.RowVersion.MinimumWidth = 6;
+            this.RowVersion.Name = "RowVersion";
+            this.RowVersion.ReadOnly = true;
+            this.RowVersion.Visible = false;
+            // 
             // QuanLyPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 510);
+            this.Controls.Add(this.cbOptions);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lbHi);
             this.Controls.Add(this.btnDSGhe);
             this.Controls.Add(this.groupBox1);
@@ -296,14 +335,17 @@
         private System.Windows.Forms.MaskedTextBox txtSoHang;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnDSGhe;
+        private System.Windows.Forms.MaskedTextBox txtSoCot;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbHi;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn DienTich;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoCot;
         private System.Windows.Forms.DataGridViewTextBoxColumn RowVersion;
-        private System.Windows.Forms.MaskedTextBox txtSoCot;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbHi;
+        private System.Windows.Forms.ComboBox cbOptions;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }
 
