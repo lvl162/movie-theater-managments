@@ -55,14 +55,14 @@ namespace DAL
             {
                 using (var context = new QLRPContext())
                 {
-                    var login = context.Logins.Single(l => l.UserName == lg.UserName && l.MaNhanVien == lg.MaNhanVien);
+                    var login = context.Logins.SingleOrDefault(l => l.UserName == lg.UserName && l.MaNhanVien == lg.MaNhanVien);
                     if (login != null)
                     {
                         login.Password = Utils.HashPassword(lg.Password);
                         context.SaveChanges();
                         return true;
                     }
-                    return false;
+                    throw new Exception("User này đã bị xóa bởi ai đó.");
                 }
             }
             catch (Exception)
@@ -77,14 +77,14 @@ namespace DAL
             {
                 using (var context = new QLRPContext())
                 {
-                    var login = context.Logins.Single(l => l.UserName == username && l.MaNhanVien == manv);
+                    var login = context.Logins.SingleOrDefault(l => l.UserName == username && l.MaNhanVien == manv);
                     if (login != null)
                     {
                         context.Logins.Remove(login);
                         context.SaveChanges();
                         return true;
                     }
-                    return false;
+                    throw new Exception("User này đã bị xóa bởi ai đó. Danh sách sẽ được load lại.");
                 }
             }
             catch (Exception)
@@ -100,10 +100,10 @@ namespace DAL
             {
                 using (QLRPContext context = new QLRPContext())
                 {
-                    Login login = context.Logins.Single(p => p.UserName == old_user && p.MaNhanVien == old_manv);
+                    Login login = context.Logins.SingleOrDefault(p => p.UserName == old_user && p.MaNhanVien == old_manv);
                     if (login!= null)
                     {
-                        if (BitConverter.ToUInt64(login.RowVersion, 0).ToString().Equals(lg.RowVersion))
+                        if (Utils.ValidateRowversion(login.RowVersion, lg.RowVersion))
                         {
                             login.MaNhanVien = lg.MaNhanVien;
                             login.NgaySua = DateTime.Now;
@@ -112,14 +112,14 @@ namespace DAL
                             login.UserName = lg.UserName;
                             context.SaveChanges();
                         }
-                        else throw new Exception("Có ai đó đã update đối tượng này trước đó.");
+                        else throw new Exception("Có ai đó đã update đối tượng này trước đó. Danh sách sẽ được load lại.");
                     }
-                    return true;
+                    throw new Exception("User này đã bị xóa bởi ai đó. Danh sách sẽ được load lại.");
                 }
             }
             catch (DbUpdateConcurrencyException)
             {
-                throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này.");
+                throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này. Danh sách sẽ được load lại.");
             }
             catch (Exception ex)
             {
@@ -137,7 +137,7 @@ namespace DAL
                     int maNV = res.MaNhanVien;
                     CurrentUser.Username = res.UserName;
                     CurrentUser.Password = res.Password;
-                    var nv = context.NhanViens.Single(p => p.MaNhanVien == maNV);
+                    var nv = context.NhanViens.SingleOrDefault(p => p.MaNhanVien == maNV);
                     return nv.ChucVu;
                 }
             }

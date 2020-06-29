@@ -230,5 +230,10 @@ namespace QuanLyRapPhim
         {
             txtSearch.Text = "";
         }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            QuanLyNhanVien_Load(sender,e);
+        }
     }
 }

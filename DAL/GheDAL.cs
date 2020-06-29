@@ -49,10 +49,10 @@ namespace DAL
             {
                 using (var context = new QLRPContext())
                 {
-                    var ghe_update = context.Ghes.Single(p => p.MaGhe == ghe.MaGhe);
-                    if (ghe != null)
+                    var ghe_update = context.Ghes.SingleOrDefault(p => p.MaGhe == ghe.MaGhe);
+                    if (ghe_update != null)
                     {
-                        if (BitConverter.ToUInt64(ghe_update.RowVersion, 0).ToString().Equals(ghe.RowVersion))
+                        if (Utils.ValidateRowversion(ghe_update.RowVersion, ghe.RowVersion))
                         {
                             foreach (var g in context.Ghes.Select(p => p).ToList())
                             {
@@ -68,14 +68,14 @@ namespace DAL
                             context.SaveChanges();
                             return true;
                         }
-                        else throw new Exception("Có ai đó đã update đối tượng này trước đó.");
+                        else throw new Exception("Có ai đó đã update đối tượng này trước đó. Danh sách sẽ được load lại.");
                     }
-                    return false;
+                    throw new Exception("Không tìm thấy ghế!");
                 }
             }
             catch (DbUpdateConcurrencyException)
             {
-                throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này.");
+                throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này. Danh sách sẽ được load lại.");
             }
             catch (Exception)
             {
@@ -89,7 +89,7 @@ namespace DAL
             {
                 using (var context = new QLRPContext())
                 {
-                    var ghe_del = context.Ghes.Single(p => p.MaGhe == ghe.MaGhe);
+                    var ghe_del = context.Ghes.SingleOrDefault(p => p.MaGhe == ghe.MaGhe);
                     if (ghe_del != null)
                     {
                         context.Ghes.Remove(ghe_del);

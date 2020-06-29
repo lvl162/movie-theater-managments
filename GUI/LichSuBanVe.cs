@@ -73,6 +73,9 @@ namespace QuanLyRapPhim
             txtSearch.Text = "";
         }
 
-        
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            LichSuBanVe_Load(sender, e);
+        }
     }
 }

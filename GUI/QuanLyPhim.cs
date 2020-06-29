@@ -178,9 +178,9 @@ namespace QuanLyRapPhim
             txtSearch.Text = "";
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void btnReload_Click(object sender, EventArgs e)
         {
-
+            QuanLyPhim_Load(sender, e);
         }
     }
 }

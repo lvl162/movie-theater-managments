@@ -29,10 +29,14 @@
         private void InitializeComponent()
         {
             this.dgvPhong = new System.Windows.Forms.DataGridView();
+            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DienTich = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoCot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtTenPhong = new System.Windows.Forms.MaskedTextBox();
@@ -46,11 +50,7 @@
             this.cbOptions = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DienTich = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoCot = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnReload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -79,9 +79,51 @@
             this.dgvPhong.RowHeadersVisible = false;
             this.dgvPhong.RowHeadersWidth = 51;
             this.dgvPhong.RowTemplate.Height = 24;
-            this.dgvPhong.Size = new System.Drawing.Size(766, 289);
+            this.dgvPhong.Size = new System.Drawing.Size(766, 290);
             this.dgvPhong.TabIndex = 0;
             this.dgvPhong.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhong_RowEnter);
+            // 
+            // MaPhong
+            // 
+            this.MaPhong.DataPropertyName = "MaPhong";
+            this.MaPhong.HeaderText = "Mã Phòng";
+            this.MaPhong.MinimumWidth = 6;
+            this.MaPhong.Name = "MaPhong";
+            this.MaPhong.ReadOnly = true;
+            this.MaPhong.Visible = false;
+            // 
+            // DienTich
+            // 
+            this.DienTich.DataPropertyName = "TenPhong";
+            this.DienTich.HeaderText = "Tên phòng";
+            this.DienTich.MinimumWidth = 6;
+            this.DienTich.Name = "DienTich";
+            this.DienTich.ReadOnly = true;
+            // 
+            // SoHang
+            // 
+            this.SoHang.DataPropertyName = "SoHang";
+            this.SoHang.HeaderText = "Số Hàng";
+            this.SoHang.MinimumWidth = 6;
+            this.SoHang.Name = "SoHang";
+            this.SoHang.ReadOnly = true;
+            // 
+            // SoCot
+            // 
+            this.SoCot.DataPropertyName = "SoCot";
+            this.SoCot.HeaderText = "Số cột";
+            this.SoCot.MinimumWidth = 6;
+            this.SoCot.Name = "SoCot";
+            this.SoCot.ReadOnly = true;
+            // 
+            // RowVersion
+            // 
+            this.RowVersion.DataPropertyName = "RowVersion";
+            this.RowVersion.HeaderText = "RowVersion";
+            this.RowVersion.MinimumWidth = 6;
+            this.RowVersion.Name = "RowVersion";
+            this.RowVersion.ReadOnly = true;
+            this.RowVersion.Visible = false;
             // 
             // btnAdd
             // 
@@ -112,16 +154,6 @@
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(456, 162);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 5;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnExit
             // 
@@ -250,53 +282,22 @@
             this.txtSearch.TabIndex = 10;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // MaPhong
+            // btnReload
             // 
-            this.MaPhong.DataPropertyName = "MaPhong";
-            this.MaPhong.HeaderText = "Mã Phòng";
-            this.MaPhong.MinimumWidth = 6;
-            this.MaPhong.Name = "MaPhong";
-            this.MaPhong.ReadOnly = true;
-            this.MaPhong.Visible = false;
-            // 
-            // DienTich
-            // 
-            this.DienTich.DataPropertyName = "TenPhong";
-            this.DienTich.HeaderText = "Tên phòng";
-            this.DienTich.MinimumWidth = 6;
-            this.DienTich.Name = "DienTich";
-            this.DienTich.ReadOnly = true;
-            // 
-            // SoHang
-            // 
-            this.SoHang.DataPropertyName = "SoHang";
-            this.SoHang.HeaderText = "Số Hàng";
-            this.SoHang.MinimumWidth = 6;
-            this.SoHang.Name = "SoHang";
-            this.SoHang.ReadOnly = true;
-            // 
-            // SoCot
-            // 
-            this.SoCot.DataPropertyName = "SoCot";
-            this.SoCot.HeaderText = "Số cột";
-            this.SoCot.MinimumWidth = 6;
-            this.SoCot.Name = "SoCot";
-            this.SoCot.ReadOnly = true;
-            // 
-            // RowVersion
-            // 
-            this.RowVersion.DataPropertyName = "RowVersion";
-            this.RowVersion.HeaderText = "RowVersion";
-            this.RowVersion.MinimumWidth = 6;
-            this.RowVersion.Name = "RowVersion";
-            this.RowVersion.ReadOnly = true;
-            this.RowVersion.Visible = false;
+            this.btnReload.Location = new System.Drawing.Point(462, 162);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(75, 23);
+            this.btnReload.TabIndex = 13;
+            this.btnReload.Text = "Reload";
+            this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // QuanLyPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 510);
+            this.ClientSize = new System.Drawing.Size(824, 511);
+            this.Controls.Add(this.btnReload);
             this.Controls.Add(this.cbOptions);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtSearch);
@@ -304,7 +305,6 @@
             this.Controls.Add(this.btnDSGhe);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
@@ -327,7 +327,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.MaskedTextBox txtTenPhong;
@@ -346,6 +345,7 @@
         private System.Windows.Forms.ComboBox cbOptions;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnReload;
     }
 }
 

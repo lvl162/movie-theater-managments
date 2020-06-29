@@ -36,6 +36,12 @@
             this.txtTenPhim = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvPhim = new System.Windows.Forms.DataGridView();
+            this.MaPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayKhoiChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbOptions = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,12 +52,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.pbPoster = new System.Windows.Forms.PictureBox();
-            this.MaPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayKhoiChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnReload = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhim)).BeginInit();
             this.panel1.SuspendLayout();
@@ -157,112 +158,6 @@
             this.dgvPhim.TabIndex = 1;
             this.dgvPhim.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhim_RowEnter);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.cbOptions);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.txtSearch);
-            this.panel1.Controls.Add(this.lbHi);
-            this.panel1.Controls.Add(this.btnDelete);
-            this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Controls.Add(this.btnCancel);
-            this.panel1.Controls.Add(this.btnUpdate);
-            this.panel1.Location = new System.Drawing.Point(438, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(562, 166);
-            this.panel1.TabIndex = 2;
-            // 
-            // cbOptions
-            // 
-            this.cbOptions.FormattingEnabled = true;
-            this.cbOptions.Items.AddRange(new object[] {
-            "Tên phim",
-            "Thể loại",
-            "Ngày khởi chiếu"});
-            this.cbOptions.Location = new System.Drawing.Point(181, 118);
-            this.cbOptions.Name = "cbOptions";
-            this.cbOptions.Size = new System.Drawing.Size(121, 24);
-            this.cbOptions.TabIndex = 9;
-            this.cbOptions.SelectedIndexChanged += new System.EventHandler(this.cbOptions_SelectedIndexChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(24, 119);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 20);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Tìm kiếm bằng";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(351, 114);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(169, 28);
-            this.txtSearch.TabIndex = 7;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // lbHi
-            // 
-            this.lbHi.AutoSize = true;
-            this.lbHi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHi.Location = new System.Drawing.Point(421, 20);
-            this.lbHi.Name = "lbHi";
-            this.lbHi.Size = new System.Drawing.Size(53, 20);
-            this.lbHi.TabIndex = 6;
-            this.lbHi.Text = "label1";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(254, 60);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(80, 33);
-            this.btnDelete.TabIndex = 0;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(32, 60);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(80, 33);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(357, 60);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(80, 33);
-            this.btnCancel.TabIndex = 0;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(136, 60);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(80, 33);
-            this.btnUpdate.TabIndex = 0;
-            this.btnUpdate.Text = "Sửa";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // pbPoster
-            // 
-            this.pbPoster.Location = new System.Drawing.Point(763, 172);
-            this.pbPoster.Name = "pbPoster";
-            this.pbPoster.Size = new System.Drawing.Size(237, 332);
-            this.pbPoster.TabIndex = 4;
-            this.pbPoster.TabStop = false;
-            // 
             // MaPhim
             // 
             this.MaPhim.DataPropertyName = "MaPhim";
@@ -317,6 +212,122 @@
             this.RowVersion.ReadOnly = true;
             this.RowVersion.Visible = false;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnReload);
+            this.panel1.Controls.Add(this.cbOptions);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.txtSearch);
+            this.panel1.Controls.Add(this.lbHi);
+            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Controls.Add(this.btnCancel);
+            this.panel1.Controls.Add(this.btnUpdate);
+            this.panel1.Location = new System.Drawing.Point(438, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(562, 166);
+            this.panel1.TabIndex = 2;
+            // 
+            // cbOptions
+            // 
+            this.cbOptions.FormattingEnabled = true;
+            this.cbOptions.Items.AddRange(new object[] {
+            "Tên phim",
+            "Thể loại",
+            "Ngày khởi chiếu"});
+            this.cbOptions.Location = new System.Drawing.Point(181, 118);
+            this.cbOptions.Name = "cbOptions";
+            this.cbOptions.Size = new System.Drawing.Size(121, 24);
+            this.cbOptions.TabIndex = 9;
+            this.cbOptions.SelectedIndexChanged += new System.EventHandler(this.cbOptions_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(24, 119);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(118, 20);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Tìm kiếm bằng";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(351, 114);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(169, 28);
+            this.txtSearch.TabIndex = 7;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // lbHi
+            // 
+            this.lbHi.AutoSize = true;
+            this.lbHi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHi.Location = new System.Drawing.Point(421, 20);
+            this.lbHi.Name = "lbHi";
+            this.lbHi.Size = new System.Drawing.Size(53, 20);
+            this.lbHi.TabIndex = 6;
+            this.lbHi.Text = "label1";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(238, 60);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(80, 33);
+            this.btnDelete.TabIndex = 0;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(32, 60);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(80, 33);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(341, 60);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(80, 33);
+            this.btnCancel.TabIndex = 0;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(135, 60);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(80, 33);
+            this.btnUpdate.TabIndex = 0;
+            this.btnUpdate.Text = "Sửa";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // pbPoster
+            // 
+            this.pbPoster.Location = new System.Drawing.Point(763, 172);
+            this.pbPoster.Name = "pbPoster";
+            this.pbPoster.Size = new System.Drawing.Size(237, 332);
+            this.pbPoster.TabIndex = 4;
+            this.pbPoster.TabStop = false;
+            // 
+            // btnReload
+            // 
+            this.btnReload.Location = new System.Drawing.Point(444, 60);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(75, 33);
+            this.btnReload.TabIndex = 10;
+            this.btnReload.Text = "Reload";
+            this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            // 
             // QuanLyPhim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -367,5 +378,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayKhoiChieu;
         private System.Windows.Forms.DataGridViewTextBoxColumn MoTa;
         private System.Windows.Forms.DataGridViewTextBoxColumn RowVersion;
+        private System.Windows.Forms.Button btnReload;
     }
 }

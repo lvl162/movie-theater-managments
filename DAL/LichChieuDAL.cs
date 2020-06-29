@@ -76,14 +76,14 @@ namespace DAL
 			{
 				using (var context = new QLRPContext())
 				{
-					var lc = context.LichChieus.Single(l => l.MaLichChieu == malc_delete);
+					var lc = context.LichChieus.SingleOrDefault(l => l.MaLichChieu == malc_delete);
 					if (lc!=null)
 					{
 						context.LichChieus.Remove(lc);
 						context.SaveChanges();
 						return true;
 					}
-					return false;
+					throw new Exception("Lịch chiếu này đã bị xóa bởi ai đó. Danh sách sẽ được load lại.");
 				}
 			}
 			catch (Exception)
@@ -98,10 +98,10 @@ namespace DAL
 			{
 				using (var context = new QLRPContext())
 				{
-					var lichChieu_update = context.LichChieus.Single(p => p.MaLichChieu == lichChieu.MaLichChieu);
+					var lichChieu_update = context.LichChieus.SingleOrDefault(p => p.MaLichChieu == lichChieu.MaLichChieu);
 					if (lichChieu_update != null)
 					{
-						if (BitConverter.ToUInt64(lichChieu_update.RowVersion, 0).ToString().Equals(lichChieu.RowVersion))
+						if (Utils.ValidateRowversion(lichChieu_update.RowVersion, lichChieu.RowVersion))
 						{
 							lichChieu_update.MaPhong = lichChieu.MaPhong;
 							lichChieu_update.MaPhim = lichChieu.MaPhim;
@@ -111,14 +111,14 @@ namespace DAL
 							context.SaveChanges();
 							return true;
 						}
-						else throw new Exception("Có ai đó đã update đối tượng này trước đó.");
+						throw new Exception("Có ai đó đã update đối tượng này trước đó. Danh sách sẽ được load lại.");
 					}
-					return false;
+					throw new Exception("Lịch chiếu này đã bị xóa bởi ai đó. Danh sách sẽ được load lại.");
 				}
 			}
 			catch (DbUpdateConcurrencyException)
 			{
-				throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này.");
+				throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này. Danh sách sẽ được load lại.");
 			}
 			catch (Exception)
 			{

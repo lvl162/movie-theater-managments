@@ -112,8 +112,13 @@ namespace QuanLyRapPhim
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message); ;
+                MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            QuanLyGhe_Load(sender, e);
         }
     }
 }

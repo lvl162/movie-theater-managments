@@ -42,6 +42,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.lbHi = new System.Windows.Forms.Label();
+            this.btnReload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSGhe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,9 +144,9 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(193, 83);
+            this.btnAdd.Location = new System.Drawing.Point(130, 86);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(75, 32);
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -153,9 +154,9 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(343, 83);
+            this.btnUpdate.Location = new System.Drawing.Point(280, 86);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(75, 32);
             this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -163,9 +164,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(479, 83);
+            this.btnDelete.Location = new System.Drawing.Point(416, 86);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(75, 32);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -181,11 +182,22 @@
             this.lbHi.TabIndex = 5;
             this.lbHi.Text = "label4";
             // 
+            // btnReload
+            // 
+            this.btnReload.Location = new System.Drawing.Point(570, 86);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(75, 32);
+            this.btnReload.TabIndex = 6;
+            this.btnReload.Text = "Reload";
+            this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            // 
             // QuanLyGhe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(851, 491);
+            this.Controls.Add(this.btnReload);
             this.Controls.Add(this.lbHi);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -221,5 +233,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn RowVersion;
         private System.Windows.Forms.Label lbHi;
+        private System.Windows.Forms.Button btnReload;
     }
 }

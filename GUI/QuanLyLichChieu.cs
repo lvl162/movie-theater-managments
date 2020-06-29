@@ -173,5 +173,10 @@ namespace QuanLyRapPhim
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            QuanLyLichChieu_Load(sender, e);
+        }
     }
 }

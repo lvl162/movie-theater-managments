@@ -71,7 +71,7 @@ namespace DAL
             {
                 using (var context = new QLRPContext())
                 {
-                    var pc = context.PhongChieus.Single(p => p.MaPhong == maPhong);
+                    var pc = context.PhongChieus.SingleOrDefault(p => p.MaPhong == maPhong);
                     return new PhongChieuDTO()
                     {
                         SoCot = pc.SoCot,

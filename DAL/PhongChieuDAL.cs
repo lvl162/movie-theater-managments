@@ -69,10 +69,10 @@ namespace DAL
             {
                 using (var context = new QLRPContext())
                 {
-                    var phong = context.PhongChieus.Single(p => p.MaPhong == pc.MaPhong);
+                    var phong = context.PhongChieus.SingleOrDefault(p => p.MaPhong == pc.MaPhong);
                     if (phong != null)
                     {
-                        if (BitConverter.ToUInt64(phong.RowVersion, 0).ToString().Equals(pc.RowVersion))
+                        if (Utils.ValidateRowversion(phong.RowVersion, pc.RowVersion))
                         {
                             phong.TenPhong = pc.TenPhong;
                             phong.SoHang = pc.SoHang;
@@ -82,14 +82,14 @@ namespace DAL
                             context.SaveChanges();
                             return true;
                         }
-                        else throw new Exception("Có ai đó đã update đối tượng này trước đó.");
+                        throw new Exception("Có ai đó đã update đối tượng này trước đó. Danh sách sẽ được load lại.");
                     }
-                    return false;
+                    throw new Exception("Phòng này đã bị xóa bởi ai đó. Danh sách sẽ được load lại.");
                 }
             }
             catch (DbUpdateConcurrencyException)
             {
-                throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này.");
+                throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này. Danh sách sẽ được load lại.");
             }
             catch (Exception ex)
             {
@@ -102,19 +102,19 @@ namespace DAL
             {
                 using (var context = new QLRPContext())
                 {
-                    var phong = context.PhongChieus.Single(p => p.MaPhong == ma);
+                    var phong = context.PhongChieus.SingleOrDefault(p => p.MaPhong == ma);
                     if (phong != null)
                     {
                         context.PhongChieus.Remove(phong);
                         context.SaveChanges();
                         return true;
                     }
-                    return false;
+                    throw new Exception("Phòng này đã bị xóa bởi ai đó. Danh sách sẽ được load lại.");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
     }

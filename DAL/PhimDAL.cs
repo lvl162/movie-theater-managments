@@ -68,14 +68,14 @@ namespace DAL
             {
                 using (QLRPContext context = new QLRPContext())
                 {
-                    Phim pc = context.Phims.Single(px => px.MaPhim == ma);
+                    Phim pc = context.Phims.SingleOrDefault(px => px.MaPhim == ma);
                     if (pc != null)
                     {
                         context.Phims.Remove(pc);
                         context.SaveChanges();
                         return true;
                     }
-                    return false;
+                    throw new Exception("Phim này đã bị xóa bởi ai đó. Danh sách sẽ được load lại.");
                 }
             }
             catch (Exception ex)
@@ -90,10 +90,10 @@ namespace DAL
             {
                 using (QLRPContext context = new QLRPContext())
                 {
-                    Phim pc = context.Phims.Single(px => px.MaPhim == p.MaPhim);
+                    Phim pc = context.Phims.SingleOrDefault(px => px.MaPhim == p.MaPhim);
                     if (pc != null)
                     {
-                        if (BitConverter.ToUInt64(pc.RowVersion, 0).ToString().Equals(p.RowVersion))
+                        if (Utils.ValidateRowversion(pc.RowVersion, p.RowVersion))
                         {
                             pc.TenPhim = p.TenPhim;
                             pc.TheLoai = p.TheLoai;
@@ -103,14 +103,14 @@ namespace DAL
                             context.SaveChanges();
                             return true;
                         }
-                        else throw new Exception("Có ai đó đã update đối tượng này trước đó.");
+                        else throw new Exception("Có ai đó đã update đối tượng này trước đó. Danh sách sẽ được load lại.");
                     }
-                    return false;
+                    throw new Exception("Phim này đã bị xóa bởi ai đó. Danh sách sẽ được load lại.");
                 }
             }
             catch (DbUpdateConcurrencyException)
             {
-                throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này.");
+                throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này. Danh sách sẽ được load lại.");
             }
             catch (Exception ex)
             {

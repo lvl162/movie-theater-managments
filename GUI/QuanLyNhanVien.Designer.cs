@@ -65,6 +65,7 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RowVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnReload = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -106,6 +107,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnReload);
             this.panel2.Controls.Add(this.cbOptions);
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.label2);
@@ -171,9 +173,9 @@
             // 
             // btnUserInfo
             // 
-            this.btnUserInfo.Location = new System.Drawing.Point(609, 166);
+            this.btnUserInfo.Location = new System.Drawing.Point(684, 169);
             this.btnUserInfo.Name = "btnUserInfo";
-            this.btnUserInfo.Size = new System.Drawing.Size(169, 28);
+            this.btnUserInfo.Size = new System.Drawing.Size(172, 28);
             this.btnUserInfo.TabIndex = 7;
             this.btnUserInfo.Text = "Reset Password";
             this.btnUserInfo.UseVisualStyleBackColor = true;
@@ -193,10 +195,10 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(454, 166);
+            this.btnDelete.Location = new System.Drawing.Point(391, 169);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(94, 28);
+            this.btnDelete.Size = new System.Drawing.Size(97, 28);
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -204,10 +206,10 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(304, 166);
+            this.btnUpdate.Location = new System.Drawing.Point(235, 169);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(94, 28);
+            this.btnUpdate.Size = new System.Drawing.Size(97, 28);
             this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -215,10 +217,10 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(154, 166);
+            this.btnAdd.Location = new System.Drawing.Point(79, 169);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(94, 28);
+            this.btnAdd.Size = new System.Drawing.Size(97, 28);
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -474,6 +476,16 @@
             this.Username.MinimumWidth = 6;
             this.Username.Name = "Username";
             // 
+            // btnReload
+            // 
+            this.btnReload.Location = new System.Drawing.Point(547, 169);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(78, 28);
+            this.btnReload.TabIndex = 11;
+            this.btnReload.Text = "Reload";
+            this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            // 
             // QuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -537,5 +549,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn RowVersion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
+        private System.Windows.Forms.Button btnReload;
     }
 }

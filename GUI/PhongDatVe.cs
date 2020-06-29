@@ -26,14 +26,7 @@ namespace QuanLyRapPhim.DanhSachPhong
             InitializeComponent();
             lichChieu = lc;
             datVeBLL = new DatVeBLL();
-            try
-            {
-                GhesDraw();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            
             // Trang : con
             // Do : da dat ve
             // Xanh la cay : da chon
@@ -63,6 +56,30 @@ namespace QuanLyRapPhim.DanhSachPhong
                 }
             }
         }
+        private void Reset()
+        {
+            gheDaDat = datVeBLL.LayVeDaDat(lichChieu.MaLichChieu);
+            gheDaChon.Clear();
+            foreach (var el in GhesPanel.Controls)
+            {
+                if (el is Button)
+                {
+                    var b = el as Button;
+                    if (b.BackColor == Color.Red)
+                    {
+                        continue;
+                    }
+                    if (b.BackColor == Color.Green)
+                    {
+                        b.BackColor = Color.White;
+                    }
+                    if (gheDaDat.Contains(b.Text))
+                    {
+                        b.BackColor = Color.Red;
+                    }
+                }
+            }
+        }
         private void button_Click(object sender, EventArgs e)
         {
             Button b = sender as Button;
@@ -83,20 +100,27 @@ namespace QuanLyRapPhim.DanhSachPhong
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show($"Bạn có chắc muốn đặt {gheDaChon.Count} vé?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (gheDaChon.Count == 0)
             {
-                try
+                MessageBox.Show("Bạn chưa chọn ghế.");
+            }
+            else
+            {
+                if (MessageBox.Show($"Bạn có chắc muốn đặt {gheDaChon.Count} vé?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    if (datVeBLL.DatVes(gheDaChon, lichChieu.MaLichChieu))
+                    try
                     {
-                        MessageBox.Show("Mua vé thành công!");
-                        Close();
+                        if (datVeBLL.DatVes(gheDaChon, lichChieu.MaLichChieu))
+                        {
+                            MessageBox.Show("Mua vé thành công!");
+                            Close();
+                        }
                     }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Đã có lỗi xảy ra trong quá trình bán vé ghế hoặc ghế đã được đặt chỗ. Danh sách ghế đã được load lại.");
-                    GhesDraw();
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Đã có lỗi xảy ra trong quá trình bán vé ghế hoặc ghế đã được đặt chỗ. Danh sách ghế đã được load lại.");
+                        Reset();
+                    }
                 }
             }
         }
@@ -104,6 +128,23 @@ namespace QuanLyRapPhim.DanhSachPhong
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void PhongDatVe_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                GhesDraw();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            Reset();
         }
     }
 

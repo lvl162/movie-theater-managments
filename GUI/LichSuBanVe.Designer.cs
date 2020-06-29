@@ -38,6 +38,7 @@
             this.SearchBy = new System.Windows.Forms.Label();
             this.cbOptions = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnReload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSuBanVe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,11 +150,22 @@
             this.txtSearch.TabIndex = 3;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
+            // btnReload
+            // 
+            this.btnReload.Location = new System.Drawing.Point(704, 21);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(84, 41);
+            this.btnReload.TabIndex = 4;
+            this.btnReload.Text = "Reload";
+            this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            // 
             // LichSuBanVe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 476);
+            this.Controls.Add(this.btnReload);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.cbOptions);
             this.Controls.Add(this.SearchBy);
@@ -180,5 +192,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenGhe;
         private System.Windows.Forms.DataGridViewTextBoxColumn NguoiBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianBanVe;
+        private System.Windows.Forms.Button btnReload;
     }
 }

@@ -47,14 +47,14 @@ namespace DAL
             {
                 using (QLRPContext context = new QLRPContext())
                 {
-                    NhanVien nv_found = context.NhanViens.Single(p => p.MaNhanVien == manv);
+                    NhanVien nv_found = context.NhanViens.SingleOrDefault(p => p.MaNhanVien == manv);
                     if (nv_found != null)
                     {
                         context.NhanViens.Remove(nv_found);
                         context.SaveChanges();
                         return true;
                     }
-                    return false;
+                    throw new Exception("Nhân viên này đã bị xóa bởi ai đó. Danh sách sẽ được load lại.");
                 }
             }
             catch (Exception e)
@@ -69,10 +69,10 @@ namespace DAL
             {
                 using (QLRPContext context = new QLRPContext())
                 {
-                    NhanVien nv_found = context.NhanViens.Single(p => p.MaNhanVien == nv.MaNhanVien);
+                    NhanVien nv_found = context.NhanViens.SingleOrDefault(p => p.MaNhanVien == nv.MaNhanVien);
                     if (nv_found != null)
                     {
-                        if (BitConverter.ToUInt64(nv_found.RowVersion, 0).ToString().Equals(nv.RowVersion))
+                        if (Utils.ValidateRowversion(nv_found.RowVersion, nv.RowVersion))
                         {
                             nv_found.ChucVu = nv.ChucVu;
                             nv_found.DiaChi = nv.DiaChi;
@@ -86,14 +86,14 @@ namespace DAL
                             context.SaveChanges();
                             return true;
                         }
-                        else throw new Exception("Có ai đó đã update đối tượng này trước đó.");
+                        throw new Exception("Có ai đó đã update đối tượng này trước đó. Danh sách sẽ được load lại.");
                     }
-                    return false;
+                    throw new Exception("Nhân viên này đã bị xóa bởi ai đó. Danh sách sẽ được load lại.");
                 }
             }
             catch (DbUpdateConcurrencyException)
             {
-                throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này.");
+                throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này. Danh sách sẽ được load lại.");
             }
             catch (Exception e)
             {

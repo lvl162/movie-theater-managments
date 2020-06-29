@@ -37,5 +37,9 @@ namespace DAL
 				return false;
 			}
 		}
+		public static bool ValidateRowversion(byte[] correctRowVersion, string rowVersion_stored)
+		{
+			return BitConverter.ToUInt64(correctRowVersion, 0).ToString().Equals(rowVersion_stored);
+		}
 	}
 }

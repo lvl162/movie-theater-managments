@@ -179,5 +179,10 @@ namespace GUI
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            QuanLyPhong_Load(sender, e);
+        }
     }
 }
