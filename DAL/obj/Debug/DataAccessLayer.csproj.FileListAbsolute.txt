@@ -1,0 +1,17 @@
+C:\Users\LuuVanLoi\Desktop\QLRP\DAL\bin\Debug\DAL.dll
+C:\Users\LuuVanLoi\Desktop\QLRP\DAL\bin\Debug\DAL.pdb
+C:\Users\LuuVanLoi\Desktop\QLRP\DAL\bin\Debug\BCrypt.Net.dll
+C:\Users\LuuVanLoi\Desktop\QLRP\DAL\bin\Debug\DTO.dll
+C:\Users\LuuVanLoi\Desktop\QLRP\DAL\bin\Debug\EntityFramework.dll
+C:\Users\LuuVanLoi\Desktop\QLRP\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\LuuVanLoi\Desktop\QLRP\DAL\bin\Debug\Model.dll
+C:\Users\LuuVanLoi\Desktop\QLRP\DAL\bin\Debug\DTO.pdb
+C:\Users\LuuVanLoi\Desktop\QLRP\DAL\bin\Debug\Model.pdb
+C:\Users\LuuVanLoi\Desktop\QLRP\DAL\bin\Debug\BCrypt.Net.xml
+C:\Users\LuuVanLoi\Desktop\QLRP\DAL\bin\Debug\EntityFramework.xml
+C:\Users\LuuVanLoi\Desktop\QLRP\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\LuuVanLoi\Desktop\QLRP\DAL\obj\Debug\DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\LuuVanLoi\Desktop\QLRP\DAL\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\LuuVanLoi\Desktop\QLRP\DAL\obj\Debug\DataAccessLayer.csproj.CopyComplete
+C:\Users\LuuVanLoi\Desktop\QLRP\DAL\obj\Debug\DAL.dll
+C:\Users\LuuVanLoi\Desktop\QLRP\DAL\obj\Debug\DAL.pdb

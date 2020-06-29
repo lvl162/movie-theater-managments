@@ -218,13 +218,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
+    <ProjectReference Include="..\BLL\BusinessLogicLayer.csproj">
       <Project>{f821346d-bea1-47b4-8f0a-b6aa07afec06}</Project>
-      <Name>BLL</Name>
+      <Name>BusinessLogicLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DTO\DTO.csproj">
+    <ProjectReference Include="..\DTO\DataTransferObject.csproj">
       <Project>{8DFEF653-00C3-470A-BB95-FC73C75A153A}</Project>
-      <Name>DTO</Name>
+      <Name>DataTransferObject</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

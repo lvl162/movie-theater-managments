@@ -53,13 +53,13 @@
     <Compile Include="NhanVienBLL.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DAL\DAL.csproj">
+    <ProjectReference Include="..\DAL\DataAccessLayer.csproj">
       <Project>{82418344-238c-407b-991b-ee816a0ac976}</Project>
-      <Name>DAL</Name>
+      <Name>DataAccessLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DTO\DTO.csproj">
+    <ProjectReference Include="..\DTO\DataTransferObject.csproj">
       <Project>{8dfef653-00c3-470a-bb95-fc73c75a153a}</Project>
-      <Name>DTO</Name>
+      <Name>DataTransferObject</Name>
     </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{5B86D13A-1974-4C37-A422-B62CDAA21057}</Project>
