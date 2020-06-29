@@ -72,31 +72,5 @@ namespace BLL
                 throw ex;
             }
         }
-
-        public bool UpdateUser(string new_user, string new_password, int new_manv, string old_user, int old_manv, string rowVer)
-        {
-            try
-            {
-                return userDAL.UpdateUser(new LoginDTO() { UserName = new_user, Password = new_password, MaNhanVien = new_manv, RowVersion = rowVer }, old_user, old_manv);
-                    
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
-        public bool DeleteUser(string username, int manv)
-        {
-            try
-            {
-                return userDAL.DeleteUser(username, manv);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
     }
 }

@@ -43,24 +43,29 @@ namespace DAL
 
         public bool XoaNhanVien(int manv)
         {
-            try
+            LoginUserDAL lgDAL = new LoginUserDAL();
+            if (lgDAL.DeleteUser(manv))
             {
-                using (QLRPContext context = new QLRPContext())
+                try
                 {
-                    NhanVien nv_found = context.NhanViens.SingleOrDefault(p => p.MaNhanVien == manv);
-                    if (nv_found != null)
+                    using (QLRPContext context = new QLRPContext())
                     {
-                        context.NhanViens.Remove(nv_found);
-                        context.SaveChanges();
-                        return true;
+                        NhanVien nv_found = context.NhanViens.SingleOrDefault(p => p.MaNhanVien == manv);
+                        if (nv_found != null)
+                        {
+                            context.NhanViens.Remove(nv_found);
+                            context.SaveChanges();
+                            return true;
+                        }
+                        throw new Exception("Nhân viên này đã bị xóa bởi ai đó. Danh sách sẽ được load lại.");
                     }
-                    throw new Exception("Nhân viên này đã bị xóa bởi ai đó. Danh sách sẽ được load lại.");
+                }
+                catch (Exception)
+                {
+                    throw;
                 }
             }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            throw new Exception("Đã có lỗi xảy ra.");
         }
 
         public bool UpdateNhanVien(NhanVienDTO nv)

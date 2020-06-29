@@ -59,6 +59,8 @@ namespace DAL
                     if (login != null)
                     {
                         login.Password = Utils.HashPassword(lg.Password);
+                        login.NguoiSua = CurrentUser.Username;
+                        login.NgaySua = DateTime.Now;
                         context.SaveChanges();
                         return true;
                     }
@@ -71,13 +73,13 @@ namespace DAL
             }
         }
 
-        public bool DeleteUser(string username, int manv)
+        public bool DeleteUser(int manv)
         {
             try
             {
                 using (var context = new QLRPContext())
                 {
-                    var login = context.Logins.SingleOrDefault(l => l.UserName == username && l.MaNhanVien == manv);
+                    var login = context.Logins.SingleOrDefault(l => l.MaNhanVien == manv);
                     if (login != null)
                     {
                         context.Logins.Remove(login);
@@ -89,43 +91,10 @@ namespace DAL
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
 
-        public bool UpdateUser(LoginDTO lg, string old_user, int old_manv)
-        {
-            try
-            {
-                using (QLRPContext context = new QLRPContext())
-                {
-                    Login login = context.Logins.SingleOrDefault(p => p.UserName == old_user && p.MaNhanVien == old_manv);
-                    if (login!= null)
-                    {
-                        if (Utils.ValidateRowversion(login.RowVersion, lg.RowVersion))
-                        {
-                            login.MaNhanVien = lg.MaNhanVien;
-                            login.NgaySua = DateTime.Now;
-                            login.NguoiSua = CurrentUser.Username;
-                            login.Password = lg.Password;
-                            login.UserName = lg.UserName;
-                            context.SaveChanges();
-                        }
-                        else throw new Exception("Có ai đó đã update đối tượng này trước đó. Danh sách sẽ được load lại.");
-                    }
-                    throw new Exception("User này đã bị xóa bởi ai đó. Danh sách sẽ được load lại.");
-                }
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này. Danh sách sẽ được load lại.");
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
         public string Login(LoginDTO lg)
         {
             try
@@ -158,6 +127,8 @@ namespace DAL
                     if (res != null)
                     {
                         res.Password = Utils.HashPassword(newPassword);
+                        res.NgaySua = DateTime.Now;
+                        res.NguoiSua = res.UserName;
                         context.SaveChanges();
                         return true;
                     }
