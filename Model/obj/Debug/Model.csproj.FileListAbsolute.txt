@@ -30,3 +30,4 @@ C:\Users\LuuVanLoi\Desktop\QLRP\Model\obj\Debug\DTO.Migrations.SuaPhonChieu.reso
 C:\Users\LuuVanLoi\Desktop\QLRP\Model\obj\Debug\DTO.Migrations.indexer_LichChieuAndGhe.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\Model\obj\Debug\DTO.Migrations.add_required.resources
 C:\Users\LuuVanLoi\Desktop\QLRP\Model\obj\Debug\DTO.Migrations.fix_login.resources
+C:\Users\LuuVanLoi\Desktop\QLRP\Model\obj\Debug\Model.csprojAssemblyReference.cache

@@ -9,7 +9,7 @@ namespace Model
 {
     public class QLRPContext : DbContext
     {
-        public QLRPContext() : base("name=QLRPModel") {
+        public QLRPContext() : base("name=QLRPModel1") {
             Database.SetInitializer<QLRPContext>(null);
         }
         public DbSet<Phim> Phims { get; set; }

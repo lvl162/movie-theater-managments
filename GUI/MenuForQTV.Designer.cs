@@ -67,7 +67,7 @@
             // 
             // btnQLLichChieu
             // 
-            this.btnQLLichChieu.Location = new System.Drawing.Point(64, 199);
+            this.btnQLLichChieu.Location = new System.Drawing.Point(159, 206);
             this.btnQLLichChieu.Name = "btnQLLichChieu";
             this.btnQLLichChieu.Size = new System.Drawing.Size(101, 103);
             this.btnQLLichChieu.TabIndex = 4;
@@ -77,7 +77,7 @@
             // 
             // btnQLNhanVien
             // 
-            this.btnQLNhanVien.Location = new System.Drawing.Point(236, 199);
+            this.btnQLNhanVien.Location = new System.Drawing.Point(331, 206);
             this.btnQLNhanVien.Name = "btnQLNhanVien";
             this.btnQLNhanVien.Size = new System.Drawing.Size(101, 103);
             this.btnQLNhanVien.TabIndex = 5;

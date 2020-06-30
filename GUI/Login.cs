@@ -1,5 +1,4 @@
 ﻿using BLL;
-using GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,7 +40,7 @@ namespace QuanLyRapPhim
                 ChucVu = LoginBLL.Login(UserName, Password);
                 if (ChucVu == "Khong tim thay")
                 {
-                    MessageBox.Show("Sai ten dang nhap/ mat khau..");
+                    MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu..");
                 }
                 if (ChucVu == "QTV Hệ Thống")
                 {
