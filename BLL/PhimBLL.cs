@@ -18,9 +18,9 @@ namespace BLL
             {
                 return phimDAL.DanhSachPhim();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
         public bool ThemPhim(string ten, string theloai, DateTime khoichieu, string mota)
@@ -31,9 +31,9 @@ namespace BLL
                 if (phimDAL.ThemPhim(p)) return true;
                 return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
         public bool XoaPhim(int ma)
@@ -42,9 +42,9 @@ namespace BLL
             {
                 return phimDAL.XoaPhim(ma);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
         public bool UpdatePhim(int ma, string ten, string theloai, DateTime khoichieu, string rowVersion)
@@ -59,9 +59,9 @@ namespace BLL
                 if (phimDAL.UpdatePhim(p)) return true;
                 return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
     }

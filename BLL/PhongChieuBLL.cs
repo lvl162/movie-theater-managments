@@ -20,9 +20,9 @@ namespace BLL
             {
                 return pcDAL.DanhSachPhongChieu();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
         public bool ThemPhong(string tenPhong, int soHang, int soCot)

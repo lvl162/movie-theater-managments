@@ -17,9 +17,9 @@ namespace BLL
 			{
 				return gheDAL.DanhSachGhe();
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				throw ex;
+				throw;
 			}
 		}
 
@@ -29,9 +29,9 @@ namespace BLL
 			{
 				return gheDAL.ThemGhe(new GheDTO { TenGhe = tenGhe, MaPhong = maPhong, TenPhong = tenPhong });
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				throw ex;
+				throw;
 			}
 		}
 
@@ -41,9 +41,9 @@ namespace BLL
 			{
 				return gheDAL.XoaGhe(new GheDTO { MaGhe = maGhe, TenGhe = tenGhe, MaPhong = maPhong });
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				throw ex;
+				throw;
 			}
 		}
 

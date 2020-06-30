@@ -19,9 +19,9 @@ namespace BLL
             {
                 return userDAL.Login(new LoginDTO() { UserName = user, Password = password });
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
 
@@ -67,9 +67,9 @@ namespace BLL
             {
                 return userDAL.ThemUser(new LoginDTO() { UserName = username, Password = password, MaNhanVien = maNV });
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
     }

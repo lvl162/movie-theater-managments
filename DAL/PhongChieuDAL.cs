@@ -35,9 +35,9 @@ namespace DAL
                     return list;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
         public bool ThemPhong(PhongChieuDTO pc)
@@ -91,9 +91,9 @@ namespace DAL
             {
                 throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này. Danh sách sẽ được load lại.");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
         public bool XoaPhong(int ma)

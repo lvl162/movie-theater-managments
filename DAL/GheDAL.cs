@@ -36,10 +36,10 @@ namespace DAL
                     return ghes;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                throw ex;
+                throw;
             }
         }
 
@@ -99,10 +99,10 @@ namespace DAL
                     throw new Exception("Không tìm thấy ghế!");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                throw ex;
+                throw;
             }
         }
 
@@ -133,9 +133,9 @@ namespace DAL
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
     }

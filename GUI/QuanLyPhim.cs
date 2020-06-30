@@ -156,7 +156,7 @@ namespace QuanLyRapPhim
                 string text = txtSearch.Text.ToLower();
                 if (index == 0)
                 {
-                    dgvPhim.DataSource = list.Where(p => Utils.convertToUnSign(p.TenPhim).ToLower().Contains(text)).ToList();
+                    dgvPhim.DataSource = list.Where(p => Utils.convertToUnSign(p.TenPhim).ToLower().Contains(text) || p.TenPhim.ToLower().Contains(text)).ToList();
                 }
                 if (index == 1)
                 {

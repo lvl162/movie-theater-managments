@@ -81,7 +81,7 @@ namespace QuanLyRapPhim
                 string text = txtSearch.Text.ToLower();
                 if (index == 0)
                 {
-                    dgvLichChieu.DataSource = list.Where(p => Utils.convertToUnSign(p.TenPhim).ToLower().Contains(text)).ToList();
+                    dgvLichChieu.DataSource = list.Where(p => Utils.convertToUnSign(p.TenPhim).ToLower().Contains(text)|| p.TenPhim.ToLower().Contains(text)).ToList();
                 }
                 if (index == 1)
                 {

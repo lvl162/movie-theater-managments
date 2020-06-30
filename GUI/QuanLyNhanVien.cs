@@ -193,7 +193,7 @@ namespace QuanLyRapPhim
                 int index = cbOptions.SelectedIndex;
                 if (index == 0)
                 {
-                    dgvNhanVien.DataSource = list.Where(nv => Utils.convertToUnSign(nv.HoVaTen).ToLower().Contains(text)).ToList();
+                    dgvNhanVien.DataSource = list.Where(nv => Utils.convertToUnSign(nv.HoVaTen).ToLower().Contains(text) || nv.HoVaTen.ToLower().Contains(text)).ToList();
                 }
                 if (index == 1)
                 {

@@ -42,9 +42,9 @@ namespace DAL
                     return true;
                 }
             }
-            catch(Exception ex )
+            catch(Exception)
             {
-                throw ex;
+                throw;
 
             }
         }
@@ -110,9 +110,9 @@ namespace DAL
                     return nv.ChucVu;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
 

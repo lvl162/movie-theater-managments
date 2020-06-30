@@ -1,5 +1,0 @@
-C:\Users\LuuVanLoi\Desktop\QLRP\DTO\bin\Debug\DTO.dll
-C:\Users\LuuVanLoi\Desktop\QLRP\DTO\bin\Debug\DTO.pdb
-C:\Users\LuuVanLoi\Desktop\QLRP\DTO\obj\Debug\DataTransferObject.csproj.CoreCompileInputs.cache
-C:\Users\LuuVanLoi\Desktop\QLRP\DTO\obj\Debug\DTO.dll
-C:\Users\LuuVanLoi\Desktop\QLRP\DTO\obj\Debug\DTO.pdb

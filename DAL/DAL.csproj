@@ -69,9 +69,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DTO\DataTransferObject.csproj">
+    <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{8dfef653-00c3-470a-bb95-fc73c75a153a}</Project>
-      <Name>DataTransferObject</Name>
+      <Name>DTO</Name>
     </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{5B86D13A-1974-4C37-A422-B62CDAA21057}</Project>

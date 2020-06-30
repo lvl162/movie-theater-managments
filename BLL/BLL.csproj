@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8DFEF653-00C3-470A-BB95-FC73C75A153A}</ProjectGuid>
+    <ProjectGuid>{F821346D-BEA1-47B4-8F0A-B6AA07AFEC06}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DTO</RootNamespace>
-    <AssemblyName>DTO</AssemblyName>
+    <RootNamespace>BLL</RootNamespace>
+    <AssemblyName>BLL</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -33,6 +33,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,14 +43,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatVeDTO.cs" />
-    <Compile Include="GheDTO.cs" />
-    <Compile Include="LichChieuDTO.cs" />
-    <Compile Include="LoginDTO.cs" />
-    <Compile Include="NhanVienDTO.cs" />
-    <Compile Include="PhimDTO.cs" />
-    <Compile Include="PhongChieuDTO.cs" />
+    <Compile Include="DatVeBLL.cs" />
+    <Compile Include="GheBLL.cs" />
+    <Compile Include="LichChieuBLL.cs" />
+    <Compile Include="PhimBLL.cs" />
+    <Compile Include="PhongChieuBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LoginUserBLL.cs" />
+    <Compile Include="NhanVienBLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{82418344-238c-407b-991b-ee816a0ac976}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{8dfef653-00c3-470a-bb95-fc73c75a153a}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{5B86D13A-1974-4C37-A422-B62CDAA21057}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
