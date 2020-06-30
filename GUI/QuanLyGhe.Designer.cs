@@ -37,12 +37,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtTenGhe = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtMaPhong = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.lbHi = new System.Windows.Forms.Label();
             this.btnReload = new System.Windows.Forms.Button();
+            this.cbPhongs = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSGhe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,16 +131,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(414, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 17);
+            this.label3.Size = new System.Drawing.Size(77, 17);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Mã Phòng";
-            // 
-            // txtMaPhong
-            // 
-            this.txtMaPhong.Location = new System.Drawing.Point(513, 29);
-            this.txtMaPhong.Name = "txtMaPhong";
-            this.txtMaPhong.Size = new System.Drawing.Size(100, 22);
-            this.txtMaPhong.TabIndex = 2;
+            this.label3.Text = "Tên phòng";
             // 
             // btnAdd
             // 
@@ -192,17 +185,25 @@
             this.btnReload.UseVisualStyleBackColor = true;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
+            // cbPhongs
+            // 
+            this.cbPhongs.FormattingEnabled = true;
+            this.cbPhongs.Location = new System.Drawing.Point(524, 27);
+            this.cbPhongs.Name = "cbPhongs";
+            this.cbPhongs.Size = new System.Drawing.Size(121, 24);
+            this.cbPhongs.TabIndex = 7;
+            // 
             // QuanLyGhe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(851, 491);
+            this.Controls.Add(this.cbPhongs);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.lbHi);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtMaPhong);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTenGhe);
             this.Controls.Add(this.label1);
@@ -223,7 +224,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTenGhe;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtMaPhong;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
@@ -234,5 +234,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn RowVersion;
         private System.Windows.Forms.Label lbHi;
         private System.Windows.Forms.Button btnReload;
+        private System.Windows.Forms.ComboBox cbPhongs;
     }
 }

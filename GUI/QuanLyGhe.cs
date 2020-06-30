@@ -28,6 +28,9 @@ namespace QuanLyRapPhim
             {
                 dgvDSGhe.AutoGenerateColumns = false;
                 dgvDSGhe.DataSource = gheBLL.DanhSachGhe();
+                cbPhongs.DataSource = gheBLL.DanhSachPhong();
+                cbPhongs.DisplayMember = "TenPhong";
+                cbPhongs.ValueMember = "MaPhong";
             }
             catch (Exception ex)
             {
@@ -42,7 +45,7 @@ namespace QuanLyRapPhim
                 try
                 {
                     string tenghe = txtTenGhe.Text;
-                    int maphong = int.Parse(txtMaPhong.Text);
+                    int maphong = int.Parse(cbPhongs.SelectedValue.ToString());
                     string tenPhong = dgvDSGhe.Rows[RowEnter].Cells[3].Value.ToString();
                     if (gheBLL.ThemGhe(tenghe, maphong, tenPhong))
                         MessageBox.Show("Thêm thành công!");
@@ -63,7 +66,7 @@ namespace QuanLyRapPhim
                 {
                     int maGhe = int.Parse(dgvDSGhe.Rows[RowEnter].Cells[0].Value.ToString());
                     string tenGhe = txtTenGhe.Text;
-                    int maPhong = int.Parse(txtMaPhong.Text);
+                    int maPhong = int.Parse(cbPhongs.SelectedValue.ToString());
                     string rowVersion = dgvDSGhe.Rows[RowEnter].Cells[4].Value.ToString();
                     if (gheBLL.UpdateGhe(maGhe, tenGhe, maPhong, rowVersion))
                     {
@@ -108,7 +111,7 @@ namespace QuanLyRapPhim
             {
                 RowEnter = e.RowIndex;
                 txtTenGhe.Text = dgvDSGhe.Rows[RowEnter].Cells[1].Value.ToString();
-                txtMaPhong.Text = dgvDSGhe.Rows[RowEnter].Cells[2].Value.ToString();
+                cbPhongs.Text = dgvDSGhe.Rows[RowEnter].Cells[3].Value.ToString();
             }
             catch (Exception ex)
             {

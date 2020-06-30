@@ -43,6 +43,18 @@ namespace DAL
             }
         }
 
+        public List<PhongChieuDTO> DanhSachPhong()
+        {
+            try
+            {
+                return (new LichChieuDAL().getPhongs());
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public bool UpdateGhe(GheDTO ghe)
         {
             try

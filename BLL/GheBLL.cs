@@ -58,5 +58,17 @@ namespace BLL
 				throw;
 			}
 		}
-	}
+
+        public List<PhongChieuDTO> DanhSachPhong()
+        {
+			try
+			{
+				return gheDAL.DanhSachPhong();
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+        }
+    }
 }
