@@ -86,7 +86,7 @@ namespace DAL
                         context.SaveChanges();
                         return true;
                     }
-                    throw new Exception("User này đã bị xóa bởi ai đó. Danh sách sẽ được load lại.");
+                    return false;
                 }
             }
             catch (Exception)

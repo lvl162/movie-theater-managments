@@ -17,25 +17,26 @@ namespace DAL
             {
                 using (QLRPContext context = new QLRPContext())
                 {
-                    context.NhanViens.Add(new NhanVien() { 
-                    MaNhanVien = nv.MaNhanVien,
-                    ChucVu = nv.ChucVu,
-                    NgaySinh = nv.NgaySinh,
-                    DiaChi = nv.DiaChi,
-                    GioiTinh = nv.GioiTinh,
-                    HoVaTen = nv.HoVaTen,
-                    SDT = nv.SDT,
-                    SoCMND = nv.SoCMND,
-                    NgayTao = DateTime.Now,
-                    NguoiTao = CurrentUser.Username,
-                    NgaySua = DateTime.Now,
-                    NguoiSua = CurrentUser.Username
+                    context.NhanViens.Add(new NhanVien()
+                    {
+                        MaNhanVien = nv.MaNhanVien,
+                        ChucVu = nv.ChucVu,
+                        NgaySinh = nv.NgaySinh,
+                        DiaChi = nv.DiaChi,
+                        GioiTinh = nv.GioiTinh,
+                        HoVaTen = nv.HoVaTen,
+                        SDT = nv.SDT,
+                        SoCMND = nv.SoCMND,
+                        NgayTao = DateTime.Now,
+                        NguoiTao = CurrentUser.Username,
+                        NgaySua = DateTime.Now,
+                        NguoiSua = CurrentUser.Username
                     });
                     context.SaveChanges();
                     return true;
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw e;
             }
@@ -44,26 +45,25 @@ namespace DAL
         public bool XoaNhanVien(int manv)
         {
             LoginUserDAL lgDAL = new LoginUserDAL();
-            if (lgDAL.DeleteUser(manv))
+            bool deleteuser = lgDAL.DeleteUser(manv);
+
+            try
             {
-                try
+                using (QLRPContext context = new QLRPContext())
                 {
-                    using (QLRPContext context = new QLRPContext())
+                    NhanVien nv_found = context.NhanViens.SingleOrDefault(p => p.MaNhanVien == manv);
+                    if (nv_found != null)
                     {
-                        NhanVien nv_found = context.NhanViens.SingleOrDefault(p => p.MaNhanVien == manv);
-                        if (nv_found != null)
-                        {
-                            context.NhanViens.Remove(nv_found);
-                            context.SaveChanges();
-                            return true;
-                        }
-                        throw new Exception("Nhân viên này đã bị xóa bởi ai đó. Danh sách sẽ được load lại.");
+                        context.NhanViens.Remove(nv_found);
+                        context.SaveChanges();
+                        return true;
                     }
+                    throw new Exception("Nhân viên này đã bị xóa bởi ai đó. Danh sách sẽ được load lại.");
                 }
-                catch (Exception)
-                {
-                    throw;
-                }
+            }
+            catch (Exception)
+            {
+                throw;
             }
             throw new Exception("Đã có lỗi xảy ra.");
         }
@@ -112,7 +112,7 @@ namespace DAL
             {
                 using (QLRPContext context = new QLRPContext())
                 {
-                    foreach(var el in context.Logins.Select(p=>p).ToList())
+                    foreach (var el in context.Logins.Select(p => p).ToList())
                     {
                         if (el.MaNhanVien == manv)
                         {
@@ -164,7 +164,7 @@ namespace DAL
             catch (Exception)
             {
                 throw;
-            } 
+            }
         }
     }
 }
