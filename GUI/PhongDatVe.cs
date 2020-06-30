@@ -38,6 +38,19 @@ namespace QuanLyRapPhim.DanhSachPhong
             phongChieu = datVeBLL.LayKieuPhong(lichChieu.MaPhong);
             int r = phongChieu.SoHang;
             int c = phongChieu.SoCot;
+            
+            GhesPanel.RowStyles.Clear();
+            GhesPanel.ColumnStyles.Clear();
+            GhesPanel.ColumnCount = c;
+            GhesPanel.RowCount = r;
+            for (int i = 0; i<c; i++)
+            {
+                GhesPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100*1f/c));
+            }
+            for (int i = 0; i < r; i++)
+            {
+                GhesPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100 * 1f / r));
+            }
             for (char i = 'A'; i < 'A' + r; i++)
             {
                 for (int j = 1; j <= c; j++)
@@ -45,7 +58,7 @@ namespace QuanLyRapPhim.DanhSachPhong
                     Button b = new Button();
                     b.Text = i + "" + j;
                     b.Dock = DockStyle.Fill;
-                    b.Margin = new Padding(4, 4, 4, 4);
+                    b.Margin = new Padding(3, 3, 3, 3);
                     b.BackColor = Color.White;
                     if (gheDaDat.Contains(b.Text))
                     {

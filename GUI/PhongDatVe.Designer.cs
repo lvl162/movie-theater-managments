@@ -50,7 +50,7 @@
             // 
             this.GhesPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.GhesPanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
-            this.GhesPanel.ColumnCount = 10;
+            this.GhesPanel.ColumnCount = 1;
             this.GhesPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.GhesPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.GhesPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -63,7 +63,7 @@
             this.GhesPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.GhesPanel.Location = new System.Drawing.Point(78, 99);
             this.GhesPanel.Name = "GhesPanel";
-            this.GhesPanel.RowCount = 10;
+            this.GhesPanel.RowCount = 1;
             this.GhesPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.GhesPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.GhesPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
