@@ -70,7 +70,7 @@ namespace DAL
 			}
 		}
 
-		public bool XoaLichChieu(int malc_delete)
+		public bool XoaLichChieu(int malc_delete, string rowVersion)
 		{
 			try
 			{
@@ -79,12 +79,20 @@ namespace DAL
 					var lc = context.LichChieus.SingleOrDefault(l => l.MaLichChieu == malc_delete);
 					if (lc!=null)
 					{
-						context.LichChieus.Remove(lc);
-						context.SaveChanges();
-						return true;
+						if (Utils.ValidateRowversion(lc.RowVersion, rowVersion))
+						{
+							context.LichChieus.Remove(lc);
+							context.SaveChanges();
+							return true;
+						}
+						throw new Exception("Có ai đó đã update đối tượng này trước đó. Danh sách sẽ được load lại.");
 					}
 					throw new Exception("Lịch chiếu này đã bị xóa bởi ai đó. Danh sách sẽ được load lại.");
 				}
+			}
+			catch (DbUpdateConcurrencyException)
+			{
+				throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này. Danh sách sẽ được load lại.");
 			}
 			catch (Exception)
 			{

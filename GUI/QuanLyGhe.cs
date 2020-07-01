@@ -88,10 +88,9 @@ namespace QuanLyRapPhim
                 try
                 {
                     int maGhe = int.Parse(dgvDSGhe.Rows[RowEnter].Cells[0].Value.ToString());
-                    int maPhong = int.Parse(dgvDSGhe.Rows[RowEnter].Cells[2].Value.ToString());
-                    string tenGhe = txtTenGhe.Text;
+                    string rowVersion = dgvDSGhe.Rows[RowEnter].Cells[4].Value.ToString();
 
-                    if (gheBLL.XoaGhe(maGhe, tenGhe, maPhong))
+                    if (gheBLL.XoaGhe(maGhe, rowVersion))
                     {
                         MessageBox.Show("Xóa thành công!");
                     }

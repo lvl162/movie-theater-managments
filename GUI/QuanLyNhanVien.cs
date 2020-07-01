@@ -93,8 +93,9 @@ namespace QuanLyRapPhim
                 try
                 {
                     int maNV = int.Parse(dgvNhanVien.Rows[RowEnter].Cells[0].Value.ToString());
+                    string RowVer = dgvNhanVien.Rows[RowEnter].Cells[8].Value.ToString();
 
-                    if (quanLyNhanVienBLL.XoaNhanVien(maNV))
+                    if (quanLyNhanVienBLL.XoaNhanVien(maNV, RowVer))
                     {
                         MessageBox.Show("Xóa thành công!");
                     }

@@ -62,7 +62,7 @@ namespace DAL
                 throw e;
             }
         }
-        public bool XoaPhim(int ma)
+        public bool XoaPhim(int ma, string rv)
         {
             try
             {
@@ -71,12 +71,20 @@ namespace DAL
                     Phim pc = context.Phims.SingleOrDefault(px => px.MaPhim == ma);
                     if (pc != null)
                     {
-                        context.Phims.Remove(pc);
-                        context.SaveChanges();
-                        return true;
+                        if (Utils.ValidateRowversion(pc.RowVersion, rv))
+                        {
+                            context.Phims.Remove(pc);
+                            context.SaveChanges();
+                            return true;
+                        }
+                        throw new Exception("Có ai đó đã update đối tượng này trước đó. Danh sách sẽ được load lại.");
                     }
                     throw new Exception("Phim này đã bị xóa bởi ai đó. Danh sách sẽ được load lại.");
                 }
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này. Danh sách sẽ được load lại.");
             }
             catch (Exception)
             {

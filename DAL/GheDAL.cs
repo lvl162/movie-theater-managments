@@ -95,25 +95,32 @@ namespace DAL
             }
         }
 
-        public bool XoaGhe(GheDTO ghe)
+        public bool XoaGhe(int ma, string rv)
         {
             try
             {
                 using (var context = new QLRPContext())
                 {
-                    var ghe_del = context.Ghes.SingleOrDefault(p => p.MaGhe == ghe.MaGhe);
+                    var ghe_del = context.Ghes.SingleOrDefault(p => p.MaGhe == ma);
                     if (ghe_del != null)
                     {
-                        context.Ghes.Remove(ghe_del);
-                        context.SaveChanges();
-                        return true;
-                    }
+                        if (Utils.ValidateRowversion(ghe_del.RowVersion, rv))
+                        {
+                            context.Ghes.Remove(ghe_del);
+                            context.SaveChanges();
+                            return true;
+                        }
+                        else throw new Exception("Ghế đã được sửa trước đó. Trang sẽ được load lại.");
+                    }    
                     throw new Exception("Không tìm thấy ghế!");
                 }
             }
+            catch (DbUpdateConcurrencyException)
+            {
+                throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này. Danh sách sẽ được load lại.");
+            }
             catch (Exception)
             {
-
                 throw;
             }
         }

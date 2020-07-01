@@ -99,8 +99,9 @@ namespace QuanLyRapPhim
                 try
                 {
                     int maPhim = int.Parse(dgvPhim.Rows[RowEnter].Cells[0].Value.ToString());
-                    
-                    if (phimBLL.XoaPhim(maPhim))
+                    string rowVer = dgvPhim.Rows[RowEnter].Cells[5].Value.ToString();
+
+                    if (phimBLL.XoaPhim(maPhim, rowVer))
                     {
                         MessageBox.Show("Xóa thành công!");
                     }

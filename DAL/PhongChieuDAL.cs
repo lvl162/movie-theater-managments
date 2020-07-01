@@ -25,13 +25,14 @@ namespace DAL
                     var list = (from pc in context.PhongChieus
                                 select pc)
                                .AsEnumerable()
-                               .Select (pc => new PhongChieuDTO() { 
-                                   MaPhong = pc.MaPhong, 
+                               .Select(pc => new PhongChieuDTO()
+                               {
+                                   MaPhong = pc.MaPhong,
                                    TenPhong = pc.TenPhong,
                                    SoHang = pc.SoHang,
                                    SoCot = pc.SoCot,
                                    RowVersion = BitConverter.ToUInt64(pc.RowVersion, 0).ToString()
-                    }).ToList();
+                               }).ToList();
                     return list;
                 }
             }
@@ -46,10 +47,14 @@ namespace DAL
             {
                 using (QLRPContext context = new QLRPContext())
                 {
-                    context.PhongChieus.Add(new PhongChieu() { MaPhong = pc.MaPhong, TenPhong = pc.TenPhong,
+                    context.PhongChieus.Add(new PhongChieu()
+                    {
+                        MaPhong = pc.MaPhong,
+                        TenPhong = pc.TenPhong,
                         SoHang = pc.SoHang,
                         SoCot = pc.SoCot,
-                        NguoiTao = CurrentUser.Username, NgayTao = DateTime.Now,
+                        NguoiTao = CurrentUser.Username,
+                        NgayTao = DateTime.Now,
                         NgaySua = DateTime.Now,
                         NguoiSua = CurrentUser.Username
                     });
@@ -96,7 +101,7 @@ namespace DAL
                 throw;
             }
         }
-        public bool XoaPhong(int ma)
+        public bool XoaPhong(int ma, string rv)
         {
             try
             {
@@ -105,12 +110,20 @@ namespace DAL
                     var phong = context.PhongChieus.SingleOrDefault(p => p.MaPhong == ma);
                     if (phong != null)
                     {
-                        context.PhongChieus.Remove(phong);
-                        context.SaveChanges();
-                        return true;
+                        if (Utils.ValidateRowversion(phong.RowVersion, rv))
+                        {
+                            context.PhongChieus.Remove(phong);
+                            context.SaveChanges();
+                            return true;
+                        }
+                        throw new Exception("Có ai đó đã update đối tượng này trước đó. Danh sách sẽ được load lại.");
                     }
                     throw new Exception("Phòng này đã bị xóa bởi ai đó. Danh sách sẽ được load lại.");
                 }
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này. Danh sách sẽ được load lại.");
             }
             catch (Exception)
             {

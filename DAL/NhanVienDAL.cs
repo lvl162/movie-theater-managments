@@ -2,6 +2,7 @@
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
@@ -42,11 +43,9 @@ namespace DAL
             }
         }
 
-        public bool XoaNhanVien(int manv)
+        public bool XoaNhanVien(int manv, string rowVer)
         {
             LoginUserDAL lgDAL = new LoginUserDAL();
-            bool deleteuser = lgDAL.DeleteUser(manv);
-
             try
             {
                 using (QLRPContext context = new QLRPContext())
@@ -54,18 +53,26 @@ namespace DAL
                     NhanVien nv_found = context.NhanViens.SingleOrDefault(p => p.MaNhanVien == manv);
                     if (nv_found != null)
                     {
-                        context.NhanViens.Remove(nv_found);
-                        context.SaveChanges();
-                        return true;
+                        if (Utils.ValidateRowversion(nv_found.RowVersion, rowVer))
+                        {
+                            bool deleteuser = lgDAL.DeleteUser(manv);
+                            context.NhanViens.Remove(nv_found);
+                            context.SaveChanges();
+                            return true;
+                        }
+                        throw new Exception("Có ai đó đã update đối tượng này trước đó. Danh sách sẽ được load lại.");
                     }
                     throw new Exception("Nhân viên này đã bị xóa bởi ai đó. Danh sách sẽ được load lại.");
                 }
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                throw new Exception("Hiện tại, có ai đó cũng đang update đối tượng này. Danh sách sẽ được load lại.");
             }
             catch (Exception)
             {
                 throw;
             }
-            throw new Exception("Đã có lỗi xảy ra.");
         }
 
         public bool UpdateNhanVien(NhanVienDTO nv)

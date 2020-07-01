@@ -35,11 +35,11 @@ namespace BLL
 			}
 		}
 
-		public bool XoaGhe(int maGhe, string tenGhe, int maPhong)
+		public bool XoaGhe(int maGhe, string rv)
 		{
 			try
 			{
-				return gheDAL.XoaGhe(new GheDTO { MaGhe = maGhe, TenGhe = tenGhe, MaPhong = maPhong });
+				return gheDAL.XoaGhe(maGhe, rv);
 			}
 			catch (Exception)
 			{

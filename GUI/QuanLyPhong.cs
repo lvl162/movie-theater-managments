@@ -117,8 +117,9 @@ namespace GUI
                 try
                 {
                     int maPhong = int.Parse(dgvPhong.Rows[RowEnter].Cells[0].Value.ToString());
+                    string rowVersion = dgvPhong.Rows[RowEnter].Cells[4].Value.ToString();
 
-                    if (pcBLL.XoaPhong(maPhong))
+                    if (pcBLL.XoaPhong(maPhong, rowVersion))
                     {
                         MessageBox.Show("Xóa thành công!");
                     }

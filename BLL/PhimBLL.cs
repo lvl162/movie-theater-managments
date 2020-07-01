@@ -36,11 +36,11 @@ namespace BLL
                 throw;
             }
         }
-        public bool XoaPhim(int ma)
+        public bool XoaPhim(int ma, string rv)
         {
             try
             {
-                return phimDAL.XoaPhim(ma);
+                return phimDAL.XoaPhim(ma, rv);
             }
             catch (Exception)
             {

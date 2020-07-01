@@ -110,7 +110,9 @@ namespace QuanLyRapPhim
                 try
                 {
                     int malc_delete = int.Parse(dgvDSLichChieu.Rows[RowEnter].Cells[0].Value.ToString());
-                    if (lichChieuBLL.XoaLichChieu(malc_delete))
+                    string rowVer = dgvDSLichChieu.Rows[RowEnter].Cells[4].Value.ToString();
+
+                    if (lichChieuBLL.XoaLichChieu(malc_delete, rowVer))
                     {
                         MessageBox.Show("Xóa thành công!");
                     }

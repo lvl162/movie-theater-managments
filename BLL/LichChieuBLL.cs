@@ -100,11 +100,11 @@ namespace BLL
 			}
 		}
 
-		public bool XoaLichChieu(int malc_delete)
+		public bool XoaLichChieu(int malc_delete, string rver)
 		{
 			try
 			{
-				return lichChieuDAL.XoaLichChieu(malc_delete);
+				return lichChieuDAL.XoaLichChieu(malc_delete, rver);
 			}
 			catch (Exception)
 			{

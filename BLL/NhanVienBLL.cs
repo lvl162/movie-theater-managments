@@ -27,11 +27,11 @@ namespace BLL
 
         }
 
-        public bool XoaNhanVien(int _maNV)
+        public bool XoaNhanVien(int _maNV, string rowVer)
         {
             try
             {
-                return quanLyNhanVienDAL.XoaNhanVien(_maNV);
+                return quanLyNhanVienDAL.XoaNhanVien(_maNV, rowVer);
             }
             catch (Exception)
             {

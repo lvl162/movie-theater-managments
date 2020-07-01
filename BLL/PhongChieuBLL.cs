@@ -50,11 +50,11 @@ namespace BLL
             }
             
         }
-        public bool XoaPhong(int ma)
+        public bool XoaPhong(int ma, string rv)
         {
             try
             {
-                return (pcDAL.XoaPhong(ma));
+                return (pcDAL.XoaPhong(ma, rv));
             }
             catch (Exception)
             {
